@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="WebsProMakers">
+  <rect width="48" height="48" rx="12" fill="#1d4b3a"/>
+  <circle cx="12.5" cy="12.5" r="1.9" fill="#a8d5b9"/><circle cx="18" cy="12.5" r="1.9" fill="#a8d5b9" opacity=".7"/><circle cx="23.5" cy="12.5" r="1.9" fill="#a8d5b9" opacity=".45"/>
+  <path d="M11 20.5 17 35l7-11.5L31 35l6-14.5" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

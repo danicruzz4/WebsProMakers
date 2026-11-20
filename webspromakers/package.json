@@ -1,0 +1,12 @@
+{
+  "name": "webspromakers",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Web oficial de WebsProMakers (Langkawi). Sitio estático listo para Cloudflare Pages.",
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "check": "node scripts/check.mjs"
+  },
+  "engines": { "node": ">=18" }
+}

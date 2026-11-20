@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Digital Menu – Api &amp; Daun (Concept Demo)</title>
+  <meta name="description" content="QR digital menu demo by WebsProMakers: categories, food photos, prices and four languages.">
+  <meta name="theme-color" content="#f6efe4">
+  <link rel="canonical" href="https://webspromakers.pages.dev/demos/restaurant/menu/">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Jost:wght@400;500&display=swap">
+  <link rel="stylesheet" href="/assets/css/demo-base.css">
+  <style>
+    :root { --ph1: #c99a74; --ph2: #7a4a2c; }
+    body { background: #f6efe4; color: #2a1d16; font: 16px/1.55 "Jost", "Inter", system-ui, "PingFang SC", "Noto Sans SC", sans-serif; }
+    .wrap { width: min(560px, 100% - 32px); margin-inline: auto; }
+    .demo-banner { font-size: 12px; padding: 6px 12px; }
+    .embed .demo-banner { display: none; }
+    .embed .top { height: 236px; }
+    .embed .top .wrap { padding-top: 42px; }
+    .top { position: relative; height: 210px; color: #fff; isolation: isolate; }
+    .top .ph { position: absolute; inset: 0; z-index: -2; }
+    .top::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(23, 17, 14, .2), rgba(23, 17, 14, .85)); }
+    .top .wrap { height: 100%; display: flex; flex-direction: column; justify-content: space-between; padding: 14px 0 18px; }
+    .top-row { display: flex; justify-content: space-between; align-items: center; }
+    .top-row .lang-btn { color: #fff; border-color: rgba(255,255,255,.6); background: rgba(0,0,0,.2); height: 38px; }
+    .brand { font-family: "Cormorant Garamond", Georgia, serif; font-size: 34px; font-weight: 600; line-height: 1; }
+    .brand span { color: #f0a284; }
+    .top p { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; opacity: .85; margin-top: 6px; }
+    [data-lang="zh"] .top p { letter-spacing: .04em; }
+    .m-tabs { position: sticky; top: 0; z-index: 10; display: flex; gap: 8px; overflow-x: auto; padding: 12px 16px; background: #f6efe4; scrollbar-width: none; box-shadow: 0 1px 0 #e5d7c4; }
+    .m-tabs::-webkit-scrollbar { display: none; }
+    .m-tabs button { flex: none; border: 1px solid #dbc9b2; background: #fff; border-radius: 999px; padding: 9px 16px; font-size: 15px; cursor: pointer; min-height: 42px; }
+    .m-tabs button[aria-selected="true"] { background: #2a1d16; color: #fff; border-color: #2a1d16; }
+    .m-list { width: min(560px, 100% - 32px); margin: 8px auto 0; }
+    .m-item { display: grid; grid-template-columns: 84px 1fr auto; gap: 14px; align-items: center; padding: 14px 0; border-bottom: 1px solid #e8dccb; }
+    .m-item.no-photo { grid-template-columns: 1fr auto; }
+    .m-photo { width: 84px; height: 84px; border-radius: 14px; }
+    .m-text h4 { font-size: 17px; font-weight: 500; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin: 0; }
+    .m-text p { font-size: 14px; color: #6e5a4b; margin-top: 3px; }
+    .m-tag { font-size: 11px; padding: 2px 8px; border-radius: 99px; background: #f6d9c9; color: #8a3a1a; }
+    .m-price { font-weight: 500; color: #a9431f; white-space: nowrap; align-self: start; padding-top: 2px; }
+    .foot { padding: 22px 0 110px; font-size: 13px; color: #6e5a4b; display: grid; gap: 8px; }
+    .foot a { color: #2a1d16; }
+    .call { position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%); z-index: 20; display: flex; gap: 10px; }
+    .call button { min-height: 50px; padding: 0 22px; border-radius: 999px; border: 0; background: #2a1d16; color: #fff; font-size: 15px; font-weight: 500; cursor: pointer; box-shadow: 0 10px 30px -10px rgba(0,0,0,.5); white-space: nowrap; }
+  </style>
+  <script defer src="/assets/js/config.js"></script>
+  <script defer src="/assets/js/photos.js"></script>
+  <script defer src="/assets/js/core.js"></script>
+  <script defer src="/assets/js/demo.js"></script>
+  <script defer src="../menu-data.js"></script>
+  <script defer src="../i18n.js"></script>
+</head>
+<body>
+<div class="demo-banner"><span data-i18n="demo.banner">Concept demo by WebsProMakers · Fictitious business</span><a href="/#qr-menu"><span data-i18n="demo.back">Back to WebsProMakers</span></a></div>
+<header class="top">
+  <div class="ph"><img data-photo="food-spread" data-w="800" alt="" loading="eager"></div>
+  <div class="wrap">
+    <div class="top-row">
+      <span class="brand">Api <span>&amp;</span> Daun</span>
+      <div class="lang" data-lang-switch><button class="lang-btn" type="button" data-i18n-aria="r.lang" aria-label="Language"><svg class="icon" aria-hidden="true"><use href="#d-globe"/></svg><span data-lang-current>EN</span></button></div>
+    </div>
+    <div><h1 class="brand" style="font-size:28px" data-i18n="mn.title">Digital menu</h1><p data-i18n="mn.sub">Scan · Browse · Enjoy</p></div>
+  </div>
+</header>
+<main id="menu-root"></main>
+<div class="wrap foot">
+  <p><span data-i18n="r.menu.prices">Prices in Malaysian ringgit (RM).</span> <span data-i18n="demo.samplePrices">Sample prices for demonstration.</span></p>
+  <p data-i18n="mn.allergy">Please tell our staff about any allergies.</p>
+  <p><a href="../" target="_top" data-i18n="mn.site">Restaurant website</a></p>
+</div>
+<div class="call"><button type="button" id="call-waiter" data-i18n="mn.call">Call a waiter</button></div>
+<script defer src="menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="meta.title">Website Design Langkawi | WebsProMakers – Websites for Local Businesses</title>
+  <meta name="description" data-i18n-content="meta.desc" content="WebsProMakers designs custom websites for restaurants, hotels, cafés, shops and tour companies in Langkawi, Malaysia. Mobile-first, multilingual, with WhatsApp, Google Maps and QR menus.">
+  <meta name="theme-color" content="#0e1311">
+  <link rel="canonical" href="https://webspromakers.pages.dev/">
+  <!-- Google Search Console: pega aquí tu etiqueta de verificación, por ejemplo:
+  <meta name="google-site-verification" content="TU_CODIGO"> -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="WebsProMakers">
+  <meta property="og:title" content="WebsProMakers – Website Design in Langkawi">
+  <meta property="og:description" content="Professional websites designed to help Langkawi businesses attract more customers, build trust and grow online.">
+  <meta property="og:url" content="https://webspromakers.pages.dev/">
+  <meta property="og:image" content="https://webspromakers.pages.dev/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:locale:alternate" content="ms_MY">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "WebsProMakers",
+    "url": "https://webspromakers.pages.dev/",
+    "logo": "https://webspromakers.pages.dev/assets/img/icon-512.png",
+    "image": "https://webspromakers.pages.dev/assets/img/og-image.png",
+    "description": "Custom website design and development for restaurants, hotels, cafés, shops and tour companies in Langkawi, Malaysia.",
+    "areaServed": { "@type": "Place", "name": "Langkawi, Kedah, Malaysia" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Langkawi", "addressRegion": "Kedah", "addressCountry": "MY" },
+    "knowsLanguage": ["en", "ms", "es", "zh"],
+    "serviceType": ["Website design", "Restaurant website design", "Hotel website design", "Digital menu with QR code", "Multilingual websites"]
+  }
+  </script>
+  <script defer src="/assets/js/config.js"></script>
+  <script defer src="/assets/js/photos.js"></script>
+  <script defer src="/assets/js/qr.js"></script>
+  <script defer src="/assets/js/core.js"></script>
+  <script defer src="/assets/js/i18n-site.js"></script>
+  <script defer src="/assets/js/site.js"></script>
+</head>
+<body>
+<!-- Iconos (se reutilizan con <use href="#i-...">) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="m8 12.2 2.8 2.8L16.2 9.5"/></symbol>
+    <symbol id="i-x-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="m15 9-6 6M9 9l6 6"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.6 2.8 3.9 6 3.9 9.5s-1.3 6.7-3.9 9.5c-2.6-2.8-3.9-6-3.9-9.5s1.3-6.7 3.9-9.5z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 20 6v6c0 5-3.4 8-8 9-4.6-1-8-4-8-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.6a3.5 3.5 0 0 1 0 6.8M21.5 20a6.5 6.5 0 0 0-4-6"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3.2 2"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="m12 3 1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="m8.6 14-1.6 8 5-3 5 3-1.6-8"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8.5 8.5 0 0 1-12.4 7.6L3.5 21l1.4-4.8A8.5 8.5 0 1 1 21 12z"/><path d="M8 12h.01M12 12h.01M16 12h.01"/></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2.5"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-9 9"/></symbol>
+    <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2.5"/><path d="M3 9h18M9 21V9"/></symbol>
+    <symbol id="i-utensils" viewBox="0 0 24 24"><path d="M6 3v7a2 2 0 0 0 4 0V3M8 12v9M17 21V3c-2 1.2-3 3.8-3 7.5V13h3"/></symbol>
+    <symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 5v14M3 14h18v5M21 14v-2.5A3.5 3.5 0 0 0 17.5 8H11v6"/><circle cx="7" cy="10.5" r="2"/></symbol>
+    <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9 5.2 4h13.6L20 9M4 9a2.7 2.7 0 0 0 5.3 0 2.7 2.7 0 0 0 5.4 0A2.7 2.7 0 0 0 20 9M5 11.5V20h14v-8.5M10 20v-5h4v5"/></symbol>
+    <symbol id="i-mobile" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18h2"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.4l-4.4 1.4 1.4-4.3a8.5 8.5 0 1 1 15.6-4.5z"/><path d="M9 8.3c-.3 2.9 2.6 6.1 6 6.5l1.1-1.4-2.1-1.1-1 .7c-.9-.4-1.9-1.4-2.3-2.3l.7-1-1-2.2z"/></symbol>
+    <symbol id="i-wa-fill" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 2.2a9.6 9.6 0 0 0-8.3 14.5L2.3 21.8l5.3-1.4A9.6 9.6 0 1 0 12 2.2zm0 17.6a8 8 0 0 1-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3A8 8 0 1 1 12 19.8zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8.9c-.1.2-.3.2-.5.1-.7-.3-1.5-.7-2.1-1.3-.6-.6-1-1.2-1.3-1.8-.1-.2 0-.4.1-.5l.4-.5.3-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3 1 2.5c.1.2 1.6 2.5 4 3.5 1.5.6 2.1.7 2.8.6.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1l-.4-.3z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21.5s-7-6.1-7-11.2a7 7 0 0 1 14 0c0 5.1-7 11.2-7 11.2z"/><circle cx="12" cy="10.2" r="2.5"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><path d="m3 17 6-6 4 4 8-8M15 7h6v6"/></symbol>
+    <symbol id="i-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20.5 14v.01M14 20.5h.01M17.5 20.5H21V17"/></symbol>
+    <symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2.5"/><path d="M8.5 7V5.5a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2V7M3 13h18"/></symbol>
+    <symbol id="i-coffee" viewBox="0 0 24 24"><path d="M4 9h13v4a6 6 0 0 1-6 6h-1a6 6 0 0 1-6-6zM17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 3v3M12 3v3"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11 12 4l9 7M5 9.5V20h14V9.5M10 20v-6h4v6"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.2A4.2 4.2 0 0 1 12 7.4a4.2 4.2 0 0 1 7.5 2.4C19.5 15.4 12 20 12 20z"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7.5" height="7.5" rx="1.8"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.8"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.8"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.8"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16zM13.5 6.5l4 4"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.5"/></symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1"/><circle cx="15" cy="6" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="18" r="2"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2.5 4 14h7l-1 7.5L19 10h-7z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 16.5V11M12 7.5h.01"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="M21.5 2.5 10.5 13.5M21.5 2.5l-7 19-4-8-8-4z"/></symbol>
+    <symbol id="i-form" viewBox="0 0 24 24"><rect x="3.5" y="3" width="17" height="18" rx="2.5"/><path d="M7.5 8h9M7.5 12h9M7.5 16h5"/></symbol>
+    <symbol id="i-route" viewBox="0 0 24 24"><path d="M3.5 11.5 21 3l-8.5 17.5-2-7z"/></symbol>
+    <symbol id="i-call" viewBox="0 0 24 24"><path d="M5 3h3.5l2 5L8 9.5a11 11 0 0 0 6.5 6.5L16 13.5l5 2V19a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></symbol>
+    <symbol id="i-swap" viewBox="0 0 24 24"><path d="M9 6 3 12l6 6M15 6l6 6-6 6"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
+    <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M15 3h-2.5A3.5 3.5 0 0 0 9 6.5V10H6.5v3.5H9V21h3.5v-7.5H15l.5-3.5h-3V7a1 1 0 0 1 1-1H15z"/></symbol>
+    <symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M14 3v11.5a3.5 3.5 0 1 1-3-3.46M14 3c.5 2.5 2.3 4.2 5 4.5"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V17M8 7.2v.01M12 17v-3.8a2.2 2.2 0 0 1 4.4 0V17M12 10.5V17"/></symbol>
+    <symbol id="i-logo" viewBox="0 0 48 48"><rect width="48" height="48" rx="12" fill="#2a6a51" stroke="none"/><circle cx="12.5" cy="12.5" r="1.9" fill="#cfe9d9" stroke="none"/><circle cx="18" cy="12.5" r="1.9" fill="#cfe9d9" opacity=".7" stroke="none"/><circle cx="23.5" cy="12.5" r="1.9" fill="#cfe9d9" opacity=".45" stroke="none"/><path d="M11 20.5 17 35l7-11.5L31 35l6-14.5" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 200 260"><path fill="currentColor" d="M100 258c-4-40-8-78-6-118C70 150 30 140 8 112c30-4 58 2 84 18-2-24-16-48-40-66 30 2 52 18 66 42 4-30 0-62-14-96 24 22 36 52 34 88 18-22 40-34 66-38-14 26-34 46-60 58 30-6 52 0 66 14-26 12-52 16-78 8-2 38 0 80 6 120z"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#main" data-i18n="nav.skip">Skip to content</a>
+
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a class="brand" href="#top" aria-label="WebsProMakers – Home">
+      <svg aria-hidden="true"><use href="#i-logo"/></svg>
+      <span>Webs<b>Pro</b>Makers</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <ul>
+        <li><a href="#top" data-i18n="nav.home">Home</a></li>
+        <li><a href="#about" data-i18n="nav.about">About Us</a></li>
+        <li><a href="#services" data-i18n="nav.services">Services</a></li>
+        <li><a href="#work" data-i18n="nav.work">Our Work</a></li>
+        <li><a href="#why-us" data-i18n="nav.why">Why Choose Us</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <a class="btn nav-cta" href="#contact" data-i18n="cta.getWebsite">Get Your Website</a>
+    </nav>
+    <div class="header-actions">
+      <div class="lang" data-lang-switch>
+        <button class="lang-btn" type="button" data-i18n-aria="nav.language" aria-label="Language">
+          <svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg>
+          <span data-lang-current>EN</span>
+        </button>
+      </div>
+      <a class="btn btn--sm header-cta" href="#contact" data-i18n="cta.getWebsite">Get Your Website</a>
+      <button class="menu-toggle" type="button" aria-controls="nav" aria-expanded="false" data-i18n-aria="nav.menu" aria-label="Menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<!-- ================= HERO ================= -->
+<section class="hero" aria-labelledby="hero-title">
+  <svg class="hero-leaf hero-leaf--1" aria-hidden="true"><use href="#i-leaf"/></svg>
+  <svg class="hero-leaf hero-leaf--2" aria-hidden="true"><use href="#i-leaf"/></svg>
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="kicker"><span class="dot"></span><span data-i18n="hero.kicker">Website design in Langkawi, Malaysia</span></p>
+      <h1 id="hero-title" data-i18n="hero.title">Your Business Deserves More Than Just Social Media.</h1>
+      <p class="hero-sub" data-i18n="hero.sub">Professional websites designed to help Langkawi businesses attract more customers, build trust and grow online.</p>
+      <div class="hero-actions">
+        <a class="btn btn--light" href="#contact"><span data-i18n="cta.getWebsite">Get Your Website</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn--ghost-light" href="#work" data-i18n="hero.cta2">Explore Our Work</a>
+      </div>
+      <ul class="hero-points">
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg><span data-i18n="hero.p1">Mobile-first design</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg><span data-i18n="hero.p2">Multilingual</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg><span data-i18n="hero.p3">WhatsApp &amp; Google Maps ready</span></li>
+      </ul>
+    </div>
+    <div>
+      <div class="devices" aria-hidden="true">
+        <div class="device laptop">
+          <div class="screen">
+            <div class="mock">
+              <div class="mock-bar" style="color:#2b1a10"><span class="f-rest" style="font-size:1.3em">Api &amp; Daun</span><i></i></div>
+              <div class="mock-hero ph"><img data-photo="rest-interior" data-w="900" alt="" loading="eager"><div class="ov"><b>Malay grill &amp; island flavours</b><span></span><em></em></div></div>
+              <div class="mock-row"><div class="ph"><img data-photo="food-grill" data-w="300" alt=""></div><div class="ph"><img data-photo="food-curry" data-w="300" alt=""></div><div class="ph"><img data-photo="food-dessert" data-w="300" alt=""></div></div>
+            </div>
+          </div>
+          <div class="base"></div>
+        </div>
+        <div class="device tablet">
+          <div class="mock mock--hotel">
+            <div class="mock-bar">HALIA HOUSE</div>
+            <div class="mock-img ph"><img data-photo="hotel-pool" data-w="500" alt=""></div>
+            <h5>A quiet boutique stay by the sea</h5>
+            <div class="lines"><i></i><i></i><i></i></div>
+            <div class="pill"></div>
+          </div>
+        </div>
+        <div class="device phone">
+          <div class="mock mock--cafe">
+            <div class="mock-top ph"><img data-photo="coffee-latte" data-w="300" alt=""><b>Kopi Pasir</b></div>
+            <div class="mock-tabs"><i></i><i></i><i></i></div>
+            <div class="mock-item"><div class="ph"><img data-photo="coffee-cup" data-w="120" alt=""></div><p><i></i><i></i><i></i></p></div>
+            <div class="mock-item"><div class="ph"><img data-photo="cafe-croissant" data-w="120" alt=""></div><p><i></i><i></i><i></i></p></div>
+            <div class="mock-item"><div class="ph"><img data-photo="drink-cocktail" data-w="120" alt=""></div><p><i></i><i></i><i></i></p></div>
+          </div>
+        </div>
+      </div>
+      <p class="hero-caption" data-i18n="hero.caption">Concept designs by WebsProMakers. Try the full demos below.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="section" id="about" aria-labelledby="about-title">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-copy" data-reveal>
+        <p class="label" data-i18n="about.label">About us</p>
+        <h2 class="title" id="about-title" data-i18n="about.title">We build digital tools that help local businesses grow.</h2>
+        <p class="lead" data-i18n="about.p1">WebsProMakers designs and develops custom websites for restaurants, hotels, cafés, shops and tour operators in Langkawi. Every site is built around one business: its customers, its products and the way it works.</p>
+        <p class="lead" data-i18n="about.p2">A good website is more than a page on the internet. It is where visitors check your menu before they come, compare your rooms, find your location and message you directly.</p>
+        <ul class="check-list">
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg><span data-i18n="about.l1">Strengthen your professional image</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg><span data-i18n="about.l2">Present your products and services clearly</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg><span data-i18n="about.l3">Be easier to find online</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg><span data-i18n="about.l4">Make it simple for customers to contact you</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg><span data-i18n="about.l5">Offer information in several languages</span></li>
+        </ul>
+      </div>
+      <div class="about-visual" data-reveal data-reveal-delay="1">
+        <div class="ph"><img data-photo="meeting" data-w="900" data-i18n-alt="about.imgAlt" alt="Planning a website with a local business owner"></div>
+        <div class="float-card">
+          <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>
+          <div><strong data-i18n="about.cardT">Based in Langkawi</strong><span data-i18n="about.cardD">Working with local businesses, face to face.</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="pillars">
+      <article class="pillar" data-reveal>
+        <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span>
+        <h3 data-i18n="about.pil1t">Professionalism</h3>
+        <p data-i18n="about.pil1d">A clean, careful design that reflects the quality of what you offer.</p>
+      </article>
+      <article class="pillar" data-reveal data-reveal-delay="1">
+        <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-eye"/></svg></span>
+        <h3 data-i18n="about.pil2t">Visibility</h3>
+        <p data-i18n="about.pil2d">A place on the web that you own, which customers can find, share and return to.</p>
+      </article>
+      <article class="pillar" data-reveal data-reveal-delay="2">
+        <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-trend"/></svg></span>
+        <h3 data-i18n="about.pil3t">Business Growth</h3>
+        <p data-i18n="about.pil3d">Clear information and direct contact options that turn interest into enquiries.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY A WEBSITE ================= -->
+<section class="section section--sand" id="why-website" aria-labelledby="why-title">
+  <div class="container">
+    <div class="section-head center" data-reveal>
+      <p class="label" data-i18n="why.label">Why a website?</p>
+      <h2 class="title" id="why-title" data-i18n="why.title">Why does your business need a website?</h2>
+      <p class="lead" data-i18n="why.sub">Social media is great for updates. A website gives your business a permanent, organised home that you control.</p>
+    </div>
+    <div class="grid grid-4">
+      <article class="card" data-reveal><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-eye"/></svg></span><h3 data-i18n="why.c1t">More Visibility</h3><p data-i18n="why.c1d">Make it easier for tourists and residents to find your business when they search online.</p></article>
+      <article class="card" data-reveal data-reveal-delay="1"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span><h3 data-i18n="why.c2t">Build Trust</h3><p data-i18n="why.c2d">A professional website shows customers that your business is established and reliable.</p></article>
+      <article class="card" data-reveal data-reveal-delay="2"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></span><h3 data-i18n="why.c3t">Attract More Customers</h3><p data-i18n="why.c3d">Help new visitors discover your place, even before they arrive on the island.</p></article>
+      <article class="card" data-reveal data-reveal-delay="3"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span><h3 data-i18n="why.c4t">Available 24/7</h3><p data-i18n="why.c4d">Your opening hours, menu and location are there whenever customers look, day or night.</p></article>
+      <article class="card" data-reveal><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-sparkle"/></svg></span><h3 data-i18n="why.c5t">Better Customer Experience</h3><p data-i18n="why.c5d">All your information organised in one place, instead of scattered across posts and chats.</p></article>
+      <article class="card" data-reveal data-reveal-delay="1"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-award"/></svg></span><h3 data-i18n="why.c6t">Stand Out From Competitors</h3><p data-i18n="why.c6d">Give customers a clear reason to choose you over similar places nearby.</p></article>
+      <article class="card" data-reveal data-reveal-delay="2"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg></span><h3 data-i18n="why.c7t">Direct Communication</h3><p data-i18n="why.c7d">Make enquiries, bookings and messages easy with WhatsApp, forms and one-tap calls.</p></article>
+      <article class="card" data-reveal data-reveal-delay="3"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-image"/></svg></span><h3 data-i18n="why.c8t">Showcase Your Business</h3><p data-i18n="why.c8d">Show your photos, products, menus and services the way they deserve to be seen.</p></article>
+    </div>
+    <div class="quote-band" data-reveal>
+      <p data-i18n="why.quote">Your website is your digital storefront. Make it count.</p>
+      <a class="btn btn--light" href="#contact"><span data-i18n="cta.getWebsite">Get Your Website</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="section" id="services" aria-labelledby="svc-title">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="label" data-i18n="svc.label">Services</p>
+      <h2 class="title" id="svc-title" data-i18n="svc.title">Everything your business needs online</h2>
+      <p class="lead" data-i18n="svc.sub">From restaurant websites to hotel website design in Langkawi, each project is built to fit your business. Choose what you need and we shape it around you.</p>
+    </div>
+    <div class="grid grid-4">
+      <article class="card svc svc--feature" data-reveal><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-layout"/></svg></span><h3 data-i18n="svc.1t">Custom Website Design</h3><p data-i18n="svc.1d">Websites designed around your brand, your customers and your goals. No generic templates.</p></article>
+      <article class="card svc" data-reveal data-reveal-delay="1"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-utensils"/></svg></span><h3 data-i18n="svc.2t">Restaurant Websites</h3><p data-i18n="svc.2d">Menus, food photos, prices, opening hours, location and contact, all in one place.</p></article>
+      <article class="card svc" data-reveal data-reveal-delay="2"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-bed"/></svg></span><h3 data-i18n="svc.3t">Hotel &amp; Accommodation Websites</h3><p data-i18n="svc.3d">For hotels, villas, resorts and guesthouses: rooms, facilities, gallery and availability requests.</p></article>
+      <article class="card svc" data-reveal data-reveal-delay="3"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-store"/></svg></span><h3 data-i18n="svc.4t">Business Websites</h3><p data-i18n="svc.4d">Professional sites for shops, companies and local services.</p></article>
+      <article class="card svc" data-reveal><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-mobile"/></svg></span><h3 data-i18n="svc.5t">Mobile Optimisation</h3><p data-i18n="svc.5d">Designed first for phones, then adapted to tablets and computers.</p></article>
+      <article class="card svc" data-reveal data-reveal-delay="1"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg></span><h3 data-i18n="svc.6t">Multilingual Websites</h3><p data-i18n="svc.6d">Your content in the languages your international visitors speak.</p></article>
+      <article class="card svc" data-reveal data-reveal-delay="2"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg></span><h3 data-i18n="svc.7t">WhatsApp Integration</h3><p data-i18n="svc.7d">One tap opens a WhatsApp chat with your business, with a ready-written message.</p></article>
+      <article class="card svc" data-reveal data-reveal-delay="3"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span><h3 data-i18n="svc.8t">Google Maps Integration</h3><p data-i18n="svc.8d">An interactive map and directions so customers find you easily.</p></article>
+      <article class="card svc" data-reveal><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg></span><h3 data-i18n="svc.9t">Booking &amp; Enquiry Features</h3><p data-i18n="svc.9d">Reservation, availability and enquiry forms set up for the way you work.</p></article>
+      <article class="card svc" data-reveal data-reveal-delay="1"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg></span><h3 data-i18n="svc.10t">SEO Optimisation</h3><p data-i18n="svc.10d">Basic search engine optimisation: structure, titles, descriptions, image text and fast loading.</p></article>
+      <article class="card svc" data-reveal data-reveal-delay="2"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-qr"/></svg></span><h3 data-i18n="svc.11t">Digital Menu &amp; QR Code</h3><p data-i18n="svc.11d">A mobile menu your customers open by scanning a QR code at the table.</p></article>
+      <article class="card svc" data-reveal data-reveal-delay="3"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-tool"/></svg></span><h3 data-i18n="svc.12t">Website Maintenance</h3><p data-i18n="svc.12d">Updates and maintenance options, agreed according to each project.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OUR WORK ================= -->
+<section class="section section--ink" id="work" aria-labelledby="work-title">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="label" data-i18n="work.label">Our work</p>
+      <h2 class="title" id="work-title" data-i18n="work.title">See what your website could look like</h2>
+      <p class="lead" data-i18n="work.sub">Five concept demos, each with its own design. Open them, navigate them and try them on your phone.</p>
+    </div>
+    <div class="work-grid">
+      <article class="work-card" data-reveal>
+        <div class="work-thumb"><div class="ph"><img data-photo="rest-dining" data-w="900" alt="" ></div>
+          <div class="thumb-ui"><div class="thumb-nav"><span>☰</span><i></i></div><span class="badge" data-i18n="work.badge">Concept demo</span><strong class="f-rest">Api &amp; Daun</strong></div></div>
+        <div class="work-body">
+          <span class="work-sector" data-i18n="work.d1s">Restaurant</span>
+          <p data-i18n="work.d1d">Malay grill restaurant with digital menu, food photography, prices, opening hours, map and table reservations.</p>
+          <a class="btn btn--light btn--sm" href="/demos/restaurant/"><span data-i18n="work.view">View Demo</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+      <article class="work-card" data-reveal data-reveal-delay="1">
+        <div class="work-thumb"><div class="ph"><img data-photo="hotel-resort" data-w="900" alt=""></div>
+          <div class="thumb-ui"><div class="thumb-nav"><span>☰</span><i></i></div><span class="badge" data-i18n="work.badge">Concept demo</span><strong class="f-hotel">Halia House</strong></div></div>
+        <div class="work-body">
+          <span class="work-sector" data-i18n="work.d2s">Hotel &amp; Resort</span>
+          <p data-i18n="work.d2d">Boutique hotel with rooms, facilities, gallery, location and availability requests.</p>
+          <a class="btn btn--light btn--sm" href="/demos/hotel/"><span data-i18n="work.view">View Demo</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+      <article class="work-card" data-reveal>
+        <div class="work-thumb"><div class="ph"><img data-photo="cafe-interior" data-w="700" alt=""></div>
+          <div class="thumb-ui"><div class="thumb-nav"><span>☰</span><i></i></div><span class="badge" data-i18n="work.badge">Concept demo</span><strong class="f-cafe">Kopi Pasir</strong></div></div>
+        <div class="work-body">
+          <span class="work-sector" data-i18n="work.d3s">Café &amp; Bar</span>
+          <p data-i18n="work.d3d">Beach café and bar with drinks and food menu, prices, hours, location and social media.</p>
+          <a class="btn btn--light btn--sm" href="/demos/cafe/"><span data-i18n="work.view">View Demo</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+      <article class="work-card" data-reveal data-reveal-delay="1">
+        <div class="work-thumb"><div class="ph"><img data-photo="island-bali" data-w="700" alt=""></div>
+          <div class="thumb-ui"><div class="thumb-nav"><span>☰</span><i></i></div><span class="badge" data-i18n="work.badge">Concept demo</span><strong class="f-tours" style="font-size:22px">Island Tide</strong></div></div>
+        <div class="work-body">
+          <span class="work-sector" data-i18n="work.d4s">Tours &amp; Activities</span>
+          <p data-i18n="work.d4d">Island tours and activities with descriptions, key information, booking requests and WhatsApp.</p>
+          <a class="btn btn--light btn--sm" href="/demos/tours/"><span data-i18n="work.view">View Demo</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+      <article class="work-card" data-reveal data-reveal-delay="2">
+        <div class="work-thumb"><div class="ph"><img data-photo="shop-interior" data-w="900" alt=""></div>
+          <div class="thumb-ui"><div class="thumb-nav"><span>☰</span><i></i></div><span class="badge" data-i18n="work.badge">Concept demo</span><strong class="f-shop">Pandan &amp; Co.</strong></div></div>
+        <div class="work-body">
+          <span class="work-sector" data-i18n="work.d5s">Local Shop</span>
+          <p data-i18n="work.d5d">Local crafts shop with visual catalogue, product photos, opening hours and location.</p>
+          <a class="btn btn--light btn--sm" href="/demos/shop/"><span data-i18n="work.view">View Demo</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+    </div>
+    <p class="note work-note"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span data-i18n="work.note">These are fictitious businesses created as concept examples. They are not client projects.</span></p>
+  </div>
+</section>
+
+<!-- ================= QR MENU ================= -->
+<section class="section section--sand" id="qr-menu" aria-labelledby="qr-title">
+  <div class="container qr-grid">
+    <div data-reveal>
+      <p class="label" data-i18n="qr.label">Digital menu</p>
+      <h2 class="title" id="qr-title" data-i18n="qr.title">Digital Menu &amp; QR Code</h2>
+      <p class="qr-quote" data-i18n="qr.quote">Let your customers explore your menu directly from their phones. Beautiful food photography, clear prices and multilingual options — all in one place.</p>
+      <ol class="steps-list">
+        <li data-i18n="qr.s1">Scan the QR code at the table</li>
+        <li data-i18n="qr.s2">The menu opens instantly on the phone</li>
+        <li data-i18n="qr.s3">Browse categories, photos and prices</li>
+        <li data-i18n="qr.s4">Switch language with one tap</li>
+      </ol>
+      <div class="qr-card">
+        <div class="qr-code" id="qr-main"></div>
+        <div>
+          <p data-i18n="qr.scan">Scan it with your phone camera: it opens the real demo menu. No app needed.</p>
+          <a class="link-arrow" id="qr-open" href="/demos/restaurant/menu/"><span data-i18n="qr.open">Open the demo menu</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="qr-stage" data-reveal data-reveal-delay="1">
+      <div class="qr-phone">
+        <div class="qr-screen" id="qr-screen">
+          <div class="qr-scanner" id="qr-scanner">
+            <div class="frame"><div class="qr-code" id="qr-mini"></div><div class="beam"></div></div>
+            <p class="hint" data-i18n="qr.scanning">Point the camera at the QR code</p>
+          </div>
+          <iframe id="qr-iframe" title="Demo digital menu" data-i18n-title="qr.iframeTitle" loading="lazy" tabindex="-1"></iframe>
+        </div>
+      </div>
+      <div class="qr-controls">
+        <button class="btn" type="button" id="qr-simulate"><svg class="icon" aria-hidden="true"><use href="#i-qr"/></svg><span data-i18n="qr.simulate">Simulate a scan</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GOOGLE ================= -->
+<section class="section" id="google" aria-labelledby="g-title">
+  <div class="container g-grid">
+    <div data-reveal>
+      <p class="label" data-i18n="g.label">Google visibility</p>
+      <h2 class="title" id="g-title" data-i18n="g.title">Be easier to find on Google</h2>
+      <p class="lead" data-i18n="g.sub">Most visitors search before they decide where to eat, stay or book. A website gives Google, and your customers, clear and complete information about your business.</p>
+      <div class="g-points">
+        <div><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg></span><h3 data-i18n="g.1t">How customers find you</h3><p data-i18n="g.1d">Searches like “restaurant Pantai Cenang” or “island tour Langkawi” lead people to businesses with clear online information.</p></div>
+        <div><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-image"/></svg></span><h3 data-i18n="g.2t">Present your offer properly</h3><p data-i18n="g.2d">Your website shows your menu, rooms or products in full, with your own photos and words.</p></div>
+        <div><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span><h3 data-i18n="g.3t">Google Maps</h3><p data-i18n="g.3d">An embedded map and a directions link help customers reach your door.</p></div>
+        <div><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-call"/></svg></span><h3 data-i18n="g.4t">Contact information</h3><p data-i18n="g.4d">Phone, WhatsApp, email and opening hours, visible and consistent everywhere.</p></div>
+        <div><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-trend"/></svg></span><h3 data-i18n="g.5t">Basic SEO</h3><p data-i18n="g.5d">Correct titles, descriptions, headings, image text and fast loading, so search engines understand your site.</p></div>
+        <div><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg></span><h3 data-i18n="g.6t">Works with Google Business Profile</h3><p data-i18n="g.6d">Your website complements your Google Business Profile. Linking them gives customers the full picture.</p></div>
+      </div>
+      <p class="g-note"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span data-i18n="g.note">No one can guarantee top positions on Google. We build your site following good practices so it starts from a solid foundation.</span></p>
+    </div>
+    <div class="serp" data-reveal data-reveal-delay="1" aria-label="Example search result (fictitious)" data-i18n-aria="g.mockAria">
+      <span class="serp-flag" data-i18n="g.flag">Fictitious example</span>
+      <div class="serp-top">
+        <span class="serp-logo" aria-hidden="true"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></span>
+      </div>
+      <div class="serp-top" style="border:0;padding-bottom:0">
+        <div class="serp-search"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg><span class="typed" id="serp-typed">malay restaurant pantai cenang</span></div>
+      </div>
+      <div class="serp-body">
+        <div class="serp-mapcard">
+          <div class="serp-map">
+            <svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect width="400" height="120" fill="#e5efe9"/><path d="M0 92c60-10 90 8 150-4s110-30 170-14 80 6 80 6v40H0z" fill="#aadaff"/>
+              <path d="M30 0v120M0 40h400M220 0l-40 120M300 0v80" stroke="#fff" stroke-width="6"/><path d="M0 40h400" stroke="#fde293" stroke-width="5"/>
+              <rect x="250" y="12" width="60" height="22" rx="4" fill="#c8e6c9"/>
+              <g transform="translate(196 34)"><path d="M0 26S-12 14-12 6a12 12 0 0 1 24 0c0 8-12 20-12 20z" fill="#ea4335"/><circle cy="6" r="4.5" fill="#a50e0e"/></g>
+            </svg>
+          </div>
+          <div class="info">
+            <h4>Api &amp; Daun</h4>
+            <p class="meta" data-i18n="g.m.cat">Malay restaurant · Pantai Cenang, Langkawi</p>
+            <p class="meta"><span class="open" data-i18n="g.m.open">Open</span> · <span data-i18n="g.m.closes">Closes 10:30 pm</span></p>
+            <div class="serp-actions">
+              <span><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg><span data-i18n="g.m.web">Website</span></span>
+              <span><svg class="icon" aria-hidden="true"><use href="#i-route"/></svg><span data-i18n="g.m.dir">Directions</span></span>
+              <span><svg class="icon" aria-hidden="true"><use href="#i-call"/></svg><span data-i18n="g.m.call">Call</span></span>
+            </div>
+          </div>
+        </div>
+        <div class="serp-result">
+          <div class="site"><i>A</i><div>Api &amp; Daun<small>https://apidaun.example › menu</small></div></div>
+          <h4 data-i18n="g.m.title">Api &amp; Daun – Malay Grill Restaurant in Langkawi</h4>
+          <p data-i18n="g.m.desc">Charcoal-grilled Malay dishes and island seafood in Pantai Cenang. See our menu with prices, opening hours and book a table online.</p>
+          <div class="serp-links"><span data-i18n="g.m.l1">Menu</span><span data-i18n="g.m.l2">Reservations</span><span data-i18n="g.m.l3">Location</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHATSAPP & BOOKINGS ================= -->
+<section class="section section--ink" id="whatsapp" aria-labelledby="wa-title">
+  <div class="container wa-grid">
+    <div data-reveal>
+      <p class="label" data-i18n="wa.label">WhatsApp &amp; bookings</p>
+      <h2 class="title" id="wa-title" data-i18n="wa.title">From visitor to customer in one tap</h2>
+      <p class="lead" data-i18n="wa.sub">Your website should make it effortless to contact you. We add the options that fit your business.</p>
+      <ul class="feature-list">
+        <li><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg></span><div><h3 data-i18n="wa.f1t">WhatsApp button</h3><p data-i18n="wa.f1d">Opens a chat with your business and a pre-written message.</p></div></li>
+        <li><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span><div><h3 data-i18n="wa.f2t">Contact form</h3><p data-i18n="wa.f2d">Messages arrive in your email inbox.</p></div></li>
+        <li><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg></span><div><h3 data-i18n="wa.f3t">Booking requests</h3><p data-i18n="wa.f3d">Tables, tours or treatments: date, time and number of people.</p></div></li>
+        <li><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-bed"/></svg></span><div><h3 data-i18n="wa.f4t">Availability check</h3><p data-i18n="wa.f4d">Guests send their dates and you confirm availability.</p></div></li>
+        <li><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg></span><div><h3 data-i18n="wa.f5t">Information requests</h3><p data-i18n="wa.f5d">Questions about prices, groups, events or anything else.</p></div></li>
+      </ul>
+      <p class="note wa-note"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span data-i18n="wa.note">Booking features are configured for each project: from a simple request form to a link with the booking system you already use.</span></p>
+    </div>
+    <div class="wa-demo" data-reveal data-reveal-delay="1">
+      <div class="wa-demo-head">
+        <h3 data-i18n="wa.demoT">Try it: how a customer contacts you</h3>
+        <p data-i18n="wa.demoD">Fill in the form and see the message the business would receive. Demo only: nothing is sent.</p>
+      </div>
+      <div class="seg" role="tablist" aria-label="Request type" data-i18n-aria="wa.tabsAria">
+        <button type="button" role="tab" aria-selected="true" data-wa-type="table" data-i18n="wa.t1">Table booking</button>
+        <button type="button" role="tab" aria-selected="false" data-wa-type="room" data-i18n="wa.t2">Room availability</button>
+        <button type="button" role="tab" aria-selected="false" data-wa-type="tour" data-i18n="wa.t3">Tour booking</button>
+        <button type="button" role="tab" aria-selected="false" data-wa-type="info" data-i18n="wa.t4">Question</button>
+      </div>
+      <div class="wa-demo-body">
+        <form class="wa-form" id="wa-demo-form" autocomplete="off">
+          <div><label for="wd-name" data-i18n="wa.fName">Your name</label><input id="wd-name" value="Sarah"></div>
+          <div class="row2">
+            <div><label for="wd-date" data-i18n="wa.fDate">Date</label><input id="wd-date" type="date"></div>
+            <div><label for="wd-people" data-i18n="wa.fPeople">People</label><input id="wd-people" type="number" min="1" max="50" value="4"></div>
+          </div>
+          <div data-wa-only="table tour"><label for="wd-time" data-i18n="wa.fTime">Time</label><input id="wd-time" type="time" value="19:30"></div>
+          <div data-wa-only="room"><label for="wd-nights" data-i18n="wa.fNights">Nights</label><input id="wd-nights" type="number" min="1" max="30" value="3"></div>
+          <div data-wa-only="info"><label for="wd-q" data-i18n="wa.fQuestion">Question</label><input id="wd-q" data-i18n-ph="wa.fQuestionPh" placeholder="Do you have vegetarian options?"></div>
+        </form>
+        <div class="chat" aria-live="polite">
+          <div class="chat-head"><span class="av">AD</span><div><b data-i18n="wa.chatName">Your business</b><small data-i18n="wa.chatSub">WhatsApp Business</small></div></div>
+          <div class="chat-body">
+            <div class="bubble" id="wa-bubble"></div>
+            <div class="bubble bubble--in" id="wa-reply"></div>
+          </div>
+          <div class="chat-foot" data-i18n="wa.chatFoot">Preview · demo only</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BEFORE & AFTER ================= -->
+<section class="section section--sand" id="before-after" aria-labelledby="ba-title">
+  <div class="container">
+    <div class="section-head center" data-reveal>
+      <p class="label" data-i18n="ba.label">Before &amp; after</p>
+      <h2 class="title" id="ba-title" data-i18n="ba.title">The same business, two ways to be seen</h2>
+      <p class="lead" data-i18n="ba.sub">Drag the slider to compare a business that relies only on social media with the same business on its own website.</p>
+    </div>
+    <div class="ba" id="ba" data-reveal style="--pos:50%">
+      <div class="ba-pane ba-before" aria-hidden="true">
+        <span class="ba-tag" data-i18n="ba.before">Before</span>
+        <div class="feed">
+          <div class="post" style="--r:-1.5deg"><div class="who"><i></i>apidaun_official</div><div class="ph"><img data-photo="food-spread" data-w="300" alt=""></div><span data-i18n="ba.post1">Open today!! DM for menu 🔥</span><span class="cmt q" data-i18n="ba.q1">What time do you close?</span></div>
+          <div class="post" style="--r:1deg"><div class="who"><i></i>apidaun_official</div><span data-i18n="ba.post2">New dishes this week, prices in the comments</span><span class="cmt q" data-i18n="ba.q2">Where are you exactly?</span><span class="cmt q" data-i18n="ba.q3">Price??</span></div>
+          <div class="post" style="--r:-.5deg"><div class="who"><i></i>apidaun_official</div><div class="ph"><img data-photo="rest-table" data-w="300" alt=""></div><span class="cmt q" data-i18n="ba.q4">Do you take bookings?</span></div>
+          <div class="post" style="--r:1.5deg"><div class="who"><i></i>apidaun_official</div><span data-i18n="ba.post3">Closed tomorrow (maybe)</span><span class="cmt q" data-i18n="ba.q5">Menu in English please?</span></div>
+          <div class="post" style="--r:-1deg"><div class="who"><i></i>apidaun_official</div><div class="ph"><img data-photo="food-curry" data-w="300" alt=""></div><span class="cmt q" data-i18n="ba.q6">Is this still available?</span></div>
+          <div class="post" style="--r:.5deg"><div class="who"><i></i>apidaun_official</div><span data-i18n="ba.post4">Story highlight: menu (old)</span><span class="cmt q" data-i18n="ba.q7">Vegetarian options?</span></div>
+        </div>
+        <span class="sticky-note" style="left:4%;top:5%;transform:rotate(-4deg)" data-i18n="ba.sticky">Info scattered everywhere</span>
+      </div>
+      <div class="ba-pane ba-after" aria-hidden="true">
+        <span class="ba-tag" data-i18n="ba.after">After</span>
+        <div class="site-mock">
+          <div class="sm-nav"><b>Api &amp; Daun</b><span><span data-i18n="ba.smMenu">Menu</span><span data-i18n="ba.smBook">Book</span><span data-i18n="ba.smFind">Find us</span></span><em>EN · BM · 中文</em></div>
+          <div class="sm-main">
+            <div class="sm-hero"><div class="ph"><img data-photo="rest-interior" data-w="700" alt=""></div><div class="ov"><b data-i18n="ba.smTitle">Malay grill &amp; island flavours</b><small data-i18n="ba.smHours">Open daily · 12:00 – 22:30</small></div></div>
+            <div class="sm-side">
+              <div class="sm-menu"><h5 data-i18n="ba.smMenu">Menu</h5><div><span>Nasi Lemak Ayam</span><b>RM 18</b></div><div><span>Ikan Bakar</span><b>RM 38</b></div><div><span>Satay (10)</span><b>RM 22</b></div><div><span>Sotong Goreng</span><b>RM 26</b></div><div><span>Cendol</span><b>RM 9</b></div></div>
+              <div class="sm-info"><span><svg class="icon"><use href="#i-pin"/></svg><span data-i18n="ba.smMap">Map</span></span><span><svg class="icon"><use href="#i-clock"/></svg><span data-i18n="ba.smOpen">Hours</span></span></div>
+              <div class="sm-wa"><svg class="icon"><use href="#i-wa"/></svg><span data-i18n="ba.smWa">WhatsApp us</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <input class="ba-range" type="range" min="0" max="100" value="50" id="ba-range" data-i18n-aria="ba.rangeAria" aria-label="Compare before and after">
+      <div class="ba-handle"><span class="ba-knob"><svg class="icon" aria-hidden="true"><use href="#i-swap"/></svg></span></div>
+    </div>
+    <div class="ba-lists">
+      <div class="ba-list ba-list--before" data-reveal>
+        <h3 data-i18n="ba.before">Before</h3>
+        <ul>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-x-circle"/></svg><span data-i18n="ba.b1">Information scattered across posts, stories and chats</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-x-circle"/></svg><span data-i18n="ba.b2">Menu and prices hard to find</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-x-circle"/></svg><span data-i18n="ba.b3">The same questions answered again and again</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-x-circle"/></svg><span data-i18n="ba.b4">Only one language</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-x-circle"/></svg><span data-i18n="ba.b5">Visibility depends on the platform’s algorithm</span></li>
+        </ul>
+      </div>
+      <div class="ba-list ba-list--after" data-reveal data-reveal-delay="1">
+        <h3 data-i18n="ba.after">After</h3>
+        <ul>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg><span data-i18n="ba.a1">Careful design that reflects your brand</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg><span data-i18n="ba.a2">Your best photos, presented properly</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg><span data-i18n="ba.a3">Organised information: hours, prices, services</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg><span data-i18n="ba.a4">Full menu or catalogue</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg><span data-i18n="ba.a5">Location with Google Maps</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg><span data-i18n="ba.a6">WhatsApp contact in one tap</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check-circle"/></svg><span data-i18n="ba.a7">Several languages for international visitors</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="note" style="margin-top:20px;justify-content:center"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span data-i18n="ba.note">Conceptual comparison with a fictitious business. It does not show real results.</span></p>
+  </div>
+</section>
+
+<!-- ================= WHO WE WORK WITH ================= -->
+<section class="section" id="sectors" aria-labelledby="sec-title">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="label" data-i18n="sec.label">Who we work with</p>
+      <h2 class="title" id="sec-title" data-i18n="sec.title">Websites for every kind of local business</h2>
+      <p class="lead" data-i18n="sec.sub">If your customers look for you online, a website helps them choose you.</p>
+    </div>
+    <div class="grid grid-4">
+      <article class="sector" data-reveal><div class="ph"><img data-photo="rest-dining" data-w="600" data-i18n-alt="sec.1t" alt="Restaurants"></div><span class="num"><svg class="icon" aria-hidden="true"><use href="#i-utensils"/></svg></span><div class="sector-body"><h3 data-i18n="sec.1t">Restaurants</h3><p data-i18n="sec.1d">Menus, reservations and food photography that make people hungry.</p></div></article>
+      <article class="sector" data-reveal data-reveal-delay="1"><div class="ph"><img data-photo="bar-night" data-w="600" data-i18n-alt="sec.2t" alt="Cafés &amp; Bars"></div><span class="num"><svg class="icon" aria-hidden="true"><use href="#i-coffee"/></svg></span><div class="sector-body"><h3 data-i18n="sec.2t">Cafés &amp; Bars</h3><p data-i18n="sec.2d">Drinks menus, opening hours and the atmosphere of your place.</p></div></article>
+      <article class="sector" data-reveal data-reveal-delay="2"><div class="ph"><img data-photo="hotel-exterior" data-w="600" data-i18n-alt="sec.3t" alt="Hotels &amp; Resorts"></div><span class="num"><svg class="icon" aria-hidden="true"><use href="#i-bed"/></svg></span><div class="sector-body"><h3 data-i18n="sec.3t">Hotels &amp; Resorts</h3><p data-i18n="sec.3d">Rooms, facilities and availability requests for international guests.</p></div></article>
+      <article class="sector" data-reveal data-reveal-delay="3"><div class="ph"><img data-photo="villa" data-w="600" data-i18n-alt="sec.4t" alt="Villas &amp; Guesthouses"></div><span class="num"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg></span><div class="sector-body"><h3 data-i18n="sec.4t">Villas &amp; Guesthouses</h3><p data-i18n="sec.4d">A personal website that shows your property and lets guests contact you directly.</p></div></article>
+      <article class="sector" data-reveal><div class="ph"><img data-photo="diving" data-w="600" data-i18n-alt="sec.5t" alt="Tour &amp; Activity Companies"></div><span class="num"><svg class="icon" aria-hidden="true"><use href="#i-compass"/></svg></span><div class="sector-body"><h3 data-i18n="sec.5t">Tour &amp; Activity Companies</h3><p data-i18n="sec.5d">Tours, schedules, what’s included and easy booking requests.</p></div></article>
+      <article class="sector" data-reveal data-reveal-delay="1"><div class="ph"><img data-photo="shop-pottery" data-w="600" data-i18n-alt="sec.6t" alt="Shops &amp; Local Businesses"></div><span class="num"><svg class="icon" aria-hidden="true"><use href="#i-store"/></svg></span><div class="sector-body"><h3 data-i18n="sec.6t">Shops &amp; Local Businesses</h3><p data-i18n="sec.6d">Products, catalogue, location and opening hours.</p></div></article>
+      <article class="sector" data-reveal data-reveal-delay="2"><div class="ph"><img data-photo="spa" data-w="600" data-i18n-alt="sec.7t" alt="Beauty &amp; Wellness"></div><span class="num"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></span><div class="sector-body"><h3 data-i18n="sec.7t">Beauty &amp; Wellness</h3><p data-i18n="sec.7d">Treatments, prices, appointments and a calm, trustworthy image.</p></div></article>
+      <article class="sector sector--other" data-reveal data-reveal-delay="3"><span class="num"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg></span><div class="sector-body"><h3 data-i18n="sec.8t">Other Local Businesses</h3><p data-i18n="sec.8d">If you serve customers in Langkawi, we can build a website around your needs.</p><a class="link-arrow" style="color:var(--leaf);margin-top:12px" href="#contact"><span data-i18n="sec.8cta">Tell us about yours</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY CHOOSE US ================= -->
+<section class="section section--ink" id="why-us" aria-labelledby="wu-title">
+  <div class="container why-us">
+    <div class="section-head" data-reveal>
+      <p class="label" data-i18n="wu.label">Why choose us</p>
+      <h2 class="title" id="wu-title" data-i18n="wu.title">Why choose WebsProMakers</h2>
+      <p class="lead" data-i18n="wu.sub">We focus on one thing: building websites that are genuinely useful for local businesses in Langkawi.</p>
+      <a class="btn btn--light" style="margin-top:30px" href="#contact"><span data-i18n="cta.getWebsite">Get Your Website</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+    <div class="why-list">
+      <div class="why-item" data-reveal><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg><div><h3 data-i18n="wu.1t">Personalised Designs</h3><p data-i18n="wu.1d">Every website is designed for your business. No copy-paste templates.</p></div></div>
+      <div class="why-item" data-reveal data-reveal-delay="1"><svg class="icon" aria-hidden="true"><use href="#i-target"/></svg><div><h3 data-i18n="wu.2t">Local Business Focus</h3><p data-i18n="wu.2d">We work with Langkawi businesses and think about how tourists search and decide.</p></div></div>
+      <div class="why-item" data-reveal><svg class="icon" aria-hidden="true"><use href="#i-mobile"/></svg><div><h3 data-i18n="wu.3t">Mobile First</h3><p data-i18n="wu.3d">Most of your visitors will arrive on a phone. We design for that first.</p></div></div>
+      <div class="why-item" data-reveal data-reveal-delay="1"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg><div><h3 data-i18n="wu.4t">Multilingual Possibilities</h3><p data-i18n="wu.4d">English, Bahasa Melayu, Chinese and more, depending on your customers.</p></div></div>
+      <div class="why-item" data-reveal><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg><div><h3 data-i18n="wu.5t">Direct Communication</h3><p data-i18n="wu.5d">You talk directly with the people who build your website.</p></div></div>
+      <div class="why-item" data-reveal data-reveal-delay="1"><svg class="icon" aria-hidden="true"><use href="#i-sliders"/></svg><div><h3 data-i18n="wu.6t">Tailored Solutions</h3><p data-i18n="wu.6d">We include the features you need and leave out the ones you don’t.</p></div></div>
+      <div class="why-item" data-reveal><svg class="icon" aria-hidden="true"><use href="#i-award"/></svg><div><h3 data-i18n="wu.7t">Professional Presentation</h3><p data-i18n="wu.7d">Clean design, good photography and clear writing that build confidence.</p></div></div>
+      <div class="why-item" data-reveal data-reveal-delay="1"><svg class="icon" aria-hidden="true"><use href="#i-zap"/></svg><div><h3 data-i18n="wu.8t">Practical Features</h3><p data-i18n="wu.8d">WhatsApp, maps, menus, QR codes and forms that make daily work easier.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section class="section" id="process" aria-labelledby="pr-title">
+  <div class="container">
+    <div class="section-head center" data-reveal>
+      <p class="label" data-i18n="pr.label">How it works</p>
+      <h2 class="title" id="pr-title" data-i18n="pr.title">Four simple steps to your new website</h2>
+    </div>
+    <ol class="process">
+      <li class="step" data-reveal><span class="step-num"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg></span><small data-i18n="pr.s1n">Step 1</small><h3 data-i18n="pr.s1t">Let’s Talk</h3><p data-i18n="pr.s1d">We meet you and learn about your business, your customers and your goals.</p></li>
+      <li class="step" data-reveal data-reveal-delay="1"><span class="step-num"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg></span><small data-i18n="pr.s2n">Step 2</small><h3 data-i18n="pr.s2t">Design &amp; Planning</h3><p data-i18n="pr.s2d">We prepare a personalised proposal with structure, features and design direction.</p></li>
+      <li class="step" data-reveal data-reveal-delay="2"><span class="step-num"><svg class="icon" aria-hidden="true"><use href="#i-layout"/></svg></span><small data-i18n="pr.s3n">Step 3</small><h3 data-i18n="pr.s3t">Development</h3><p data-i18n="pr.s3d">We design and build your website and share it with you for feedback.</p></li>
+      <li class="step" data-reveal data-reveal-delay="3"><span class="step-num"><svg class="icon" aria-hidden="true"><use href="#i-send"/></svg></span><small data-i18n="pr.s4n">Step 4</small><h3 data-i18n="pr.s4t">Launch</h3><p data-i18n="pr.s4d">We publish your website and check that everything works on every device.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="section section--sand" id="faq" aria-labelledby="faq-title">
+  <div class="container faq-grid">
+    <div class="faq-aside" data-reveal>
+      <p class="label" data-i18n="faq.label">FAQ</p>
+      <h2 class="title" id="faq-title" data-i18n="faq.title">Frequently asked questions</h2>
+      <p class="lead" data-i18n="faq.sub">Can’t find your answer? Ask us directly.</p>
+      <a class="btn" href="#contact"><span data-i18n="faq.cta">Ask a question</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+    <div class="faq" data-reveal data-reveal-delay="1">
+      <details><summary><span data-i18n="faq.q1">Why does my business need a website?</span><span class="pm"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span></summary><p class="answer" data-i18n="faq.a1">A website gives your business a permanent, organised place online. Customers can check your menu, services, location and contact details at any time, and it complements your social media and your Google profile.</p></details>
+      <details><summary><span data-i18n="faq.q2">Can you create a website for my restaurant?</span><span class="pm"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span></summary><p class="answer" data-i18n="faq.a2">Yes. Restaurant websites are one of our specialities: menu with photos and prices, opening hours, location, WhatsApp and reservation requests. Have a look at the restaurant demo above.</p></details>
+      <details><summary><span data-i18n="faq.q3">Can my website have multiple languages?</span><span class="pm"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span></summary><p class="answer" data-i18n="faq.a3">Yes. We can build your website in several languages, such as English, Bahasa Melayu, Chinese or others your customers speak.</p></details>
+      <details><summary><span data-i18n="faq.q4">Can customers contact me through WhatsApp?</span><span class="pm"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span></summary><p class="answer" data-i18n="faq.a4">Yes. We can add WhatsApp buttons that open a chat with your business, with a pre-written message.</p></details>
+      <details><summary><span data-i18n="faq.q5">Can you include my menu and prices?</span><span class="pm"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span></summary><p class="answer" data-i18n="faq.a5">Yes. We can include your full menu or catalogue with categories, photos and prices.</p></details>
+      <details><summary><span data-i18n="faq.q6">Will my website work on mobile phones?</span><span class="pm"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span></summary><p class="answer" data-i18n="faq.a6">Yes. Every website we build is designed for phones first and also works on tablets and computers.</p></details>
+      <details><summary><span data-i18n="faq.q7">How long does it take to create a website?</span><span class="pm"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span></summary><p class="answer" data-i18n="faq.a7">It depends on the size of the website and the features you need. We give you an estimated timeline together with your personalised proposal.</p></details>
+      <details><summary><span data-i18n="faq.q8">Can I request changes to my website?</span><span class="pm"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span></summary><p class="answer" data-i18n="faq.a8">Yes. You can request changes during the design process. Changes after launch are agreed according to each project.</p></details>
+      <details><summary><span data-i18n="faq.q9">Do you offer website maintenance?</span><span class="pm"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span></summary><p class="answer" data-i18n="faq.a9">Maintenance and updates can be offered depending on the characteristics of each project. We will talk through the options with you.</p></details>
+      <details><summary><span data-i18n="faq.q10">Can you help my business appear on Google?</span><span class="pm"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span></summary><p class="answer" data-i18n="faq.a10">We build your website following good SEO practices and can help you link it to your Google Business Profile. No one can guarantee specific positions in search results.</p></details>
+      <details><summary><span data-i18n="faq.q11">Can you create a QR code for my restaurant menu?</span><span class="pm"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span></summary><p class="answer" data-i18n="faq.a11">Yes. We can create a digital menu and a QR code that opens it, ready to print for your tables.</p></details>
+      <details><summary><span data-i18n="faq.q12">How much does a website cost?</span><span class="pm"><svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></span></summary><p class="answer" data-i18n="faq.a12">Every business is different. Our websites are tailored to each client's needs, design preferences and required features. Contact us to receive a personalised proposal.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="section section--sand" id="contact" aria-labelledby="ct-title" style="padding-top:0">
+  <div class="container contact-grid">
+    <div data-reveal>
+      <p class="label" data-i18n="ct.label">Contact</p>
+      <h2 class="title" id="ct-title" data-i18n="ct.title">Let’s build your website</h2>
+      <p class="lead" data-i18n="ct.sub">Tell us about your business. We will reply with ideas and a personalised proposal.</p>
+      <div class="contact-info">
+        <a class="ci ci--wa" data-wa="wa.default" href="#contact"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg></span><div><small>WhatsApp</small><strong data-cfg-text="contact.whatsapp">WhatsApp</strong></div></a>
+        <a class="ci" data-cfg-mail><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span><div><small data-i18n="ct.email">Email</small><strong data-cfg-text="contact.email">Email</strong></div></a>
+        <div class="ci"><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span><div><small data-i18n="ct.where">Where we are</small><strong data-cfg-text="contact.location">Langkawi, Malaysia</strong></div></div>
+        <div class="ci" data-social-group><span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg></span><div><small data-i18n="ct.social">Social media</small>
+          <div class="socials">
+            <a data-social="instagram" aria-label="Instagram"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg></a>
+            <a data-social="facebook" aria-label="Facebook"><svg class="icon" aria-hidden="true"><use href="#i-facebook"/></svg></a>
+            <a data-social="tiktok" aria-label="TikTok"><svg class="icon" aria-hidden="true"><use href="#i-tiktok"/></svg></a>
+            <a data-social="linkedin" aria-label="LinkedIn"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
+          </div><strong class="soon is-empty" data-i18n="common.soon">Coming soon</strong></div></div>
+      </div>
+      <div class="map-frame"><iframe data-map title="Map of Langkawi" data-i18n-title="ct.mapTitle" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    </div>
+    <div class="form-card" data-reveal data-reveal-delay="1">
+      <form id="contact-form" class="form-grid" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="">
+        <input type="hidden" name="subject" value="New website enquiry – WebsProMakers">
+        <input type="hidden" name="from_name" value="WebsProMakers website">
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="field"><label for="f-name"><span data-i18n="ct.fName">Full Name</span><span class="req">*</span></label><input id="f-name" name="name" autocomplete="name" required minlength="2"></div>
+        <div class="field"><label for="f-business"><span data-i18n="ct.fBusiness">Business Name</span><span class="req">*</span></label><input id="f-business" name="business" autocomplete="organization" required></div>
+        <div class="field"><label for="f-type"><span data-i18n="ct.fType">Business Type</span><span class="req">*</span></label>
+          <select id="f-type" name="business_type" required>
+            <option value="" data-i18n="ct.choose">Choose an option</option>
+            <option value="Restaurant" data-i18n="ct.bt1">Restaurant</option>
+            <option value="Cafe / Bar" data-i18n="ct.bt2">Café / Bar</option>
+            <option value="Hotel / Resort" data-i18n="ct.bt3">Hotel / Resort</option>
+            <option value="Villa / Guesthouse" data-i18n="ct.bt4">Villa / Guesthouse</option>
+            <option value="Tours & Activities" data-i18n="ct.bt5">Tours &amp; Activities</option>
+            <option value="Shop" data-i18n="ct.bt6">Shop</option>
+            <option value="Other" data-i18n="ct.bt7">Other</option>
+          </select></div>
+        <div class="field"><label for="f-email"><span data-i18n="ct.fEmail">Email Address</span><span class="req">*</span></label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="f-phone"><span data-i18n="ct.fPhone">Phone / WhatsApp Number</span><span class="req">*</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel" data-validate="phone" required data-i18n-ph="ct.phonePh" placeholder="+60 …"></div>
+        <div class="field"><label for="f-website" data-i18n="ct.fWebsite">What type of website are you looking for?</label>
+          <select id="f-website" name="website_type">
+            <option value="" data-i18n="ct.choose">Choose an option</option>
+            <option value="New website" data-i18n="ct.wt1">A new website</option>
+            <option value="Redesign" data-i18n="ct.wt2">A redesign of my current website</option>
+            <option value="Digital menu & QR" data-i18n="ct.wt3">Digital menu &amp; QR code</option>
+            <option value="Booking / enquiry features" data-i18n="ct.wt4">Website with bookings or enquiries</option>
+            <option value="Not sure yet" data-i18n="ct.wt5">Not sure yet</option>
+          </select></div>
+        <div class="field field--full"><label for="f-msg"><span data-i18n="ct.fMsg">Tell us about your project</span><span class="req">*</span></label><textarea id="f-msg" name="message" required minlength="10" data-i18n-ph="ct.msgPh" placeholder="What does your business do? What would you like your website to include?"></textarea></div>
+        <div class="field--full">
+          <div class="form-foot">
+            <button class="btn" type="submit" id="f-submit"><span class="spinner" aria-hidden="true"></span><span data-i18n="ct.submit">Let’s Build Your Website</span><svg class="icon" aria-hidden="true"><use href="#i-send"/></svg></button>
+            <small data-i18n="ct.privacy">We only use your details to reply to your enquiry.</small>
+          </div>
+          <div class="form-status" id="f-status" role="status" aria-live="polite"></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="section cta-final" aria-labelledby="cta-title">
+  <svg class="hero-leaf hero-leaf--1" aria-hidden="true"><use href="#i-leaf"/></svg>
+  <svg class="hero-leaf hero-leaf--2" aria-hidden="true"><use href="#i-leaf"/></svg>
+  <div class="container" data-reveal>
+    <h2 id="cta-title" data-i18n="cta.title">Ready to Take Your Business to the Next Level?</h2>
+    <p data-i18n="cta.sub">Let’s create a professional online presence that helps your business stand out in Langkawi.</p>
+    <div class="hero-actions">
+      <a class="btn btn--light" href="#contact"><span data-i18n="cta.start">Start Your Project</span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a class="btn btn--ghost-light" data-wa="wa.default" href="#contact"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="#top" aria-label="WebsProMakers – Home"><svg aria-hidden="true"><use href="#i-logo"/></svg><span>Webs<b>Pro</b>Makers</span></a>
+        <p class="footer-desc" data-i18n="ft.desc">Website design and development for restaurants, hotels, cafés, shops and tour companies in Langkawi, Malaysia.</p>
+        <div data-social-group style="margin-top:20px"><div class="socials">
+          <a data-social="instagram" aria-label="Instagram"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg></a>
+          <a data-social="facebook" aria-label="Facebook"><svg class="icon" aria-hidden="true"><use href="#i-facebook"/></svg></a>
+          <a data-social="tiktok" aria-label="TikTok"><svg class="icon" aria-hidden="true"><use href="#i-tiktok"/></svg></a>
+          <a data-social="linkedin" aria-label="LinkedIn"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
+        </div></div>
+      </div>
+      <div>
+        <h4 data-i18n="ft.nav">Navigation</h4>
+        <ul>
+          <li><a href="#top" data-i18n="nav.home">Home</a></li>
+          <li><a href="#about" data-i18n="nav.about">About Us</a></li>
+          <li><a href="#services" data-i18n="nav.services">Services</a></li>
+          <li><a href="#work" data-i18n="nav.work">Our Work</a></li>
+          <li><a href="#why-us" data-i18n="nav.why">Why Choose Us</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="ft.services">Services</h4>
+        <ul>
+          <li><a href="#services" data-i18n="svc.1t">Custom Website Design</a></li>
+          <li><a href="#services" data-i18n="svc.2t">Restaurant Websites</a></li>
+          <li><a href="#services" data-i18n="svc.3t">Hotel &amp; Accommodation Websites</a></li>
+          <li><a href="#qr-menu" data-i18n="svc.11t">Digital Menu &amp; QR Code</a></li>
+          <li><a href="#services" data-i18n="svc.6t">Multilingual Websites</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="ft.contact">Contact</h4>
+        <ul>
+          <li><a data-wa="wa.default" href="#contact">WhatsApp: <span data-cfg-text="contact.whatsapp"></span></a></li>
+          <li><a data-cfg-mail><span data-cfg-text="contact.email"></span></a></li>
+          <li data-cfg-text="contact.location">Langkawi, Malaysia</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> WebsProMakers. <span data-i18n="ft.rights">All rights reserved.</span></span>
+      <span data-i18n="ft.demos">The demos on this website are fictitious concept examples.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" data-wa="wa.default" href="#contact" aria-label="WhatsApp"><svg class="icon" aria-hidden="true"><use href="#i-wa-fill"/></svg></a>
+</body>
+</html>

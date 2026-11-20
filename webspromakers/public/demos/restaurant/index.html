@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="r.meta">Api &amp; Daun – Malay Grill Restaurant Website (Concept Demo) | WebsProMakers</title>
+  <meta name="description" data-i18n-content="r.metaDesc" content="Concept demo by WebsProMakers: a restaurant website for Langkawi with digital menu, prices, opening hours, map, WhatsApp and table reservations.">
+  <meta name="theme-color" content="#17110e">
+  <link rel="canonical" href="https://webspromakers.pages.dev/demos/restaurant/">
+  <meta property="og:title" content="Restaurant website demo – WebsProMakers">
+  <meta property="og:description" content="Concept restaurant website for Langkawi: digital menu, reservations, WhatsApp and map.">
+  <meta property="og:image" content="https://webspromakers.pages.dev/assets/img/og-image.png">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@400;500&display=swap">
+  <link rel="stylesheet" href="/assets/css/demo-base.css">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="/assets/js/config.js"></script>
+  <script defer src="/assets/js/photos.js"></script>
+  <script defer src="/assets/js/core.js"></script>
+  <script defer src="/assets/js/demo.js"></script>
+  <script defer src="menu-data.js"></script>
+  <script defer src="i18n.js"></script>
+</head>
+<body>
+<div class="demo-banner"><span data-i18n="demo.banner">Concept demo by WebsProMakers · Fictitious business</span><a href="/#work"><svg class="icon" aria-hidden="true"><use href="#d-back"/></svg><span data-i18n="demo.back">Back to WebsProMakers</span></a></div>
+
+<header class="hd" data-demo-header>
+  <div class="wrap hd-in">
+    <a class="logo" href="#top">Api <span>&amp;</span> Daun</a>
+    <nav data-demo-nav aria-label="Main">
+      <ul>
+        <li><a href="#menu" data-i18n="r.nav.menu">Menu</a></li>
+        <li><a href="#story" data-i18n="r.nav.story">Our story</a></li>
+        <li><a href="#book" data-i18n="r.nav.book">Reservations</a></li>
+        <li><a href="#visit" data-i18n="r.nav.visit">Visit us</a></li>
+      </ul>
+    </nav>
+    <div class="lang" data-lang-switch><button class="lang-btn" type="button" data-i18n-aria="r.lang" aria-label="Language"><svg class="icon" aria-hidden="true"><use href="#d-globe"/></svg><span data-lang-current>EN</span></button></div>
+    <a class="btn hide-m" href="#book" data-i18n="r.cta.book">Book a table</a>
+    <button class="d-burger" type="button" aria-expanded="false" data-i18n-aria="demo.menu" aria-label="Menu"><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="ph"><img data-photo="rest-interior" data-w="1800" alt="" loading="eager"></div>
+    <div class="wrap">
+      <p class="kicker" data-i18n="r.hero.kicker">Pantai Cenang · Langkawi</p>
+      <h1 data-i18n="r.hero.title">Malay grill &amp; island flavours</h1>
+      <p data-i18n="r.hero.sub">Charcoal-grilled dishes, fresh seafood and family recipes, served on an open-air terrace a short walk from the beach.</p>
+      <div class="acts">
+        <a class="btn" href="#menu" data-i18n="r.hero.menu">See the menu</a>
+        <a class="btn btn--line" href="#book" data-i18n="r.cta.book">Book a table</a>
+      </div>
+    </div>
+  </section>
+  <div class="strip"><ul class="wrap">
+    <li><svg class="icon" aria-hidden="true"><use href="#d-clock"/></svg><span data-i18n="r.strip.hours">Open daily from 12:00</span></li>
+    <li><svg class="icon" aria-hidden="true"><use href="#d-sun"/></svg><span data-i18n="r.strip.terrace">Open-air terrace</span></li>
+    <li><svg class="icon" aria-hidden="true"><use href="#d-globe"/></svg><span data-i18n="r.strip.langs">Menu in 4 languages</span></li>
+    <li><svg class="icon" aria-hidden="true"><use href="#d-pin"/></svg><span data-i18n="r.strip.place">5 minutes from the beach</span></li>
+  </ul></div>
+
+  <section class="section" id="story">
+    <div class="wrap about">
+      <div data-reveal>
+        <p class="kicker" data-i18n="r.about.label">Our story</p>
+        <h2 data-i18n="r.about.title">Cooked over charcoal, served with island hospitality</h2>
+        <p data-i18n="r.about.p">Every dish starts with local ingredients: fish from the morning boats, herbs from the garden and spice pastes made fresh every day. Come hungry, share plates and stay for the sunset.</p>
+        <ul>
+          <li><svg class="icon" aria-hidden="true"><use href="#d-check"/></svg><span data-i18n="r.about.f1">Fresh fish every morning</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#d-check"/></svg><span data-i18n="r.about.f2">Spice pastes made in-house</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#d-check"/></svg><span data-i18n="r.about.f3">Family-style sharing plates</span></li>
+        </ul>
+      </div>
+      <div class="about-pics" data-reveal data-lightbox>
+        <div class="ph"><img data-photo="food-plate" data-w="700" data-i18n-alt="r.alt1" alt="Grilled fish served on a banana leaf"></div>
+        <div class="ph"><img data-photo="rest-table" data-w="500" data-i18n-alt="r.alt2" alt="Dining table set for dinner"></div>
+        <div class="ph"><img data-photo="food-spread" data-w="500" data-i18n-alt="r.alt3" alt="Sharing plates on the table"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section menu-sec" id="menu">
+    <div class="wrap">
+      <div class="menu-head">
+        <div><p class="kicker" data-i18n="r.menu.label">Menu</p><h2 data-i18n="r.menu.title">Our menu</h2></div>
+        <p><span data-i18n="r.menu.qr">Also available as a QR menu at your table:</span> <a href="menu/" data-i18n="r.menu.qrLink">open the mobile menu</a></p>
+      </div>
+      <div id="menu-root"></div>
+      <p class="menu-note"><span data-i18n="r.menu.prices">Prices in Malaysian ringgit (RM).</span> <span data-i18n="demo.samplePrices">Sample prices for demonstration.</span></p>
+    </div>
+  </section>
+
+  <section class="section" id="book">
+    <div class="wrap book">
+      <div class="book-side" data-reveal>
+        <p class="kicker" data-i18n="r.book.label">Reservations</p>
+        <h2 data-i18n="r.book.title">Book a table</h2>
+        <p data-i18n="r.book.sub">Send us your request and we will confirm it by WhatsApp. For groups of more than 10, please message us directly.</p>
+        <div class="ph"><img data-photo="rest-dining" data-w="800" data-i18n-alt="r.alt4" alt="Restaurant terrace in the evening"></div>
+      </div>
+      <form data-demo-form data-reveal>
+        <div class="d-grid">
+          <div class="d-field"><label for="r-name" data-i18n="f.name">Name</label><input id="r-name" name="name" required autocomplete="name"></div>
+          <div class="d-field"><label for="r-phone" data-i18n="f.phone">Phone / WhatsApp</label><input id="r-phone" name="phone" type="tel" data-validate="phone" required autocomplete="tel"></div>
+          <div class="d-field"><label for="r-date" data-i18n="f.date">Date</label><input id="r-date" name="date" type="date" required></div>
+          <div class="d-field"><label for="r-time" data-i18n="f.time">Time</label>
+            <select id="r-time" name="time" required>
+              <option value="" data-i18n="f.choose">Choose…</option>
+              <option>12:00</option><option>12:30</option><option>13:00</option><option>13:30</option><option>14:00</option><option>18:00</option><option>18:30</option><option>19:00</option><option>19:30</option><option>20:00</option><option>20:30</option><option>21:00</option><option>21:30</option>
+            </select></div>
+          <div class="d-field"><label for="r-guests" data-i18n="f.guests">Guests</label>
+            <select id="r-guests" name="guests" required>
+              <option value="" data-i18n="f.choose">Choose…</option>
+              <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+            </select></div>
+          <div class="d-field"><label for="r-area" data-i18n="r.book.area">Seating</label>
+            <select id="r-area" name="area"><option data-i18n="r.book.any">No preference</option><option data-i18n="r.book.terrace">Terrace</option><option data-i18n="r.book.inside">Inside</option></select></div>
+          <div class="d-field full"><label for="r-msg" data-i18n="f.message">Message (optional)</label><textarea id="r-msg" name="message" data-i18n-ph="r.book.msgPh" placeholder="Birthday, allergies, high chair…"></textarea></div>
+        </div>
+        <div class="acts">
+          <button class="btn" type="submit" data-i18n="r.book.submit">Request a table</button>
+          <button class="btn btn--wa" type="button" data-demo="wa" data-demo-msg="r.wa.msg"><svg aria-hidden="true"><use href="#d-wa"/></svg><span data-i18n="r.book.wa">Book via WhatsApp</span></button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="section menu-sec" id="visit">
+    <div class="wrap visit">
+      <div data-reveal>
+        <p class="kicker" data-i18n="r.visit.label">Visit us</p>
+        <h2 data-i18n="r.visit.title">Find us in Pantai Cenang</h2>
+        <div class="hours">
+          <div><span data-i18n="r.h1">Monday – Thursday</span><b>12:00 – 22:00</b></div>
+          <div><span data-i18n="r.h2">Friday – Sunday</span><b>12:00 – 23:00</b></div>
+        </div>
+        <small data-i18n="r.kitchen">The kitchen closes 30 minutes before closing time.</small>
+        <h3 data-i18n="r.contact">Contact</h3>
+        <p class="line"><svg class="icon" aria-hidden="true"><use href="#d-pin"/></svg><span data-i18n="r.addr">Pantai Cenang, Langkawi, Kedah</span></p>
+        <p class="line"><svg class="icon" aria-hidden="true"><use href="#d-call"/></svg><a href="#" data-demo="call">+60 4-000 0000</a></p>
+        <p class="line"><svg class="icon" aria-hidden="true"><use href="#d-map"/></svg><a data-map-link="Pantai Cenang, Langkawi" data-i18n="demo.openMaps">Open in Google Maps</a></p>
+      </div>
+      <div>
+        <div class="map"><iframe data-map="Pantai Cenang, Langkawi" title="Map" data-i18n-title="r.visit.title" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        <small data-i18n="demo.mapNote">The map shows the area. This business is fictitious.</small>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="ft">
+  <div class="wrap ft-in">
+    <span><b class="logo" style="font-size:22px">Api &amp; Daun</b> · <span data-i18n="r.footer">Malay grill &amp; island flavours in Pantai Cenang, Langkawi.</span></span>
+    <div class="social">
+      <a href="#" data-demo="social" aria-label="Instagram"><svg class="icon" aria-hidden="true"><use href="#d-ig"/></svg></a>
+      <a href="#" data-demo="social" aria-label="Facebook"><svg class="icon" aria-hidden="true"><use href="#d-fb"/></svg></a>
+      <a href="#" data-demo="social" aria-label="TikTok"><svg class="icon" aria-hidden="true"><use href="#d-tt"/></svg></a>
+    </div>
+  </div>
+</footer>
+<button class="d-wa" type="button" data-demo="wa" data-demo-msg="r.wa.msg" aria-label="WhatsApp"><svg aria-hidden="true"><use href="#d-wa"/></svg></button>
+<script defer src="restaurant.js"></script>
+</body>
+</html>

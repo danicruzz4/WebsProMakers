@@ -1,0 +1,5 @@
+# WebsProMakers — robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://webspromakers.pages.dev/sitemap.xml

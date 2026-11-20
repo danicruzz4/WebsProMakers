@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="h.meta">Halia House – Boutique Hotel Website (Concept Demo) | WebsProMakers</title>
+  <meta name="description" data-i18n-content="h.metaDesc" content="Concept demo by WebsProMakers: a boutique hotel website for Langkawi with rooms, facilities, gallery, location and availability requests.">
+  <meta name="theme-color" content="#f7f2ea">
+  <link rel="canonical" href="https://webspromakers.pages.dev/demos/hotel/">
+  <meta property="og:title" content="Hotel website demo – WebsProMakers">
+  <meta property="og:image" content="https://webspromakers.pages.dev/assets/img/og-image.png">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500&display=swap">
+  <link rel="stylesheet" href="/assets/css/demo-base.css">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="/assets/js/config.js"></script>
+  <script defer src="/assets/js/photos.js"></script>
+  <script defer src="/assets/js/core.js"></script>
+  <script defer src="/assets/js/demo.js"></script>
+  <script defer src="i18n.js"></script>
+  <script defer src="hotel.js"></script>
+</head>
+<body>
+<div class="demo-banner"><span data-i18n="demo.banner">Concept demo by WebsProMakers · Fictitious business</span><a href="/#work"><svg class="icon" aria-hidden="true"><use href="#d-back"/></svg><span data-i18n="demo.back">Back to WebsProMakers</span></a></div>
+
+<header class="hd" data-demo-header>
+  <div class="wrap hd-in">
+    <a class="logo" href="#top">HALIA HOUSE<small data-i18n="h.tag">BOUTIQUE HOTEL · LANGKAWI</small></a>
+    <nav data-demo-nav aria-label="Main">
+      <ul>
+        <li><a href="#rooms" data-i18n="h.nav.rooms">Rooms</a></li>
+        <li><a href="#facilities" data-i18n="h.nav.fac">Facilities</a></li>
+        <li><a href="#gallery" data-i18n="h.nav.gallery">Gallery</a></li>
+        <li><a href="#location" data-i18n="h.nav.loc">Location</a></li>
+        <li><a href="#book" data-i18n="h.nav.contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="lang" data-lang-switch><button class="lang-btn" type="button" aria-label="Language"><svg class="icon" aria-hidden="true"><use href="#d-globe"/></svg><span data-lang-current>EN</span></button></div>
+    <a class="btn hide-m" href="#book" data-i18n="h.bookNow">Book now</a>
+    <button class="d-burger" type="button" aria-expanded="false" data-i18n-aria="demo.menu" aria-label="Menu"><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-img">
+        <div class="ph"><img data-photo="hotel-pool" data-w="1800" alt="" loading="eager"></div>
+        <div>
+          <p class="eyebrow" style="color:#f1dfc0" data-i18n="h.hero.eyebrow">Pantai Cenang · Langkawi</p>
+          <h1 data-i18n="h.hero.title">A quiet boutique stay by the sea</h1>
+          <p data-i18n="h.hero.sub">Twelve rooms around a tropical garden and pool, a short walk from the beach.</p>
+        </div>
+      </div>
+    </div>
+    <form class="avail" id="avail" novalidate>
+      <div class="d-field"><label for="a-in" data-i18n="f.checkin">Check-in</label><input id="a-in" type="date" required></div>
+      <div class="d-field"><label for="a-out" data-i18n="f.checkout">Check-out</label><input id="a-out" type="date" required data-after="a-in"></div>
+      <div class="d-field"><label for="a-guests" data-i18n="f.guests">Guests</label><select id="a-guests"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></div>
+      <button class="btn" type="submit" data-i18n="h.check">Check availability</button>
+    </form>
+  </section>
+
+  <section class="sec">
+    <div class="wrap intro">
+      <div data-reveal>
+        <p class="eyebrow" data-i18n="h.intro.eyebrow">Welcome</p>
+        <h2 data-i18n="h.intro.title">Slow mornings, warm service and the beach at the end of the lane</h2>
+        <p class="lead" data-i18n="h.intro.p">Halia House is a small family-run hotel designed for couples and families who want calm, comfort and personal attention. Breakfast is served by the pool and our team is happy to help you plan your days on the island.</p>
+        <div class="intro-points">
+          <div><b data-i18n="h.ip1t">Breakfast included</b><span data-i18n="h.ip1d">Local and continental, every morning.</span></div>
+          <div><b data-i18n="h.ip2t">Near the beach</b><span data-i18n="h.ip2d">Walk to Pantai Cenang in minutes.</span></div>
+          <div><b data-i18n="h.ip3t">Personal service</b><span data-i18n="h.ip3d">Tours, transfers and tips from our team.</span></div>
+          <div><b data-i18n="h.ip4t">Garden &amp; pool</b><span data-i18n="h.ip4d">A green, quiet place to unwind.</span></div>
+        </div>
+      </div>
+      <div class="ph" data-reveal><img data-photo="hotel-lobby" data-w="800" data-i18n-alt="h.alt.lobby" alt="Hotel lobby with tropical plants"></div>
+    </div>
+  </section>
+
+  <section class="sec" id="rooms" style="padding-top:0">
+    <div class="wrap">
+      <div class="center" data-reveal>
+        <p class="eyebrow" data-i18n="h.rooms.eyebrow">Rooms &amp; suites</p>
+        <h2 data-i18n="h.rooms.title">Choose your room</h2>
+        <p class="lead" data-i18n="h.rooms.sub">All rooms include air conditioning, Wi-Fi, breakfast and daily housekeeping.</p>
+      </div>
+      <div class="rooms" id="rooms-list"></div>
+      <p class="note center"><span data-i18n="h.rooms.prices">Prices per night in RM, breakfast included.</span> <span data-i18n="demo.samplePrices">Sample prices for demonstration.</span></p>
+    </div>
+  </section>
+
+  <section class="sec fac" id="facilities">
+    <div class="wrap">
+      <div class="center" data-reveal>
+        <p class="eyebrow" data-i18n="h.fac.eyebrow">Facilities &amp; services</p>
+        <h2 data-i18n="h.fac.title">Everything for an easy stay</h2>
+      </div>
+      <div class="fac-grid">
+        <div><svg class="icon" aria-hidden="true"><use href="#d-pool"/></svg><h3 data-i18n="h.f1t">Outdoor pool</h3><p data-i18n="h.f1d">Open from 7:00 to 21:00, with sun loungers.</p></div>
+        <div><svg class="icon" aria-hidden="true"><use href="#d-coffee"/></svg><h3 data-i18n="h.f2t">Breakfast</h3><p data-i18n="h.f2d">Served by the pool every morning.</p></div>
+        <div><svg class="icon" aria-hidden="true"><use href="#d-wifi"/></svg><h3 data-i18n="h.f3t">Free Wi-Fi</h3><p data-i18n="h.f3d">In all rooms and common areas.</p></div>
+        <div><svg class="icon" aria-hidden="true"><use href="#d-car"/></svg><h3 data-i18n="h.f4t">Airport transfer</h3><p data-i18n="h.f4d">Available on request.</p></div>
+        <div><svg class="icon" aria-hidden="true"><use href="#d-spa"/></svg><h3 data-i18n="h.f5t">Spa treatments</h3><p data-i18n="h.f5d">Massages in our garden pavilion.</p></div>
+        <div><svg class="icon" aria-hidden="true"><use href="#d-bike"/></svg><h3 data-i18n="h.f6t">Bicycles</h3><p data-i18n="h.f6d">Explore the coast at your own pace.</p></div>
+        <div><svg class="icon" aria-hidden="true"><use href="#d-broom"/></svg><h3 data-i18n="h.f7t">Daily housekeeping</h3><p data-i18n="h.f7d">Fresh towels and a tidy room every day.</p></div>
+        <div><svg class="icon" aria-hidden="true"><use href="#d-map"/></svg><h3 data-i18n="h.f8t">Tour desk</h3><p data-i18n="h.f8d">Island hopping, mangroves and more.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="gallery">
+    <div class="wrap">
+      <div class="center" data-reveal><p class="eyebrow" data-i18n="h.gal.eyebrow">Gallery</p><h2 data-i18n="h.gal.title">A look inside</h2></div>
+      <div class="gallery" data-lightbox>
+        <div class="ph"><img data-photo="hotel-resort" data-w="900" data-i18n-alt="h.alt.g1" alt="Hotel pool and garden"></div>
+        <div class="ph"><img data-photo="room-1" data-w="500" data-i18n-alt="h.alt.g2" alt="Bedroom with garden view"></div>
+        <div class="ph"><img data-photo="spa" data-w="500" data-i18n-alt="h.alt.g3" alt="Spa treatment room"></div>
+        <div class="ph"><img data-photo="hotel-exterior" data-w="500" data-i18n-alt="h.alt.g4" alt="Hotel exterior at dusk"></div>
+        <div class="ph"><img data-photo="room-3" data-w="500" data-i18n-alt="h.alt.g5" alt="Suite with king bed"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="location" style="padding-top:0">
+    <div class="wrap loc">
+      <div data-reveal>
+        <p class="eyebrow" data-i18n="h.loc.eyebrow">Location</p>
+        <h2 data-i18n="h.loc.title">Close to everything, far from the noise</h2>
+        <ul class="dist">
+          <li><span data-i18n="h.d1">Pantai Cenang beach</span><b data-i18n="h.d1v">5 min walk</b></li>
+          <li><span data-i18n="h.d2">Langkawi International Airport</span><b data-i18n="h.d2v">approx. 15 min by car</b></li>
+          <li><span data-i18n="h.d3">Restaurants and shops</span><b data-i18n="h.d3v">5–10 min walk</b></li>
+          <li><span data-i18n="h.d4">Kuah town and jetty</span><b data-i18n="h.d4v">approx. 30 min by car</b></li>
+        </ul>
+        <p style="margin-top:20px"><a class="btn btn--line" data-map-link="Pantai Cenang, Langkawi"><svg class="icon" aria-hidden="true"><use href="#d-map"/></svg><span data-i18n="demo.openMaps">Open in Google Maps</span></a></p>
+      </div>
+      <div>
+        <div class="map"><iframe data-map="Pantai Cenang, Langkawi" title="Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        <small data-i18n="demo.mapNote">The map shows the area. This business is fictitious.</small>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="book" style="padding-top:0">
+    <div class="wrap book">
+      <div data-reveal>
+        <p class="eyebrow" data-i18n="h.book.eyebrow">Availability</p>
+        <h2 data-i18n="h.book.title">Request your stay</h2>
+        <p class="lead" data-i18n="h.book.sub">Tell us your dates and we will reply with availability and the best rate, usually within a few hours.</p>
+        <div class="contact-lines">
+          <a href="#" data-demo="wa" data-demo-msg="h.wa.msg"><svg class="icon" aria-hidden="true"><use href="#d-wa"/></svg><span>WhatsApp</span></a>
+          <a href="#" data-demo="call"><svg class="icon" aria-hidden="true"><use href="#d-call"/></svg><span>+60 4-000 0000</span></a>
+          <a href="#" data-demo="email"><svg class="icon" aria-hidden="true"><use href="#d-mail"/></svg><span>stay@haliahouse.example</span></a>
+        </div>
+      </div>
+      <form data-demo-form id="book-form">
+        <div class="d-grid">
+          <div class="d-field"><label for="b-in" data-i18n="f.checkin">Check-in</label><input id="b-in" name="checkin" type="date" required></div>
+          <div class="d-field"><label for="b-out" data-i18n="f.checkout">Check-out</label><input id="b-out" name="checkout" type="date" required data-after="b-in"></div>
+          <div class="d-field"><label for="b-guests" data-i18n="f.guests">Guests</label><select id="b-guests" name="guests" required><option value="" data-i18n="f.choose">Choose…</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></div>
+          <div class="d-field"><label for="b-room" data-i18n="f.room">Room type</label><select id="b-room" name="room" required><option value="" data-i18n="f.choose">Choose…</option><option value="garden" data-i18n="h.r1n">Garden Room</option><option value="pool" data-i18n="h.r2n">Pool Suite</option><option value="family" data-i18n="h.r3n">Family Villa</option></select></div>
+          <div class="d-field"><label for="b-name" data-i18n="f.name">Name</label><input id="b-name" name="name" required autocomplete="name"></div>
+          <div class="d-field"><label for="b-email" data-i18n="f.email">Email</label><input id="b-email" name="email" type="email" required autocomplete="email"></div>
+          <div class="d-field full"><label for="b-phone" data-i18n="f.phone">Phone / WhatsApp</label><input id="b-phone" name="phone" type="tel" data-validate="phone" autocomplete="tel"></div>
+          <div class="d-field full"><label for="b-msg" data-i18n="f.message">Message (optional)</label><textarea id="b-msg" name="message" data-i18n-ph="h.book.msgPh" placeholder="Arrival time, airport transfer, special occasion…"></textarea></div>
+        </div>
+        <div class="acts">
+          <button class="btn" type="submit" data-i18n="h.check">Check availability</button>
+          <button class="btn btn--wa" type="button" data-demo="wa" data-demo-msg="h.wa.msg"><svg aria-hidden="true"><use href="#d-wa"/></svg><span>WhatsApp</span></button>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="ft">
+  <div class="wrap ft-in">
+    <a class="logo" href="#top">HALIA HOUSE</a>
+    <span data-i18n="h.footer">Boutique hotel in Pantai Cenang, Langkawi.</span>
+    <div class="social">
+      <a href="#" data-demo="social" aria-label="Instagram"><svg class="icon" aria-hidden="true"><use href="#d-ig"/></svg></a>
+      <a href="#" data-demo="social" aria-label="Facebook"><svg class="icon" aria-hidden="true"><use href="#d-fb"/></svg></a>
+    </div>
+  </div>
+</footer>
+<button class="d-wa" type="button" data-demo="wa" data-demo-msg="h.wa.msg" aria-label="WhatsApp"><svg aria-hidden="true"><use href="#d-wa"/></svg></button>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="s.meta">Pandan &amp; Co. – Local Shop Website (Concept Demo) | WebsProMakers</title>
+  <meta name="description" data-i18n-content="s.metaDesc" content="Concept demo by WebsProMakers: a local shop website for Langkawi with visual catalogue, product photos, opening hours, location and contact.">
+  <meta name="theme-color" content="#fbfaf7">
+  <link rel="canonical" href="https://webspromakers.pages.dev/demos/shop/">
+  <meta property="og:title" content="Shop website demo – WebsProMakers">
+  <meta property="og:image" content="https://webspromakers.pages.dev/assets/img/og-image.png">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/demo-base.css">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="/assets/js/config.js"></script>
+  <script defer src="/assets/js/photos.js"></script>
+  <script defer src="/assets/js/core.js"></script>
+  <script defer src="/assets/js/demo.js"></script>
+  <script defer src="i18n.js"></script>
+  <script defer src="shop.js"></script>
+</head>
+<body>
+<div class="demo-banner"><span data-i18n="demo.banner">Concept demo by WebsProMakers · Fictitious business</span><a href="/#work"><svg class="icon" aria-hidden="true"><use href="#d-back"/></svg><span data-i18n="demo.back">Back to WebsProMakers</span></a></div>
+
+<header class="hd" data-demo-header>
+  <div class="wrap hd-in">
+    <a class="logo" href="#top">Pandan <span>&amp;</span> Co.</a>
+    <nav data-demo-nav aria-label="Main">
+      <ul>
+        <li><a href="#shop" data-i18n="s.nav.shop">Shop</a></li>
+        <li><a href="#makers" data-i18n="s.nav.makers">Our makers</a></li>
+        <li><a href="#visit" data-i18n="s.nav.visit">Visit the shop</a></li>
+      </ul>
+    </nav>
+    <div class="lang" data-lang-switch><button class="lang-btn" type="button" aria-label="Language"><svg class="icon" aria-hidden="true"><use href="#d-globe"/></svg><span data-lang-current>EN</span></button></div>
+    <button class="d-burger" type="button" aria-expanded="false" data-i18n-aria="demo.menu" aria-label="Menu"><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-copy">
+      <small data-i18n="s.hero.small">Kuah · Langkawi</small>
+      <h1 data-i18n-html="s.hero.title">Handmade <em>on the island</em></h1>
+      <p data-i18n="s.hero.sub">Batik, pottery, natural soaps and island pantry goods, made by small local makers. Gifts with a story to take home.</p>
+      <div class="acts">
+        <a class="btn" href="#shop" data-i18n="s.hero.cta">Browse the catalogue</a>
+        <a class="btn btn--line" href="#visit" data-i18n="s.hero.visit">Opening hours</a>
+      </div>
+    </div>
+    <div class="ph"><img data-photo="shop-interior" data-w="1200" data-i18n-alt="s.alt.shop" alt="Inside the shop" loading="eager"></div>
+  </section>
+  <ul class="values">
+    <li><svg class="icon" aria-hidden="true"><use href="#d-leaf"/></svg><div><b data-i18n="s.v1t">Made in Langkawi</b><span data-i18n="s.v1d">From makers across the island</span></div></li>
+    <li><svg class="icon" aria-hidden="true"><use href="#d-users"/></svg><div><b data-i18n="s.v2t">Small makers</b><span data-i18n="s.v2d">Fair prices for local artisans</span></div></li>
+    <li><svg class="icon" aria-hidden="true"><use href="#d-bag"/></svg><div><b data-i18n="s.v3t">Gift wrapping</b><span data-i18n="s.v3d">Free, with banana-leaf paper</span></div></li>
+  </ul>
+
+  <section class="sec" id="shop">
+    <div class="wrap">
+      <div class="cat-head">
+        <div><h2 data-i18n="s.cat.title">The catalogue</h2><p class="lead" data-i18n="s.cat.sub">Available in store. Ask us on WhatsApp to reserve a piece.</p></div>
+      </div>
+      <div class="filters" id="filters" role="group" data-i18n-aria="s.cat.filter" aria-label="Filter products"></div>
+      <div class="products" id="products"></div>
+      <p class="note"><span data-i18n="s.cat.prices">Prices in RM.</span> <span data-i18n="demo.samplePrices">Sample prices for demonstration.</span></p>
+    </div>
+  </section>
+
+  <section class="sec makers" id="makers">
+    <div class="wrap makers-grid">
+      <div class="ph" data-reveal><img data-photo="shop-pottery" data-w="900" data-i18n-alt="s.alt.maker" alt="A potter shaping clay"></div>
+      <div data-reveal>
+        <h2 data-i18n="s.mk.title">Meet the hands behind every piece</h2>
+        <p class="lead" data-i18n="s.mk.p">We work directly with batik painters, potters and small producers from villages around Langkawi. Every product tells you who made it.</p>
+        <ul>
+          <li><svg class="icon" aria-hidden="true"><use href="#d-check"/></svg><span data-i18n="s.mk.l1">Natural materials and dyes wherever possible</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#d-check"/></svg><span data-i18n="s.mk.l2">Limited pieces: each batik is unique</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#d-check"/></svg><span data-i18n="s.mk.l3">Plastic-free packaging</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="visit">
+    <div class="wrap visit">
+      <div>
+        <h3 data-i18n="s.hours.title">Opening hours</h3>
+        <ul class="hours">
+          <li><span data-i18n="s.hours.d1">Monday – Saturday</span><b>10:00 – 21:00</b></li>
+          <li><span data-i18n="s.hours.d2">Sunday</span><b>11:00 – 19:00</b></li>
+          <li><span data-i18n="s.hours.d3">Public holidays</span><b data-i18n="s.hours.d3v">Please check</b></li>
+        </ul>
+      </div>
+      <div>
+        <h3 data-i18n="s.find.title">Find us</h3>
+        <p class="line"><svg class="icon" aria-hidden="true"><use href="#d-pin"/></svg><span data-i18n="s.addr">Kuah town centre, Langkawi</span></p>
+        <p class="line"><svg class="icon" aria-hidden="true"><use href="#d-call"/></svg><a href="#" data-demo="call">+60 4-000 0000</a></p>
+        <p class="line"><svg class="icon" aria-hidden="true"><use href="#d-wa"/></svg><a href="#" data-demo="wa" data-demo-msg="s.wa.msg">WhatsApp</a></p>
+        <p class="line"><svg class="icon" aria-hidden="true"><use href="#d-map"/></svg><a data-map-link="Kuah, Langkawi" data-i18n="demo.openMaps">Open in Google Maps</a></p>
+        <div class="social">
+          <a href="#" data-demo="social" aria-label="Instagram"><svg class="icon" aria-hidden="true"><use href="#d-ig"/></svg></a>
+          <a href="#" data-demo="social" aria-label="Facebook"><svg class="icon" aria-hidden="true"><use href="#d-fb"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <div class="map"><iframe data-map="Kuah, Langkawi" title="Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        <small data-i18n="demo.mapNote">The map shows the area. This business is fictitious.</small>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="ft"><div class="wrap ft-in"><span class="logo" style="font-size:22px">Pandan <span>&amp;</span> Co.</span><span data-i18n="s.footer">Local crafts &amp; island goods · Kuah, Langkawi</span></div></footer>
+<button class="d-wa" type="button" data-demo="wa" data-demo-msg="s.wa.msg" aria-label="WhatsApp"><svg aria-hidden="true"><use href="#d-wa"/></svg></button>
+</body>
+</html>

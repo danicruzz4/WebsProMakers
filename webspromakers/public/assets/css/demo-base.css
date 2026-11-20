@@ -1,0 +1,91 @@
+/* ==========================================================================
+   WEBSPROMAKERS — Base común de las demos (banner, modal, idiomas, formularios)
+   El estilo propio de cada demo está en /demos/<demo>/style.css
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+* { min-width: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { margin: 0; overflow-x: clip; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+button, input, select, textarea { font: inherit; color: inherit; }
+h1, h2, h3, h4, p { margin: 0; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+[hidden] { display: none !important; }
+.icon { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+img.is-missing { visibility: hidden; }
+.ph { position: relative; overflow: hidden; background: linear-gradient(135deg, var(--ph1, #c9b79c), var(--ph2, #7d6b55)); }
+.ph img { width: 100%; height: 100%; object-fit: cover; position: relative; }
+
+/* Demo banner */
+.demo-banner { position: relative; z-index: 200; display: flex; align-items: center; justify-content: center; gap: 8px 16px; flex-wrap: wrap; padding: 8px 16px; background: #0e1311; color: #e9efe9; font: 500 13px/1.4 "Inter", system-ui, sans-serif; text-align: center; }
+.demo-banner a { color: #a8d5b9; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.demo-banner a:hover { text-decoration: underline; }
+.demo-banner svg { width: 18px; height: 18px; flex: none; }
+
+/* Language switcher (shared markup) */
+.lang { position: relative; }
+.lang-btn { display: inline-flex; align-items: center; gap: 6px; height: 40px; padding: 0 12px; border-radius: 999px; border: 1px solid currentColor; background: transparent; cursor: pointer; font-size: 14px; font-weight: 600; opacity: .9; }
+.lang-btn .icon { width: 17px; height: 17px; }
+.lang-menu { position: absolute; right: 0; top: calc(100% + 8px); min-width: 180px; padding: 6px; background: #fff; color: #111; border-radius: 12px; box-shadow: 0 20px 50px -15px rgba(0, 0, 0, .35), 0 0 0 1px rgba(0, 0, 0, .06); z-index: 150; font-family: "Inter", system-ui, "PingFang SC", "Noto Sans SC", sans-serif; }
+.lang-menu button { width: 100%; text-align: left; padding: 10px 12px; border: 0; background: none; border-radius: 8px; cursor: pointer; font-size: 15px; display: flex; justify-content: space-between; }
+.lang-menu button:hover, .lang-menu button:focus-visible { background: #f2efe9; }
+.lang-menu button[aria-checked="true"] { font-weight: 700; }
+.lang-menu button[aria-checked="true"]::after { content: "✓"; }
+
+/* Forms (shared behaviour; each demo themes them) */
+.d-field { display: flex; flex-direction: column; gap: 6px; }
+.d-field label { font-size: 14px; font-weight: 600; }
+.d-field input, .d-field select, .d-field textarea { width: 100%; min-height: 48px; padding: 11px 13px; font-size: 16px; border-radius: 10px; border: 1px solid rgba(0, 0, 0, .18); background: #fff; color: #111; }
+.d-field textarea { min-height: 100px; resize: vertical; }
+.d-field [aria-invalid="true"] { border-color: #c0392b !important; background: #fff7f6; }
+.field-error { font-size: 13px; color: #c0392b; font-weight: 500; }
+.field-error:empty { display: none; }
+.d-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.d-grid .full { grid-column: 1 / -1; }
+@media (max-width: 600px) { .d-grid { grid-template-columns: 1fr; } }
+
+/* Demo modal */
+.d-modal { position: fixed; inset: 0; z-index: 400; display: grid; place-items: center; padding: 18px; background: rgba(10, 12, 11, .6); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); opacity: 0; transition: opacity .25s; }
+.d-modal.is-open { opacity: 1; }
+.d-modal-card { width: min(480px, 100%); max-height: calc(100vh - 36px); overflow: auto; background: #fff; color: #111; border-radius: 20px; padding: 26px; font: 15px/1.55 "Inter", system-ui, "PingFang SC", "Noto Sans SC", sans-serif; box-shadow: 0 40px 80px -20px rgba(0, 0, 0, .5); transform: translateY(12px); transition: transform .3s; }
+.d-modal.is-open .d-modal-card { transform: none; }
+.d-modal-card h2 { font: 800 22px/1.2 "Manrope", "Inter", system-ui, sans-serif; letter-spacing: -.01em; display: flex; gap: 10px; align-items: center; }
+.d-modal-card h2 span { font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 99px; background: #e3f0e8; color: #1d4b3a; letter-spacing: 0; }
+.d-modal-card p { margin-top: 10px; color: #444; }
+.d-modal-msg { margin-top: 14px; background: #dcf8c6; border-radius: 12px 0 12px 12px; padding: 12px 14px; white-space: pre-line; font-size: 14.5px; color: #111; }
+.d-modal-msg.plain { background: #f3f1ec; border-radius: 12px; }
+.d-modal-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; padding-top: 18px; border-top: 1px solid #eee; align-items: center; }
+.d-modal-actions small { flex: 1 1 100%; color: #666; font-size: 13px; }
+.d-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 46px; padding: 0 20px; border-radius: 999px; font-weight: 600; font-size: 15px; text-decoration: none; cursor: pointer; border: 1px solid transparent; background: #1d4b3a; color: #fff; }
+.d-btn--ghost { background: transparent; color: #111; border-color: #ccc; }
+
+/* Lightbox */
+.d-lightbox { position: fixed; inset: 0; z-index: 400; background: rgba(0, 0, 0, .9); display: grid; place-items: center; padding: 24px; }
+.d-lightbox img { max-height: 86vh; max-width: 100%; border-radius: 8px; object-fit: contain; }
+.d-lightbox button { position: absolute; top: 14px; right: 14px; width: 46px; height: 46px; border-radius: 50%; border: 0; background: rgba(255, 255, 255, .15); color: #fff; font-size: 24px; cursor: pointer; }
+
+/* Floating WhatsApp (demo) */
+.d-wa { position: fixed; right: 18px; bottom: 18px; z-index: 90; width: 56px; height: 56px; border-radius: 50%; border: 0; background: #1fa855; color: #fff; display: grid; place-items: center; cursor: pointer; box-shadow: 0 12px 30px -8px rgba(31, 168, 85, .7); transition: transform .25s; }
+.d-wa:hover { transform: scale(1.07); }
+.d-wa svg { width: 30px; height: 30px; }
+
+/* Toast */
+.wpm-toast { position: fixed; left: 50%; bottom: 24px; z-index: 500; transform: translate(-50%, 160%); background: #111; color: #fff; padding: 13px 18px; border-radius: 12px; font: 15px/1.4 "Inter", system-ui, sans-serif; max-width: calc(100% - 32px); transition: transform .35s; text-align: center; }
+.wpm-toast.is-on { transform: translate(-50%, 0); }
+
+/* Mobile nav helper */
+.d-burger { display: none; width: 44px; height: 44px; border-radius: 12px; border: 1px solid currentColor; background: transparent; cursor: pointer; place-items: center; }
+.d-burger span, .d-burger span::before, .d-burger span::after { display: block; width: 18px; height: 2px; background: currentColor; border-radius: 2px; position: relative; content: ""; transition: transform .25s, background .25s; }
+.d-burger span::before { position: absolute; top: -6px; }
+.d-burger span::after { position: absolute; top: 6px; }
+.nav-open .d-burger span { background: transparent; }
+.nav-open .d-burger span::before { transform: translateY(6px) rotate(45deg); }
+.nav-open .d-burger span::after { transform: translateY(-6px) rotate(-45deg); }
+
+/* Reveal */
+.js-ready [data-reveal] { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+.js-ready [data-reveal].is-in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }

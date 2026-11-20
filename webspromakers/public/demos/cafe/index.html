@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="c.meta">Kopi Pasir – Beach Café &amp; Bar Website (Concept Demo) | WebsProMakers</title>
+  <meta name="description" data-i18n-content="c.metaDesc" content="Concept demo by WebsProMakers: a café and bar website for Langkawi with drinks and food menu, prices, opening hours, location and social media.">
+  <meta name="theme-color" content="#fbf3e6">
+  <link rel="canonical" href="https://webspromakers.pages.dev/demos/cafe/">
+  <meta property="og:title" content="Café & bar website demo – WebsProMakers">
+  <meta property="og:image" content="https://webspromakers.pages.dev/assets/img/og-image.png">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:ital,wght@0,600;0,700;1,500&display=swap">
+  <link rel="stylesheet" href="/assets/css/demo-base.css">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="/assets/js/config.js"></script>
+  <script defer src="/assets/js/photos.js"></script>
+  <script defer src="/assets/js/core.js"></script>
+  <script defer src="/assets/js/demo.js"></script>
+  <script defer src="i18n.js"></script>
+  <script defer src="cafe.js"></script>
+</head>
+<body>
+<div class="demo-banner"><span data-i18n="demo.banner">Concept demo by WebsProMakers · Fictitious business</span><a href="/#work"><svg class="icon" aria-hidden="true"><use href="#d-back"/></svg><span data-i18n="demo.back">Back to WebsProMakers</span></a></div>
+
+<header class="hd" data-demo-header>
+  <div class="wrap hd-in">
+    <a class="logo" href="#top"><span><svg class="icon" aria-hidden="true"><use href="#d-coffee"/></svg></span>Kopi Pasir</a>
+    <nav data-demo-nav aria-label="Main">
+      <ul>
+        <li><a href="#menu" data-i18n="c.nav.menu">Menu</a></li>
+        <li><a href="#story" data-i18n="c.nav.story">Our café</a></li>
+        <li><a href="#visit" data-i18n="c.nav.hours">Hours &amp; location</a></li>
+      </ul>
+    </nav>
+    <div class="lang" data-lang-switch><button class="lang-btn" type="button" aria-label="Language"><svg class="icon" aria-hidden="true"><use href="#d-globe"/></svg><span data-lang-current>EN</span></button></div>
+    <button class="d-burger" type="button" aria-expanded="false" data-i18n-aria="demo.menu" aria-label="Menu"><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="pill"><i></i><span data-i18n="c.open">Open daily · 8:00 – 23:00</span></span>
+        <h1 data-i18n-html="c.hero.title">Coffee by the sand, <em>cocktails at sunset</em></h1>
+        <p data-i18n="c.hero.sub">A relaxed beach café in Pantai Tengah: specialty coffee and brunch in the morning, fresh juices all day and island cocktails when the sun goes down.</p>
+        <div class="acts">
+          <a class="btn" href="#menu" data-i18n="c.hero.cta">See the menu</a>
+          <a class="btn btn--white" href="#visit"><svg class="icon" aria-hidden="true"><use href="#d-pin"/></svg><span data-i18n="c.hero.find">Find us</span></a>
+        </div>
+      </div>
+      <div class="collage" aria-hidden="true">
+        <div class="ph c1"><img data-photo="cafe-interior" data-w="800" alt="" loading="eager"></div>
+        <div class="ph c2"><img data-photo="coffee-latte" data-w="500" alt=""></div>
+        <div class="ph c3"><img data-photo="drink-cocktail" data-w="300" alt=""></div>
+        <div class="sticker" data-i18n="c.sticker">Sunset hour 18:00</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true"><div>
+    <span>Kopi O</span><b>✺</b><span>Gula Melaka Latte</span><b>✺</b><span>Roti Bakar Kaya</span><b>✺</b><span>Pandan Colada</span><b>✺</b><span>Fresh Coconut</span><b>✺</b><span>Mango Smoothie</span><b>✺</b>
+    <span>Kopi O</span><b>✺</b><span>Gula Melaka Latte</span><b>✺</b><span>Roti Bakar Kaya</span><b>✺</b><span>Pandan Colada</span><b>✺</b><span>Fresh Coconut</span><b>✺</b><span>Mango Smoothie</span><b>✺</b>
+  </div></div>
+
+  <section class="sec" id="menu">
+    <div class="wrap">
+      <div class="menu-top">
+        <h2 data-i18n="c.menu.title">What we’re pouring</h2>
+        <p style="color:var(--muted);max-width:28em" data-i18n="c.menu.sub">Prices in RM. Ask us about plant-based milk and today’s cakes.</p>
+      </div>
+      <div id="cafe-menu"></div>
+      <p class="small-note" data-i18n="demo.samplePrices">Sample prices for demonstration.</p>
+    </div>
+  </section>
+
+  <section class="sec story" id="story">
+    <div class="wrap story-grid">
+      <div class="ph" data-reveal><img data-photo="cafe-shop" data-w="800" data-i18n-alt="c.alt.bar" alt="Café counter with coffee machine"></div>
+      <div data-reveal>
+        <h2 data-i18n="c.story.title">Barefoot welcome</h2>
+        <p data-i18n="c.story.p1">Kopi Pasir started with a simple idea: great coffee a few steps from the sea. We roast with local partners, bake every morning and mix our cocktails with island fruit.</p>
+        <p data-i18n="c.story.p2">Come for breakfast, work with a view or stay for the sunset. Kids, dogs and sandy feet are always welcome.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-bottom:40px">
+    <div class="wrap">
+      <div class="menu-top">
+        <h2 data-i18n="c.insta.title">Follow the good vibes</h2>
+        <a class="btn btn--white" href="#" data-demo="social"><svg class="icon" aria-hidden="true"><use href="#d-ig"/></svg>@kopipasir</a>
+      </div>
+      <div class="insta" data-lightbox>
+        <div class="ph"><img data-photo="coffee-cup" data-w="400" data-i18n-alt="c.alt.i1" alt="Cup of coffee"></div>
+        <div class="ph"><img data-photo="beach-waves" data-w="400" data-i18n-alt="c.alt.i2" alt="Waves on the beach"></div>
+        <div class="ph"><img data-photo="cafe-croissant" data-w="400" data-i18n-alt="c.alt.i3" alt="Fresh croissants"></div>
+        <div class="ph"><img data-photo="bar-night" data-w="400" data-i18n-alt="c.alt.i4" alt="The bar at night"></div>
+        <div class="ph"><img data-photo="sunset" data-w="400" data-i18n-alt="c.alt.i5" alt="Sunset over the sea"></div>
+        <div class="ph"><img data-photo="drink-bar" data-w="400" data-i18n-alt="c.alt.i6" alt="Cocktails on the bar"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="visit" style="padding-top:40px">
+    <div class="wrap info">
+      <div class="card">
+        <h3><svg class="icon" aria-hidden="true"><use href="#d-clock"/></svg><span data-i18n="c.hours.title">Opening hours</span></h3>
+        <ul class="hours">
+          <li><span data-i18n="c.hours.wk">Monday – Friday</span><b>8:00 – 23:00</b></li>
+          <li><span data-i18n="c.hours.we">Saturday – Sunday</span><b>7:30 – 24:00</b></li>
+          <li class="hl"><span data-i18n="c.hours.sun">Sunset hour</span><b>18:00 – 19:30</b></li>
+          <li><span data-i18n="c.hours.kitchen">Kitchen</span><b>8:00 – 21:30</b></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3><svg class="icon" aria-hidden="true"><use href="#d-pin"/></svg><span data-i18n="c.find.title">Find us</span></h3>
+        <p class="line" data-i18n="c.addr">On the beach at Pantai Tengah, Langkawi</p>
+        <p class="line"><svg class="icon" aria-hidden="true"><use href="#d-call"/></svg><a href="#" data-demo="call">+60 4-000 0000</a></p>
+        <p class="line"><svg class="icon" aria-hidden="true"><use href="#d-wa"/></svg><a href="#" data-demo="wa" data-demo-msg="c.wa.msg">WhatsApp</a></p>
+        <p class="line"><svg class="icon" aria-hidden="true"><use href="#d-map"/></svg><a data-map-link="Pantai Tengah, Langkawi" data-i18n="demo.openMaps">Open in Google Maps</a></p>
+        <div class="socials">
+          <a href="#" data-demo="social" aria-label="Instagram"><svg class="icon" aria-hidden="true"><use href="#d-ig"/></svg></a>
+          <a href="#" data-demo="social" aria-label="Facebook"><svg class="icon" aria-hidden="true"><use href="#d-fb"/></svg></a>
+          <a href="#" data-demo="social" aria-label="TikTok"><svg class="icon" aria-hidden="true"><use href="#d-tt"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <div class="map"><iframe data-map="Pantai Tengah, Langkawi" title="Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        <p class="map-note" data-i18n="demo.mapNote">The map shows the area. This business is fictitious.</p>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="ft"><div class="wrap ft-in"><span class="logo">Kopi Pasir</span><span data-i18n="c.footer">Beach café &amp; bar · Pantai Tengah, Langkawi</span></div></footer>
+<button class="d-wa" type="button" data-demo="wa" data-demo-msg="c.wa.msg" aria-label="WhatsApp"><svg aria-hidden="true"><use href="#d-wa"/></svg></button>
+</body>
+</html>

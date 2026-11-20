@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="t.meta">Island Tide Adventures – Tours &amp; Activities Website (Concept Demo) | WebsProMakers</title>
+  <meta name="description" data-i18n-content="t.metaDesc" content="Concept demo by WebsProMakers: a tours and activities website for Langkawi with tour descriptions, key information, booking requests and WhatsApp.">
+  <meta name="theme-color" content="#0c2b3a">
+  <link rel="canonical" href="https://webspromakers.pages.dev/demos/tours/">
+  <meta property="og:title" content="Tours website demo – WebsProMakers">
+  <meta property="og:image" content="https://webspromakers.pages.dev/assets/img/og-image.png">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;600;700;800&display=swap">
+  <link rel="stylesheet" href="/assets/css/demo-base.css">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="/assets/js/config.js"></script>
+  <script defer src="/assets/js/photos.js"></script>
+  <script defer src="/assets/js/core.js"></script>
+  <script defer src="/assets/js/demo.js"></script>
+  <script defer src="i18n.js"></script>
+  <script defer src="tours.js"></script>
+</head>
+<body>
+<div class="demo-banner"><span data-i18n="demo.banner">Concept demo by WebsProMakers · Fictitious business</span><a href="/#work"><svg class="icon" aria-hidden="true"><use href="#d-back"/></svg><span data-i18n="demo.back">Back to WebsProMakers</span></a></div>
+
+<header class="hd" data-demo-header>
+  <div class="wrap hd-in">
+    <a class="logo" href="#top"><i><svg class="icon" aria-hidden="true"><use href="#d-sun"/></svg></i><span>Island Tide<br>Adventures</span></a>
+    <nav data-demo-nav aria-label="Main">
+      <ul>
+        <li><a href="#tours" data-i18n="t.nav.tours">Tours</a></li>
+        <li><a href="#info" data-i18n="t.nav.info">Good to know</a></li>
+        <li><a href="#book" data-i18n="t.nav.book">Book</a></li>
+      </ul>
+    </nav>
+    <div class="lang" data-lang-switch><button class="lang-btn" type="button" aria-label="Language"><svg class="icon" aria-hidden="true"><use href="#d-globe"/></svg><span data-lang-current>EN</span></button></div>
+    <button class="d-burger" type="button" aria-expanded="false" data-i18n-aria="demo.menu" aria-label="Menu"><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="ph"><img data-photo="island-bali" data-w="1800" alt="" loading="eager"></div>
+    <div class="wrap">
+      <span class="tag" style="color:#7fe3d9" data-i18n="t.hero.tag">Langkawi · Sea &amp; forest tours</span>
+      <h1 data-i18n-html="t.hero.title">Explore Langkawi by <span>sea</span> and forest</h1>
+      <p data-i18n="t.hero.sub">Small-group island hopping, mangrove kayaking, snorkelling and sunset cruises with local guides who know every bay.</p>
+      <div class="acts">
+        <a class="btn" href="#tours" data-i18n="t.hero.cta">See all tours</a>
+        <button class="btn btn--ghost" type="button" data-demo="wa" data-demo-msg="t.wa.msg"><svg aria-hidden="true"><use href="#d-wa"/></svg><span data-i18n="t.hero.wa">Ask on WhatsApp</span></button>
+      </div>
+    </div>
+  </section>
+  <div class="facts"><ul class="wrap">
+    <li><svg class="icon" aria-hidden="true"><use href="#d-users"/></svg><span data-i18n="t.fact1">Small groups</span></li>
+    <li><svg class="icon" aria-hidden="true"><use href="#d-car"/></svg><span data-i18n="t.fact2">Hotel pick-up on request</span></li>
+    <li><svg class="icon" aria-hidden="true"><use href="#d-shield"/></svg><span data-i18n="t.fact3">Life jackets for everyone</span></li>
+    <li><svg class="icon" aria-hidden="true"><use href="#d-globe"/></svg><span data-i18n="t.fact4">English &amp; Malay guides</span></li>
+  </ul></div>
+
+  <section class="sec" id="tours">
+    <div class="wrap">
+      <span class="tag" data-i18n="t.tours.tag">Our tours</span>
+      <h2 data-i18n="t.tours.title">Pick your adventure</h2>
+      <div class="tours" id="tour-list"></div>
+      <p class="note"><span data-i18n="t.tours.prices">Prices per person in RM.</span> <span data-i18n="demo.samplePrices">Sample prices for demonstration.</span></p>
+    </div>
+  </section>
+
+  <section class="sec good" id="info">
+    <div class="wrap">
+      <span class="tag" data-i18n="t.good.tag">Good to know</span>
+      <h2 data-i18n="t.good.title">Before you go</h2>
+      <div class="good-grid">
+        <div><svg class="icon" aria-hidden="true"><use href="#d-clock"/></svg><h3 data-i18n="t.g1t">Flexible dates</h3><p data-i18n="t.g1d">Change your date with 24 hours’ notice, subject to availability.</p></div>
+        <div><svg class="icon" aria-hidden="true"><use href="#d-sun"/></svg><h3 data-i18n="t.g2t">Weather first</h3><p data-i18n="t.g2d">If the sea is too rough, we move your tour to another day.</p></div>
+        <div><svg class="icon" aria-hidden="true"><use href="#d-users"/></svg><h3 data-i18n="t.g3t">Families welcome</h3><p data-i18n="t.g3d">Most tours are suitable for children. Ask us for details.</p></div>
+        <div><svg class="icon" aria-hidden="true"><use href="#d-leaf"/></svg><h3 data-i18n="t.g4t">Respect nature</h3><p data-i18n="t.g4d">We follow park rules and never feed wild animals.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="book">
+    <div class="wrap book">
+      <div class="book-side">
+        <span class="tag" data-i18n="t.book.tag">Booking</span>
+        <h2 data-i18n="t.book.title">Request a booking</h2>
+        <p data-i18n="t.book.sub">Send your request and we will confirm availability, pick-up time and payment details by WhatsApp or email.</p>
+        <div class="lines">
+          <a href="#" data-demo="wa" data-demo-msg="t.wa.msg"><svg class="icon" aria-hidden="true"><use href="#d-wa"/></svg>WhatsApp</a>
+          <a href="#" data-demo="call"><svg class="icon" aria-hidden="true"><use href="#d-call"/></svg>+60 4-000 0000</a>
+          <a data-map-link="Pantai Cenang Jetty, Langkawi"><svg class="icon" aria-hidden="true"><use href="#d-pin"/></svg><span data-i18n="t.meet">Meeting point: Pantai Cenang jetty area</span></a>
+        </div>
+        <div class="map"><iframe data-map="Pantai Cenang, Langkawi" title="Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        <small data-i18n="demo.mapNote">The map shows the area. This business is fictitious.</small>
+      </div>
+      <form data-demo-form id="tour-form">
+        <div class="d-grid">
+          <div class="d-field full"><label for="t-tour" data-i18n="f.tour">Tour</label><select id="t-tour" name="tour" required></select></div>
+          <div class="d-field"><label for="t-date" data-i18n="f.date">Date</label><input id="t-date" name="date" type="date" required></div>
+          <div class="d-field"><label for="t-adults" data-i18n="f.adults">Adults</label><input id="t-adults" name="adults" type="number" min="1" max="30" value="2" required></div>
+          <div class="d-field"><label for="t-kids" data-i18n="f.children">Children</label><input id="t-kids" name="children" type="number" min="0" max="20" value="0"></div>
+          <div class="d-field"><label for="t-hotel" data-i18n="f.hotel">Hotel for pick-up (optional)</label><input id="t-hotel" name="hotel"></div>
+          <div class="d-field"><label for="t-name" data-i18n="f.name">Name</label><input id="t-name" name="name" required autocomplete="name"></div>
+          <div class="d-field"><label for="t-phone" data-i18n="f.phone">Phone / WhatsApp</label><input id="t-phone" name="phone" type="tel" data-validate="phone" required autocomplete="tel"></div>
+          <div class="d-field full"><label for="t-email" data-i18n="f.email">Email</label><input id="t-email" name="email" type="email" autocomplete="email"></div>
+          <div class="d-field full"><label for="t-msg" data-i18n="f.message">Message (optional)</label><textarea id="t-msg" name="message"></textarea></div>
+        </div>
+        <div class="acts">
+          <button class="btn btn--teal" type="submit" data-i18n="t.book.submit">Send booking request</button>
+          <button class="btn btn--wa" type="button" data-demo="wa" data-demo-msg="t.wa.msg"><svg aria-hidden="true"><use href="#d-wa"/></svg><span>WhatsApp</span></button>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+<footer class="ft"><div class="wrap ft-in">
+  <span class="logo"><i><svg class="icon" aria-hidden="true"><use href="#d-sun"/></svg></i><span>Island Tide</span></span>
+  <span data-i18n="t.footer">Island tours &amp; activities in Langkawi, Malaysia.</span>
+  <div class="social">
+    <a href="#" data-demo="social" aria-label="Instagram"><svg class="icon" aria-hidden="true"><use href="#d-ig"/></svg></a>
+    <a href="#" data-demo="social" aria-label="Facebook"><svg class="icon" aria-hidden="true"><use href="#d-fb"/></svg></a>
+    <a href="#" data-demo="social" aria-label="TikTok"><svg class="icon" aria-hidden="true"><use href="#d-tt"/></svg></a>
+  </div>
+</div></footer>
+<button class="d-wa" type="button" data-demo="wa" data-demo-msg="t.wa.msg" aria-label="WhatsApp"><svg aria-hidden="true"><use href="#d-wa"/></svg></button>
+</body>
+</html>
