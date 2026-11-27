@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title data-i18n="z.meta">Zhong Hua Lou Seafood Restaurant Langkawi – Website proposal | WebsProMakers</title>
+  <meta name="description" data-i18n-content="z.metaDesc" content="Website proposal by WebsProMakers for Zhong Hua Lou, Pantai Tengah: Chinese seafood menu in English and Chinese, family sets, QR menu, table bookings, hours and map.">
+  <meta name="theme-color" content="#7a1712">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Karla:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+  <style>
+/* ==========================================================================
+   WEBSPROMAKERS — Base común de las demos (banner, modal, idiomas, formularios)
+   El estilo propio de cada demo está en /demos/<demo>/style.css
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+* { min-width: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { margin: 0; overflow-x: clip; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+button, input, select, textarea { font: inherit; color: inherit; }
+h1, h2, h3, h4, p { margin: 0; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+[hidden] { display: none !important; }
+.icon { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+img.is-missing { visibility: hidden; }
+.ph { position: relative; overflow: hidden; background: linear-gradient(135deg, var(--ph1, #c9b79c), var(--ph2, #7d6b55)); }
+.ph img { width: 100%; height: 100%; object-fit: cover; position: relative; }
+
+/* Demo banner */
+.demo-banner { position: relative; z-index: 200; display: flex; align-items: center; justify-content: center; gap: 8px 16px; flex-wrap: wrap; padding: 8px 16px; background: #0e1311; color: #e9efe9; font: 500 13px/1.4 "Inter", system-ui, sans-serif; text-align: center; }
+.demo-banner a { color: #a8d5b9; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.demo-banner a:hover { text-decoration: underline; }
+.demo-banner svg { width: 18px; height: 18px; flex: none; }
+
+/* Language switcher (shared markup) */
+.lang { position: relative; }
+.lang-btn { display: inline-flex; align-items: center; gap: 6px; height: 40px; padding: 0 12px; border-radius: 999px; border: 1px solid currentColor; background: transparent; cursor: pointer; font-size: 14px; font-weight: 600; opacity: .9; }
+.lang-btn .icon { width: 17px; height: 17px; }
+.lang-menu { position: absolute; right: 0; top: calc(100% + 8px); min-width: 180px; padding: 6px; background: #fff; color: #111; border-radius: 12px; box-shadow: 0 20px 50px -15px rgba(0, 0, 0, .35), 0 0 0 1px rgba(0, 0, 0, .06); z-index: 150; font-family: "Inter", system-ui, "PingFang SC", "Noto Sans SC", sans-serif; }
+.lang-menu button { width: 100%; text-align: left; padding: 10px 12px; border: 0; background: none; border-radius: 8px; cursor: pointer; font-size: 15px; display: flex; justify-content: space-between; }
+.lang-menu button:hover, .lang-menu button:focus-visible { background: #f2efe9; }
+.lang-menu button[aria-checked="true"] { font-weight: 700; }
+.lang-menu button[aria-checked="true"]::after { content: "✓"; }
+
+/* Forms (shared behaviour; each demo themes them) */
+.d-field { display: flex; flex-direction: column; gap: 6px; }
+.d-field label { font-size: 14px; font-weight: 600; }
+.d-field input, .d-field select, .d-field textarea { width: 100%; min-height: 48px; padding: 11px 13px; font-size: 16px; border-radius: 10px; border: 1px solid rgba(0, 0, 0, .18); background: #fff; color: #111; }
+.d-field textarea { min-height: 100px; resize: vertical; }
+.d-field [aria-invalid="true"] { border-color: #c0392b !important; background: #fff7f6; }
+.field-error { font-size: 13px; color: #c0392b; font-weight: 500; }
+.field-error:empty { display: none; }
+.d-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.d-grid .full { grid-column: 1 / -1; }
+@media (max-width: 600px) { .d-grid { grid-template-columns: 1fr; } }
+
+/* Demo modal */
+.d-modal { position: fixed; inset: 0; z-index: 400; display: grid; place-items: center; padding: 18px; background: rgba(10, 12, 11, .6); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); opacity: 0; transition: opacity .25s; }
+.d-modal.is-open { opacity: 1; }
+.d-modal-card { width: min(480px, 100%); max-height: calc(100vh - 36px); overflow: auto; background: #fff; color: #111; border-radius: 20px; padding: 26px; font: 15px/1.55 "Inter", system-ui, "PingFang SC", "Noto Sans SC", sans-serif; box-shadow: 0 40px 80px -20px rgba(0, 0, 0, .5); transform: translateY(12px); transition: transform .3s; }
+.d-modal.is-open .d-modal-card { transform: none; }
+.d-modal-card h2 { font: 800 22px/1.2 "Manrope", "Inter", system-ui, sans-serif; letter-spacing: -.01em; display: flex; gap: 10px; align-items: center; }
+.d-modal-card h2 span { font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 99px; background: #e3f0e8; color: #1d4b3a; letter-spacing: 0; }
+.d-modal-card p { margin-top: 10px; color: #444; }
+.d-modal-msg { margin-top: 14px; background: #dcf8c6; border-radius: 12px 0 12px 12px; padding: 12px 14px; white-space: pre-line; font-size: 14.5px; color: #111; }
+.d-modal-msg.plain { background: #f3f1ec; border-radius: 12px; }
+.d-modal-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; padding-top: 18px; border-top: 1px solid #eee; align-items: center; }
+.d-modal-actions small { flex: 1 1 100%; color: #666; font-size: 13px; }
+.d-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 46px; padding: 0 20px; border-radius: 999px; font-weight: 600; font-size: 15px; text-decoration: none; cursor: pointer; border: 1px solid transparent; background: #1d4b3a; color: #fff; }
+.d-btn--ghost { background: transparent; color: #111; border-color: #ccc; }
+
+/* Lightbox */
+.d-lightbox { position: fixed; inset: 0; z-index: 400; background: rgba(0, 0, 0, .9); display: grid; place-items: center; padding: 24px; }
+.d-lightbox img { max-height: 86vh; max-width: 100%; border-radius: 8px; object-fit: contain; }
+.d-lightbox button { position: absolute; top: 14px; right: 14px; width: 46px; height: 46px; border-radius: 50%; border: 0; background: rgba(255, 255, 255, .15); color: #fff; font-size: 24px; cursor: pointer; }
+
+/* Floating WhatsApp (demo) */
+.d-wa { position: fixed; right: 18px; bottom: 18px; z-index: 90; width: 56px; height: 56px; border-radius: 50%; border: 0; background: #1fa855; color: #fff; display: grid; place-items: center; cursor: pointer; box-shadow: 0 12px 30px -8px rgba(31, 168, 85, .7); transition: transform .25s; }
+.d-wa:hover { transform: scale(1.07); }
+.d-wa svg { width: 30px; height: 30px; }
+
+/* Toast */
+.wpm-toast { position: fixed; left: 50%; bottom: 24px; z-index: 500; transform: translate(-50%, 160%); background: #111; color: #fff; padding: 13px 18px; border-radius: 12px; font: 15px/1.4 "Inter", system-ui, sans-serif; max-width: calc(100% - 32px); transition: transform .35s; text-align: center; }
+.wpm-toast.is-on { transform: translate(-50%, 0); }
+
+/* Mobile nav helper */
+.d-burger { display: none; width: 44px; height: 44px; border-radius: 12px; border: 1px solid currentColor; background: transparent; cursor: pointer; place-items: center; }
+.d-burger span, .d-burger span::before, .d-burger span::after { display: block; width: 18px; height: 2px; background: currentColor; border-radius: 2px; position: relative; content: ""; transition: transform .25s, background .25s; }
+.d-burger span::before { position: absolute; top: -6px; }
+.d-burger span::after { position: absolute; top: 6px; }
+.nav-open .d-burger span { background: transparent; }
+.nav-open .d-burger span::before { transform: translateY(6px) rotate(45deg); }
+.nav-open .d-burger span::after { transform: translateY(-6px) rotate(-45deg); }
+
+/* Reveal */
+.js-ready [data-reveal] { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+.js-ready [data-reveal].is-in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+
+</style>
+  <style>
+/* ZHONG HUA LOU — marisco chino familiar. Crema, rojo laca, oro y madera. Playfair Display + Noto Serif SC + Karla. */
+:root { --ivory: #fbf5ea; --ivory2: #f2e4cc; --green: #7a1712; --green2: #94211a; --gold: #b8862b; --gold2: #e8c26a; --pom: #2c5d4a; --ink: #2a1c18; --muted: #6b5c55; --line: rgba(122, 23, 18, .15); --ph1: #c0553c; --ph2: #7a1712;
+  --pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M8 8h12v12H8zM28 28h12v12H28zM20 14h8M14 20v8M34 20v8M20 34h8' fill='none' stroke='%23e8c26a' stroke-opacity='.2' stroke-width='1.2'/%3E%3C/svg%3E"); }
+body { background: var(--ivory); color: var(--ink); font: 16px/1.65 "Karla", "Inter", system-ui, "PingFang SC", "Noto Sans SC", sans-serif; }
+h1, h2, h3 { font-family: "Playfair Display", Georgia, "Songti SC", serif; font-weight: 600; line-height: 1.08; color: var(--green); }
+[lang="zh"], [data-lang="zh"] h1, [data-lang="zh"] h2, [data-lang="zh"] h3 { font-family: "Noto Serif SC", "Songti SC", serif; }
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3 { font-family: "Amiri", serif; font-weight: 700; line-height: 1.3; }
+.wrap { width: min(1180px, 100% - 40px); margin-inline: auto; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; padding: 0 26px; border-radius: 999px; background: var(--green); color: #fff; text-decoration: none; font-weight: 700; border: 1px solid var(--green); cursor: pointer; transition: background .25s, transform .25s; font-size: 15.5px; }
+.btn:hover { background: var(--green2); transform: translateY(-2px); }
+.btn--sm { min-height: 42px; padding: 0 18px; font-size: 14.5px; }
+.btn--line { background: transparent; color: var(--green); }
+.btn--line:hover { background: rgba(16, 51, 44, .06); }
+.btn--wa { background: #1fa855; border-color: #1fa855; }
+.btn svg { width: 20px; height: 20px; }
+.kicker { font-size: 13px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); font-weight: 700; }
+[data-lang="zh"] .kicker, [dir="rtl"] .kicker { letter-spacing: .02em; font-size: 15px; }
+.section { padding: clamp(70px, 10vw, 120px) 0; }
+.section h2 { font-size: clamp(36px, 5vw, 58px); margin-top: 12px; }
+
+/* header */
+.hd { position: sticky; top: 0; z-index: 100; background: var(--ivory); transition: box-shadow .3s; }
+.hd.is-scrolled { box-shadow: 0 1px 0 var(--line); }
+.hd-in { display: flex; align-items: center; gap: 22px; height: 78px; }
+.logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--green); }
+.logo-ar { font-size: 34px; font-weight: 700; color: var(--gold); line-height: 1; }
+.logo-en { font-family: "Playfair Display", Georgia, serif; font-size: 24px; font-weight: 700; line-height: 1; display: flex; flex-direction: column; }
+.logo-en small { font-family: "Karla", sans-serif; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; font-weight: 700; color: var(--muted); margin-top: 4px; }
+.hd nav { margin-inline-start: auto; }
+.hd nav ul { display: flex; gap: 26px; }
+.hd nav a { text-decoration: none; font-weight: 500; color: var(--muted); }
+.hd nav a:hover { color: var(--green); }
+.lang-btn { color: var(--green); }
+
+/* hero */
+.hero { padding: clamp(30px, 5vw, 60px) 0 clamp(50px, 7vw, 90px); background-image: var(--pattern); }
+.hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(30px, 5vw, 70px); align-items: center; }
+.hero h1 { font-size: clamp(48px, 7vw, 92px); margin-top: 16px; }
+.hero h1 em { color: var(--pom); font-style: italic; }
+[dir="rtl"] .hero h1 em { font-style: normal; }
+.hero .lead { font-size: clamp(17px, 1.6vw, 20px); color: var(--muted); max-width: 32em; margin-top: 20px; }
+.hero .acts { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+.rating { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 30px; padding-top: 22px; border-top: 1px solid var(--line); color: var(--muted); font-size: 15px; }
+.rating b { font-family: "Playfair Display", serif; font-size: 34px; color: var(--green); line-height: 1; }
+.stars { font-size: 20px; letter-spacing: 2px; background: linear-gradient(90deg, var(--gold) 92%, #d8cdb7 92%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+[dir="rtl"] .stars { background: linear-gradient(270deg, var(--gold) 92%, #d8cdb7 92%); -webkit-background-clip: text; background-clip: text; }
+.hero-art { position: relative; aspect-ratio: 1/1.05; }
+.arch { position: absolute; inset: 0 12% 0 0; border-radius: 999px 999px 18px 18px; border: 6px solid #fff; box-shadow: 0 30px 60px -30px rgba(16, 51, 44, .6); }
+[dir="rtl"] .arch { inset: 0 0 0 12%; }
+.round { position: absolute; right: 0; bottom: 8%; width: 40%; aspect-ratio: 1; border-radius: 50%; border: 6px solid #fff; box-shadow: 0 20px 40px -20px rgba(0, 0, 0, .5); }
+[dir="rtl"] .round { right: auto; left: 0; }
+.seal { position: absolute; left: -14px; top: 10%; width: 132px; height: 132px; border-radius: 50%; background: var(--green); color: var(--gold2); display: grid; place-content: center; text-align: center; gap: 2px; box-shadow: 0 0 0 6px var(--ivory), 0 0 0 7px var(--gold); transform: rotate(-8deg); }
+[dir="rtl"] .seal { left: auto; right: -14px; }
+.seal span { font-size: 34px; font-weight: 700; line-height: 1; }
+.seal small { font-size: 11px; color: #e9dfc9; padding: 0 12px; line-height: 1.3; }
+
+.strip { background: var(--green); color: #e9e2d2; }
+.strip ul { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px 30px; padding: 20px 0; font-size: 15px; }
+.strip li { display: flex; align-items: center; gap: 10px; }
+.strip svg { color: var(--gold2); }
+
+/* about */
+.about { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(30px, 6vw, 90px); align-items: center; }
+.about p { color: var(--muted); margin-top: 22px; font-size: 17px; }
+.about-pics { display: grid; grid-template-columns: 1.2fr 1fr; grid-template-rows: 1fr 1fr; gap: 14px; aspect-ratio: 1/1; }
+.about-pics .ph { border-radius: 18px; cursor: zoom-in; }
+.about-pics .ph:first-child { grid-row: span 2; border-radius: 999px 999px 18px 18px; }
+.mini { font-family: "Karla", sans-serif !important; font-size: 14px; letter-spacing: .12em; text-transform: uppercase; color: var(--gold) !important; margin-top: 30px; font-weight: 700; }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+.chips li { padding: 9px 14px; border-radius: 999px; background: #fff; border: 1px solid var(--line); font-weight: 500; display: flex; gap: 8px; align-items: center; }
+.chips b { font-size: 12px; background: var(--ivory2); color: var(--green); padding: 1px 8px; border-radius: 99px; }
+
+/* menu */
+.menu-sec { background: var(--green); color: #eee6d4; background-image: var(--pattern); }
+.menu-sec h2, .menu-sec h4 { color: #fff; }
+.menu-head { display: flex; justify-content: space-between; align-items: end; gap: 20px; flex-wrap: wrap; margin-bottom: 30px; }
+.menu-head p { color: #c8d1cb; max-width: 30em; }
+.menu-head a { color: var(--gold2); font-weight: 700; }
+.m-tabs { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 8px; scrollbar-width: none; margin-bottom: 26px; }
+.m-tabs::-webkit-scrollbar { display: none; }
+.m-tabs button { flex: none; border: 1px solid rgba(217, 181, 111, .45); background: transparent; color: #e9e2d2; padding: 10px 18px; border-radius: 999px; font-size: 15px; cursor: pointer; font-weight: 500; }
+.m-tabs button[aria-selected="true"] { background: var(--gold2); color: var(--green); border-color: var(--gold2); font-weight: 700; }
+.m-list { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 46px; }
+.m-item { display: grid; grid-template-columns: 88px 1fr auto; gap: 18px; align-items: center; padding: 16px 0; border-bottom: 1px dashed rgba(233, 226, 210, .2); }
+.m-item.no-photo { grid-template-columns: 1fr auto; }
+.m-photo { width: 88px; height: 88px; border-radius: 50% 50% 14px 14px; }
+.m-text h4 { font-family: "Playfair Display", Georgia, serif; font-size: 21px; font-weight: 600; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+[data-lang="zh"] .m-text h4 { font-family: "Noto Serif SC", serif; }
+.m-text p { color: #bccac3; font-size: 14.5px; margin-top: 4px; }
+.m-tag { font-family: "Karla", sans-serif; font-size: 11px; padding: 3px 9px; border-radius: 99px; background: rgba(217, 181, 111, .18); color: var(--gold2); font-weight: 700; }
+.m-tag--vegan, .m-tag--veg { background: rgba(124, 196, 140, .18); color: #9fdcaf; }
+.m-price { font-family: "Playfair Display", serif; font-size: 21px; color: var(--gold2); white-space: nowrap; }
+.menu-note { color: #bccac3; font-size: 13px; margin-top: 24px; }
+
+/* booking */
+.book { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(30px, 6vw, 80px); align-items: start; }
+.book-side p { color: var(--muted); margin-top: 18px; }
+.book-side .ph { margin-top: 30px; aspect-ratio: 4/3; border-radius: 999px 999px 18px 18px; }
+.book form { background: #fff; padding: clamp(22px, 4vw, 40px); border-radius: 22px; border: 1px solid var(--line); box-shadow: 0 30px 60px -40px rgba(16, 51, 44, .5); }
+.book .d-field input, .book .d-field select, .book .d-field textarea { border-color: #ddd2bd; background: var(--ivory); }
+.book .acts { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
+
+/* visit */
+.visit-sec { background: var(--ivory2); }
+.visit { display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(30px, 5vw, 70px); }
+.hours { margin-top: 26px; }
+.hours div { display: flex; justify-content: space-between; gap: 20px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 17px; }
+.hours b { white-space: nowrap; }
+.visit h3 { font-size: 24px; margin-top: 30px; }
+.visit .line { display: flex; gap: 10px; align-items: flex-start; color: var(--muted); margin-top: 12px; }
+.visit .line svg { color: var(--gold); margin-top: 1px; }
+.visit .line a { color: var(--green); font-weight: 700; }
+.visit small { color: var(--muted); display: block; margin-top: 10px; }
+.map { border-radius: 22px; overflow: hidden; min-height: 400px; background: #d9d2c1; position: relative; border: 6px solid #fff; }
+.map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+/* footer */
+.ft { background: var(--green); padding: 40px 0; color: #c8d1cb; font-size: 14px; }
+.ft-in { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; align-items: center; }
+.ft .logo-ar { font-size: 26px; }
+.social { display: flex; gap: 10px; }
+.social a { width: 42px; height: 42px; border: 1px solid rgba(217, 181, 111, .4); border-radius: 50%; display: grid; place-items: center; color: #fff; }
+.social a:hover { background: var(--gold); border-color: var(--gold); }
+.social svg { width: 18px; height: 18px; }
+[dir="rtl"] .lang-menu { right: auto; left: 0; }
+[dir="rtl"] .lang-menu button { text-align: right; }
+[dir="rtl"] .d-wa { right: auto; left: 18px; }
+
+@media (max-width: 920px) {
+  .d-burger { display: grid; color: var(--green); }
+  .hd nav { position: fixed; inset: 0 0 0 auto; width: min(320px, 85vw); background: var(--ivory); padding: 110px 28px 28px; opacity: 0; visibility: hidden; transition: opacity .25s, visibility .25s; z-index: -1; box-shadow: -20px 0 60px rgba(0, 0, 0, .15); }
+  [dir="rtl"] .hd nav { inset: 0 auto 0 0; }
+  .nav-open .hd nav { opacity: 1; visibility: visible; }
+  .hd nav ul { flex-direction: column; gap: 4px; }
+  .hd nav a { display: block; font-size: 22px; padding: 12px 0; font-family: "Playfair Display", serif; color: var(--green); }
+  .hd .btn.hide-m { display: none; }
+  .hero-grid, .about, .book, .visit { grid-template-columns: 1fr; }
+  .hero-art { max-width: 520px; width: 100%; margin: 0 auto; }
+  .m-list { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .logo-ar { font-size: 28px; }
+  .logo-en { font-size: 20px; }
+  .logo-en small { display: none; }
+  .lang-btn { padding: 0 9px; }
+  .m-item { grid-template-columns: 70px 1fr; }
+  .m-photo { width: 70px; height: 70px; }
+  .m-item .m-price { grid-column: 2; justify-self: start; }
+  .m-item.no-photo .m-price { grid-column: auto; justify-self: end; }
+  .seal { width: 104px; height: 104px; left: -4px; }
+  .seal span { font-size: 26px; }
+  .hero .acts .btn { flex: 1 1 100%; }
+}
+
+/* The Corner: extras */
+.logo-ar { color: var(--pom); }
+.seal { background: var(--pom); }
+.seal small { color: #f7e3c3; }
+.m-price small { display: block; font-family: "Karla", sans-serif; font-size: 12px; color: #c8d1cb; text-align: end; }
+.m-price.is-text { font-family: "Karla", sans-serif; font-size: 14px; font-weight: 700; white-space: normal; text-align: end; max-width: 9em; }
+.tank { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 36px; }
+.tank li { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 20px; }
+.tank b { display: block; font-family: "Playfair Display", serif; font-size: 40px; color: var(--pom); line-height: 1; }
+.tank span { display: block; margin-top: 8px; color: var(--muted); font-size: 15px; }
+@media (max-width: 920px) { .tank { grid-template-columns: 1fr 1fr; } }
+
+.logo-ar { color: var(--pom); font-family: "Playfair Display", serif; font-style: italic; }
+.seal { background: var(--pom); }
+.seal span { font-family: "Playfair Display", serif; font-style: italic; font-size: 26px; }
+.d-note { color: var(--pom); font-weight: 700; margin: 12px 0 0; }
+
+.logo-ar, .seal span, [lang="zh"] { font-family: "Noto Serif SC", "Songti SC", serif !important; font-style: normal !important; }
+.logo-ar { color: var(--gold); }
+.seal { background: var(--green); }
+
+</style>
+  <style>
+/* Versión enlace privado: huecos de foto y botón de mapa */
+.ph[data-ph-label] { background-image: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, .22), transparent 55%), linear-gradient(135deg, var(--ph1, #c9b79c), var(--ph2, #7d6b55)); }
+.ph[data-ph-label]::before { content: ""; position: absolute; left: 50%; top: 50%; width: 34px; height: 34px; margin: -24px 0 0 -17px; opacity: .55; pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 8h3l2-3h6l2 3h3v11H4z'/%3E%3Ccircle cx='12' cy='13' r='3.5'/%3E%3C/svg%3E") center / contain no-repeat; }
+.ph[data-ph-label]::after { content: attr(data-ph-label); position: absolute; left: 8px; right: 8px; top: 50%; margin-top: 16px; text-align: center; font: 600 12px/1.3 system-ui, sans-serif; color: rgba(255, 255, 255, .85); text-transform: none; letter-spacing: 0; pointer-events: none; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.m-photo.ph[data-ph-label]::after, .ph[data-ph-label].m-photo::after { display: none; }
+.m-photo.ph[data-ph-label]::before { width: 26px; height: 26px; margin: -13px 0 0 -13px; }
+[data-lightbox] .ph { cursor: default !important; }
+.pp-map { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; text-decoration: none; color: #1b2a33; padding: 20px; text-align: center;
+  background-color: #e6ecef;
+  background-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0), linear-gradient(90deg, rgba(0, 0, 0, .05) 1px, transparent 1px), linear-gradient(rgba(0, 0, 0, .05) 1px, transparent 1px);
+  background-size: 100% 10px, 10px 100%, 28px 28px, 28px 28px; background-position: 0 58%, 38% 0, 0 0, 0 0; background-repeat: no-repeat, no-repeat, repeat, repeat; }
+.pp-pin { width: 44px; height: 44px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); background: #e8453c; box-shadow: 0 10px 20px -8px rgba(0, 0, 0, .5); position: relative; }
+.pp-pin::after { content: ""; position: absolute; inset: 14px; border-radius: 50%; background: #fff; }
+.pp-map b { font: 700 16px/1.3 system-ui, sans-serif; background: #fff; padding: 10px 18px; border-radius: 999px; box-shadow: 0 6px 18px -8px rgba(0, 0, 0, .4); margin-top: 6px; }
+.pp-map small { font: 13px/1.3 system-ui, sans-serif; color: #4a5a63; max-width: 24em; }
+.pp-map:hover b { background: #1b2a33; color: #fff; }
+
+</style>
+</head>
+<body data-biz="Zhong Hua Lou Seafood Restaurant">
+<div class="demo-banner"><span data-i18n="demo.banner">Website proposal for Zhong Hua Lou Seafood Restaurant by WebsProMakers · Not the official website</span><a href="https://webspromakers-site.pages.dev/#work" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#d-back"/></svg><span data-i18n="demo.back">Back to WebsProMakers</span></a></div>
+
+<header class="hd" data-demo-header>
+  <div class="wrap hd-in">
+    <a class="logo" href="#top"><span class="logo-ar" lang="zh">中华楼</span><span class="logo-en">Zhong Hua Lou<small>Seafood Restaurant · Langkawi</small></span></a>
+    <nav data-demo-nav aria-label="Main">
+      <ul>
+        <li><a href="#menu" data-i18n="z.nav.menu">Menu</a></li>
+        <li><a href="#about" data-i18n="z.nav.about">About us</a></li>
+        <li><a href="#book" data-i18n="z.nav.book">Reservations</a></li>
+        <li><a href="#visit" data-i18n="z.nav.visit">Find us</a></li>
+      </ul>
+    </nav>
+    <div class="lang" data-lang-switch><button class="lang-btn" type="button" aria-label="Language"><svg class="icon" aria-hidden="true"><use href="#d-globe"/></svg><span data-lang-current>EN</span></button></div>
+    <a class="btn btn--sm hide-m" href="#book" data-i18n="z.cta.book">Book a table</a>
+    <button class="d-burger" type="button" aria-expanded="false" data-i18n-aria="demo.menu" aria-label="Menu"><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="kicker" data-i18n="z.hero.kicker">Chinese seafood restaurant · Pantai Tengah, Langkawi</p>
+        <h1 data-i18n-html="z.hero.title">Steamed fish and clam soup, <em>for the whole family.</em></h1>
+        <p class="lead" data-i18n="z.hero.sub">Cantonese-style seafood at round tables: steamed grouper, Thai-style fish fillet, assam prawns, lala clam soup and Singapore noodles. Lunch and dinner every day, at the end of the Pantai Cenang strip.</p>
+        <div class="acts">
+          <a class="btn" href="#menu" data-i18n="z.hero.menu">See the menu</a>
+          <a class="btn btn--line" href="#book" data-i18n="z.cta.book">Book a table</a>
+        </div>
+        <div class="rating">
+          <b>4.1</b><span class="stars" aria-hidden="true">★★★★★</span>
+          <span data-i18n="z.hero.rating">678 Google reviews · lunch and dinner every day</span>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="arch ph"><img data-photo="zhl-hero" data-w="900" data-i18n-alt="z.altHero" alt="Dining room of Zhong Hua Lou" loading="eager"></div>
+        <div class="round ph"><img data-photo="zhl-round" data-w="400" data-i18n-alt="z.altRavioli" alt="Steamed grouper"></div>
+        <div class="seal" aria-hidden="true"><span lang="zh">中华楼</span><small data-i18n="z.seal">12:00 – 15:30 · 17:30 – 22:30</small></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip"><ul class="wrap">
+    <li><svg class="icon" aria-hidden="true"><use href="#d-clock"/></svg><span data-i18n="z.strip.hours">Lunch 12:00 – 15:30 · Dinner 17:30 – 22:30</span></li>
+    <li><svg class="icon" aria-hidden="true"><use href="#d-users"/></svg><span data-i18n="z.strip.family">Round tables for families and groups</span></li>
+    <li><svg class="icon" aria-hidden="true"><use href="#d-check"/></svg><span data-i18n="z.strip.wine">Menu in English, Chinese and Malay</span></li>
+    <li><svg class="icon" aria-hidden="true"><use href="#d-pin"/></svg><span data-i18n="z.strip.terrace">Opposite PARKROYAL, end of the Cenang strip</span></li>
+  </ul></div>
+
+  <section class="section" id="about">
+    <div class="wrap about">
+      <div class="about-pics" data-reveal data-lightbox>
+        <div class="ph"><img data-photo="zhl-about1" data-w="700" data-i18n-alt="z.alt1" alt="Round tables in the dining room"></div>
+        <div class="ph"><img data-photo="zhl-about2" data-w="500" data-i18n-alt="z.alt2" alt="Assam prawns"></div>
+        <div class="ph"><img data-photo="zhl-about3" data-w="500" data-i18n-alt="z.alt3" alt="Lala clam soup"></div>
+      </div>
+      <div data-reveal>
+        <p class="kicker" data-i18n="z.about.label">About us</p>
+        <h2 data-i18n="z.about.title">A Chinese table near the beach</h2>
+        <p data-i18n="z.about.p">Zhong Hua Lou serves Chinese seafood in a wooden dining room with traditional Chinese decor. Families and local regulars come back for the steamed fish, the clam soup and the Singapore noodles. Tip from the reviews: lunch is quieter than dinner.</p>
+        <h3 class="mini" data-i18n="z.about.mostT">Most mentioned in reviews</h3>
+        <ul class="chips">
+          <li data-i18n="z.chip1">Steamed grouper</li><li data-i18n="z.chip2">Thai-style fish fillet</li><li data-i18n="z.chip3">Lala clam soup</li><li data-i18n="z.chip4">Assam prawns</li><li data-i18n="z.chip5">Good for families</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section menu-sec" id="menu">
+    <div class="wrap">
+      <div class="menu-head">
+        <div><p class="kicker" data-i18n="z.menu.label">Menu</p><h2 data-i18n="z.menu.title">Our menu</h2></div>
+        <p><span data-i18n="z.menu.qr">Also as a QR menu for your table:</span> <a href="zhong-hua-lou-menu-qr.html" data-i18n="z.menu.qrLink">open the mobile menu</a></p>
+      </div>
+      <div id="menu-root"></div>
+      <p class="menu-note" data-i18n="z.menu.note">Dishes taken from guest reviews. Prices and set menus will be added with the restaurant.</p>
+    </div>
+  </section>
+
+  <section class="section" id="book">
+    <div class="wrap book">
+      <div class="book-side" data-reveal>
+        <p class="kicker" data-i18n="z.book.label">Reservations</p>
+        <h2 data-i18n="z.book.title">Book a round table or order takeaway</h2>
+        <p data-i18n="z.book.sub">Tell us how many you are and the time. The restaurant confirms by WhatsApp.</p>
+        <div class="ph"><img data-photo="zhl-book" data-w="800" data-i18n-alt="z.alt4" alt="A family table"></div>
+      </div>
+      <form data-demo-form data-reveal>
+        <div class="d-grid">
+          <div class="d-field full"><label for="a-type" data-i18n="z.fType">Request</label>
+            <select id="a-type" name="type"><option data-i18n="z.fTable">Table for lunch or dinner</option><option data-i18n="z.fTerrace">Round table for 8 or more</option><option data-i18n="z.fTake">Takeaway order</option></select></div>
+          <div class="d-field"><label for="a-name" data-i18n="f.name">Name</label><input id="a-name" name="name" required autocomplete="name"></div>
+          <div class="d-field"><label for="a-phone" data-i18n="f.phone">Phone / WhatsApp</label><input id="a-phone" name="phone" type="tel" data-validate="phone" required autocomplete="tel"></div>
+          <div class="d-field"><label for="a-date" data-i18n="f.date">Date</label><input id="a-date" name="date" type="date" required></div>
+          <div class="d-field"><label for="a-time" data-i18n="f.time">Time</label>
+            <select id="a-time" name="time" required>
+              <option value="" data-i18n="f.choose">Choose…</option>
+              <option>12:00</option><option>12:30</option><option>13:00</option><option>13:30</option><option>14:00</option><option>14:30</option><option>17:30</option><option>18:00</option><option>18:30</option><option>19:00</option><option>19:30</option><option>20:00</option><option>20:30</option><option>21:00</option><option>21:30</option>
+            </select></div>
+          <div class="d-field"><label for="a-guests" data-i18n="f.guests">Guests</label>
+            <select id="a-guests" name="guests" required>
+              <option value="" data-i18n="f.choose">Choose…</option>
+              <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>8+</option>
+            </select></div>
+          <div class="d-field full"><label for="a-msg" data-i18n="f.message">Message (optional)</label><textarea id="a-msg" name="message" data-i18n-ph="z.book.msgPh" placeholder="Family of 6, two children, one steamed grouper, no spicy…"></textarea></div>
+        </div>
+        <div class="acts">
+          <button class="btn" type="submit" data-i18n="z.book.submit">Send request</button>
+          <button class="btn btn--wa" type="button" data-demo="wa" data-demo-msg="z.wa.msg"><svg aria-hidden="true"><use href="#d-wa"/></svg><span data-i18n="z.book.wa">Book via WhatsApp</span></button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="section visit-sec" id="visit">
+    <div class="wrap visit">
+      <div data-reveal>
+        <p class="kicker" data-i18n="z.visit.label">Find us</p>
+        <h2 data-i18n="z.visit.title">No. 1, Pantai Tengah</h2>
+        <div class="hours">
+          <div><span data-i18n="z.h1">Lunch, every day</span><b>12:00 – 15:30</b></div>
+          <div><span data-i18n="z.h2">Dinner, every day</span><b>17:30 – 22:30</b></div>
+        </div>
+        <h3 data-i18n="z.contact">Contact</h3>
+        <p class="line"><svg class="icon" aria-hidden="true"><use href="#d-pin"/></svg><span>No. 1, Pantai Tengah, 07000 Langkawi, Kedah</span></p>
+        <p class="line"><svg class="icon" aria-hidden="true"><use href="#d-call"/></svg><a href="#" data-demo="call" dir="ltr">+60 12-470 1593</a></p>
+        <p class="line"><svg class="icon" aria-hidden="true"><use href="#d-wa"/></svg><a href="#" data-demo="wa" data-demo-msg="z.wa.msg">WhatsApp</a></p>
+        <p class="line"><svg class="icon" aria-hidden="true"><use href="#d-arrow"/></svg><a data-map-link="Zhong Hua Lou Seafood Restaurant, Pantai Tengah, Langkawi" data-i18n="demo.openMaps">Open in Google Maps</a></p>
+      </div>
+      <div>
+        <div class="map"><iframe data-map="Zhong Hua Lou Seafood Restaurant, Pantai Tengah, Langkawi" title="Map" data-i18n-title="z.visit.title" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        <small data-i18n="demo.mapNote">Location from Google Maps.</small>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="ft">
+  <div class="wrap ft-in">
+    <span><b class="logo-ar" lang="zh">中华楼</b> · <span data-i18n="z.footer">Zhong Hua Lou Seafood Restaurant · Pantai Tengah, Langkawi</span></span>
+    <div class="social">
+      <a href="#" data-demo="social" aria-label="Facebook"><svg class="icon" aria-hidden="true"><use href="#d-fb"/></svg></a>
+      <a href="#" data-demo="social" aria-label="Instagram"><svg class="icon" aria-hidden="true"><use href="#d-ig"/></svg></a>
+    </div>
+  </div>
+</footer>
+<button class="d-wa" type="button" data-demo="wa" data-demo-msg="z.wa.msg" aria-label="WhatsApp"><svg aria-hidden="true"><use href="#d-wa"/></svg></button>
+<script>
+/* ==========================================================================
+   WEBSPROMAKERS — CONFIGURACIÓN CENTRAL (edita SOLO este archivo para tus datos)
+   --------------------------------------------------------------------------
+   - Deja un campo vacío ("") si todavía no lo tienes: la web lo ocultará
+     o mostrará "Coming soon" en vez de un dato falso.
+   - WhatsApp: formato internacional SIN "+", sin espacios. Ej.: "60123456789"
+   ========================================================================== */
+window.WPM_CONFIG = {
+  companyName: "WebsProMakers",
+
+  // Dirección pública de la web (cámbiala si Cloudflare te da otro nombre)
+  siteUrl: "https://webspromakers.pages.dev",
+
+  contact: {
+    whatsapp: "",            // Ej.: "60123456789"
+    phone: "",               // Ej.: "+60 12-345 6789" (se muestra tal cual)
+    email: "",               // Ej.: "hello@tudominio.com" o un Gmail
+    location: "Langkawi, Malaysia"
+  },
+
+  // Redes sociales: pega la URL completa. Vacío = no se muestra.
+  social: {
+    instagram: "",
+    facebook: "",
+    tiktok: "",
+    linkedin: ""
+  },
+
+  // Formulario de contacto -> email gratis con Web3Forms (250 envíos/mes gratis)
+  // 1) Ve a https://web3forms.com  2) Escribe tu email  3) Copia la "Access Key" aquí
+  forms: {
+    web3formsAccessKey: ""
+  },
+
+  // Google Analytics 4 (opcional). Ej.: "G-XXXXXXXXXX". Vacío = desactivado.
+  analytics: {
+    gaMeasurementId: ""
+  },
+
+  // Mapa de la sección de contacto (texto de búsqueda de Google Maps)
+  map: {
+    query: "Langkawi, Kedah, Malaysia"
+  },
+
+  // Idiomas disponibles (el primero es el predeterminado)
+  languages: [
+    { code: "en", label: "English", short: "EN" },
+    { code: "ms", label: "Bahasa Melayu", short: "BM" },
+    { code: "es", label: "Español", short: "ES" },
+    { code: "zh", label: "中文", short: "中文" }
+  ]
+};
+
+</script>
+<script data-langs="en,zh,ms">
+/* Idiomas de cada propuesta: <script defer src="../langs.js" data-langs="en,ms,zh,ar"> (va justo después de config.js) */
+(function () {
+  var ALL = {
+    en: { code: "en", label: "English", short: "EN" },
+    ms: { code: "ms", label: "Bahasa Melayu", short: "BM" },
+    es: { code: "es", label: "Español", short: "ES" },
+    zh: { code: "zh", label: "中文", short: "中文" },
+    ar: { code: "ar", label: "العربية", short: "عربي" },
+    hi: { code: "hi", label: "हिन्दी", short: "हिं" }
+  };
+  var s = document.currentScript, list = ((s && s.getAttribute("data-langs")) || "en,ms,zh").split(",");
+  window.WPM_CONFIG = window.WPM_CONFIG || {};
+  window.WPM_CONFIG.languages = list.map(function (c) { return ALL[c.trim()]; }).filter(Boolean);
+})();
+
+</script>
+<script>
+/* ==========================================================================
+   WEBSPROMAKERS — FOTOGRAFÍAS (un único sitio para cambiarlas todas)
+   --------------------------------------------------------------------------
+   Cada foto tiene un nombre (clave). En el HTML se usa así:
+       <img data-photo="rest-interior" alt="...">
+   Para usar TU foto: súbela a /public/assets/img/photos/ y cambia el valor:
+       "rest-interior": "/assets/img/photos/mi-restaurante.webp",
+   Los valores que empiezan por "u:" son fotos de Unsplash (licencia gratuita
+   para uso comercial). Se cargan desde images.unsplash.com.
+   Si una foto no carga, la web muestra un fondo de color en su lugar.
+   ========================================================================== */
+window.WPM_PHOTOS = {
+  // Restaurante
+  "rest-interior": "u:1517248135467-4c7edcad34c4",
+  "rest-table": "u:1414235077428-338989a2e8c0",
+  "rest-dining": "u:1555396273-367ea4eb4db5",
+  "food-plate": "u:1504674900247-0877df9cc836",
+  "food-salad": "u:1512621776951-a57141f2eefd",
+  "food-bowl": "u:1546069901-ba9599a7e63c",
+  "food-spread": "u:1540189549336-e6e99c3679fe",
+  "food-grill": "u:1544025162-d76694265947",
+  "food-curry": "u:1585937421612-70a008356fbe",
+  "food-noodles": "u:1569718212165-3a8278d5f624",
+  "food-dessert": "u:1488477181946-6428a0291777",
+  "food-pancake": "u:1567620905732-2d1ec7ab7445",
+  "drink-cocktail": "u:1551024709-8f23befc6f87",
+  "drink-bar": "u:1470337458703-46ad1756a187",
+  // Café & bar
+  "cafe-interior": "u:1501339847302-ac426a4a7cbb",
+  "cafe-shop": "u:1554118811-1e0d58224f24",
+  "coffee-cup": "u:1495474472287-4d71bcdd2085",
+  "coffee-beans": "u:1509042239860-f550ce710b93",
+  "coffee-latte": "u:1541167760496-1628856ab772",
+  "cafe-croissant": "u:1555507036-ab1f4038808a",
+  "bar-night": "u:1514933651103-005eec06c04b",
+  // Hotel
+  "hotel-pool": "u:1566073771259-6a8506099945",
+  "hotel-resort": "u:1520250497591-112f2f40a3f4",
+  "hotel-exterior": "u:1571896349842-33c89424de2d",
+  "hotel-lobby": "u:1542314831-068cd1dbfeeb",
+  "room-1": "u:1582719478250-c89cae4dc85b",
+  "room-2": "u:1611892440504-42a792e24d32",
+  "room-3": "u:1590490360182-c33d57733427",
+  "spa": "u:1540555700478-4be289fbecef",
+  "villa": "u:1613490493576-7fde63acd811",
+  "guesthouse": "u:1564013799919-ab600027ffc6",
+  // Islas, playa, tours
+  "beach": "u:1507525428034-b723cf961d3e",
+  "beach-waves": "u:1505228395891-9a51e7e86bf6",
+  "island-bali": "u:1537996194471-e657df975ab4",
+  "diving": "u:1544551763-46a013bb70d5",
+  "sunset": "u:1495616811223-4d98c6e9c869",
+  "forest": "u:1448375240586-882707db888b",
+  "waterfall": "u:1432405972618-c60b0225b8f9",
+  // Tienda
+  "shop-interior": "u:1441986300917-64674bd600d8",
+  "shop-cosmetics": "u:1556228578-8c89e6adf883",
+  "shop-pottery": "u:1578749556568-bc2c40e68b61",
+  // Negocio / web
+  "web-laptop": "u:1460925895917-afdab827c52f",
+  "web-code": "u:1498050108023-c5249f4df085",
+  "web-phone": "u:1512941937669-90a1b58e7e9c",
+  "meeting": "u:1556761175-5973dc0f32e7",
+  "beauty": "u:1560066984-138dadb4c035"
+};
+
+</script>
+<script>
+/* ==========================================================================
+   WEBSPROMAKERS — CORE (idiomas, fotos, datos de contacto, validación)
+   Se usa en la web principal y en todas las demos.
+   ========================================================================== */
+(function () {
+  "use strict";
+  var CFG = window.WPM_CONFIG || {};
+  var LANGS = (CFG.languages || [{ code: "en", label: "English", short: "EN" }]);
+  var CODES = LANGS.map(function (l) { return l.code; });
+  var DEFAULT = CODES[0];
+  var STORE_KEY = "wpm-lang";
+  var HTML_LANG = { en: "en", ms: "ms", es: "es", zh: "zh-CN" };
+
+  var dict = {};       // dict[lang][key]
+  var en = {};         // English snapshot taken from the HTML
+  var current = DEFAULT;
+
+  /* ---------- small helpers ---------- */
+  function $all(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
+  function get(obj, path) {
+    return path.split(".").reduce(function (o, k) { return o && o[k] != null ? o[k] : undefined; }, obj);
+  }
+  function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
+
+  /* ---------- i18n ---------- */
+  function addStrings(lang, obj) {
+    dict[lang] = dict[lang] || {};
+    for (var k in obj) if (Object.prototype.hasOwnProperty.call(obj, k)) dict[lang][k] = obj[k];
+  }
+  function t(key, lang) {
+    lang = lang || current;
+    var v = dict[lang] && dict[lang][key];
+    if (v == null) v = (dict.en && dict.en[key]) != null ? dict.en[key] : en[key];
+    return v == null ? key : v;
+  }
+  var ATTRS = [["data-i18n-ph", "placeholder"], ["data-i18n-aria", "aria-label"], ["data-i18n-alt", "alt"], ["data-i18n-title", "title"], ["data-i18n-content", "content"]];
+
+  function snapshot() {
+    $all("[data-i18n]").forEach(function (el) { var k = el.getAttribute("data-i18n"); if (!(k in en)) en[k] = el.textContent.trim(); });
+    $all("[data-i18n-html]").forEach(function (el) { var k = el.getAttribute("data-i18n-html"); if (!(k in en)) en[k] = el.innerHTML.trim(); });
+    ATTRS.forEach(function (a) {
+      $all("[" + a[0] + "]").forEach(function (el) { var k = el.getAttribute(a[0]); if (!(k in en)) en[k] = el.getAttribute(a[1]) || ""; });
+    });
+  }
+
+  function apply(lang) {
+    if (CODES.indexOf(lang) < 0) lang = DEFAULT;
+    current = lang;
+    document.documentElement.lang = HTML_LANG[lang] || lang;
+    document.documentElement.setAttribute("data-lang", lang);
+    $all("[data-i18n]").forEach(function (el) { el.textContent = t(el.getAttribute("data-i18n")); });
+    $all("[data-i18n-html]").forEach(function (el) { el.innerHTML = t(el.getAttribute("data-i18n-html")); });
+    ATTRS.forEach(function (a) {
+      $all("[" + a[0] + "]").forEach(function (el) { el.setAttribute(a[1], t(el.getAttribute(a[0]))); });
+    });
+    // Re-translate visible validation messages
+    $all("[data-err-key]").forEach(function (el) { el.textContent = t(el.getAttribute("data-err-key")); });
+    $all("[data-lang-current]").forEach(function (el) {
+      var l = LANGS.filter(function (x) { return x.code === lang; })[0];
+      el.textContent = l ? l.short : lang.toUpperCase();
+    });
+    $all("[data-lang-option]").forEach(function (el) {
+      el.setAttribute("aria-checked", el.getAttribute("data-lang-option") === lang ? "true" : "false");
+    });
+    store(STORE_KEY, lang);
+    document.dispatchEvent(new CustomEvent("wpm:lang", { detail: { lang: lang } }));
+  }
+
+  function initialLang() {
+    var q = new URLSearchParams(location.search).get("lang");
+    if (q && CODES.indexOf(q) >= 0) return q;
+    var s = store(STORE_KEY);
+    if (s && CODES.indexOf(s) >= 0) return s;
+    return DEFAULT;
+  }
+
+  /* ---------- language switcher ---------- */
+  function buildSwitchers() {
+    $all("[data-lang-switch]").forEach(function (box) {
+      var btn = box.querySelector("button");
+      var menu = document.createElement("ul");
+      menu.className = "lang-menu";
+      menu.setAttribute("role", "menu");
+      menu.hidden = true;
+      LANGS.forEach(function (l) {
+        var li = document.createElement("li");
+        var b = document.createElement("button");
+        b.type = "button";
+        b.setAttribute("role", "menuitemradio");
+        b.setAttribute("data-lang-option", l.code);
+        b.setAttribute("lang", HTML_LANG[l.code] || l.code);
+        b.textContent = l.label;
+        b.addEventListener("click", function () { apply(l.code); close(); btn.focus(); });
+        li.appendChild(b); menu.appendChild(li);
+      });
+      box.appendChild(menu);
+      function close() { menu.hidden = true; btn.setAttribute("aria-expanded", "false"); }
+      btn.setAttribute("aria-haspopup", "true");
+      btn.setAttribute("aria-expanded", "false");
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var open = menu.hidden;
+        $all(".lang-menu").forEach(function (m) { m.hidden = true; });
+        menu.hidden = !open;
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+        if (open) { var first = menu.querySelector('[aria-checked="true"]') || menu.querySelector("button"); first && first.focus(); }
+      });
+      box.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") { close(); btn.focus(); }
+        if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+          var items = $all("button", menu), i = items.indexOf(document.activeElement);
+          if (i < 0) return;
+          e.preventDefault();
+          items[(i + (e.key === "ArrowDown" ? 1 : items.length - 1)) % items.length].focus();
+        }
+      });
+      document.addEventListener("click", function (e) { if (!box.contains(e.target)) close(); });
+    });
+  }
+
+  /* ---------- photos ---------- */
+  function photoUrl(val, w) {
+    if (!val) return "";
+    if (val.indexOf("u:") === 0) return "https://images.unsplash.com/photo-" + val.slice(2) + "?auto=format&fit=crop&w=" + w + "&q=70";
+    return val;
+  }
+  function loadPhotos(root) {
+    var P = window.WPM_PHOTOS || {};
+    $all("img[data-photo]", root).forEach(function (img) {
+      if (img.getAttribute("src")) return;
+      var val = P[img.getAttribute("data-photo")];
+      var w = parseInt(img.getAttribute("data-w") || "800", 10);
+      if (!val) { img.classList.add("is-missing"); return; }
+      img.addEventListener("error", function () { img.classList.add("is-missing"); }, { once: true });
+      img.decoding = "async";
+      if (!img.hasAttribute("loading")) img.loading = "lazy";
+      if (val.indexOf("u:") === 0) img.srcset = photoUrl(val, w) + " 1x, " + photoUrl(val, Math.min(w * 2, 2400)) + " 2x";
+      img.src = photoUrl(val, w);
+    });
+  }
+
+  /* ---------- config-driven contact details ---------- */
+  function waLink(number, text) {
+    return "https://wa.me/" + String(number).replace(/[^\d]/g, "") + (text ? "?text=" + encodeURIComponent(text) : "");
+  }
+  function bindConfig() {
+    var c = CFG.contact || {}, s = CFG.social || {};
+    $all("[data-cfg-text]").forEach(function (el) {
+      var v = get(CFG, el.getAttribute("data-cfg-text"));
+      if (v) { el.textContent = v; el.removeAttribute("data-i18n"); el.classList.remove("is-empty"); }
+      else { el.setAttribute("data-i18n", "common.soon"); el.classList.add("is-empty"); }
+    });
+    $all("[data-cfg-mail]").forEach(function (a) {
+      if (c.email) a.href = "mailto:" + c.email; else { a.removeAttribute("href"); a.classList.add("is-empty"); }
+    });
+    $all("[data-cfg-tel]").forEach(function (a) {
+      if (c.phone) a.href = "tel:" + c.phone.replace(/[^\d+]/g, ""); else { a.removeAttribute("href"); a.classList.add("is-empty"); }
+    });
+    $all("[data-social]").forEach(function (a) {
+      var url = s[a.getAttribute("data-social")];
+      if (url) { a.href = url; a.target = "_blank"; a.rel = "noopener"; } else a.hidden = true;
+    });
+    $all("[data-social-group]").forEach(function (g) {
+      if (!$all("[data-social]:not([hidden])", g).length) g.classList.add("is-empty");
+    });
+    $all("[data-map]").forEach(function (f) {
+      var q = f.getAttribute("data-map") || (CFG.map && CFG.map.query) || "Langkawi";
+      f.src = "https://www.google.com/maps?q=" + encodeURIComponent(q) + "&output=embed";
+    });
+    $all("[data-map-link]").forEach(function (a) {
+      var q = a.getAttribute("data-map-link") || (CFG.map && CFG.map.query) || "Langkawi";
+      a.href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q);
+      a.target = "_blank"; a.rel = "noopener";
+    });
+    $all("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
+  }
+  // WhatsApp links of the agency (main site). Demos use their own demo modal.
+  function bindWhatsApp() {
+    var num = (CFG.contact || {}).whatsapp;
+    $all("[data-wa]").forEach(function (a) {
+      function refresh() {
+        if (num) { a.href = waLink(num, t(a.getAttribute("data-wa") || "wa.default")); a.target = "_blank"; a.rel = "noopener"; }
+        else { a.href = "#contact"; a.removeAttribute("target"); }
+      }
+      refresh();
+      document.addEventListener("wpm:lang", refresh);
+      if (!num) a.addEventListener("click", function () { toast(t("toast.waSoon")); });
+    });
+  }
+
+  /* ---------- analytics (only if configured) ---------- */
+  function analytics() {
+    var id = CFG.analytics && CFG.analytics.gaMeasurementId;
+    if (!id) return;
+    var s = document.createElement("script");
+    s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(id);
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag("js", new Date());
+    window.gtag("config", id, { anonymize_ip: true });
+  }
+
+  /* ---------- toast ---------- */
+  var toastEl, toastTimer;
+  function toast(msg) {
+    if (!toastEl) {
+      toastEl = document.createElement("div");
+      toastEl.className = "wpm-toast";
+      toastEl.setAttribute("role", "status");
+      toastEl.setAttribute("aria-live", "polite");
+      document.body.appendChild(toastEl);
+    }
+    toastEl.textContent = msg;
+    toastEl.classList.add("is-on");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toastEl.classList.remove("is-on"); }, 4200);
+  }
+
+  /* ---------- form validation ---------- */
+  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  var PHONE_RE = /^\+?[\d\s\-().]{7,20}$/;
+  function fieldError(field) {
+    var v = (field.value || "").trim();
+    if (field.required && !v) return field.tagName === "SELECT" ? "val.select" : "val.required";
+    if (v && field.type === "email" && !EMAIL_RE.test(v)) return "val.email";
+    if (v && field.getAttribute("data-validate") === "phone" && !PHONE_RE.test(v)) return "val.phone";
+    if (v && field.type === "number") {
+      var n = Number(v), min = field.min !== "" ? Number(field.min) : null, max = field.max !== "" ? Number(field.max) : null;
+      if (isNaN(n) || (min !== null && n < min) || (max !== null && n > max)) return "val.number";
+    }
+    if (v && field.type === "date" && field.min && v < field.min) return "val.date";
+    if (field.getAttribute("data-after")) {
+      var other = field.form && field.form.querySelector("#" + field.getAttribute("data-after"));
+      if (v && other && other.value && v <= other.value) return "val.after";
+    }
+    if (field.minLength > 0 && v && v.length < field.minLength) return "val.short";
+    return null;
+  }
+  function showError(field, key) {
+    var id = field.id + "-err", box = document.getElementById(id);
+    if (!box) {
+      box = document.createElement("p");
+      box.id = id; box.className = "field-error";
+      field.parentNode.appendChild(box);
+    }
+    if (key) {
+      box.textContent = t(key); box.setAttribute("data-err-key", key);
+      field.setAttribute("aria-invalid", "true");
+      field.setAttribute("aria-describedby", id);
+    } else {
+      box.textContent = ""; box.removeAttribute("data-err-key");
+      field.removeAttribute("aria-invalid");
+    }
+  }
+  function validateForm(form) {
+    var first = null;
+    $all("input, select, textarea", form).forEach(function (f) {
+      if (f.type === "hidden" || f.disabled || f.name === "botcheck") return;
+      var k = fieldError(f);
+      showError(f, k);
+      if (k && !first) first = f;
+    });
+    if (first) first.focus();
+    return !first;
+  }
+  function liveValidate(form) {
+    form.setAttribute("novalidate", "");
+    $all("input, select, textarea", form).forEach(function (f) {
+      var ev = f.tagName === "SELECT" || f.type === "date" ? "change" : "blur";
+      f.addEventListener(ev, function () { if (f.value || f.hasAttribute("aria-invalid")) showError(f, fieldError(f)); });
+      f.addEventListener("input", function () { if (f.hasAttribute("aria-invalid")) showError(f, fieldError(f)); });
+    });
+    // Dates cannot be in the past
+    var today = new Date(); today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
+    $all('input[type="date"]', form).forEach(function (d) { d.min = today.toISOString().slice(0, 10); });
+  }
+  function formData(form) {
+    var out = {};
+    $all("input, select, textarea", form).forEach(function (f) {
+      if (!f.name || f.type === "hidden" || f.name === "botcheck") return;
+      var label = form.querySelector('label[for="' + f.id + '"]');
+      var val = f.tagName === "SELECT" && f.selectedIndex >= 0 ? f.options[f.selectedIndex].text : f.value;
+      out[f.name] = { label: label ? label.textContent.replace(/\*/g, "").trim() : f.name, value: (val || "").trim() };
+    });
+    return out;
+  }
+
+  /* ---------- reveal on scroll ---------- */
+  function reveal() {
+    var els = $all("[data-reveal]");
+    if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      els.forEach(function (e) { e.classList.add("is-in"); }); return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("is-in"); io.unobserve(en.target); } });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+    els.forEach(function (e) { io.observe(e); });
+  }
+
+  /* ---------- boot ---------- */
+  function boot() {
+    snapshot();
+    bindConfig();
+    buildSwitchers();
+    bindWhatsApp();
+    loadPhotos();
+    apply(initialLang());
+    reveal();
+    analytics();
+    document.documentElement.classList.add("js-ready");
+  }
+
+  window.WPM = {
+    config: CFG, addStrings: addStrings, t: t, apply: apply, lang: function () { return current; },
+    toast: toast, validateForm: validateForm, liveValidate: liveValidate, formData: formData,
+    waLink: waLink, loadPhotos: loadPhotos, $all: $all, boot: boot
+  };
+})();
+
+</script>
+<script>
+/* ==========================================================================
+   WEBSPROMAKERS — Motor común de las demos
+   - Textos comunes en 4 idiomas
+   - Modal "esto es una demo" (WhatsApp, redes, llamadas, formularios)
+   - Pestañas, filtros, galería, menú móvil
+   Cada demo registra su propio contenido con DEMO.onRender(fn)
+   ========================================================================== */
+(function () {
+  "use strict";
+  var W = window.WPM, add = W.addStrings, t = W.t, $all = W.$all;
+
+  add("en", {
+    "demo.banner": "Concept demo by WebsProMakers · Fictitious business",
+    "demo.back": "Back to WebsProMakers",
+    "demo.isDemo": "Demo",
+    "demo.title.wa": "WhatsApp",
+    "demo.title.form": "Request ready",
+    "demo.title.social": "Social media",
+    "demo.title.call": "Phone call",
+    "demo.title.email": "Email",
+    "demo.wa": "On a real website, this button opens WhatsApp with the business and this message ready to send:",
+    "demo.social": "On a real website, this icon opens the business’s social media profile.",
+    "demo.call": "On a real website, this button calls the business directly with one tap.",
+    "demo.email": "On a real website, this opens an email to the business.",
+    "demo.form": "This is a demo, so nothing has been sent. On a real website, the business would receive this request by email or WhatsApp:",
+    "demo.cta": "Would you like this for your business?",
+    "demo.ctaBtn": "Talk to WebsProMakers",
+    "demo.close": "Close",
+    "demo.menu": "Menu",
+    "demo.mapNote": "The map shows the area. This business is fictitious.",
+    "demo.samplePrices": "Sample prices for demonstration.",
+    "demo.openMaps": "Open in Google Maps",
+    "f.name": "Name", "f.phone": "Phone / WhatsApp", "f.email": "Email", "f.date": "Date", "f.time": "Time", "f.guests": "Guests",
+    "f.message": "Message (optional)", "f.checkin": "Check-in", "f.checkout": "Check-out", "f.room": "Room type", "f.choose": "Choose…",
+    "f.adults": "Adults", "f.children": "Children", "f.tour": "Tour", "f.hotel": "Hotel for pick-up (optional)",
+    "val.required": "Please fill in this field.", "val.select": "Please choose an option.", "val.email": "Please enter a valid email address.",
+    "val.phone": "Please enter a valid phone number, e.g. +60 12 345 6789.", "val.number": "Please enter a valid number.",
+    "val.date": "Please choose a date from today onwards.", "val.after": "This date must be after the first one.", "val.short": "Please write a little more."
+  });
+  add("ms", {
+    "demo.banner": "Demo konsep oleh WebsProMakers · Perniagaan rekaan",
+    "demo.back": "Kembali ke WebsProMakers", "demo.isDemo": "Demo",
+    "demo.title.wa": "WhatsApp", "demo.title.form": "Permintaan sedia", "demo.title.social": "Media sosial", "demo.title.call": "Panggilan telefon", "demo.title.email": "E-mel",
+    "demo.wa": "Di laman web sebenar, butang ini membuka WhatsApp dengan perniagaan dan mesej ini sedia untuk dihantar:",
+    "demo.social": "Di laman web sebenar, ikon ini membuka profil media sosial perniagaan.",
+    "demo.call": "Di laman web sebenar, butang ini terus menghubungi perniagaan dengan satu sentuhan.",
+    "demo.email": "Di laman web sebenar, ini membuka e-mel kepada perniagaan.",
+    "demo.form": "Ini ialah demo, jadi tiada apa-apa dihantar. Di laman web sebenar, perniagaan akan menerima permintaan ini melalui e-mel atau WhatsApp:",
+    "demo.cta": "Mahukan ini untuk perniagaan anda?", "demo.ctaBtn": "Hubungi WebsProMakers", "demo.close": "Tutup", "demo.menu": "Menu",
+    "demo.mapNote": "Peta menunjukkan kawasan. Perniagaan ini rekaan.", "demo.samplePrices": "Harga contoh untuk demonstrasi.", "demo.openMaps": "Buka di Google Maps",
+    "f.name": "Nama", "f.phone": "Telefon / WhatsApp", "f.email": "E-mel", "f.date": "Tarikh", "f.time": "Masa", "f.guests": "Tetamu",
+    "f.message": "Mesej (pilihan)", "f.checkin": "Daftar masuk", "f.checkout": "Daftar keluar", "f.room": "Jenis bilik", "f.choose": "Pilih…",
+    "f.adults": "Dewasa", "f.children": "Kanak-kanak", "f.tour": "Lawatan", "f.hotel": "Hotel untuk dijemput (pilihan)",
+    "val.required": "Sila isi ruangan ini.", "val.select": "Sila pilih satu pilihan.", "val.email": "Sila masukkan alamat e-mel yang sah.",
+    "val.phone": "Sila masukkan nombor telefon yang sah, cth. +60 12 345 6789.", "val.number": "Sila masukkan nombor yang sah.",
+    "val.date": "Sila pilih tarikh mulai hari ini.", "val.after": "Tarikh ini mesti selepas tarikh pertama.", "val.short": "Sila tulis sedikit lagi."
+  });
+  add("es", {
+    "demo.banner": "Demo conceptual de WebsProMakers · Negocio ficticio",
+    "demo.back": "Volver a WebsProMakers", "demo.isDemo": "Demo",
+    "demo.title.wa": "WhatsApp", "demo.title.form": "Solicitud lista", "demo.title.social": "Redes sociales", "demo.title.call": "Llamada", "demo.title.email": "Email",
+    "demo.wa": "En una web real, este botón abre WhatsApp con el negocio y este mensaje listo para enviar:",
+    "demo.social": "En una web real, este icono abre el perfil del negocio en redes sociales.",
+    "demo.call": "En una web real, este botón llama al negocio con un solo toque.",
+    "demo.email": "En una web real, esto abre un email dirigido al negocio.",
+    "demo.form": "Esto es una demo, así que no se ha enviado nada. En una web real, el negocio recibiría esta solicitud por email o WhatsApp:",
+    "demo.cta": "¿Quieres esto para tu negocio?", "demo.ctaBtn": "Habla con WebsProMakers", "demo.close": "Cerrar", "demo.menu": "Menú",
+    "demo.mapNote": "El mapa muestra la zona. Este negocio es ficticio.", "demo.samplePrices": "Precios de ejemplo para la demostración.", "demo.openMaps": "Abrir en Google Maps",
+    "f.name": "Nombre", "f.phone": "Teléfono / WhatsApp", "f.email": "Email", "f.date": "Fecha", "f.time": "Hora", "f.guests": "Personas",
+    "f.message": "Mensaje (opcional)", "f.checkin": "Entrada", "f.checkout": "Salida", "f.room": "Tipo de habitación", "f.choose": "Elige…",
+    "f.adults": "Adultos", "f.children": "Niños", "f.tour": "Excursión", "f.hotel": "Hotel de recogida (opcional)",
+    "val.required": "Rellena este campo.", "val.select": "Elige una opción.", "val.email": "Introduce un email válido.",
+    "val.phone": "Introduce un teléfono válido, p. ej. +60 12 345 6789.", "val.number": "Introduce un número válido.",
+    "val.date": "Elige una fecha a partir de hoy.", "val.after": "Esta fecha debe ser posterior a la primera.", "val.short": "Escribe un poco más, por favor."
+  });
+  add("zh", {
+    "demo.banner": "WebsProMakers 概念演示 · 虚构商家",
+    "demo.back": "返回 WebsProMakers", "demo.isDemo": "演示",
+    "demo.title.wa": "WhatsApp", "demo.title.form": "申请已生成", "demo.title.social": "社交媒体", "demo.title.call": "电话", "demo.title.email": "电子邮件",
+    "demo.wa": "在真实网站上，此按钮会打开与商家的 WhatsApp 对话，并附上这条待发送的消息：",
+    "demo.social": "在真实网站上，此图标会打开商家的社交媒体主页。",
+    "demo.call": "在真实网站上，此按钮可一键直接拨打商家电话。",
+    "demo.email": "在真实网站上，这会打开发给商家的电子邮件。",
+    "demo.form": "这是演示，因此没有发送任何内容。在真实网站上，商家会通过电子邮件或 WhatsApp 收到以下申请：",
+    "demo.cta": "想为您的生意也做一个吗？", "demo.ctaBtn": "联系 WebsProMakers", "demo.close": "关闭", "demo.menu": "菜单",
+    "demo.mapNote": "地图显示的是所在区域。此商家为虚构。", "demo.samplePrices": "价格仅为演示示例。", "demo.openMaps": "在 Google 地图中打开",
+    "f.name": "姓名", "f.phone": "电话 / WhatsApp", "f.email": "电子邮箱", "f.date": "日期", "f.time": "时间", "f.guests": "人数",
+    "f.message": "留言（选填）", "f.checkin": "入住", "f.checkout": "退房", "f.room": "房型", "f.choose": "请选择…",
+    "f.adults": "成人", "f.children": "儿童", "f.tour": "行程", "f.hotel": "接送酒店（选填）",
+    "val.required": "请填写此项。", "val.select": "请选择一个选项。", "val.email": "请输入有效的电子邮箱。",
+    "val.phone": "请输入有效的电话号码，例如 +60 12 345 6789。", "val.number": "请输入有效的数字。",
+    "val.date": "请选择今天或之后的日期。", "val.after": "此日期必须晚于第一个日期。", "val.short": "请再多写一点。"
+  });
+
+  /* ---------- shared icon sprite ---------- */
+  var SPRITE = '<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>' +
+    '<symbol id="d-wa" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 2.2a9.6 9.6 0 0 0-8.3 14.5L2.3 21.8l5.3-1.4A9.6 9.6 0 1 0 12 2.2zm0 17.6a8 8 0 0 1-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3A8 8 0 1 1 12 19.8zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8.9c-.1.2-.3.2-.5.1-.7-.3-1.5-.7-2.1-1.3-.6-.6-1-1.2-1.3-1.8-.1-.2 0-.4.1-.5l.4-.5.3-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3 1 2.5c.1.2 1.6 2.5 4 3.5 1.5.6 2.1.7 2.8.6.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1l-.4-.3z"/></symbol>' +
+    '<symbol id="d-pin" viewBox="0 0 24 24"><path d="M12 21.5s-7-6.1-7-11.2a7 7 0 0 1 14 0c0 5.1-7 11.2-7 11.2z"/><circle cx="12" cy="10.2" r="2.5"/></symbol>' +
+    '<symbol id="d-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3.2 2"/></symbol>' +
+    '<symbol id="d-call" viewBox="0 0 24 24"><path d="M5 3h3.5l2 5L8 9.5a11 11 0 0 0 6.5 6.5L16 13.5l5 2V19a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></symbol>' +
+    '<symbol id="d-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></symbol>' +
+    '<symbol id="d-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>' +
+    '<symbol id="d-fb" viewBox="0 0 24 24"><path d="M15 3h-2.5A3.5 3.5 0 0 0 9 6.5V10H6.5v3.5H9V21h3.5v-7.5H15l.5-3.5h-3V7a1 1 0 0 1 1-1H15z"/></symbol>' +
+    '<symbol id="d-tt" viewBox="0 0 24 24"><path d="M14 3v11.5a3.5 3.5 0 1 1-3-3.46M14 3c.5 2.5 2.3 4.2 5 4.5"/></symbol>' +
+    '<symbol id="d-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.6 2.8 3.9 6 3.9 9.5s-1.3 6.7-3.9 9.5c-2.6-2.8-3.9-6-3.9-9.5s1.3-6.7 3.9-9.5z"/></symbol>' +
+    '<symbol id="d-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>' +
+    '<symbol id="d-back" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>' +
+    '<symbol id="d-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>' +
+    '<symbol id="d-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.6a3.5 3.5 0 0 1 0 6.8M21.5 20a6.5 6.5 0 0 0-4-6"/></symbol>' +
+    '<symbol id="d-size" viewBox="0 0 24 24"><path d="M4 9V4h5M20 15v5h-5M4 4l6 6M20 20l-6-6"/></symbol>' +
+    '<symbol id="d-bed" viewBox="0 0 24 24"><path d="M3 5v14M3 14h18v5M21 14v-2.5A3.5 3.5 0 0 0 17.5 8H11v6"/><circle cx="7" cy="10.5" r="2"/></symbol>' +
+    '<symbol id="d-pool" viewBox="0 0 24 24"><path d="M2 18c2 0 2-1.5 4-1.5S8 18 10 18s2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5M8 14V5a2 2 0 0 1 4 0M16 14V5a2 2 0 0 0-4 0M8 9h8"/></symbol>' +
+    '<symbol id="d-coffee" viewBox="0 0 24 24"><path d="M4 9h13v4a6 6 0 0 1-6 6h-1a6 6 0 0 1-6-6zM17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 3v3M12 3v3"/></symbol>' +
+    '<symbol id="d-wifi" viewBox="0 0 24 24"><path d="M2 8.5a15 15 0 0 1 20 0M5.5 12a10 10 0 0 1 13 0M9 15.5a5 5 0 0 1 6 0M12 19h.01"/></symbol>' +
+    '<symbol id="d-car" viewBox="0 0 24 24"><path d="M5 16V11l2-5h10l2 5v5M3 16h18v3h-3v-3M6 19v-3"/><circle cx="7.5" cy="13" r=".8"/><circle cx="16.5" cy="13" r=".8"/></symbol>' +
+    '<symbol id="d-spa" viewBox="0 0 24 24"><path d="M12 21c-5 0-8-3-8-7 3 0 6 1.5 8 4 2-2.5 5-4 8-4 0 4-3 7-8 7zM12 18c-2-3-2-7 0-10 2 3 2 7 0 10z"/></symbol>' +
+    '<symbol id="d-bike" viewBox="0 0 24 24"><circle cx="6" cy="16" r="3.5"/><circle cx="18" cy="16" r="3.5"/><path d="M6 16l4-8h5l3 8M10 8 8.5 5H6M12.5 16 15 8"/></symbol>' +
+    '<symbol id="d-broom" viewBox="0 0 24 24"><path d="M14 4l6 6M12 6l6 6-7 7a3 3 0 0 1-4 0l-2-2a3 3 0 0 1 0-4z"/></symbol>' +
+    '<symbol id="d-map" viewBox="0 0 24 24"><path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/></symbol>' +
+    '<symbol id="d-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>' +
+    '<symbol id="d-shield" viewBox="0 0 24 24"><path d="M12 3 20 6v6c0 5-3.4 8-8 9-4.6-1-8-4-8-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>' +
+    '<symbol id="d-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1 13H6zM9 8V6a3 3 0 0 1 6 0v2"/></symbol>' +
+    '<symbol id="d-leaf" viewBox="0 0 24 24"><path d="M5 19c0-9 6-14 15-14 0 9-5 15-14 15M5 19l8-8"/></symbol>' +
+    '<symbol id="d-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>' +
+    '</defs></svg>';
+
+  /* ---------- helpers ---------- */
+  function L(o) { if (o == null) return ""; if (typeof o === "string") return o; return o[W.lang()] || o.en || ""; }
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  var renderers = [];
+
+  /* ---------- modal ---------- */
+  var lastFocus;
+  function modal(kind, body, isMsg) {
+    close();
+    lastFocus = document.activeElement;
+    var m = document.createElement("div");
+    m.className = "d-modal"; m.setAttribute("role", "dialog"); m.setAttribute("aria-modal", "true"); m.setAttribute("aria-labelledby", "d-modal-title");
+    m.innerHTML = '<div class="d-modal-card"><h2 id="d-modal-title">' + esc(t("demo.title." + kind)) + " <span>" + esc(t("demo.isDemo")) + "</span></h2>" +
+      "<p>" + esc(t("demo." + kind)) + "</p>" +
+      (body ? '<div class="d-modal-msg' + (isMsg ? "" : " plain") + '">' + esc(body) + "</div>" : "") +
+      '<div class="d-modal-actions"><small>' + esc(t("demo.cta")) + '</small><a class="d-btn" href="' + 'https://webspromakers-site.pages.dev/#contact" target="_blank" rel="noopener">' + esc(t("demo.ctaBtn")) + '</a><button type="button" class="d-btn d-btn--ghost" data-close>' + esc(t("demo.close")) + "</button></div></div>";
+    document.body.appendChild(m);
+    requestAnimationFrame(function () { m.classList.add("is-open"); });
+    m.addEventListener("click", function (e) { if (e.target === m || e.target.hasAttribute("data-close")) close(); });
+    m.querySelector("[data-close]").focus();
+  }
+  function close() {
+    var m = document.querySelector(".d-modal, .d-lightbox");
+    if (m) { m.remove(); if (lastFocus) lastFocus.focus(); }
+  }
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+
+  /* ---------- delegated actions ---------- */
+  document.addEventListener("click", function (e) {
+    var el = e.target.closest("[data-demo]");
+    if (el) {
+      e.preventDefault();
+      var kind = el.getAttribute("data-demo");
+      var text = el.getAttribute("data-demo-text") || (el.getAttribute("data-demo-msg") ? t(el.getAttribute("data-demo-msg")) : "");
+      modal(kind, text, kind === "wa");
+      return;
+    }
+    var img = e.target.closest("[data-lightbox] img");
+    if (img && !img.classList.contains("is-missing")) {
+      lastFocus = document.activeElement;
+      var lb = document.createElement("div");
+      lb.className = "d-lightbox"; lb.setAttribute("role", "dialog"); lb.setAttribute("aria-modal", "true");
+      var src = img.currentSrc || img.src;
+      lb.innerHTML = '<img alt=""><button type="button" aria-label="' + esc(t("demo.close")) + '">×</button>';
+      lb.querySelector("img").src = src.replace(/w=\d+/, "w=1600");
+      lb.querySelector("img").alt = img.alt;
+      lb.addEventListener("click", close);
+      document.body.appendChild(lb);
+      lb.querySelector("button").focus();
+    }
+  });
+
+  /* ---------- forms ---------- */
+  function bindForms() {
+    $all("form[data-demo-form]").forEach(function (form) {
+      W.liveValidate(form);
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (!W.validateForm(form)) return;
+        var data = W.formData(form);
+        var lines = Object.keys(data).filter(function (k) { return data[k].value; }).map(function (k) { return data[k].label + ": " + data[k].value; });
+        modal("form", lines.join("\n"), false);
+      });
+    });
+  }
+
+  /* ---------- tabs & filters ---------- */
+  function bindTabs() {
+    $all("[data-tabs]").forEach(function (box) {
+      var btns = $all("[data-tab]", box);
+      function show(id) {
+        btns.forEach(function (b) { var on = b.getAttribute("data-tab") === id; b.setAttribute("aria-selected", on ? "true" : "false"); b.tabIndex = on ? 0 : -1; });
+        $all("[data-panel]", box).forEach(function (p) { p.hidden = p.getAttribute("data-panel") !== id; });
+      }
+      btns.forEach(function (b, i) {
+        b.addEventListener("click", function () { show(b.getAttribute("data-tab")); });
+        b.addEventListener("keydown", function (e) {
+          if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+          var n = btns[(i + (e.key === "ArrowRight" ? 1 : btns.length - 1)) % btns.length];
+          n.focus(); n.click();
+        });
+      });
+      if (btns[0]) show(btns[0].getAttribute("data-tab"));
+    });
+  }
+
+  /* ---------- header & mobile nav ---------- */
+  function bindNav() {
+    var header = document.querySelector("[data-demo-header]");
+    var burger = document.querySelector(".d-burger");
+    if (header) {
+      var onS = function () { header.classList.toggle("is-scrolled", window.scrollY > 30); };
+      onS(); window.addEventListener("scroll", onS, { passive: true });
+    }
+    if (burger) {
+      burger.addEventListener("click", function () {
+        var open = !document.body.classList.contains("nav-open");
+        document.body.classList.toggle("nav-open", open);
+        burger.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+      $all("[data-demo-nav] a").forEach(function (a) { a.addEventListener("click", function () { document.body.classList.remove("nav-open"); burger.setAttribute("aria-expanded", "false"); }); });
+    }
+  }
+
+  function renderAll() { renderers.forEach(function (fn) { fn(W.lang()); }); W.loadPhotos(); }
+
+  function start() {
+    document.body.insertAdjacentHTML("afterbegin", SPRITE);
+    renderAll();           // first render in default language so the English snapshot is complete
+    W.boot();              // translations, photos, language switcher
+    bindForms(); bindTabs(); bindNav();
+    document.addEventListener("wpm:lang", renderAll);
+    renderAll();
+  }
+
+  window.DEMO = {
+    L: L, esc: esc, modal: modal,
+    onRender: function (fn) { renderers.push(fn); },
+    rebindForms: bindForms
+  };
+  if (document.readyState === "complete") start(); else document.addEventListener("DOMContentLoaded", start);
+})();
+
+</script>
+<script>
+/* ==========================================================================
+   WEBSPROMAKERS — Propuestas para negocios reales (común a /propuestas/*)
+   - Fotos extra (Unsplash, licencia gratuita)
+   - Textos comunes en árabe (ar) e hindi (hi)
+   - Banner "propuesta, no es la web oficial" con el nombre del negocio
+   - Dirección derecha-izquierda (RTL) para árabe
+   Se carga DESPUÉS de demo.js y ANTES del data.js de cada propuesta.
+   ========================================================================== */
+(function () {
+  "use strict";
+  var W = window.WPM, add = W.addStrings;
+
+  /* ---------- fotos extra ---------- */
+  var P = window.WPM_PHOTOS = window.WPM_PHOTOS || {};
+  var extra = {
+    // India / Punjab
+    "pk-hero": "u:1772730065344-4cf131b39951", "pk-butter": "u:1603894584373-5ac82b2ae398",
+    "pk-biryani": "u:1782541370275-6761522e39d1", "pk-biryani2": "u:1589302168068-964664d93dc0",
+    "pk-tandoor": "u:1763951718950-c536b1295213", "pk-tikka": "u:1762922425226-8cfe6987e7b0",
+    "pk-thali": "u:1767114915989-c6ab3c8fc42e", "pk-dal": "u:1585937421612-70a008356fbe",
+    "pk-roti": "u:1565557623262-b51c2513a641", "pk-kebab": "u:1781332146555-5507a0fc9bc9",
+    "pk-paneer": "u:1631452180519-c014fe946bc7", "pk-table": "u:1728910156510-77488f19b152",
+    // Siria / Oriente Medio
+    "sy-mezze": "u:1767114915974-3481fa23cbb0", "sy-hummus": "u:1697126248475-a537cc5cce28",
+    "sy-hummus2": "u:1783696072732-2ff5cec23b08", "sy-baba": "u:1771574206132-74f127909c02",
+    "sy-falafel": "u:1593001872095-7d5b3868fb1d", "sy-falafel2": "u:1786174045076-1cd880429ef1",
+    "sy-shawarma": "u:1529006557810-274b9b2fc783", "sy-shawarma-spit": "u:1530469912745-a215c6b256ea",
+    "sy-wrap": "u:1760888548893-bc2f7e09e972", "sy-grill": "u:1555939594-58d7cb561ad1",
+    "sy-kebab": "u:1603360946369-dc9bb6258143", "sy-kibbeh": "u:1786174044931-d395bf77e58e",
+    "sy-baklava": "u:1761828122856-8703baac8e86", "sy-kunafa": "u:1778447812923-88a9e3e6b567",
+    "sy-dips": "u:1783455442171-16dbde079c53", "sy-lanterns": "u:1589371315231-096e33e8c55e",
+    "sy-room": "u:1763811939095-09bd3e83ba0d",
+    // Desayuno mediterráneo / café
+    "bc-breakfast": "u:1759216279330-c5a83a0a1ebe", "bc-shakshuka": "u:1757972367454-b79cbe99a253",
+    "bc-shakshuka2": "u:1759493785939-0bd3e3d60682", "bc-turkish": "u:1768566108481-27e72362c174",
+    "bc-coconut": "u:1537191072641-5e19cc173c6a", "bc-coconut2": "u:1620752420341-4cd7642568dd",
+    "bc-palms": "u:1570533459920-076b827c7b69",
+    // Barbería
+    "bb-shop": "u:1585747860715-2ba37e788b70", "bb-chair": "u:1621645582931-d1d3e6564943",
+    "bb-cut": "u:1647140655214-e4a2d914971f", "bb-razor": "u:1599351431202-1e0f0137899a",
+    "bb-dry": "u:1605497788044-5a32c7078486", "bb-tools": "u:1621605815971-fbc98d665033",
+    "bb-beard": "u:1599011176306-4a96f1516d4d", "bb-fade": "u:1593702275687-f8b402bf1fb5",
+    "bb-sit": "u:1503951914875-452162b0f3f1", "bb-gloves": "u:1783908688260-0c47404926f3",
+    "bb-interior": "u:1781455793310-8427c96454c7",
+    // Jet ski / islas
+    "js-hero": "u:1787142948486-e8022174270e", "js-ride": "u:1505867798796-639ec7e8cdf5",
+    "js-woman": "u:1764056230965-570f10082acc", "js-two": "u:1554132267-d06483b00adc",
+    "js-sunset": "u:1768463852042-656c293ce22f", "js-fleet": "u:1524061508355-90afbf7fcf03",
+    "js-aerial": "u:1715178724773-a243cfbc2e9e", "js-island": "u:1771601795534-8a07e8bf4ae4",
+    "js-karst": "u:1764187808299-f3e5dfdf09ef", "js-eagle": "u:1583316369024-8a4eb52ec261",
+    "js-mangrove": "u:1589556183130-530470785fab", "js-view": "u:1647878872662-50d50c74d40e",
+    "js-beach": "u:1591251010190-43c22baa46b0"
+  };
+  for (var k in extra) P[k] = extra[k];
+
+  /* ---------- textos comunes: árabe ---------- */
+  add("ar", {
+    "demo.back": "العودة إلى WebsProMakers", "demo.isDemo": "عرض تجريبي",
+    "demo.title.wa": "واتساب", "demo.title.form": "الطلب جاهز", "demo.title.social": "وسائل التواصل", "demo.title.call": "اتصال هاتفي", "demo.title.email": "البريد الإلكتروني",
+    "demo.wa": "في الموقع الحقيقي، يفتح هذا الزر واتساب مع النشاط التجاري وهذه الرسالة جاهزة للإرسال:",
+    "demo.social": "في الموقع الحقيقي، تفتح هذه الأيقونة حساب النشاط على وسائل التواصل.",
+    "demo.call": "في الموقع الحقيقي، يتصل هذا الزر بالنشاط مباشرة بلمسة واحدة.",
+    "demo.email": "في الموقع الحقيقي، يفتح هذا رسالة بريد إلكتروني إلى النشاط.",
+    "demo.form": "هذا عرض تجريبي، لذلك لم يُرسل شيء. في الموقع الحقيقي، يستلم النشاط هذا الطلب عبر البريد أو واتساب:",
+    "demo.cta": "هل تريد هذا لنشاطك التجاري؟", "demo.ctaBtn": "تواصل مع WebsProMakers", "demo.close": "إغلاق", "demo.menu": "القائمة",
+    "demo.openMaps": "افتح في خرائط Google",
+    "f.name": "الاسم", "f.phone": "الهاتف / واتساب", "f.email": "البريد الإلكتروني", "f.date": "التاريخ", "f.time": "الوقت", "f.guests": "عدد الأشخاص",
+    "f.message": "رسالة (اختياري)", "f.choose": "اختر…", "f.adults": "البالغون", "f.children": "الأطفال", "f.tour": "الجولة", "f.hotel": "الفندق (اختياري)",
+    "val.required": "يرجى ملء هذا الحقل.", "val.select": "يرجى اختيار خيار.", "val.email": "يرجى إدخال بريد إلكتروني صحيح.",
+    "val.phone": "يرجى إدخال رقم هاتف صحيح، مثل ‎+60 12 345 6789.", "val.number": "يرجى إدخال رقم صحيح.",
+    "val.date": "يرجى اختيار تاريخ من اليوم فصاعدًا.", "val.after": "يجب أن يكون هذا التاريخ بعد التاريخ الأول.", "val.short": "يرجى كتابة المزيد قليلًا."
+  });
+  /* ---------- textos comunes: hindi ---------- */
+  add("hi", {
+    "demo.back": "WebsProMakers पर वापस जाएँ", "demo.isDemo": "डेमो",
+    "demo.title.wa": "WhatsApp", "demo.title.form": "अनुरोध तैयार", "demo.title.social": "सोशल मीडिया", "demo.title.call": "फ़ोन कॉल", "demo.title.email": "ईमेल",
+    "demo.wa": "असली वेबसाइट पर यह बटन बिज़नेस के साथ WhatsApp खोलता है, यह संदेश भेजने के लिए तैयार रहता है:",
+    "demo.social": "असली वेबसाइट पर यह आइकन बिज़नेस का सोशल मीडिया प्रोफ़ाइल खोलता है।",
+    "demo.call": "असली वेबसाइट पर यह बटन एक टैप में बिज़नेस को कॉल करता है।",
+    "demo.email": "असली वेबसाइट पर यह बिज़नेस को ईमेल खोलता है।",
+    "demo.form": "यह डेमो है, इसलिए कुछ भी नहीं भेजा गया। असली वेबसाइट पर बिज़नेस को यह अनुरोध ईमेल या WhatsApp पर मिलेगा:",
+    "demo.cta": "क्या आप अपने बिज़नेस के लिए यह चाहते हैं?", "demo.ctaBtn": "WebsProMakers से बात करें", "demo.close": "बंद करें", "demo.menu": "मेन्यू",
+    "demo.openMaps": "Google Maps में खोलें",
+    "f.name": "नाम", "f.phone": "फ़ोन / WhatsApp", "f.email": "ईमेल", "f.date": "तारीख़", "f.time": "समय", "f.guests": "लोग",
+    "f.message": "संदेश (वैकल्पिक)", "f.choose": "चुनें…", "f.adults": "वयस्क", "f.children": "बच्चे", "f.tour": "टूर", "f.hotel": "होटल (वैकल्पिक)",
+    "val.required": "कृपया यह भरें।", "val.select": "कृपया एक विकल्प चुनें।", "val.email": "कृपया सही ईमेल लिखें।",
+    "val.phone": "कृपया सही फ़ोन नंबर लिखें, जैसे +60 12 345 6789।", "val.number": "कृपया सही संख्या लिखें।",
+    "val.date": "कृपया आज या उसके बाद की तारीख़ चुनें।", "val.after": "यह तारीख़ पहली तारीख़ के बाद होनी चाहिए।", "val.short": "कृपया थोड़ा और लिखें।"
+  });
+
+  /* ---------- banner y notas: propuesta para un negocio real ---------- */
+  var biz = document.body.getAttribute("data-biz") || "";
+  var BAN = {
+    en: "Website proposal for {b} by WebsProMakers · Not the official website",
+    ms: "Cadangan laman web untuk {b} oleh WebsProMakers · Bukan laman web rasmi",
+    es: "Propuesta de web para {b} de WebsProMakers · No es la web oficial",
+    zh: "WebsProMakers 为 {b} 制作的网站提案 · 非官方网站",
+    ar: "مقترح موقع إلكتروني لـ {b} من WebsProMakers · ليس الموقع الرسمي",
+    hi: "{b} के लिए WebsProMakers का वेबसाइट प्रस्ताव · यह आधिकारिक वेबसाइट नहीं है"
+  };
+  var MAP = { en: "Location from Google Maps.", ms: "Lokasi dari Google Maps.", es: "Ubicación según Google Maps.", zh: "位置来自 Google 地图。", ar: "الموقع من خرائط Google.", hi: "लोकेशन Google Maps से।" };
+  var PRICES = {
+    en: "Example prices: to be confirmed with the business.", ms: "Harga contoh: akan disahkan bersama perniagaan.", es: "Precios de ejemplo: a confirmar con el negocio.",
+    zh: "示例价格：以商家确认为准。", ar: "أسعار تقريبية: يؤكدها النشاط التجاري.", hi: "उदाहरण मूल्य: बिज़नेस से पुष्टि होना बाकी।"
+  };
+  Object.keys(BAN).forEach(function (l) {
+    var o = {}; o["demo.banner"] = BAN[l].replace("{b}", biz); o["demo.mapNote"] = MAP[l]; o["demo.samplePrices"] = PRICES[l];
+    add(l, o);
+  });
+
+  /* ---------- RTL para árabe ---------- */
+  function dir(e) { var l = (e && e.detail && e.detail.lang) || W.lang(); document.documentElement.dir = l === "ar" ? "rtl" : "ltr"; }
+  document.addEventListener("wpm:lang", dir);
+})();
+
+</script>
+<script>
+/* FOTOS DE ZHONG HUA LOU — guarda las fotos reales en fotos/ con EXACTAMENTE estos nombres (jpg). */
+window.PP_FOTOS = {
+ "zhl-hero": [
+  "fotos/sala.jpg",
+  "rest-interior"
+ ],
+ "zhl-round": [
+  "fotos/mero-al-vapor.jpg",
+  "food-plate"
+ ],
+ "zhl-about1": [
+  "fotos/mesa-redonda.jpg",
+  "rest-dining"
+ ],
+ "zhl-about2": [
+  "fotos/gambas-assam.jpg",
+  "food-curry"
+ ],
+ "zhl-about3": [
+  "fotos/sopa-almejas.jpg",
+  "food-bowl"
+ ],
+ "zhl-book": [
+  "fotos/mesa-familia.jpg",
+  "rest-table"
+ ],
+ "zhl-qr": [
+  "fotos/sala.jpg",
+  "rest-interior"
+ ],
+ "zhl-grouper": [
+  "fotos/mero-al-vapor.jpg",
+  "food-plate"
+ ],
+ "zhl-thai": [
+  "fotos/filete-thai.jpg",
+  ""
+ ],
+ "zhl-assam": [
+  "fotos/gambas-assam.jpg",
+  "food-curry"
+ ],
+ "zhl-lala": [
+  "fotos/sopa-almejas.jpg",
+  "food-bowl"
+ ],
+ "zhl-oyster": [
+  "fotos/tortilla-ostras.jpg",
+  ""
+ ],
+ "zhl-noodles": [
+  "fotos/singapore-noodles.jpg",
+  "food-noodles"
+ ],
+ "zhl-rice": [
+  "fotos/arroz-frito.jpg",
+  ""
+ ]
+};
+
+</script>
+<script>
+/* Huecos de foto con las fotos reales del negocio (Google Maps / las que os dé el dueño).
+   Cada demo tiene su fotos.js:  window.PP_FOTOS = { "clave": ["fotos/archivo.jpg", "foto-de-reserva"] }
+   1) Si existe fotos/archivo.jpg, se usa.
+   2) Si no existe y hay foto de reserva (clave de photos.js / common.js), se usa la de reserva.
+   3) Si no hay ninguna, se ve un hueco con el nombre de la foto que va ahí. */
+(function () {
+  "use strict";
+  var F = window.PP_FOTOS || {}, P = window.WPM_PHOTOS = window.WPM_PHOTOS || {}, STOCK = {};
+  var me = document.currentScript, ROOT = me ? me.src.replace(/pp\/slots\.js(\?.*)?$/, "") : "";
+  Object.keys(F).forEach(function (k) {
+    if (P[k] && !STOCK[k]) STOCK[k] = P[k];
+    P[k] = /^(https?:|\/)/.test(F[k][0]) ? F[k][0] : ROOT + F[k][0];
+  });
+  function stockUrl(key, w) {
+    var v = STOCK[key] || P[key];
+    if (!v || v.indexOf("u:") !== 0) return v || "";
+    return "https://images.unsplash.com/photo-" + v.slice(2) + "?auto=format&fit=crop&w=" + w + "&q=70";
+  }
+  function label(img) {
+    img.classList.add("is-missing");
+    var ph = img.closest(".ph");
+    if (ph) ph.setAttribute("data-ph-label", img.getAttribute("alt") || "Photo");
+  }
+  function fail(img) {
+    var key = img.getAttribute("data-photo"), slot = F[key];
+    if (!slot) return;
+    var fb = slot[1];
+    if (fb && !img.getAttribute("data-fb")) {
+      var w = parseInt(img.getAttribute("data-w") || "800", 10), url = fb.indexOf("u:") === 0 ? "https://images.unsplash.com/photo-" + fb.slice(2) + "?auto=format&fit=crop&w=" + w + "&q=70" : stockUrl(fb, w);
+      if (url) {
+        img.setAttribute("data-fb", "1");
+        img.removeAttribute("srcset");
+        setTimeout(function () { img.classList.remove("is-missing"); img.src = url; }, 0);
+        return;
+      }
+    }
+    label(img);
+  }
+  document.addEventListener("error", function (e) {
+    var img = e.target;
+    if (img && img.tagName === "IMG" && img.hasAttribute("data-photo")) fail(img);
+  }, true);
+  function relabel() {
+    Array.prototype.forEach.call(document.querySelectorAll(".ph[data-ph-label] img"), function (img) {
+      img.closest(".ph").setAttribute("data-ph-label", img.getAttribute("alt") || "Photo");
+    });
+  }
+  document.addEventListener("wpm:lang", function () { setTimeout(relabel, 40); });
+})();
+
+</script>
+<script>
+/* Carta con pestañas para las propuestas (web + carta QR).
+   Datos: window.PP_MENU = [{ id, name:{en,..}, items:[{ n, p, photo, tag, d:{en,..} }] }]
+   n puede ser texto o un objeto por idioma. p = precio en RM (número o texto). */
+(function () {
+  var TAGS = {
+    pop: { en: "Popular", ms: "Popular", es: "Popular", zh: "人气", ar: "الأكثر طلبًا", hi: "लोकप्रिय" },
+    rev: { en: "Mentioned in reviews", ms: "Disebut dalam ulasan", es: "Citado en reseñas", zh: "评价常提及", ar: "مذكور في التقييمات", hi: "रिव्यू में ज़िक्र" },
+    veg: { en: "Vegetarian", ms: "Vegetarian", es: "Vegetariano", zh: "素食", ar: "نباتي", hi: "शाकाहारी" },
+    vegan: { en: "Vegan", ms: "Vegan", es: "Vegano", zh: "纯素", ar: "نباتي صرف", hi: "वीगन" },
+    spicy: { en: "Spicy", ms: "Pedas", es: "Picante", zh: "辣", ar: "حار", hi: "तीखा" }
+  };
+  window.PP_renderMenu = function (root, opts) {
+    var D = window.DEMO, L = D.L, esc = D.esc, M = window.PP_MENU;
+    opts = opts || {};
+    var active = root.getAttribute("data-active") || M[0].id;
+    var cat = M.filter(function (c) { return c.id === active; })[0] || M[0];
+    root.innerHTML =
+      '<div class="m-tabs" role="tablist">' + M.map(function (c) {
+        return '<button type="button" role="tab" data-cat="' + c.id + '" aria-selected="' + (c.id === cat.id) + '">' + esc(L(c.name)) + "</button>";
+      }).join("") + "</div>" +
+      '<div class="m-list" role="tabpanel">' + cat.items.map(function (it) {
+        var name = L(it.n), tags = (it.tags || (it.tag ? [it.tag] : []));
+        return '<article class="m-item' + (it.photo ? "" : " no-photo") + '">' +
+          (it.photo ? '<div class="m-photo ph"><img data-photo="' + it.photo + '" data-w="' + (opts.w || 300) + '" alt="' + esc(name) + '"></div>' : "") +
+          '<div class="m-text"><h4>' + esc(name) + tags.map(function (t) { return ' <span class="m-tag m-tag--' + t + '">' + esc(L(TAGS[t])) + "</span>"; }).join("") + "</h4>" +
+          (it.d ? "<p>" + esc(L(it.d)) + "</p>" : "") + "</div>" +
+          (!it.p ? "" : /^[\d.,\s–-]+$/.test(String(it.p)) ? '<b class="m-price">RM ' + esc(it.p) + "</b>" : '<b class="m-price is-text">' + esc(L(it.p)) + "</b>") + "</article>";
+      }).join("") + "</div>";
+    if (!root._bound) {
+      root._bound = true;
+      root.addEventListener("click", function (e) {
+        var b = e.target.closest("[data-cat]");
+        if (!b) return;
+        root.setAttribute("data-active", b.getAttribute("data-cat"));
+        window.PP_renderMenu(root, opts);
+        window.WPM.loadPhotos(root);
+        var nb = root.querySelector('[data-cat="' + b.getAttribute("data-cat") + '"]');
+        nb && nb.focus();
+      });
+    }
+  };
+})();
+
+</script>
+<script>
+/* ZHONG HUA LOU — carta y traducciones. Datos: ficha de Google (4,1 · 678 reseñas; 12:00–15:30 y 17:30–22:30; +60 12-470 1593; No. 1, Pantai Tengah), Trip.com (marisco chino, decoración china rústica, mero), Wanderlog (filete de pescado estilo tailandés, gambas assam, tortilla de ostras, sopa de almejas lala; enfrente del PARKROYAL al final de la calle de Pantai Cenang; a mediodía hay menos gente) y reseñas de Google (pescado al vapor, Singapore noodles, familias). SIN PRECIOS publicados; los menús para 4 son una propuesta. */
+(function () {
+  var W = window.WPM, D = window.DEMO, add = W.addStrings;
+  var CLOSED = -1;
+  window.PP_MENU = [
+    { id: "fish", name: { en: "Fish", zh: "鱼", ms: "Ikan" }, items: [
+      { n: { en: "Steamed grouper", zh: "清蒸石斑鱼", ms: "Kerapu kukus" }, photo: "zhl-grouper", tags: ["rev", "pop"],
+        d: { en: "Hong Kong style with soy, ginger and spring onion. Priced by size.", zh: "港式清蒸，酱油、姜丝、葱。按大小计价。", ms: "Gaya Hong Kong dengan kicap, halia dan daun bawang. Harga ikut saiz." } },
+      { n: { en: "Thai-style fish fillet", zh: "泰式鱼片", ms: "Fillet ikan gaya Thai" }, photo: "zhl-thai", tags: ["rev"],
+        d: { en: "Tender fillets in a sweet, sour and spicy sauce.", zh: "鱼片嫩滑，酸甜微辣。", ms: "Fillet lembut dalam sos masam manis pedas." } }
+    ]},
+    { id: "seafood", name: { en: "Seafood", zh: "海鲜", ms: "Makanan laut" }, items: [
+      { n: { en: "Assam prawns", zh: "亚参虾", ms: "Udang asam" }, photo: "zhl-assam", tags: ["rev", "spicy"] },
+      { n: { en: "Lala clam soup", zh: "啦啦汤", ms: "Sup lala" }, photo: "zhl-lala", tags: ["rev", "pop"],
+        d: { en: "Clear soup with fresh clams. A favourite in the reviews.", zh: "鲜啦啦清汤，评价中的人气菜。", ms: "Sup jernih dengan lala segar. Kegemaran dalam ulasan." } },
+      { n: { en: "Oyster omelette", zh: "蚝煎", ms: "Telur dadar tiram" }, photo: "zhl-oyster" }
+    ]},
+    { id: "noodles", name: { en: "Rice & noodles", zh: "饭面", ms: "Nasi & mi" }, items: [
+      { n: { en: "Singapore noodles", zh: "星洲炒米粉", ms: "Bihun Singapura" }, photo: "zhl-noodles", tags: ["rev"] },
+      { n: { en: "Chinese fried rice", zh: "扬州炒饭", ms: "Nasi goreng Cina" }, photo: "zhl-rice" }
+    ]},
+    { id: "sets", name: { en: "Family sets", zh: "家庭套餐", ms: "Set keluarga" }, items: [
+      { n: { en: "Set for 4 people", zh: "四人套餐", ms: "Set untuk 4 orang" }, p: { en: "Ask", zh: "请询价", ms: "Tanya" },
+        d: { en: "Steamed fish, prawns, soup, vegetables and rice. Fixed price per table.", zh: "清蒸鱼、虾、汤、青菜和白饭，每桌固定价格。", ms: "Ikan kukus, udang, sup, sayur dan nasi. Harga tetap setiap meja." } },
+      { n: { en: "Set for 6–8 people", zh: "六至八人套餐", ms: "Set untuk 6–8 orang" }, p: { en: "Ask", zh: "请询价", ms: "Tanya" },
+        d: { en: "For a round table. Tell us if you prefer no spicy dishes.", zh: "适合圆桌。如不吃辣请告诉我们。", ms: "Untuk meja bulat. Beritahu jika tidak mahu pedas." } }
+    ]}
+  ];
+  add("en", {"z.wa.msg": "Hello Zhong Hua Lou! Table for 6 tonight at 7 pm, please. Can you keep a steamed grouper for us?", "mn.title": "Digital menu", "mn.sub": "Scan · Choose · Enjoy", "mn.site": "Restaurant website", "mn.allergy": "Please tell our staff about any allergies.", "mn.call": "Call a waiter", "mn.callMsg": "Demo: on the real menu, this button calls a waiter or opens WhatsApp."});
+  add("zh", {"z.meta": "中华楼海鲜餐厅 兰卡威 – 网站提案 | WebsProMakers", "z.metaDesc": "WebsProMakers 为 Pantai Tengah 中华楼制作的网站提案：中英文海鲜菜单、家庭套餐、二维码菜单、订位、营业时间和地图。", "z.nav.menu": "菜单", "z.nav.about": "关于我们", "z.nav.book": "订位", "z.nav.visit": "位置", "z.cta.book": "预订餐位", "z.hero.kicker": "中式海鲜餐厅 · 兰卡威 Pantai Tengah", "z.hero.title": "清蒸鱼、啦啦汤，<em>全家一起来。</em>", "z.hero.sub": "圆桌上的粤式海鲜：清蒸石斑、泰式鱼片、亚参虾、啦啦汤和星洲炒米粉。每天供应午餐和晚餐，位于 Pantai Cenang 商业街尽头。", "z.hero.menu": "查看菜单", "z.hero.rating": "Google 678 条评价 · 每天午餐和晚餐", "z.seal": "12:00 – 15:30 · 17:30 – 22:30", "z.altHero": "中华楼餐厅", "z.altRavioli": "清蒸石斑鱼", "z.strip.hours": "午餐 12:00 – 15:30 · 晚餐 17:30 – 22:30", "z.strip.family": "适合家庭和团体的圆桌", "z.strip.wine": "中英马三语菜单", "z.strip.terrace": "PARKROYAL 对面，Cenang 商业街尽头", "z.alt1": "餐厅里的圆桌", "z.alt2": "亚参虾", "z.alt3": "啦啦汤", "z.alt4": "家庭餐桌", "z.about.label": "关于我们", "z.about.title": "海边的一桌中国菜", "z.about.p": "中华楼在木质装潢、传统中式布置的餐厅里供应中式海鲜。家庭客和本地熟客常回来吃清蒸鱼、啦啦汤和星洲炒米粉。评价小贴士：午餐比晚餐人少。", "z.about.mostT": "评价中提及最多", "z.chip1": "清蒸石斑", "z.chip2": "泰式鱼片", "z.chip3": "啦啦汤", "z.chip4": "亚参虾", "z.chip5": "适合家庭", "z.menu.label": "菜单", "z.menu.title": "我们的菜单", "z.menu.qr": "餐桌上也提供二维码菜单：", "z.menu.qrLink": "打开手机菜单", "z.menu.note": "菜品取自客人评价，价格和套餐将与餐厅一起补充。", "z.book.label": "订位", "z.book.title": "预订圆桌或外带", "z.book.sub": "告诉我们人数和时间，餐厅会通过 WhatsApp 确认。", "z.fType": "需求", "z.fTable": "午餐或晚餐餐位", "z.fTerrace": "8 人以上圆桌", "z.fTake": "外带订单", "z.book.msgPh": "一家 6 口、两个小孩、一条清蒸石斑、不要辣……", "z.book.submit": "发送申请", "z.book.wa": "通过 WhatsApp 预订", "z.visit.label": "位置", "z.visit.title": "Pantai Tengah 1 号", "z.h1": "午餐（每天）", "z.h2": "晚餐（每天）", "z.contact": "联系方式", "z.footer": "中华楼海鲜餐厅 · 兰卡威 Pantai Tengah", "z.wa.msg": "您好中华楼！今晚 7 点订 6 人位，可以帮我们留一条清蒸石斑吗？", "mn.title": "电子菜单", "mn.sub": "扫码 · 挑选 · 享用", "mn.site": "餐厅网站", "mn.allergy": "如有过敏请告知我们的员工。", "mn.call": "呼叫服务员", "mn.callMsg": "演示：在真实菜单中，此按钮可呼叫服务员或打开 WhatsApp。"});
+  add("ms", {"z.meta": "Restoran Makanan Laut Zhong Hua Lou Langkawi – Cadangan laman web | WebsProMakers", "z.metaDesc": "Cadangan laman web oleh WebsProMakers untuk Zhong Hua Lou, Pantai Tengah: menu makanan laut Cina dalam bahasa Inggeris dan Cina, set keluarga, menu QR, tempahan, waktu dan peta.", "z.nav.menu": "Menu", "z.nav.about": "Tentang kami", "z.nav.book": "Tempahan", "z.nav.visit": "Lokasi", "z.cta.book": "Tempah meja", "z.hero.kicker": "Restoran makanan laut Cina · Pantai Tengah, Langkawi", "z.hero.title": "Ikan kukus dan sup lala, <em>untuk seluruh keluarga.</em>", "z.hero.sub": "Makanan laut gaya Kantonis di meja bulat: kerapu kukus, fillet ikan gaya Thai, udang asam, sup lala dan bihun Singapura. Makan tengah hari dan malam setiap hari, di hujung jalan Pantai Cenang.", "z.hero.menu": "Lihat menu", "z.hero.rating": "678 ulasan Google · tengah hari dan malam setiap hari", "z.seal": "12:00 – 15:30 · 17:30 – 22:30", "z.altHero": "Ruang makan Zhong Hua Lou", "z.altRavioli": "Kerapu kukus", "z.strip.hours": "Tengah hari 12:00 – 15:30 · Malam 17:30 – 22:30", "z.strip.family": "Meja bulat untuk keluarga dan kumpulan", "z.strip.wine": "Menu dalam bahasa Inggeris, Cina dan Melayu", "z.strip.terrace": "Bertentangan PARKROYAL, hujung jalan Cenang", "z.alt1": "Meja bulat di ruang makan", "z.alt2": "Udang asam", "z.alt3": "Sup lala", "z.alt4": "Meja keluarga", "z.about.label": "Tentang kami", "z.about.title": "Hidangan Cina berhampiran pantai", "z.about.p": "Zhong Hua Lou menghidangkan makanan laut Cina dalam ruang makan berkayu dengan hiasan tradisional Cina. Keluarga dan pelanggan tetap tempatan datang semula untuk ikan kukus, sup lala dan bihun Singapura. Tip daripada ulasan: tengah hari lebih lengang berbanding malam.", "z.about.mostT": "Paling banyak disebut dalam ulasan", "z.chip1": "Kerapu kukus", "z.chip2": "Fillet ikan gaya Thai", "z.chip3": "Sup lala", "z.chip4": "Udang asam", "z.chip5": "Sesuai untuk keluarga", "z.menu.label": "Menu", "z.menu.title": "Menu kami", "z.menu.qr": "Juga sebagai menu QR di meja anda:", "z.menu.qrLink": "buka menu mudah alih", "z.menu.note": "Hidangan diambil daripada ulasan pelanggan. Harga dan set menu akan ditambah bersama restoran.", "z.book.label": "Tempahan", "z.book.title": "Tempah meja bulat atau pesan bungkus", "z.book.sub": "Beritahu bilangan orang dan masa. Restoran akan sahkan melalui WhatsApp.", "z.fType": "Permintaan", "z.fTable": "Meja tengah hari atau malam", "z.fTerrace": "Meja bulat untuk 8 orang atau lebih", "z.fTake": "Pesanan bungkus", "z.book.msgPh": "Keluarga 6 orang, dua kanak-kanak, satu kerapu kukus, tidak pedas…", "z.book.submit": "Hantar permintaan", "z.book.wa": "Tempah melalui WhatsApp", "z.visit.label": "Lokasi", "z.visit.title": "No. 1, Pantai Tengah", "z.h1": "Tengah hari, setiap hari", "z.h2": "Malam, setiap hari", "z.contact": "Hubungi", "z.footer": "Restoran Makanan Laut Zhong Hua Lou · Pantai Tengah, Langkawi", "z.wa.msg": "Helo Zhong Hua Lou! Meja untuk 6 orang malam ini pukul 7. Boleh simpan seekor kerapu kukus untuk kami?", "mn.title": "Menu digital", "mn.sub": "Imbas · Pilih · Nikmati", "mn.site": "Laman web restoran", "mn.allergy": "Sila beritahu staf kami tentang sebarang alahan.", "mn.call": "Panggil pelayan", "mn.callMsg": "Demo: dalam menu sebenar, butang ini memanggil pelayan atau membuka WhatsApp."});
+
+  var root = document.getElementById("menu-root");
+  if (root) D.onRender(function () { window.PP_renderMenu(root); });
+  var date = document.getElementById("a-date"), note = document.getElementById("a-tue");
+  if (date && note) date.addEventListener("change", function () { note.hidden = CLOSED < 0 || !(date.value && new Date(date.value + "T12:00").getDay() === CLOSED); });
+
+})();
+
+</script>
+</body>
+</html>

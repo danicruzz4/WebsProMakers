@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1280">
+  <meta name="robots" content="noindex, nofollow">
+  <title data-i18n="t.meta">Langkawi Trip – Website proposal | WebsProMakers</title>
+  <meta name="description" data-i18n-content="t.metaDesc" content="Website proposal by WebsProMakers for Langkawi Trip, Pantai Tengah: scooter rental, mangrove tours, jet ski and sunset cruise, deposit, rules and booking requests.">
+  <meta name="theme-color" content="#0d3b33">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cairo:wght@400;700;900&family=Rubik:wght@400;500;700;800&display=swap">
+  <style>
+/* ==========================================================================
+   WEBSPROMAKERS — Base común de las demos (banner, modal, idiomas, formularios)
+   El estilo propio de cada demo está en /demos/<demo>/style.css
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+* { min-width: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { margin: 0; overflow-x: clip; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+button, input, select, textarea { font: inherit; color: inherit; }
+h1, h2, h3, h4, p { margin: 0; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+[hidden] { display: none !important; }
+.icon { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+img.is-missing { visibility: hidden; }
+.ph { position: relative; overflow: hidden; background: linear-gradient(135deg, var(--ph1, #c9b79c), var(--ph2, #7d6b55)); }
+.ph img { width: 100%; height: 100%; object-fit: cover; position: relative; }
+
+/* Demo banner */
+.demo-banner { position: relative; z-index: 200; display: flex; align-items: center; justify-content: center; gap: 8px 16px; flex-wrap: wrap; padding: 8px 16px; background: #0e1311; color: #e9efe9; font: 500 13px/1.4 "Inter", system-ui, sans-serif; text-align: center; }
+.demo-banner a { color: #a8d5b9; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.demo-banner a:hover { text-decoration: underline; }
+.demo-banner svg { width: 18px; height: 18px; flex: none; }
+
+/* Language switcher (shared markup) */
+.lang { position: relative; }
+.lang-btn { display: inline-flex; align-items: center; gap: 6px; height: 40px; padding: 0 12px; border-radius: 999px; border: 1px solid currentColor; background: transparent; cursor: pointer; font-size: 14px; font-weight: 600; opacity: .9; }
+.lang-btn .icon { width: 17px; height: 17px; }
+.lang-menu { position: absolute; right: 0; top: calc(100% + 8px); min-width: 180px; padding: 6px; background: #fff; color: #111; border-radius: 12px; box-shadow: 0 20px 50px -15px rgba(0, 0, 0, .35), 0 0 0 1px rgba(0, 0, 0, .06); z-index: 150; font-family: "Inter", system-ui, "PingFang SC", "Noto Sans SC", sans-serif; }
+.lang-menu button { width: 100%; text-align: left; padding: 10px 12px; border: 0; background: none; border-radius: 8px; cursor: pointer; font-size: 15px; display: flex; justify-content: space-between; }
+.lang-menu button:hover, .lang-menu button:focus-visible { background: #f2efe9; }
+.lang-menu button[aria-checked="true"] { font-weight: 700; }
+.lang-menu button[aria-checked="true"]::after { content: "✓"; }
+
+/* Forms (shared behaviour; each demo themes them) */
+.d-field { display: flex; flex-direction: column; gap: 6px; }
+.d-field label { font-size: 14px; font-weight: 600; }
+.d-field input, .d-field select, .d-field textarea { width: 100%; min-height: 48px; padding: 11px 13px; font-size: 16px; border-radius: 10px; border: 1px solid rgba(0, 0, 0, .18); background: #fff; color: #111; }
+.d-field textarea { min-height: 100px; resize: vertical; }
+.d-field [aria-invalid="true"] { border-color: #c0392b !important; background: #fff7f6; }
+.field-error { font-size: 13px; color: #c0392b; font-weight: 500; }
+.field-error:empty { display: none; }
+.d-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.d-grid .full { grid-column: 1 / -1; }
+@media (max-width: 600px) { .d-grid { grid-template-columns: 1fr; } }
+
+/* Demo modal */
+.d-modal { position: fixed; inset: 0; z-index: 400; display: grid; place-items: center; padding: 18px; background: rgba(10, 12, 11, .6); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); opacity: 0; transition: opacity .25s; }
+.d-modal.is-open { opacity: 1; }
+.d-modal-card { width: min(480px, 100%); max-height: calc(100vh - 36px); overflow: auto; background: #fff; color: #111; border-radius: 20px; padding: 26px; font: 15px/1.55 "Inter", system-ui, "PingFang SC", "Noto Sans SC", sans-serif; box-shadow: 0 40px 80px -20px rgba(0, 0, 0, .5); transform: translateY(12px); transition: transform .3s; }
+.d-modal.is-open .d-modal-card { transform: none; }
+.d-modal-card h2 { font: 800 22px/1.2 "Manrope", "Inter", system-ui, sans-serif; letter-spacing: -.01em; display: flex; gap: 10px; align-items: center; }
+.d-modal-card h2 span { font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 99px; background: #e3f0e8; color: #1d4b3a; letter-spacing: 0; }
+.d-modal-card p { margin-top: 10px; color: #444; }
+.d-modal-msg { margin-top: 14px; background: #dcf8c6; border-radius: 12px 0 12px 12px; padding: 12px 14px; white-space: pre-line; font-size: 14.5px; color: #111; }
+.d-modal-msg.plain { background: #f3f1ec; border-radius: 12px; }
+.d-modal-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; padding-top: 18px; border-top: 1px solid #eee; align-items: center; }
+.d-modal-actions small { flex: 1 1 100%; color: #666; font-size: 13px; }
+.d-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 46px; padding: 0 20px; border-radius: 999px; font-weight: 600; font-size: 15px; text-decoration: none; cursor: pointer; border: 1px solid transparent; background: #1d4b3a; color: #fff; }
+.d-btn--ghost { background: transparent; color: #111; border-color: #ccc; }
+
+/* Lightbox */
+.d-lightbox { position: fixed; inset: 0; z-index: 400; background: rgba(0, 0, 0, .9); display: grid; place-items: center; padding: 24px; }
+.d-lightbox img { max-height: 86vh; max-width: 100%; border-radius: 8px; object-fit: contain; }
+.d-lightbox button { position: absolute; top: 14px; right: 14px; width: 46px; height: 46px; border-radius: 50%; border: 0; background: rgba(255, 255, 255, .15); color: #fff; font-size: 24px; cursor: pointer; }
+
+/* Floating WhatsApp (demo) */
+.d-wa { position: fixed; right: 18px; bottom: 18px; z-index: 90; width: 56px; height: 56px; border-radius: 50%; border: 0; background: #1fa855; color: #fff; display: grid; place-items: center; cursor: pointer; box-shadow: 0 12px 30px -8px rgba(31, 168, 85, .7); transition: transform .25s; }
+.d-wa:hover { transform: scale(1.07); }
+.d-wa svg { width: 30px; height: 30px; }
+
+/* Toast */
+.wpm-toast { position: fixed; left: 50%; bottom: 24px; z-index: 500; transform: translate(-50%, 160%); background: #111; color: #fff; padding: 13px 18px; border-radius: 12px; font: 15px/1.4 "Inter", system-ui, sans-serif; max-width: calc(100% - 32px); transition: transform .35s; text-align: center; }
+.wpm-toast.is-on { transform: translate(-50%, 0); }
+
+/* Mobile nav helper */
+.d-burger { display: none; width: 44px; height: 44px; border-radius: 12px; border: 1px solid currentColor; background: transparent; cursor: pointer; place-items: center; }
+.d-burger span, .d-burger span::before, .d-burger span::after { display: block; width: 18px; height: 2px; background: currentColor; border-radius: 2px; position: relative; content: ""; transition: transform .25s, background .25s; }
+.d-burger span::before { position: absolute; top: -6px; }
+.d-burger span::after { position: absolute; top: 6px; }
+.nav-open .d-burger span { background: transparent; }
+.nav-open .d-burger span::before { transform: translateY(6px) rotate(45deg); }
+.nav-open .d-burger span::after { transform: translateY(-6px) rotate(-45deg); }
+
+/* Reveal */
+.js-ready [data-reveal] { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+.js-ready [data-reveal].is-in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+
+</style>
+  <style>
+/* LANGKAWI TRIP — alquiler + tours. Verde selva, ámbar y naranja. Bebas Neue + Rubik. */
+:root { --night: #0d3b33; --night2: #145247; --cyan: #ffb000; --pink: #ff5a1f; --ice: #f2f7f4; --ink: #0d3b33; --muted: #55706a; --line: rgba(13, 59, 51, .12); --ph1: #ffb000; --ph2: #0d3b33; }
+body { background: #fff; color: var(--ink); font: 16.5px/1.6 "Rubik", "Inter", system-ui, "PingFang SC", "Noto Sans SC", sans-serif; }
+h1, h2, h3 { font-family: "Bebas Neue", "Arial Narrow", "PingFang SC", "Noto Sans SC", sans-serif; font-weight: 400; line-height: .95; letter-spacing: .01em; }
+[data-lang="zh"] h1, [data-lang="zh"] h2, [data-lang="zh"] h3 { font-family: "Noto Sans SC", "PingFang SC", sans-serif; font-weight: 900; line-height: 1.15; }
+[dir="rtl"] body, [dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3 { font-family: "Cairo", "Noto Sans Arabic", sans-serif; }
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3 { font-weight: 900; line-height: 1.2; }
+.wrap { width: min(1220px, 100% - 40px); margin-inline: auto; }
+.sec { padding: clamp(64px, 9vw, 110px) 0; }
+.sec h2 { font-size: clamp(46px, 7vw, 92px); }
+[dir="rtl"] .sec h2, [data-lang="zh"] .sec h2 { font-size: clamp(34px, 5vw, 60px); }
+.eyebrow { font-weight: 800; font-size: 13px; text-transform: uppercase; letter-spacing: .16em; color: var(--pink); margin-bottom: 10px; }
+[dir="rtl"] .eyebrow, [data-lang="zh"] .eyebrow { letter-spacing: 0; font-size: 15px; }
+.intro { color: var(--muted); max-width: 40em; margin-top: 14px; font-size: 17.5px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 52px; padding: 0 24px; border-radius: 12px; background: var(--pink); color: #fff; font-weight: 800; font-size: 15.5px; text-decoration: none; border: 0; cursor: pointer; transition: transform .2s, background .2s; }
+.btn:hover { transform: translateY(-2px); background: #e04a12; }
+.btn--wa { background: #1fa855; }
+.btn--wa:hover { background: #1a9449; }
+.btn--icon { width: 52px; padding: 0; }
+.btn svg { width: 22px; height: 22px; }
+
+.hd { position: sticky; top: 0; z-index: 100; color: #fff; transition: background .3s; }
+.hd.is-scrolled, .nav-open .hd { background: var(--night); }
+.hd-in { display: flex; align-items: center; gap: 20px; height: 76px; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo b { font-family: "Bebas Neue", sans-serif; font-weight: 400; font-size: 38px; line-height: 1; letter-spacing: .04em; color: #fff; padding: 2px 10px 0; background: var(--pink); border-radius: 8px; }
+.logo span { font-size: 11.5px; line-height: 1.15; text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+.hd nav { margin-inline-start: auto; }
+.hd nav ul { display: flex; gap: 24px; }
+.hd nav a { text-decoration: none; font-weight: 700; font-size: 15px; }
+.hd nav a:hover { color: var(--cyan); }
+
+.hero { position: relative; margin-top: -76px; min-height: 820px; display: flex; align-items: flex-end; padding: 150px 0 70px; color: #fff; isolation: isolate; }
+.hero .ph { position: absolute; inset: 0; z-index: -2; }
+.hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(4, 50, 58, .6), rgba(4, 50, 58, .05) 35%, rgba(4, 50, 58, .92)); }
+.hero-tag { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-weight: 500; }
+.rate { background: #fff; color: var(--night); font-weight: 800; padding: 4px 10px; border-radius: 8px; }
+.hero h1 { font-size: clamp(64px, 11.5vw, 168px); max-width: 8.2em; margin-top: 16px; }
+.hero h1 span { color: var(--cyan); display: block; }
+[dir="rtl"] .hero h1, [data-lang="zh"] .hero h1 { font-size: clamp(42px, 7vw, 92px); }
+.hero .sub { font-size: clamp(17px, 1.7vw, 21px); max-width: 34em; margin-top: 18px; color: #dbe8f5; }
+.hero .acts { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+.facts { background: var(--night); color: #fff; }
+.facts ul { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.facts li { display: flex; gap: 12px; align-items: center; padding: 24px 18px; font-weight: 700; border-inline-start: 1px solid rgba(255, 255, 255, .12); }
+.facts li:first-child { border: 0; padding-inline-start: 0; }
+.facts svg { color: var(--cyan); width: 26px; height: 26px; }
+
+/* packages */
+.packs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; margin-top: 40px; }
+.pack { background: var(--ice); border-radius: 26px; overflow: hidden; display: flex; flex-direction: column; }
+.pack .ph { aspect-ratio: 16/8; }
+.pack-id { position: absolute; top: 14px; inset-inline-start: 14px; width: 54px; height: 54px; border-radius: 14px; background: var(--night); color: #fff; display: grid; place-items: center; font-family: "Bebas Neue", sans-serif; font-size: 34px; }
+.pack-badge { position: absolute; top: 20px; inset-inline-end: 14px; background: var(--pink); color: #fff; font-weight: 800; font-size: 12.5px; padding: 5px 12px; border-radius: 99px; text-transform: uppercase; letter-spacing: .05em; }
+.pack-body { padding: clamp(20px, 3vw, 30px); display: flex; flex-direction: column; gap: 14px; flex: 1; }
+.pack-name { font-weight: 800; text-transform: uppercase; letter-spacing: .14em; font-size: 13px; color: var(--pink); }
+.pack h3 { font-size: clamp(32px, 3.4vw, 44px); margin-top: -6px; }
+[dir="rtl"] .pack h3, [data-lang="zh"] .pack h3 { font-size: clamp(24px, 2.6vw, 32px); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips span { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 99px; background: #fff; font-size: 14px; font-weight: 700; }
+.chips svg { width: 16px; height: 16px; color: var(--cyan); }
+.stops { counter-reset: s; display: grid; gap: 6px; }
+.stops li { counter-increment: s; display: flex; gap: 10px; align-items: flex-start; font-size: 15px; }
+.stops li::before { content: counter(s); flex: none; width: 24px; height: 24px; border-radius: 50%; background: var(--cyan); color: var(--night); font-weight: 800; font-size: 12.5px; display: grid; place-items: center; margin-top: 1px; }
+.feats { display: grid; gap: 4px; font-size: 14.5px; font-weight: 600; }
+.feats li { display: flex; gap: 8px; align-items: center; }
+.feats svg { width: 18px; height: 18px; color: #12a150; }
+.dep { font-size: 14.5px; color: var(--muted); }
+.dep b { color: var(--ink); }
+.pack-foot { margin-top: auto; display: flex; justify-content: space-between; align-items: flex-end; gap: 14px; flex-wrap: wrap; padding-top: 14px; border-top: 2px dashed var(--line); }
+.prices { display: flex; gap: 18px; flex-wrap: wrap; }
+.prices span { display: flex; flex-direction: column; }
+.prices b { font-family: "Bebas Neue", sans-serif; font-weight: 400; font-size: 38px; line-height: 1; }
+.prices small { color: var(--muted); font-size: 13px; }
+.pack-foot .acts { display: flex; gap: 8px; }
+.note { color: var(--muted); font-size: 14px; margin-top: 22px; }
+
+/* compare */
+.compare-sec { background: var(--night); color: #fff; }
+.compare-sec .eyebrow { color: var(--cyan); }
+.table-wrap { overflow-x: auto; margin-top: 34px; border-radius: 20px; background: var(--night2); }
+.cmp { width: 100%; min-width: 720px; border-collapse: collapse; font-size: 15px; }
+.cmp th, .cmp td { padding: 14px 18px; text-align: start; border-bottom: 1px solid rgba(255, 255, 255, .08); vertical-align: top; white-space: pre-line; }
+.cmp thead th { font-family: "Bebas Neue", sans-serif; font-weight: 400; font-size: 26px; letter-spacing: .02em; color: #fff; }
+.cmp thead th span { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 9px; background: var(--pink); margin-inline-end: 10px; font-size: 22px; }
+.cmp tbody th { color: #9fb3cf; font-weight: 500; width: 18%; }
+.cmp td { font-weight: 600; }
+.cmp tr:last-child td { color: var(--cyan); }
+
+/* gallery */
+.gal { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 36px; }
+.gal figure { margin: 0; }
+.gal .ph { aspect-ratio: 4/3; border-radius: 20px; cursor: zoom-in; }
+.gal figcaption { font-weight: 700; margin-top: 10px; font-size: 15px; }
+
+/* rules */
+.rules-sec { background: var(--ice); }
+.rules { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.box { background: #fff; border-radius: 24px; padding: 28px; }
+.box h3 { font-size: 34px; display: flex; gap: 10px; align-items: center; }
+[dir="rtl"] .box h3, [data-lang="zh"] .box h3 { font-size: 24px; }
+.box h3 svg { color: var(--cyan); width: 26px; height: 26px; }
+.box ul { margin-top: 14px; display: grid; gap: 10px; }
+.box li { padding-inline-start: 18px; position: relative; }
+.box li::before { content: ""; position: absolute; inset-inline-start: 0; top: .65em; width: 7px; height: 7px; border-radius: 50%; background: var(--cyan); }
+.box--warn h3 svg, .box--warn li::before { color: var(--pink); background: var(--pink); }
+.box--warn h3 svg { background: none; }
+
+/* booking */
+.book { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(30px, 5vw, 70px); }
+.book-side p { color: var(--muted); margin-top: 16px; }
+.book-side .lines { display: grid; gap: 10px; margin-top: 20px; }
+.book-side .lines a { display: flex; gap: 10px; align-items: center; font-weight: 700; }
+.book-side .map { margin-top: 24px; height: 260px; border-radius: 20px; overflow: hidden; position: relative; background: #d6e6ea; }
+.book-side .map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.book-side small { display: block; color: var(--muted); margin-top: 8px; font-size: 13px; }
+.book form { background: var(--ice); border-radius: 26px; padding: clamp(22px, 4vw, 40px); }
+.book .d-field input, .book .d-field select, .book .d-field textarea { border: 2px solid transparent; border-radius: 12px; }
+.book .d-field input:focus, .book .d-field select:focus, .book .d-field textarea:focus { border-color: var(--cyan); outline: none; }
+.book .acts { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 22px; }
+
+.ft { background: var(--night); color: #9fb3cf; padding: 40px 0; font-size: 14px; }
+.ft-in { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: center; }
+.ft .logo { color: #fff; }
+.social { display: flex; gap: 10px; }
+.social a { width: 44px; height: 44px; border-radius: 12px; background: var(--night2); display: grid; place-items: center; color: #fff; }
+.social a:hover { background: var(--pink); }
+.social svg { width: 18px; height: 18px; }
+[dir="rtl"] .lang-menu { right: auto; left: 0; }
+[dir="rtl"] .lang-menu button { text-align: right; }
+[dir="rtl"] .d-wa { right: auto; left: 18px; }
+
+@media (max-width: 980px) {
+  .d-burger { display: grid; color: #fff; }
+  .hd nav { position: fixed; inset: 0; background: var(--night); padding: 120px 28px; opacity: 0; visibility: hidden; transition: .25s; z-index: -1; }
+  .nav-open .hd nav { opacity: 1; visibility: visible; }
+  .hd nav ul { flex-direction: column; gap: 0; }
+  .hd nav a { display: block; font-family: "Bebas Neue", sans-serif; font-weight: 400; font-size: 40px; padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, .12); }
+  [dir="rtl"] .hd nav a, [data-lang="zh"] .hd nav a { font-family: inherit; font-size: 26px; font-weight: 800; }
+  .facts ul { grid-template-columns: 1fr 1fr; }
+  .facts li:nth-child(3) { border: 0; padding-inline-start: 0; }
+  .packs, .book, .rules { grid-template-columns: 1fr; }
+  .gal { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .logo b { font-size: 32px; }
+  .lang-btn { padding: 0 9px; }
+  .facts li { padding: 16px 8px; font-size: 14px; }
+  .gal { gap: 10px; }
+  .gal figcaption { font-size: 13.5px; }
+  .prices b { font-size: 32px; }
+  .hero .acts .btn { flex: 1 1 100%; }
+}
+
+/* ZS: extras */
+.pack-foot .ask { font-weight: 700; color: var(--pink); }
+.more { display: grid; grid-template-columns: repeat(var(--more-n, 5), 1fr); gap: 14px; margin-top: 30px; }
+.more li { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 18px; }
+.more b { display: block; font-size: 17px; }
+.more span { display: block; color: var(--muted); font-size: 14px; margin-top: 6px; }
+.crew { margin-top: 26px; color: var(--muted); }
+@media (max-width: 920px) { .more { grid-template-columns: 1fr 1fr; } }
+
+/* Nice Scooter: pasos y tarifas */
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 34px; counter-reset: st; }
+.steps li { background: var(--ice); border-radius: 18px; padding: 22px; counter-increment: st; }
+.steps li::before { content: counter(st); display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--cyan); color: var(--night); font-family: "Bebas Neue", sans-serif; font-size: 24px; margin-bottom: 12px; }
+.steps b { display: block; font-size: 18px; }
+.steps span { color: var(--muted); font-size: 15px; }
+.pack-spec { color: var(--muted); font-size: 14.5px; }
+@media (max-width: 920px) { .steps { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .steps { grid-template-columns: 1fr; } }
+.n-days { font-weight: 700; color: var(--pink); min-height: 1.4em; margin: -4px 0 0; }
+
+</style>
+  <style>
+/* Versión enlace privado: huecos de foto y botón de mapa */
+.ph[data-ph-label] { background-image: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, .22), transparent 55%), linear-gradient(135deg, var(--ph1, #c9b79c), var(--ph2, #7d6b55)); }
+.ph[data-ph-label]::before { content: ""; position: absolute; left: 50%; top: 50%; width: 34px; height: 34px; margin: -24px 0 0 -17px; opacity: .55; pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 8h3l2-3h6l2 3h3v11H4z'/%3E%3Ccircle cx='12' cy='13' r='3.5'/%3E%3C/svg%3E") center / contain no-repeat; }
+.ph[data-ph-label]::after { content: attr(data-ph-label); position: absolute; left: 8px; right: 8px; top: 50%; margin-top: 16px; text-align: center; font: 600 12px/1.3 system-ui, sans-serif; color: rgba(255, 255, 255, .85); text-transform: none; letter-spacing: 0; pointer-events: none; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.m-photo.ph[data-ph-label]::after, .ph[data-ph-label].m-photo::after { display: none; }
+.m-photo.ph[data-ph-label]::before { width: 26px; height: 26px; margin: -13px 0 0 -13px; }
+[data-lightbox] .ph { cursor: default !important; }
+.pp-map { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; text-decoration: none; color: #1b2a33; padding: 20px; text-align: center;
+  background-color: #e6ecef;
+  background-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0), linear-gradient(90deg, rgba(0, 0, 0, .05) 1px, transparent 1px), linear-gradient(rgba(0, 0, 0, .05) 1px, transparent 1px);
+  background-size: 100% 10px, 10px 100%, 28px 28px, 28px 28px; background-position: 0 58%, 38% 0, 0 0, 0 0; background-repeat: no-repeat, no-repeat, repeat, repeat; }
+.pp-pin { width: 44px; height: 44px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); background: #e8453c; box-shadow: 0 10px 20px -8px rgba(0, 0, 0, .5); position: relative; }
+.pp-pin::after { content: ""; position: absolute; inset: 14px; border-radius: 50%; background: #fff; }
+.pp-map b { font: 700 16px/1.3 system-ui, sans-serif; background: #fff; padding: 10px 18px; border-radius: 999px; box-shadow: 0 6px 18px -8px rgba(0, 0, 0, .4); margin-top: 6px; }
+.pp-map small { font: 13px/1.3 system-ui, sans-serif; color: #4a5a63; max-width: 24em; }
+.pp-map:hover b { background: #1b2a33; color: #fff; }
+
+</style>
+</head>
+<body data-biz="Langkawi Trip Scooter &amp; Car Rental">
+<div class="demo-banner"><span data-i18n="demo.banner">Website proposal for Langkawi Trip by WebsProMakers · Not the official website</span><a href="https://webspromakers-site.pages.dev/#work" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#d-back"/></svg><span data-i18n="demo.back">Back to WebsProMakers</span></a></div>
+
+<header class="hd" data-demo-header>
+  <div class="wrap hd-in">
+    <a class="logo" href="#top"><b>TRIP</b><span>Langkawi<br>Rent &amp; Tours</span></a>
+    <nav data-demo-nav aria-label="Main">
+      <ul>
+        <li><a href="#fleet" data-i18n="t.nav.fleet">Scooters</a></li>
+        <li><a href="#tours" data-i18n="t.nav.tours">Tours</a></li>
+                <li><a href="#photos" data-i18n="t.nav.photos">Photos</a></li>
+                <li><a href="#rules" data-i18n="n.nav.rules">Deposit &amp; rules</a></li>
+        <li><a href="#book" data-i18n="n.nav.book">Book</a></li>
+      </ul>
+    </nav>
+    <div class="lang" data-lang-switch><button class="lang-btn" type="button" aria-label="Language"><svg class="icon" aria-hidden="true"><use href="#d-globe"/></svg><span data-lang-current>EN</span></button></div>
+    <button class="d-burger" type="button" aria-expanded="false" data-i18n-aria="demo.menu" aria-label="Menu"><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="ph"><img data-photo="trip-hero" data-w="1800" data-i18n-alt="t.altHero" alt="Scooter on a coastal road in Langkawi" loading="eager"></div>
+    <div class="wrap">
+      <p class="hero-tag"><span class="rate">★ 4.9</span><span data-i18n="t.hero.tag">577 Google reviews · Pantai Tengah, Langkawi</span></p>
+      <h1 data-i18n-html="t.hero.title">Rent a scooter. <span>Book the tours in the same place.</span></h1>
+      <p class="sub" data-i18n="t.hero.sub">Honda Vario from RM 45 and Honda ADV 160 from RM 80 for 24 hours, plus mangrove kayak, mangrove jet ski, mangrove boat tours and sunset cruises. One shop, one WhatsApp, open 24 hours.</p>
+      <div class="acts">
+        <a class="btn" href="#fleet" data-i18n="t.hero.cta">Scooters &amp; prices</a>
+        <a class="btn btn--line" href="#tours" data-i18n="t.hero.tours">See the tours</a>
+        <button class="btn btn--wa" type="button" data-demo="wa" data-demo-msg="t.wa.msg"><svg aria-hidden="true"><use href="#d-wa"/></svg><span data-i18n="t.hero.wa">WhatsApp</span></button>
+      </div>
+    </div>
+  </section>
+
+  <div class="facts"><ul class="wrap">
+    <li><svg class="icon" aria-hidden="true"><use href="#d-clock"/></svg><span data-i18n="t.f1">Open 24 hours (Friday 10:30 – 23:00)</span></li>
+    <li><svg class="icon" aria-hidden="true"><use href="#d-shield"/></svg><span data-i18n="t.f2">RM 100 deposit, returned at drop-off</span></li>
+    <li><svg class="icon" aria-hidden="true"><use href="#d-check"/></svg><span data-i18n="t.f3">Cards, Visa, Mastercard &amp; UnionPay</span></li>
+    <li><svg class="icon" aria-hidden="true"><use href="#d-bike"/></svg><span data-i18n="t.f4">Extend your rental on WhatsApp</span></li>
+  </ul></div>
+
+  <section class="sec" id="fleet">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="t.fl.tag">Scooter rental</p>
+      <h2 data-i18n="t.fl.title">New, well-kept scooters</h2>
+      <p class="intro" data-i18n="t.fl.sub">Guests describe the bikes as new and well maintained. Show a valid ID, leave RM 100 and ride.</p>
+      <div class="packs" id="fleet-list"></div>
+      <p class="note"><span data-i18n="t.fl.note">Prices for 24 hours, as published on langkawitrip.com. Free pick-up and drop-off in Pantai Cenang and Pantai Tengah. Yamaha NMAX and cars on request.</span></p>
+    </div>
+  </section>
+
+  <section class="sec rules-sec" id="tours">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="t.to.tag">Tours</p>
+      <h2 data-i18n="t.to.title">Mangroves, jet ski and sunsets</h2>
+      <p class="intro" data-i18n="t.to.sub">Book them at the counter when you pick up your scooter, or send a WhatsApp. Hotel pick-up for tours.</p>
+      <div class="packs" id="tour-list"></div>
+      <p class="crew" data-i18n="t.crew">Names guests repeat in reviews: Mansoor at the counter, Shah on the jet ski and captain Azlan in the mangroves.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="photos">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="t.gal.tag">Photos</p>
+      <h2 data-i18n="t.gal.title">Real rides, real tours</h2>
+      <div class="gal" data-lightbox>
+        <figure><div class="ph"><img data-photo="trip-g1" data-w="800" data-i18n-alt="t.g1" alt="The shop on Pantai Tengah"></div><figcaption data-i18n="t.g1">The shop on Pantai Tengah</figcaption></figure>
+        <figure><div class="ph"><img data-photo="trip-g2" data-w="800" data-i18n-alt="t.g2" alt="Scooters ready to go"></div><figcaption data-i18n="t.g2">Scooters ready to go</figcaption></figure>
+        <figure><div class="ph"><img data-photo="trip-g3" data-w="800" data-i18n-alt="t.g3" alt="Setting off for the mangrove tour"></div><figcaption data-i18n="t.g3">Setting off for the mangrove tour</figcaption></figure>
+        <figure><div class="ph"><img data-photo="trip-g4" data-w="800" data-i18n-alt="t.g4" alt="Jet ski on the Andaman Sea"></div><figcaption data-i18n="t.g4">Jet ski on the Andaman Sea</figcaption></figure>
+        <figure><div class="ph"><img data-photo="trip-g5" data-w="800" data-i18n-alt="t.g5" alt="Monkeys in the mangroves"></div><figcaption data-i18n="t.g5">Monkeys in the mangroves</figcaption></figure>
+        <figure><div class="ph"><img data-photo="trip-g6" data-w="800" data-i18n-alt="t.g6" alt="Inside the bat cave"></div><figcaption data-i18n="t.g6">Inside the bat cave</figcaption></figure>
+        <figure><div class="ph"><img data-photo="trip-g7" data-w="800" data-i18n-alt="t.g7" alt="Kayaking at Kilim Geoforest Park"></div><figcaption data-i18n="t.g7">Kayaking at Kilim Geoforest Park</figcaption></figure>
+        <figure><div class="ph"><img data-photo="trip-g8" data-w="800" data-i18n-alt="t.g8" alt="Boats ready at the jetty"></div><figcaption data-i18n="t.g8">Boats ready at the jetty</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec rules-sec" id="rules">
+    <div class="wrap rules">
+      <div class="box">
+        <h3><svg class="icon" aria-hidden="true"><use href="#d-check"/></svg><span data-i18n="n.inc.title">Included</span></h3>
+        <ul><li data-i18n="t.inc1">Helmet for rider and passenger</li><li data-i18n="t.inc2">Bikes checked before each rental</li><li data-i18n="t.inc3">Help on WhatsApp, 24 hours</li></ul>
+      </div>
+      <div class="box">
+        <h3><svg class="icon" aria-hidden="true"><use href="#d-bag"/></svg><span data-i18n="n.bring.title">Bring</span></h3>
+        <ul><li data-i18n="n.br1">Driving licence (international permit recommended)</li><li data-i18n="n.br2">Passport</li><li data-i18n="t.br3">RM 100 for the deposit</li></ul>
+      </div>
+      <div class="box box--warn">
+        <h3><svg class="icon" aria-hidden="true"><use href="#d-shield"/></svg><span data-i18n="n.rules.title">Good to know</span></h3>
+        <ul><li data-i18n="n.r1">Helmets are compulsory in Malaysia, for rider and passenger.</li><li data-i18n="t.r2">Need more days? Extend on WhatsApp before your return date.</li><li data-i18n="t.r3">Tours: tell us your hotel for the pick-up time.</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="book">
+    <div class="wrap book">
+      <div class="book-side">
+        <p class="eyebrow" data-i18n="n.book.tag">Booking</p>
+        <h2 data-i18n="t.book.title">Book a scooter or a tour</h2>
+        <p data-i18n="t.book.sub">Send what you need, the dates and where you are staying. The shop confirms by WhatsApp.</p>
+        <div class="lines">
+          <a href="#" data-demo="wa" data-demo-msg="t.wa.msg"><svg class="icon" aria-hidden="true"><use href="#d-wa"/></svg>WhatsApp <span dir="ltr">+60 11-1878 0037</span></a>
+          <a href="#" data-demo="call"><svg class="icon" aria-hidden="true"><use href="#d-call"/></svg><span dir="ltr">+60 11-1878 0037</span></a>
+          <a data-map-link="Langkawi Trip Scooter & Car Rental, Pantai Tengah, Langkawi"><svg class="icon" aria-hidden="true"><use href="#d-pin"/></svg><span>Langkawi Trip, Pantai Tengah, 07000 Langkawi, Kedah</span></a>
+        </div>
+        <div class="map"><iframe data-map="Langkawi Trip Scooter & Car Rental, Pantai Tengah, Langkawi" title="Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        <small data-i18n="demo.mapNote">Location from Google Maps.</small>
+      </div>
+      <form data-demo-form id="book-form">
+        <div class="d-grid">
+          <div class="d-field full"><label for="n-veh" data-i18n="t.fWhat">Scooter or tour</label><select id="n-veh" name="vehicle" required></select></div>
+          <div class="d-field"><label for="n-from" data-i18n="t.fFrom">Date (or pick-up)</label><input id="n-from" name="from" type="date" required></div>
+          <div class="d-field"><label for="n-to" data-i18n="t.fTo">Return date (scooter)</label><input id="n-to" name="to" type="date" required></div>
+          <div class="d-field full"><p class="n-days" id="n-days" aria-live="polite"></p></div>
+          <div class="d-field"><label for="n-where" data-i18n="n.fWhere">Pick-up</label>
+            <select id="n-where" name="pickup" required><option value="shop" data-i18n="n.fShop">At the shop</option><option value="hotel" data-i18n="t.fHotel">Pick me up at my hotel (tours)</option></select></div>
+          <div class="d-field"><label for="n-hotel" data-i18n="f.hotel">Hotel (optional)</label><input id="n-hotel" name="hotel"></div>
+          <div class="d-field"><label for="n-name" data-i18n="f.name">Name</label><input id="n-name" name="name" required autocomplete="name"></div>
+          <div class="d-field"><label for="n-phone" data-i18n="f.phone">Phone / WhatsApp</label><input id="n-phone" name="phone" type="tel" data-validate="phone" required autocomplete="tel"></div>
+          <div class="d-field full"><label for="n-msg" data-i18n="f.message">Message (optional)</label><textarea id="n-msg" name="message" data-i18n-ph="t.fMsgPh" placeholder="Number of people, tour time, two helmets…"></textarea></div>
+        </div>
+        <div class="acts">
+          <button class="btn" type="submit" data-i18n="n.book.submit">Send booking request</button>
+          <button class="btn btn--wa" type="button" data-demo="wa" data-demo-msg="t.wa.msg"><svg aria-hidden="true"><use href="#d-wa"/></svg><span>WhatsApp</span></button>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+<footer class="ft"><div class="wrap ft-in">
+  <span class="logo"><b>TRIP</b><span>Langkawi<br>Rent &amp; Tours</span></span>
+  <span data-i18n="t.footer">Scooter rental &amp; tours in Pantai Tengah, Langkawi · Open 24 hours</span>
+  <div class="social">
+    <a href="#" data-demo="social" aria-label="Instagram"><svg class="icon" aria-hidden="true"><use href="#d-ig"/></svg></a>
+    <a href="#" data-demo="social" aria-label="Facebook"><svg class="icon" aria-hidden="true"><use href="#d-fb"/></svg></a>
+    <a href="#" data-demo="social" aria-label="TikTok"><svg class="icon" aria-hidden="true"><use href="#d-tt"/></svg></a>
+  </div>
+</div></footer>
+<button class="d-wa" type="button" data-demo="wa" data-demo-msg="t.wa.msg" aria-label="WhatsApp"><svg aria-hidden="true"><use href="#d-wa"/></svg></button>
+<script>
+/* ==========================================================================
+   WEBSPROMAKERS — CONFIGURACIÓN CENTRAL (edita SOLO este archivo para tus datos)
+   --------------------------------------------------------------------------
+   - Deja un campo vacío ("") si todavía no lo tienes: la web lo ocultará
+     o mostrará "Coming soon" en vez de un dato falso.
+   - WhatsApp: formato internacional SIN "+", sin espacios. Ej.: "60123456789"
+   ========================================================================== */
+window.WPM_CONFIG = {
+  companyName: "WebsProMakers",
+
+  // Dirección pública de la web (cámbiala si Cloudflare te da otro nombre)
+  siteUrl: "https://webspromakers.pages.dev",
+
+  contact: {
+    whatsapp: "",            // Ej.: "60123456789"
+    phone: "",               // Ej.: "+60 12-345 6789" (se muestra tal cual)
+    email: "",               // Ej.: "hello@tudominio.com" o un Gmail
+    location: "Langkawi, Malaysia"
+  },
+
+  // Redes sociales: pega la URL completa. Vacío = no se muestra.
+  social: {
+    instagram: "",
+    facebook: "",
+    tiktok: "",
+    linkedin: ""
+  },
+
+  // Formulario de contacto -> email gratis con Web3Forms (250 envíos/mes gratis)
+  // 1) Ve a https://web3forms.com  2) Escribe tu email  3) Copia la "Access Key" aquí
+  forms: {
+    web3formsAccessKey: ""
+  },
+
+  // Google Analytics 4 (opcional). Ej.: "G-XXXXXXXXXX". Vacío = desactivado.
+  analytics: {
+    gaMeasurementId: ""
+  },
+
+  // Mapa de la sección de contacto (texto de búsqueda de Google Maps)
+  map: {
+    query: "Langkawi, Kedah, Malaysia"
+  },
+
+  // Idiomas disponibles (el primero es el predeterminado)
+  languages: [
+    { code: "en", label: "English", short: "EN" },
+    { code: "ms", label: "Bahasa Melayu", short: "BM" },
+    { code: "es", label: "Español", short: "ES" },
+    { code: "zh", label: "中文", short: "中文" }
+  ]
+};
+
+</script>
+<script data-langs="en,ms,zh,ar">
+/* Idiomas de cada propuesta: <script defer src="../langs.js" data-langs="en,ms,zh,ar"> (va justo después de config.js) */
+(function () {
+  var ALL = {
+    en: { code: "en", label: "English", short: "EN" },
+    ms: { code: "ms", label: "Bahasa Melayu", short: "BM" },
+    es: { code: "es", label: "Español", short: "ES" },
+    zh: { code: "zh", label: "中文", short: "中文" },
+    ar: { code: "ar", label: "العربية", short: "عربي" },
+    hi: { code: "hi", label: "हिन्दी", short: "हिं" }
+  };
+  var s = document.currentScript, list = ((s && s.getAttribute("data-langs")) || "en,ms,zh").split(",");
+  window.WPM_CONFIG = window.WPM_CONFIG || {};
+  window.WPM_CONFIG.languages = list.map(function (c) { return ALL[c.trim()]; }).filter(Boolean);
+})();
+
+</script>
+<script>
+/* ==========================================================================
+   WEBSPROMAKERS — FOTOGRAFÍAS (un único sitio para cambiarlas todas)
+   --------------------------------------------------------------------------
+   Cada foto tiene un nombre (clave). En el HTML se usa así:
+       <img data-photo="rest-interior" alt="...">
+   Para usar TU foto: súbela a /public/assets/img/photos/ y cambia el valor:
+       "rest-interior": "/assets/img/photos/mi-restaurante.webp",
+   Los valores que empiezan por "u:" son fotos de Unsplash (licencia gratuita
+   para uso comercial). Se cargan desde images.unsplash.com.
+   Si una foto no carga, la web muestra un fondo de color en su lugar.
+   ========================================================================== */
+window.WPM_PHOTOS = {
+  // Restaurante
+  "rest-interior": "u:1517248135467-4c7edcad34c4",
+  "rest-table": "u:1414235077428-338989a2e8c0",
+  "rest-dining": "u:1555396273-367ea4eb4db5",
+  "food-plate": "u:1504674900247-0877df9cc836",
+  "food-salad": "u:1512621776951-a57141f2eefd",
+  "food-bowl": "u:1546069901-ba9599a7e63c",
+  "food-spread": "u:1540189549336-e6e99c3679fe",
+  "food-grill": "u:1544025162-d76694265947",
+  "food-curry": "u:1585937421612-70a008356fbe",
+  "food-noodles": "u:1569718212165-3a8278d5f624",
+  "food-dessert": "u:1488477181946-6428a0291777",
+  "food-pancake": "u:1567620905732-2d1ec7ab7445",
+  "drink-cocktail": "u:1551024709-8f23befc6f87",
+  "drink-bar": "u:1470337458703-46ad1756a187",
+  // Café & bar
+  "cafe-interior": "u:1501339847302-ac426a4a7cbb",
+  "cafe-shop": "u:1554118811-1e0d58224f24",
+  "coffee-cup": "u:1495474472287-4d71bcdd2085",
+  "coffee-beans": "u:1509042239860-f550ce710b93",
+  "coffee-latte": "u:1541167760496-1628856ab772",
+  "cafe-croissant": "u:1555507036-ab1f4038808a",
+  "bar-night": "u:1514933651103-005eec06c04b",
+  // Hotel
+  "hotel-pool": "u:1566073771259-6a8506099945",
+  "hotel-resort": "u:1520250497591-112f2f40a3f4",
+  "hotel-exterior": "u:1571896349842-33c89424de2d",
+  "hotel-lobby": "u:1542314831-068cd1dbfeeb",
+  "room-1": "u:1582719478250-c89cae4dc85b",
+  "room-2": "u:1611892440504-42a792e24d32",
+  "room-3": "u:1590490360182-c33d57733427",
+  "spa": "u:1540555700478-4be289fbecef",
+  "villa": "u:1613490493576-7fde63acd811",
+  "guesthouse": "u:1564013799919-ab600027ffc6",
+  // Islas, playa, tours
+  "beach": "u:1507525428034-b723cf961d3e",
+  "beach-waves": "u:1505228395891-9a51e7e86bf6",
+  "island-bali": "u:1537996194471-e657df975ab4",
+  "diving": "u:1544551763-46a013bb70d5",
+  "sunset": "u:1495616811223-4d98c6e9c869",
+  "forest": "u:1448375240586-882707db888b",
+  "waterfall": "u:1432405972618-c60b0225b8f9",
+  // Tienda
+  "shop-interior": "u:1441986300917-64674bd600d8",
+  "shop-cosmetics": "u:1556228578-8c89e6adf883",
+  "shop-pottery": "u:1578749556568-bc2c40e68b61",
+  // Negocio / web
+  "web-laptop": "u:1460925895917-afdab827c52f",
+  "web-code": "u:1498050108023-c5249f4df085",
+  "web-phone": "u:1512941937669-90a1b58e7e9c",
+  "meeting": "u:1556761175-5973dc0f32e7",
+  "beauty": "u:1560066984-138dadb4c035"
+};
+
+</script>
+<script>
+/* ==========================================================================
+   WEBSPROMAKERS — CORE (idiomas, fotos, datos de contacto, validación)
+   Se usa en la web principal y en todas las demos.
+   ========================================================================== */
+(function () {
+  "use strict";
+  var CFG = window.WPM_CONFIG || {};
+  var LANGS = (CFG.languages || [{ code: "en", label: "English", short: "EN" }]);
+  var CODES = LANGS.map(function (l) { return l.code; });
+  var DEFAULT = CODES[0];
+  var STORE_KEY = "wpm-lang";
+  var HTML_LANG = { en: "en", ms: "ms", es: "es", zh: "zh-CN" };
+
+  var dict = {};       // dict[lang][key]
+  var en = {};         // English snapshot taken from the HTML
+  var current = DEFAULT;
+
+  /* ---------- small helpers ---------- */
+  function $all(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
+  function get(obj, path) {
+    return path.split(".").reduce(function (o, k) { return o && o[k] != null ? o[k] : undefined; }, obj);
+  }
+  function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
+
+  /* ---------- i18n ---------- */
+  function addStrings(lang, obj) {
+    dict[lang] = dict[lang] || {};
+    for (var k in obj) if (Object.prototype.hasOwnProperty.call(obj, k)) dict[lang][k] = obj[k];
+  }
+  function t(key, lang) {
+    lang = lang || current;
+    var v = dict[lang] && dict[lang][key];
+    if (v == null) v = (dict.en && dict.en[key]) != null ? dict.en[key] : en[key];
+    return v == null ? key : v;
+  }
+  var ATTRS = [["data-i18n-ph", "placeholder"], ["data-i18n-aria", "aria-label"], ["data-i18n-alt", "alt"], ["data-i18n-title", "title"], ["data-i18n-content", "content"]];
+
+  function snapshot() {
+    $all("[data-i18n]").forEach(function (el) { var k = el.getAttribute("data-i18n"); if (!(k in en)) en[k] = el.textContent.trim(); });
+    $all("[data-i18n-html]").forEach(function (el) { var k = el.getAttribute("data-i18n-html"); if (!(k in en)) en[k] = el.innerHTML.trim(); });
+    ATTRS.forEach(function (a) {
+      $all("[" + a[0] + "]").forEach(function (el) { var k = el.getAttribute(a[0]); if (!(k in en)) en[k] = el.getAttribute(a[1]) || ""; });
+    });
+  }
+
+  function apply(lang) {
+    if (CODES.indexOf(lang) < 0) lang = DEFAULT;
+    current = lang;
+    document.documentElement.lang = HTML_LANG[lang] || lang;
+    document.documentElement.setAttribute("data-lang", lang);
+    $all("[data-i18n]").forEach(function (el) { el.textContent = t(el.getAttribute("data-i18n")); });
+    $all("[data-i18n-html]").forEach(function (el) { el.innerHTML = t(el.getAttribute("data-i18n-html")); });
+    ATTRS.forEach(function (a) {
+      $all("[" + a[0] + "]").forEach(function (el) { el.setAttribute(a[1], t(el.getAttribute(a[0]))); });
+    });
+    // Re-translate visible validation messages
+    $all("[data-err-key]").forEach(function (el) { el.textContent = t(el.getAttribute("data-err-key")); });
+    $all("[data-lang-current]").forEach(function (el) {
+      var l = LANGS.filter(function (x) { return x.code === lang; })[0];
+      el.textContent = l ? l.short : lang.toUpperCase();
+    });
+    $all("[data-lang-option]").forEach(function (el) {
+      el.setAttribute("aria-checked", el.getAttribute("data-lang-option") === lang ? "true" : "false");
+    });
+    store(STORE_KEY, lang);
+    document.dispatchEvent(new CustomEvent("wpm:lang", { detail: { lang: lang } }));
+  }
+
+  function initialLang() {
+    var q = new URLSearchParams(location.search).get("lang");
+    if (q && CODES.indexOf(q) >= 0) return q;
+    var s = store(STORE_KEY);
+    if (s && CODES.indexOf(s) >= 0) return s;
+    return DEFAULT;
+  }
+
+  /* ---------- language switcher ---------- */
+  function buildSwitchers() {
+    $all("[data-lang-switch]").forEach(function (box) {
+      var btn = box.querySelector("button");
+      var menu = document.createElement("ul");
+      menu.className = "lang-menu";
+      menu.setAttribute("role", "menu");
+      menu.hidden = true;
+      LANGS.forEach(function (l) {
+        var li = document.createElement("li");
+        var b = document.createElement("button");
+        b.type = "button";
+        b.setAttribute("role", "menuitemradio");
+        b.setAttribute("data-lang-option", l.code);
+        b.setAttribute("lang", HTML_LANG[l.code] || l.code);
+        b.textContent = l.label;
+        b.addEventListener("click", function () { apply(l.code); close(); btn.focus(); });
+        li.appendChild(b); menu.appendChild(li);
+      });
+      box.appendChild(menu);
+      function close() { menu.hidden = true; btn.setAttribute("aria-expanded", "false"); }
+      btn.setAttribute("aria-haspopup", "true");
+      btn.setAttribute("aria-expanded", "false");
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var open = menu.hidden;
+        $all(".lang-menu").forEach(function (m) { m.hidden = true; });
+        menu.hidden = !open;
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+        if (open) { var first = menu.querySelector('[aria-checked="true"]') || menu.querySelector("button"); first && first.focus(); }
+      });
+      box.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") { close(); btn.focus(); }
+        if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+          var items = $all("button", menu), i = items.indexOf(document.activeElement);
+          if (i < 0) return;
+          e.preventDefault();
+          items[(i + (e.key === "ArrowDown" ? 1 : items.length - 1)) % items.length].focus();
+        }
+      });
+      document.addEventListener("click", function (e) { if (!box.contains(e.target)) close(); });
+    });
+  }
+
+  /* ---------- photos ---------- */
+  function photoUrl(val, w) {
+    if (!val) return "";
+    if (val.indexOf("u:") === 0) return "https://images.unsplash.com/photo-" + val.slice(2) + "?auto=format&fit=crop&w=" + w + "&q=70";
+    return val;
+  }
+  function loadPhotos(root) {
+    var P = window.WPM_PHOTOS || {};
+    $all("img[data-photo]", root).forEach(function (img) {
+      if (img.getAttribute("src")) return;
+      var val = P[img.getAttribute("data-photo")];
+      var w = parseInt(img.getAttribute("data-w") || "800", 10);
+      if (!val) { img.classList.add("is-missing"); return; }
+      img.addEventListener("error", function () { img.classList.add("is-missing"); }, { once: true });
+      img.decoding = "async";
+      if (!img.hasAttribute("loading")) img.loading = "lazy";
+      if (val.indexOf("u:") === 0) img.srcset = photoUrl(val, w) + " 1x, " + photoUrl(val, Math.min(w * 2, 2400)) + " 2x";
+      img.src = photoUrl(val, w);
+    });
+  }
+
+  /* ---------- config-driven contact details ---------- */
+  function waLink(number, text) {
+    return "https://wa.me/" + String(number).replace(/[^\d]/g, "") + (text ? "?text=" + encodeURIComponent(text) : "");
+  }
+  function bindConfig() {
+    var c = CFG.contact || {}, s = CFG.social || {};
+    $all("[data-cfg-text]").forEach(function (el) {
+      var v = get(CFG, el.getAttribute("data-cfg-text"));
+      if (v) { el.textContent = v; el.removeAttribute("data-i18n"); el.classList.remove("is-empty"); }
+      else { el.setAttribute("data-i18n", "common.soon"); el.classList.add("is-empty"); }
+    });
+    $all("[data-cfg-mail]").forEach(function (a) {
+      if (c.email) a.href = "mailto:" + c.email; else { a.removeAttribute("href"); a.classList.add("is-empty"); }
+    });
+    $all("[data-cfg-tel]").forEach(function (a) {
+      if (c.phone) a.href = "tel:" + c.phone.replace(/[^\d+]/g, ""); else { a.removeAttribute("href"); a.classList.add("is-empty"); }
+    });
+    $all("[data-social]").forEach(function (a) {
+      var url = s[a.getAttribute("data-social")];
+      if (url) { a.href = url; a.target = "_blank"; a.rel = "noopener"; } else a.hidden = true;
+    });
+    $all("[data-social-group]").forEach(function (g) {
+      if (!$all("[data-social]:not([hidden])", g).length) g.classList.add("is-empty");
+    });
+    $all("[data-map]").forEach(function (f) {
+      var q = f.getAttribute("data-map") || (CFG.map && CFG.map.query) || "Langkawi";
+      f.src = "https://www.google.com/maps?q=" + encodeURIComponent(q) + "&output=embed";
+    });
+    $all("[data-map-link]").forEach(function (a) {
+      var q = a.getAttribute("data-map-link") || (CFG.map && CFG.map.query) || "Langkawi";
+      a.href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q);
+      a.target = "_blank"; a.rel = "noopener";
+    });
+    $all("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
+  }
+  // WhatsApp links of the agency (main site). Demos use their own demo modal.
+  function bindWhatsApp() {
+    var num = (CFG.contact || {}).whatsapp;
+    $all("[data-wa]").forEach(function (a) {
+      function refresh() {
+        if (num) { a.href = waLink(num, t(a.getAttribute("data-wa") || "wa.default")); a.target = "_blank"; a.rel = "noopener"; }
+        else { a.href = "#contact"; a.removeAttribute("target"); }
+      }
+      refresh();
+      document.addEventListener("wpm:lang", refresh);
+      if (!num) a.addEventListener("click", function () { toast(t("toast.waSoon")); });
+    });
+  }
+
+  /* ---------- analytics (only if configured) ---------- */
+  function analytics() {
+    var id = CFG.analytics && CFG.analytics.gaMeasurementId;
+    if (!id) return;
+    var s = document.createElement("script");
+    s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(id);
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag("js", new Date());
+    window.gtag("config", id, { anonymize_ip: true });
+  }
+
+  /* ---------- toast ---------- */
+  var toastEl, toastTimer;
+  function toast(msg) {
+    if (!toastEl) {
+      toastEl = document.createElement("div");
+      toastEl.className = "wpm-toast";
+      toastEl.setAttribute("role", "status");
+      toastEl.setAttribute("aria-live", "polite");
+      document.body.appendChild(toastEl);
+    }
+    toastEl.textContent = msg;
+    toastEl.classList.add("is-on");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toastEl.classList.remove("is-on"); }, 4200);
+  }
+
+  /* ---------- form validation ---------- */
+  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  var PHONE_RE = /^\+?[\d\s\-().]{7,20}$/;
+  function fieldError(field) {
+    var v = (field.value || "").trim();
+    if (field.required && !v) return field.tagName === "SELECT" ? "val.select" : "val.required";
+    if (v && field.type === "email" && !EMAIL_RE.test(v)) return "val.email";
+    if (v && field.getAttribute("data-validate") === "phone" && !PHONE_RE.test(v)) return "val.phone";
+    if (v && field.type === "number") {
+      var n = Number(v), min = field.min !== "" ? Number(field.min) : null, max = field.max !== "" ? Number(field.max) : null;
+      if (isNaN(n) || (min !== null && n < min) || (max !== null && n > max)) return "val.number";
+    }
+    if (v && field.type === "date" && field.min && v < field.min) return "val.date";
+    if (field.getAttribute("data-after")) {
+      var other = field.form && field.form.querySelector("#" + field.getAttribute("data-after"));
+      if (v && other && other.value && v <= other.value) return "val.after";
+    }
+    if (field.minLength > 0 && v && v.length < field.minLength) return "val.short";
+    return null;
+  }
+  function showError(field, key) {
+    var id = field.id + "-err", box = document.getElementById(id);
+    if (!box) {
+      box = document.createElement("p");
+      box.id = id; box.className = "field-error";
+      field.parentNode.appendChild(box);
+    }
+    if (key) {
+      box.textContent = t(key); box.setAttribute("data-err-key", key);
+      field.setAttribute("aria-invalid", "true");
+      field.setAttribute("aria-describedby", id);
+    } else {
+      box.textContent = ""; box.removeAttribute("data-err-key");
+      field.removeAttribute("aria-invalid");
+    }
+  }
+  function validateForm(form) {
+    var first = null;
+    $all("input, select, textarea", form).forEach(function (f) {
+      if (f.type === "hidden" || f.disabled || f.name === "botcheck") return;
+      var k = fieldError(f);
+      showError(f, k);
+      if (k && !first) first = f;
+    });
+    if (first) first.focus();
+    return !first;
+  }
+  function liveValidate(form) {
+    form.setAttribute("novalidate", "");
+    $all("input, select, textarea", form).forEach(function (f) {
+      var ev = f.tagName === "SELECT" || f.type === "date" ? "change" : "blur";
+      f.addEventListener(ev, function () { if (f.value || f.hasAttribute("aria-invalid")) showError(f, fieldError(f)); });
+      f.addEventListener("input", function () { if (f.hasAttribute("aria-invalid")) showError(f, fieldError(f)); });
+    });
+    // Dates cannot be in the past
+    var today = new Date(); today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
+    $all('input[type="date"]', form).forEach(function (d) { d.min = today.toISOString().slice(0, 10); });
+  }
+  function formData(form) {
+    var out = {};
+    $all("input, select, textarea", form).forEach(function (f) {
+      if (!f.name || f.type === "hidden" || f.name === "botcheck") return;
+      var label = form.querySelector('label[for="' + f.id + '"]');
+      var val = f.tagName === "SELECT" && f.selectedIndex >= 0 ? f.options[f.selectedIndex].text : f.value;
+      out[f.name] = { label: label ? label.textContent.replace(/\*/g, "").trim() : f.name, value: (val || "").trim() };
+    });
+    return out;
+  }
+
+  /* ---------- reveal on scroll ---------- */
+  function reveal() {
+    var els = $all("[data-reveal]");
+    if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      els.forEach(function (e) { e.classList.add("is-in"); }); return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("is-in"); io.unobserve(en.target); } });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+    els.forEach(function (e) { io.observe(e); });
+  }
+
+  /* ---------- boot ---------- */
+  function boot() {
+    snapshot();
+    bindConfig();
+    buildSwitchers();
+    bindWhatsApp();
+    loadPhotos();
+    apply(initialLang());
+    reveal();
+    analytics();
+    document.documentElement.classList.add("js-ready");
+  }
+
+  window.WPM = {
+    config: CFG, addStrings: addStrings, t: t, apply: apply, lang: function () { return current; },
+    toast: toast, validateForm: validateForm, liveValidate: liveValidate, formData: formData,
+    waLink: waLink, loadPhotos: loadPhotos, $all: $all, boot: boot
+  };
+})();
+
+</script>
+<script>
+/* ==========================================================================
+   WEBSPROMAKERS — Motor común de las demos
+   - Textos comunes en 4 idiomas
+   - Modal "esto es una demo" (WhatsApp, redes, llamadas, formularios)
+   - Pestañas, filtros, galería, menú móvil
+   Cada demo registra su propio contenido con DEMO.onRender(fn)
+   ========================================================================== */
+(function () {
+  "use strict";
+  var W = window.WPM, add = W.addStrings, t = W.t, $all = W.$all;
+
+  add("en", {
+    "demo.banner": "Concept demo by WebsProMakers · Fictitious business",
+    "demo.back": "Back to WebsProMakers",
+    "demo.isDemo": "Demo",
+    "demo.title.wa": "WhatsApp",
+    "demo.title.form": "Request ready",
+    "demo.title.social": "Social media",
+    "demo.title.call": "Phone call",
+    "demo.title.email": "Email",
+    "demo.wa": "On a real website, this button opens WhatsApp with the business and this message ready to send:",
+    "demo.social": "On a real website, this icon opens the business’s social media profile.",
+    "demo.call": "On a real website, this button calls the business directly with one tap.",
+    "demo.email": "On a real website, this opens an email to the business.",
+    "demo.form": "This is a demo, so nothing has been sent. On a real website, the business would receive this request by email or WhatsApp:",
+    "demo.cta": "Would you like this for your business?",
+    "demo.ctaBtn": "Talk to WebsProMakers",
+    "demo.close": "Close",
+    "demo.menu": "Menu",
+    "demo.mapNote": "The map shows the area. This business is fictitious.",
+    "demo.samplePrices": "Sample prices for demonstration.",
+    "demo.openMaps": "Open in Google Maps",
+    "f.name": "Name", "f.phone": "Phone / WhatsApp", "f.email": "Email", "f.date": "Date", "f.time": "Time", "f.guests": "Guests",
+    "f.message": "Message (optional)", "f.checkin": "Check-in", "f.checkout": "Check-out", "f.room": "Room type", "f.choose": "Choose…",
+    "f.adults": "Adults", "f.children": "Children", "f.tour": "Tour", "f.hotel": "Hotel for pick-up (optional)",
+    "val.required": "Please fill in this field.", "val.select": "Please choose an option.", "val.email": "Please enter a valid email address.",
+    "val.phone": "Please enter a valid phone number, e.g. +60 12 345 6789.", "val.number": "Please enter a valid number.",
+    "val.date": "Please choose a date from today onwards.", "val.after": "This date must be after the first one.", "val.short": "Please write a little more."
+  });
+  add("ms", {
+    "demo.banner": "Demo konsep oleh WebsProMakers · Perniagaan rekaan",
+    "demo.back": "Kembali ke WebsProMakers", "demo.isDemo": "Demo",
+    "demo.title.wa": "WhatsApp", "demo.title.form": "Permintaan sedia", "demo.title.social": "Media sosial", "demo.title.call": "Panggilan telefon", "demo.title.email": "E-mel",
+    "demo.wa": "Di laman web sebenar, butang ini membuka WhatsApp dengan perniagaan dan mesej ini sedia untuk dihantar:",
+    "demo.social": "Di laman web sebenar, ikon ini membuka profil media sosial perniagaan.",
+    "demo.call": "Di laman web sebenar, butang ini terus menghubungi perniagaan dengan satu sentuhan.",
+    "demo.email": "Di laman web sebenar, ini membuka e-mel kepada perniagaan.",
+    "demo.form": "Ini ialah demo, jadi tiada apa-apa dihantar. Di laman web sebenar, perniagaan akan menerima permintaan ini melalui e-mel atau WhatsApp:",
+    "demo.cta": "Mahukan ini untuk perniagaan anda?", "demo.ctaBtn": "Hubungi WebsProMakers", "demo.close": "Tutup", "demo.menu": "Menu",
+    "demo.mapNote": "Peta menunjukkan kawasan. Perniagaan ini rekaan.", "demo.samplePrices": "Harga contoh untuk demonstrasi.", "demo.openMaps": "Buka di Google Maps",
+    "f.name": "Nama", "f.phone": "Telefon / WhatsApp", "f.email": "E-mel", "f.date": "Tarikh", "f.time": "Masa", "f.guests": "Tetamu",
+    "f.message": "Mesej (pilihan)", "f.checkin": "Daftar masuk", "f.checkout": "Daftar keluar", "f.room": "Jenis bilik", "f.choose": "Pilih…",
+    "f.adults": "Dewasa", "f.children": "Kanak-kanak", "f.tour": "Lawatan", "f.hotel": "Hotel untuk dijemput (pilihan)",
+    "val.required": "Sila isi ruangan ini.", "val.select": "Sila pilih satu pilihan.", "val.email": "Sila masukkan alamat e-mel yang sah.",
+    "val.phone": "Sila masukkan nombor telefon yang sah, cth. +60 12 345 6789.", "val.number": "Sila masukkan nombor yang sah.",
+    "val.date": "Sila pilih tarikh mulai hari ini.", "val.after": "Tarikh ini mesti selepas tarikh pertama.", "val.short": "Sila tulis sedikit lagi."
+  });
+  add("es", {
+    "demo.banner": "Demo conceptual de WebsProMakers · Negocio ficticio",
+    "demo.back": "Volver a WebsProMakers", "demo.isDemo": "Demo",
+    "demo.title.wa": "WhatsApp", "demo.title.form": "Solicitud lista", "demo.title.social": "Redes sociales", "demo.title.call": "Llamada", "demo.title.email": "Email",
+    "demo.wa": "En una web real, este botón abre WhatsApp con el negocio y este mensaje listo para enviar:",
+    "demo.social": "En una web real, este icono abre el perfil del negocio en redes sociales.",
+    "demo.call": "En una web real, este botón llama al negocio con un solo toque.",
+    "demo.email": "En una web real, esto abre un email dirigido al negocio.",
+    "demo.form": "Esto es una demo, así que no se ha enviado nada. En una web real, el negocio recibiría esta solicitud por email o WhatsApp:",
+    "demo.cta": "¿Quieres esto para tu negocio?", "demo.ctaBtn": "Habla con WebsProMakers", "demo.close": "Cerrar", "demo.menu": "Menú",
+    "demo.mapNote": "El mapa muestra la zona. Este negocio es ficticio.", "demo.samplePrices": "Precios de ejemplo para la demostración.", "demo.openMaps": "Abrir en Google Maps",
+    "f.name": "Nombre", "f.phone": "Teléfono / WhatsApp", "f.email": "Email", "f.date": "Fecha", "f.time": "Hora", "f.guests": "Personas",
+    "f.message": "Mensaje (opcional)", "f.checkin": "Entrada", "f.checkout": "Salida", "f.room": "Tipo de habitación", "f.choose": "Elige…",
+    "f.adults": "Adultos", "f.children": "Niños", "f.tour": "Excursión", "f.hotel": "Hotel de recogida (opcional)",
+    "val.required": "Rellena este campo.", "val.select": "Elige una opción.", "val.email": "Introduce un email válido.",
+    "val.phone": "Introduce un teléfono válido, p. ej. +60 12 345 6789.", "val.number": "Introduce un número válido.",
+    "val.date": "Elige una fecha a partir de hoy.", "val.after": "Esta fecha debe ser posterior a la primera.", "val.short": "Escribe un poco más, por favor."
+  });
+  add("zh", {
+    "demo.banner": "WebsProMakers 概念演示 · 虚构商家",
+    "demo.back": "返回 WebsProMakers", "demo.isDemo": "演示",
+    "demo.title.wa": "WhatsApp", "demo.title.form": "申请已生成", "demo.title.social": "社交媒体", "demo.title.call": "电话", "demo.title.email": "电子邮件",
+    "demo.wa": "在真实网站上，此按钮会打开与商家的 WhatsApp 对话，并附上这条待发送的消息：",
+    "demo.social": "在真实网站上，此图标会打开商家的社交媒体主页。",
+    "demo.call": "在真实网站上，此按钮可一键直接拨打商家电话。",
+    "demo.email": "在真实网站上，这会打开发给商家的电子邮件。",
+    "demo.form": "这是演示，因此没有发送任何内容。在真实网站上，商家会通过电子邮件或 WhatsApp 收到以下申请：",
+    "demo.cta": "想为您的生意也做一个吗？", "demo.ctaBtn": "联系 WebsProMakers", "demo.close": "关闭", "demo.menu": "菜单",
+    "demo.mapNote": "地图显示的是所在区域。此商家为虚构。", "demo.samplePrices": "价格仅为演示示例。", "demo.openMaps": "在 Google 地图中打开",
+    "f.name": "姓名", "f.phone": "电话 / WhatsApp", "f.email": "电子邮箱", "f.date": "日期", "f.time": "时间", "f.guests": "人数",
+    "f.message": "留言（选填）", "f.checkin": "入住", "f.checkout": "退房", "f.room": "房型", "f.choose": "请选择…",
+    "f.adults": "成人", "f.children": "儿童", "f.tour": "行程", "f.hotel": "接送酒店（选填）",
+    "val.required": "请填写此项。", "val.select": "请选择一个选项。", "val.email": "请输入有效的电子邮箱。",
+    "val.phone": "请输入有效的电话号码，例如 +60 12 345 6789。", "val.number": "请输入有效的数字。",
+    "val.date": "请选择今天或之后的日期。", "val.after": "此日期必须晚于第一个日期。", "val.short": "请再多写一点。"
+  });
+
+  /* ---------- shared icon sprite ---------- */
+  var SPRITE = '<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>' +
+    '<symbol id="d-wa" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 2.2a9.6 9.6 0 0 0-8.3 14.5L2.3 21.8l5.3-1.4A9.6 9.6 0 1 0 12 2.2zm0 17.6a8 8 0 0 1-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3A8 8 0 1 1 12 19.8zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8.9c-.1.2-.3.2-.5.1-.7-.3-1.5-.7-2.1-1.3-.6-.6-1-1.2-1.3-1.8-.1-.2 0-.4.1-.5l.4-.5.3-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3 1 2.5c.1.2 1.6 2.5 4 3.5 1.5.6 2.1.7 2.8.6.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1l-.4-.3z"/></symbol>' +
+    '<symbol id="d-pin" viewBox="0 0 24 24"><path d="M12 21.5s-7-6.1-7-11.2a7 7 0 0 1 14 0c0 5.1-7 11.2-7 11.2z"/><circle cx="12" cy="10.2" r="2.5"/></symbol>' +
+    '<symbol id="d-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3.2 2"/></symbol>' +
+    '<symbol id="d-call" viewBox="0 0 24 24"><path d="M5 3h3.5l2 5L8 9.5a11 11 0 0 0 6.5 6.5L16 13.5l5 2V19a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></symbol>' +
+    '<symbol id="d-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></symbol>' +
+    '<symbol id="d-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>' +
+    '<symbol id="d-fb" viewBox="0 0 24 24"><path d="M15 3h-2.5A3.5 3.5 0 0 0 9 6.5V10H6.5v3.5H9V21h3.5v-7.5H15l.5-3.5h-3V7a1 1 0 0 1 1-1H15z"/></symbol>' +
+    '<symbol id="d-tt" viewBox="0 0 24 24"><path d="M14 3v11.5a3.5 3.5 0 1 1-3-3.46M14 3c.5 2.5 2.3 4.2 5 4.5"/></symbol>' +
+    '<symbol id="d-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.6 2.8 3.9 6 3.9 9.5s-1.3 6.7-3.9 9.5c-2.6-2.8-3.9-6-3.9-9.5s1.3-6.7 3.9-9.5z"/></symbol>' +
+    '<symbol id="d-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>' +
+    '<symbol id="d-back" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>' +
+    '<symbol id="d-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>' +
+    '<symbol id="d-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.6a3.5 3.5 0 0 1 0 6.8M21.5 20a6.5 6.5 0 0 0-4-6"/></symbol>' +
+    '<symbol id="d-size" viewBox="0 0 24 24"><path d="M4 9V4h5M20 15v5h-5M4 4l6 6M20 20l-6-6"/></symbol>' +
+    '<symbol id="d-bed" viewBox="0 0 24 24"><path d="M3 5v14M3 14h18v5M21 14v-2.5A3.5 3.5 0 0 0 17.5 8H11v6"/><circle cx="7" cy="10.5" r="2"/></symbol>' +
+    '<symbol id="d-pool" viewBox="0 0 24 24"><path d="M2 18c2 0 2-1.5 4-1.5S8 18 10 18s2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5M8 14V5a2 2 0 0 1 4 0M16 14V5a2 2 0 0 0-4 0M8 9h8"/></symbol>' +
+    '<symbol id="d-coffee" viewBox="0 0 24 24"><path d="M4 9h13v4a6 6 0 0 1-6 6h-1a6 6 0 0 1-6-6zM17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 3v3M12 3v3"/></symbol>' +
+    '<symbol id="d-wifi" viewBox="0 0 24 24"><path d="M2 8.5a15 15 0 0 1 20 0M5.5 12a10 10 0 0 1 13 0M9 15.5a5 5 0 0 1 6 0M12 19h.01"/></symbol>' +
+    '<symbol id="d-car" viewBox="0 0 24 24"><path d="M5 16V11l2-5h10l2 5v5M3 16h18v3h-3v-3M6 19v-3"/><circle cx="7.5" cy="13" r=".8"/><circle cx="16.5" cy="13" r=".8"/></symbol>' +
+    '<symbol id="d-spa" viewBox="0 0 24 24"><path d="M12 21c-5 0-8-3-8-7 3 0 6 1.5 8 4 2-2.5 5-4 8-4 0 4-3 7-8 7zM12 18c-2-3-2-7 0-10 2 3 2 7 0 10z"/></symbol>' +
+    '<symbol id="d-bike" viewBox="0 0 24 24"><circle cx="6" cy="16" r="3.5"/><circle cx="18" cy="16" r="3.5"/><path d="M6 16l4-8h5l3 8M10 8 8.5 5H6M12.5 16 15 8"/></symbol>' +
+    '<symbol id="d-broom" viewBox="0 0 24 24"><path d="M14 4l6 6M12 6l6 6-7 7a3 3 0 0 1-4 0l-2-2a3 3 0 0 1 0-4z"/></symbol>' +
+    '<symbol id="d-map" viewBox="0 0 24 24"><path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/></symbol>' +
+    '<symbol id="d-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>' +
+    '<symbol id="d-shield" viewBox="0 0 24 24"><path d="M12 3 20 6v6c0 5-3.4 8-8 9-4.6-1-8-4-8-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>' +
+    '<symbol id="d-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1 13H6zM9 8V6a3 3 0 0 1 6 0v2"/></symbol>' +
+    '<symbol id="d-leaf" viewBox="0 0 24 24"><path d="M5 19c0-9 6-14 15-14 0 9-5 15-14 15M5 19l8-8"/></symbol>' +
+    '<symbol id="d-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>' +
+    '</defs></svg>';
+
+  /* ---------- helpers ---------- */
+  function L(o) { if (o == null) return ""; if (typeof o === "string") return o; return o[W.lang()] || o.en || ""; }
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  var renderers = [];
+
+  /* ---------- modal ---------- */
+  var lastFocus;
+  function modal(kind, body, isMsg) {
+    close();
+    lastFocus = document.activeElement;
+    var m = document.createElement("div");
+    m.className = "d-modal"; m.setAttribute("role", "dialog"); m.setAttribute("aria-modal", "true"); m.setAttribute("aria-labelledby", "d-modal-title");
+    m.innerHTML = '<div class="d-modal-card"><h2 id="d-modal-title">' + esc(t("demo.title." + kind)) + " <span>" + esc(t("demo.isDemo")) + "</span></h2>" +
+      "<p>" + esc(t("demo." + kind)) + "</p>" +
+      (body ? '<div class="d-modal-msg' + (isMsg ? "" : " plain") + '">' + esc(body) + "</div>" : "") +
+      '<div class="d-modal-actions"><small>' + esc(t("demo.cta")) + '</small><a class="d-btn" href="' + 'https://webspromakers-site.pages.dev/#contact" target="_blank" rel="noopener">' + esc(t("demo.ctaBtn")) + '</a><button type="button" class="d-btn d-btn--ghost" data-close>' + esc(t("demo.close")) + "</button></div></div>";
+    document.body.appendChild(m);
+    requestAnimationFrame(function () { m.classList.add("is-open"); });
+    m.addEventListener("click", function (e) { if (e.target === m || e.target.hasAttribute("data-close")) close(); });
+    m.querySelector("[data-close]").focus();
+  }
+  function close() {
+    var m = document.querySelector(".d-modal, .d-lightbox");
+    if (m) { m.remove(); if (lastFocus) lastFocus.focus(); }
+  }
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+
+  /* ---------- delegated actions ---------- */
+  document.addEventListener("click", function (e) {
+    var el = e.target.closest("[data-demo]");
+    if (el) {
+      e.preventDefault();
+      var kind = el.getAttribute("data-demo");
+      var text = el.getAttribute("data-demo-text") || (el.getAttribute("data-demo-msg") ? t(el.getAttribute("data-demo-msg")) : "");
+      modal(kind, text, kind === "wa");
+      return;
+    }
+    var img = e.target.closest("[data-lightbox] img");
+    if (img && !img.classList.contains("is-missing")) {
+      lastFocus = document.activeElement;
+      var lb = document.createElement("div");
+      lb.className = "d-lightbox"; lb.setAttribute("role", "dialog"); lb.setAttribute("aria-modal", "true");
+      var src = img.currentSrc || img.src;
+      lb.innerHTML = '<img alt=""><button type="button" aria-label="' + esc(t("demo.close")) + '">×</button>';
+      lb.querySelector("img").src = src.replace(/w=\d+/, "w=1600");
+      lb.querySelector("img").alt = img.alt;
+      lb.addEventListener("click", close);
+      document.body.appendChild(lb);
+      lb.querySelector("button").focus();
+    }
+  });
+
+  /* ---------- forms ---------- */
+  function bindForms() {
+    $all("form[data-demo-form]").forEach(function (form) {
+      W.liveValidate(form);
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (!W.validateForm(form)) return;
+        var data = W.formData(form);
+        var lines = Object.keys(data).filter(function (k) { return data[k].value; }).map(function (k) { return data[k].label + ": " + data[k].value; });
+        modal("form", lines.join("\n"), false);
+      });
+    });
+  }
+
+  /* ---------- tabs & filters ---------- */
+  function bindTabs() {
+    $all("[data-tabs]").forEach(function (box) {
+      var btns = $all("[data-tab]", box);
+      function show(id) {
+        btns.forEach(function (b) { var on = b.getAttribute("data-tab") === id; b.setAttribute("aria-selected", on ? "true" : "false"); b.tabIndex = on ? 0 : -1; });
+        $all("[data-panel]", box).forEach(function (p) { p.hidden = p.getAttribute("data-panel") !== id; });
+      }
+      btns.forEach(function (b, i) {
+        b.addEventListener("click", function () { show(b.getAttribute("data-tab")); });
+        b.addEventListener("keydown", function (e) {
+          if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+          var n = btns[(i + (e.key === "ArrowRight" ? 1 : btns.length - 1)) % btns.length];
+          n.focus(); n.click();
+        });
+      });
+      if (btns[0]) show(btns[0].getAttribute("data-tab"));
+    });
+  }
+
+  /* ---------- header & mobile nav ---------- */
+  function bindNav() {
+    var header = document.querySelector("[data-demo-header]");
+    var burger = document.querySelector(".d-burger");
+    if (header) {
+      var onS = function () { header.classList.toggle("is-scrolled", window.scrollY > 30); };
+      onS(); window.addEventListener("scroll", onS, { passive: true });
+    }
+    if (burger) {
+      burger.addEventListener("click", function () {
+        var open = !document.body.classList.contains("nav-open");
+        document.body.classList.toggle("nav-open", open);
+        burger.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+      $all("[data-demo-nav] a").forEach(function (a) { a.addEventListener("click", function () { document.body.classList.remove("nav-open"); burger.setAttribute("aria-expanded", "false"); }); });
+    }
+  }
+
+  function renderAll() { renderers.forEach(function (fn) { fn(W.lang()); }); W.loadPhotos(); }
+
+  function start() {
+    document.body.insertAdjacentHTML("afterbegin", SPRITE);
+    renderAll();           // first render in default language so the English snapshot is complete
+    W.boot();              // translations, photos, language switcher
+    bindForms(); bindTabs(); bindNav();
+    document.addEventListener("wpm:lang", renderAll);
+    renderAll();
+  }
+
+  window.DEMO = {
+    L: L, esc: esc, modal: modal,
+    onRender: function (fn) { renderers.push(fn); },
+    rebindForms: bindForms
+  };
+  if (document.readyState === "complete") start(); else document.addEventListener("DOMContentLoaded", start);
+})();
+
+</script>
+<script>
+/* ==========================================================================
+   WEBSPROMAKERS — Propuestas para negocios reales (común a /propuestas/*)
+   - Fotos extra (Unsplash, licencia gratuita)
+   - Textos comunes en árabe (ar) e hindi (hi)
+   - Banner "propuesta, no es la web oficial" con el nombre del negocio
+   - Dirección derecha-izquierda (RTL) para árabe
+   Se carga DESPUÉS de demo.js y ANTES del data.js de cada propuesta.
+   ========================================================================== */
+(function () {
+  "use strict";
+  var W = window.WPM, add = W.addStrings;
+
+  /* ---------- fotos extra ---------- */
+  var P = window.WPM_PHOTOS = window.WPM_PHOTOS || {};
+  var extra = {
+    // India / Punjab
+    "pk-hero": "u:1772730065344-4cf131b39951", "pk-butter": "u:1603894584373-5ac82b2ae398",
+    "pk-biryani": "u:1782541370275-6761522e39d1", "pk-biryani2": "u:1589302168068-964664d93dc0",
+    "pk-tandoor": "u:1763951718950-c536b1295213", "pk-tikka": "u:1762922425226-8cfe6987e7b0",
+    "pk-thali": "u:1767114915989-c6ab3c8fc42e", "pk-dal": "u:1585937421612-70a008356fbe",
+    "pk-roti": "u:1565557623262-b51c2513a641", "pk-kebab": "u:1781332146555-5507a0fc9bc9",
+    "pk-paneer": "u:1631452180519-c014fe946bc7", "pk-table": "u:1728910156510-77488f19b152",
+    // Siria / Oriente Medio
+    "sy-mezze": "u:1767114915974-3481fa23cbb0", "sy-hummus": "u:1697126248475-a537cc5cce28",
+    "sy-hummus2": "u:1783696072732-2ff5cec23b08", "sy-baba": "u:1771574206132-74f127909c02",
+    "sy-falafel": "u:1593001872095-7d5b3868fb1d", "sy-falafel2": "u:1786174045076-1cd880429ef1",
+    "sy-shawarma": "u:1529006557810-274b9b2fc783", "sy-shawarma-spit": "u:1530469912745-a215c6b256ea",
+    "sy-wrap": "u:1760888548893-bc2f7e09e972", "sy-grill": "u:1555939594-58d7cb561ad1",
+    "sy-kebab": "u:1603360946369-dc9bb6258143", "sy-kibbeh": "u:1786174044931-d395bf77e58e",
+    "sy-baklava": "u:1761828122856-8703baac8e86", "sy-kunafa": "u:1778447812923-88a9e3e6b567",
+    "sy-dips": "u:1783455442171-16dbde079c53", "sy-lanterns": "u:1589371315231-096e33e8c55e",
+    "sy-room": "u:1763811939095-09bd3e83ba0d",
+    // Desayuno mediterráneo / café
+    "bc-breakfast": "u:1759216279330-c5a83a0a1ebe", "bc-shakshuka": "u:1757972367454-b79cbe99a253",
+    "bc-shakshuka2": "u:1759493785939-0bd3e3d60682", "bc-turkish": "u:1768566108481-27e72362c174",
+    "bc-coconut": "u:1537191072641-5e19cc173c6a", "bc-coconut2": "u:1620752420341-4cd7642568dd",
+    "bc-palms": "u:1570533459920-076b827c7b69",
+    // Barbería
+    "bb-shop": "u:1585747860715-2ba37e788b70", "bb-chair": "u:1621645582931-d1d3e6564943",
+    "bb-cut": "u:1647140655214-e4a2d914971f", "bb-razor": "u:1599351431202-1e0f0137899a",
+    "bb-dry": "u:1605497788044-5a32c7078486", "bb-tools": "u:1621605815971-fbc98d665033",
+    "bb-beard": "u:1599011176306-4a96f1516d4d", "bb-fade": "u:1593702275687-f8b402bf1fb5",
+    "bb-sit": "u:1503951914875-452162b0f3f1", "bb-gloves": "u:1783908688260-0c47404926f3",
+    "bb-interior": "u:1781455793310-8427c96454c7",
+    // Jet ski / islas
+    "js-hero": "u:1787142948486-e8022174270e", "js-ride": "u:1505867798796-639ec7e8cdf5",
+    "js-woman": "u:1764056230965-570f10082acc", "js-two": "u:1554132267-d06483b00adc",
+    "js-sunset": "u:1768463852042-656c293ce22f", "js-fleet": "u:1524061508355-90afbf7fcf03",
+    "js-aerial": "u:1715178724773-a243cfbc2e9e", "js-island": "u:1771601795534-8a07e8bf4ae4",
+    "js-karst": "u:1764187808299-f3e5dfdf09ef", "js-eagle": "u:1583316369024-8a4eb52ec261",
+    "js-mangrove": "u:1589556183130-530470785fab", "js-view": "u:1647878872662-50d50c74d40e",
+    "js-beach": "u:1591251010190-43c22baa46b0"
+  };
+  for (var k in extra) P[k] = extra[k];
+
+  /* ---------- textos comunes: árabe ---------- */
+  add("ar", {
+    "demo.back": "العودة إلى WebsProMakers", "demo.isDemo": "عرض تجريبي",
+    "demo.title.wa": "واتساب", "demo.title.form": "الطلب جاهز", "demo.title.social": "وسائل التواصل", "demo.title.call": "اتصال هاتفي", "demo.title.email": "البريد الإلكتروني",
+    "demo.wa": "في الموقع الحقيقي، يفتح هذا الزر واتساب مع النشاط التجاري وهذه الرسالة جاهزة للإرسال:",
+    "demo.social": "في الموقع الحقيقي، تفتح هذه الأيقونة حساب النشاط على وسائل التواصل.",
+    "demo.call": "في الموقع الحقيقي، يتصل هذا الزر بالنشاط مباشرة بلمسة واحدة.",
+    "demo.email": "في الموقع الحقيقي، يفتح هذا رسالة بريد إلكتروني إلى النشاط.",
+    "demo.form": "هذا عرض تجريبي، لذلك لم يُرسل شيء. في الموقع الحقيقي، يستلم النشاط هذا الطلب عبر البريد أو واتساب:",
+    "demo.cta": "هل تريد هذا لنشاطك التجاري؟", "demo.ctaBtn": "تواصل مع WebsProMakers", "demo.close": "إغلاق", "demo.menu": "القائمة",
+    "demo.openMaps": "افتح في خرائط Google",
+    "f.name": "الاسم", "f.phone": "الهاتف / واتساب", "f.email": "البريد الإلكتروني", "f.date": "التاريخ", "f.time": "الوقت", "f.guests": "عدد الأشخاص",
+    "f.message": "رسالة (اختياري)", "f.choose": "اختر…", "f.adults": "البالغون", "f.children": "الأطفال", "f.tour": "الجولة", "f.hotel": "الفندق (اختياري)",
+    "val.required": "يرجى ملء هذا الحقل.", "val.select": "يرجى اختيار خيار.", "val.email": "يرجى إدخال بريد إلكتروني صحيح.",
+    "val.phone": "يرجى إدخال رقم هاتف صحيح، مثل ‎+60 12 345 6789.", "val.number": "يرجى إدخال رقم صحيح.",
+    "val.date": "يرجى اختيار تاريخ من اليوم فصاعدًا.", "val.after": "يجب أن يكون هذا التاريخ بعد التاريخ الأول.", "val.short": "يرجى كتابة المزيد قليلًا."
+  });
+  /* ---------- textos comunes: hindi ---------- */
+  add("hi", {
+    "demo.back": "WebsProMakers पर वापस जाएँ", "demo.isDemo": "डेमो",
+    "demo.title.wa": "WhatsApp", "demo.title.form": "अनुरोध तैयार", "demo.title.social": "सोशल मीडिया", "demo.title.call": "फ़ोन कॉल", "demo.title.email": "ईमेल",
+    "demo.wa": "असली वेबसाइट पर यह बटन बिज़नेस के साथ WhatsApp खोलता है, यह संदेश भेजने के लिए तैयार रहता है:",
+    "demo.social": "असली वेबसाइट पर यह आइकन बिज़नेस का सोशल मीडिया प्रोफ़ाइल खोलता है।",
+    "demo.call": "असली वेबसाइट पर यह बटन एक टैप में बिज़नेस को कॉल करता है।",
+    "demo.email": "असली वेबसाइट पर यह बिज़नेस को ईमेल खोलता है।",
+    "demo.form": "यह डेमो है, इसलिए कुछ भी नहीं भेजा गया। असली वेबसाइट पर बिज़नेस को यह अनुरोध ईमेल या WhatsApp पर मिलेगा:",
+    "demo.cta": "क्या आप अपने बिज़नेस के लिए यह चाहते हैं?", "demo.ctaBtn": "WebsProMakers से बात करें", "demo.close": "बंद करें", "demo.menu": "मेन्यू",
+    "demo.openMaps": "Google Maps में खोलें",
+    "f.name": "नाम", "f.phone": "फ़ोन / WhatsApp", "f.email": "ईमेल", "f.date": "तारीख़", "f.time": "समय", "f.guests": "लोग",
+    "f.message": "संदेश (वैकल्पिक)", "f.choose": "चुनें…", "f.adults": "वयस्क", "f.children": "बच्चे", "f.tour": "टूर", "f.hotel": "होटल (वैकल्पिक)",
+    "val.required": "कृपया यह भरें।", "val.select": "कृपया एक विकल्प चुनें।", "val.email": "कृपया सही ईमेल लिखें।",
+    "val.phone": "कृपया सही फ़ोन नंबर लिखें, जैसे +60 12 345 6789।", "val.number": "कृपया सही संख्या लिखें।",
+    "val.date": "कृपया आज या उसके बाद की तारीख़ चुनें।", "val.after": "यह तारीख़ पहली तारीख़ के बाद होनी चाहिए।", "val.short": "कृपया थोड़ा और लिखें।"
+  });
+
+  /* ---------- banner y notas: propuesta para un negocio real ---------- */
+  var biz = document.body.getAttribute("data-biz") || "";
+  var BAN = {
+    en: "Website proposal for {b} by WebsProMakers · Not the official website",
+    ms: "Cadangan laman web untuk {b} oleh WebsProMakers · Bukan laman web rasmi",
+    es: "Propuesta de web para {b} de WebsProMakers · No es la web oficial",
+    zh: "WebsProMakers 为 {b} 制作的网站提案 · 非官方网站",
+    ar: "مقترح موقع إلكتروني لـ {b} من WebsProMakers · ليس الموقع الرسمي",
+    hi: "{b} के लिए WebsProMakers का वेबसाइट प्रस्ताव · यह आधिकारिक वेबसाइट नहीं है"
+  };
+  var MAP = { en: "Location from Google Maps.", ms: "Lokasi dari Google Maps.", es: "Ubicación según Google Maps.", zh: "位置来自 Google 地图。", ar: "الموقع من خرائط Google.", hi: "लोकेशन Google Maps से।" };
+  var PRICES = {
+    en: "Example prices: to be confirmed with the business.", ms: "Harga contoh: akan disahkan bersama perniagaan.", es: "Precios de ejemplo: a confirmar con el negocio.",
+    zh: "示例价格：以商家确认为准。", ar: "أسعار تقريبية: يؤكدها النشاط التجاري.", hi: "उदाहरण मूल्य: बिज़नेस से पुष्टि होना बाकी।"
+  };
+  Object.keys(BAN).forEach(function (l) {
+    var o = {}; o["demo.banner"] = BAN[l].replace("{b}", biz); o["demo.mapNote"] = MAP[l]; o["demo.samplePrices"] = PRICES[l];
+    add(l, o);
+  });
+
+  /* ---------- RTL para árabe ---------- */
+  function dir(e) { var l = (e && e.detail && e.detail.lang) || W.lang(); document.documentElement.dir = l === "ar" ? "rtl" : "ltr"; }
+  document.addEventListener("wpm:lang", dir);
+})();
+
+</script>
+<script>
+/* FOTOS DE LANGKAWI TRIP — reales: de su web langkawitrip.com y de su ficha de Google Maps (enlazadas, necesitan internet). */
+window.PP_FOTOS = {
+ "trip-hero": [
+  "https://langkawitrip.com/wp-content/uploads/2025/05/DSC01297-1536x1024.webp",
+  ""
+ ],
+ "trip-A": [
+  "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Q431KZbQ7F8uypzuSYnOB44f5MuyjnVD9QT5c3kCv7lv224orbxHg8PKgd_YZFa8UwNajlup5ttveNm5kndKBzueQw3ESIFOyIgnQMulaI08i3Hthh_S38MJonjKltAzudxT0_8tWNO6hm=w1000-h700-k-no",
+  ""
+ ],
+ "trip-B": [
+  "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TpOqiOdPC8FrwSxQyW3KnB5iY6Tf0pkVFuj4FY49DT69yZgmzUunxLunTx-xrQbyrQ0yxfCH9AgY3mk5aRv20QCaGgmW08QgQPA44FFWApN4kJKsrTdD2q8rDQeYAqozRbU_bKdcHpVLqo=w1000-h700-k-no",
+  ""
+ ],
+ "trip-C": [
+  "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QkTMBTp1O1cHLCcZuYq67zvxmnHXppmsyDYA3MNgQzg6FaCtcvvcoVQKflGvlnBwaGzT5NxS67oo5rKLh11pwCylDhwrUYOYMXq5JlENuc3UjJ88WJb_T9_xvy3IopsWyxCQebACDMxxw=w1000-h700-k-no",
+  ""
+ ],
+ "trip-T1": [
+  "https://langkawitrip.com/wp-content/uploads/2024/11/img_8346-720x490.jpeg",
+  ""
+ ],
+ "trip-T2": [
+  "https://langkawitrip.com/wp-content/uploads/2025/06/IMG_6720-990x490.jpg",
+  ""
+ ],
+ "trip-T3": [
+  "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QSbdsCjpopENbIC6SPLz2bbFVEk-UqPOK1wSePtytIC8OGVW4Rkrxg38X0InHQ57vusqhoeMnRC9vu1QkXvBpw9aS-3YH8n1XW8fSnmeK30zLkR9b88KCYEGgWZd2jIxBbjXzNKMuGrds=w1000-h700-k-no",
+  ""
+ ],
+ "trip-T4": [
+  "https://langkawitrip.com/wp-content/uploads/2025/04/PremiumDeluxeSunsetPartyCruisewithMealinLangkawi-e1745047256650-990x490.jpg",
+  ""
+ ],
+ "trip-T5": [
+  "https://langkawitrip.com/wp-content/uploads/2025/05/island-990x490.webp",
+  ""
+ ],
+ "trip-g1": [
+  "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9R7BjHVCb765XZ4myvUk62jJQ2DmvjnMzvP7j3u7zmM09N-ML7aHWvuMlL7vtXgNqk_xlvDUiJT-fJAQo5eDqcEz_s9PX_ZcyFRheuGPyA-TdoAgf0KsgbitirDGCL2LFHokDKc=w900-h700-k-no",
+  ""
+ ],
+ "trip-g2": [
+  "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9T86PGFSAA5wgp5cfj3aWT40Q_MVmV12ViNS7tz4otZPe1LVGO_-xnbdTqtDx_O7hgewfEtTxnAvKbU2b_25st6j71Kf8tXksXeQaQMM73bY1h1CmL9h5_CmZKI69Wmvvya09k=w900-h700-k-no",
+  ""
+ ],
+ "trip-g3": [
+  "https://langkawitrip.com/wp-content/uploads/2025/05/IMG_6363-scaled-e1753427929110-1024x578.jpeg",
+  ""
+ ],
+ "trip-g4": [
+  "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Rl_v3x8um05F2BuJMqxWZIk8_XKd7cifuVmH-YGHSanvp74DskFuwfmMRqsAT9ZMF8Ml-ElRptDDFOiejruFIZ8ETRYeBlE5IfemyEfzvg65PuRAyodg23EGZgmCbOzHCobdjZKEatb1an=w900-h700-k-no",
+  ""
+ ],
+ "trip-g5": [
+  "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TQjzvOpTWmqygh5NPaGvsnTjfXUqG6JsrFUeIK7xS64C8dJXSXCqjNOM4lpY94QAeOXGGvmjE-60XmWIIGVyRn5LonJW4MLQTxfYeSIOtDa2Xe9fPtlcFcobj5bIxEcXIGHhndIADZ_ZA=w900-h700-k-no",
+  ""
+ ],
+ "trip-g6": [
+  "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TunUtudqZJinh4PXKPLNXxd7xMIXVYaW8-m7BNAdQ-ue48lXbY74Lz-J49dCv0X8IisAFrURUW2_yFhhF53Zai3_FKfLFhBfyXblAfqMhMAOEXOJ4KmAVQOBwoANSNS7tdqh8_bDEhDV_S=w900-h700-k-no",
+  ""
+ ],
+ "trip-g7": [
+  "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SDrXkC74XfgNvkGwyFuZL8sxYZlLWwLgaL16rLi3L9Z9tsa8cEhmbqv6ZyeW3P-iAH_h6io50PmMi6ClIPTuCZWNztwhWYm6OLTjyq83mPKaqNJoyVrBESlCDJxlWQH8vkBen4ybuVJCm8=w900-h700-k-no",
+  ""
+ ],
+ "trip-g8": [
+  "https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SMbf81DzNCE3aDJl1OaRsTEMyK_DpUc7FxL8xR9fcy6SRseOvtnoXt4dRMEa71I0Wrd6yp1P7yk3pT-Tle_8L_STrJhBEyU8sCphn_-xwrYvAfsu2tu4KHNYFvZE921un5X1Fb=w900-h700-k-no",
+  ""
+ ]
+};
+
+</script>
+<script>
+/* Huecos de foto con las fotos reales del negocio (Google Maps / las que os dé el dueño).
+   Cada demo tiene su fotos.js:  window.PP_FOTOS = { "clave": ["fotos/archivo.jpg", "foto-de-reserva"] }
+   1) Si existe fotos/archivo.jpg, se usa.
+   2) Si no existe y hay foto de reserva (clave de photos.js / common.js), se usa la de reserva.
+   3) Si no hay ninguna, se ve un hueco con el nombre de la foto que va ahí. */
+(function () {
+  "use strict";
+  var F = window.PP_FOTOS || {}, P = window.WPM_PHOTOS = window.WPM_PHOTOS || {}, STOCK = {};
+  var me = document.currentScript, ROOT = me ? me.src.replace(/pp\/slots\.js(\?.*)?$/, "") : "";
+  Object.keys(F).forEach(function (k) {
+    if (P[k] && !STOCK[k]) STOCK[k] = P[k];
+    P[k] = /^(https?:|\/)/.test(F[k][0]) ? F[k][0] : ROOT + F[k][0];
+  });
+  function stockUrl(key, w) {
+    var v = STOCK[key] || P[key];
+    if (!v || v.indexOf("u:") !== 0) return v || "";
+    return "https://images.unsplash.com/photo-" + v.slice(2) + "?auto=format&fit=crop&w=" + w + "&q=70";
+  }
+  function label(img) {
+    img.classList.add("is-missing");
+    var ph = img.closest(".ph");
+    if (ph) ph.setAttribute("data-ph-label", img.getAttribute("alt") || "Photo");
+  }
+  function fail(img) {
+    var key = img.getAttribute("data-photo"), slot = F[key];
+    if (!slot) return;
+    var fb = slot[1];
+    if (fb && !img.getAttribute("data-fb")) {
+      var w = parseInt(img.getAttribute("data-w") || "800", 10), url = fb.indexOf("u:") === 0 ? "https://images.unsplash.com/photo-" + fb.slice(2) + "?auto=format&fit=crop&w=" + w + "&q=70" : stockUrl(fb, w);
+      if (url) {
+        img.setAttribute("data-fb", "1");
+        img.removeAttribute("srcset");
+        setTimeout(function () { img.classList.remove("is-missing"); img.src = url; }, 0);
+        return;
+      }
+    }
+    label(img);
+  }
+  document.addEventListener("error", function (e) {
+    var img = e.target;
+    if (img && img.tagName === "IMG" && img.hasAttribute("data-photo")) fail(img);
+  }, true);
+  function relabel() {
+    Array.prototype.forEach.call(document.querySelectorAll(".ph[data-ph-label] img"), function (img) {
+      img.closest(".ph").setAttribute("data-ph-label", img.getAttribute("alt") || "Photo");
+    });
+  }
+  document.addEventListener("wpm:lang", function () { setTimeout(relabel, 40); });
+})();
+
+</script>
+<script>
+/* LANGKAWI TRIP SCOOTER & CAR RENTAL — flota, tours y traducciones (el inglés está en el HTML)
+   Datos: ficha y web gratuita de Google (4,9 · 577 reseñas; 24 h, viernes 10:30–23:00; +60 11-1878 0037; tarjetas),
+   publicaciones (scooter RM 35–40/día según temporada; kayak y jet ski por los manglares) y reseñas
+   (Honda ADV, Yamaha NMAX, depósito RM 100 + documento, tour privado de 4 h con cueva de murciélagos, crucero al atardecer,
+   Mansoor, Shah, Azlan). Precios (scooters y tours) de su web langkawitrip.com, consultada el 27-11-2026: Vario RM 45, ADV 160 RM 80 /24 h; kayak RM 180, jet ski manglar RM 650, manglar privado RM 280, crucero cena RM 106, island hopping compartido RM 48. */
+(function () {
+  var W = window.WPM, D = window.DEMO, L = D.L, esc = D.esc, t = W.t, add = W.addStrings;
+  var FLEET = [
+    { id: "A", photo: "trip-A", name: "Honda Vario", kind: "scooter", from: "45",
+      spec: { en: "Automatic and easy to ride. The cheapest way around Cenang and Tengah.", ms: "Automatik dan mudah ditunggang. Cara paling murah keliling Cenang dan Tengah.", zh: "自动挡，容易上手，环游 Cenang 和 Tengah 最省钱。", ar: "أوتوماتيكي وسهل القيادة. أرخص طريقة للتنقل في شنانغ وتنغاه." } },
+    { id: "B", photo: "trip-B", name: "Honda ADV 160", kind: "scooter", badge: true, from: "80",
+      spec: { en: "Adventure scooter, comfortable for long days around the island.", ms: "Skuter pengembaraan, selesa untuk seharian keliling pulau.", zh: "探险款踏板车，环岛一整天也舒适。", ar: "سكوتر مغامرة، مريح لأيام طويلة حول الجزيرة." } },
+    { id: "C", photo: "trip-C", name: "Yamaha NMAX", kind: "scooter", badge: true,
+      spec: { en: "Maxi-scooter with more power for two riders and the hills.", ms: "Skuter maksi lebih berkuasa untuk dua orang dan jalan bukit.", zh: "大踏板，双人和爬坡更有力。", ar: "سكوتر كبير بقوة أكبر لراكبين وللتلال." } }
+  ];
+  var TOURS = [
+    { id: "T1", photo: "trip-T1", from: "180", name: { en: "Mangrove kayak tour", ms: "Lawatan kayak bakau", zh: "红树林皮划艇", ar: "جولة الكاياك في المانغروف" },
+      spec: { en: "Paddle through the Kilim mangroves with a guide who explains the ecosystem.", ms: "Berkayak di hutan bakau Kilim dengan pemandu yang menerangkan ekosistemnya.", zh: "在基林红树林划艇，导游讲解生态系统。", ar: "جدّف عبر مانغروف كيليم مع مرشد يشرح النظام البيئي." } },
+    { id: "T2", photo: "trip-T2", from: "650", name: { en: "Mangrove jet ski tour", ms: "Lawatan jet ski bakau", zh: "红树林水上摩托", ar: "جولة الدراجة المائية في المانغروف" },
+      spec: { en: "Ride your own jet ski behind the guide through the mangrove rivers.", ms: "Tunggang jet ski sendiri di belakang pemandu melalui sungai bakau.", zh: "跟随导游，自己驾驶水上摩托穿越红树林河道。", ar: "قُد دراجتك المائية خلف المرشد عبر أنهار المانغروف." } },
+    { id: "T3", photo: "trip-T3", from: "280", name: { en: "Private mangrove boat tour", ms: "Lawatan bot bakau persendirian", zh: "私人红树林游船", ar: "جولة خاصة بالقارب في المانغروف" },
+      spec: { en: "Around 4 hours for your group, with the bat cave as the highlight.", ms: "Kira-kira 4 jam untuk kumpulan anda, dengan gua kelawar sebagai tarikan utama.", zh: "约 4 小时包船，亮点是蝙蝠洞。", ar: "نحو 4 ساعات لمجموعتك، وأبرز ما فيها كهف الخفافيش." } },
+    { id: "T4", photo: "trip-T4", from: "106", name: { en: "Sunset dinner cruise", ms: "Pelayaran makan malam matahari terbenam", zh: "日落晚餐游船", ar: "رحلة الغروب مع العشاء" },
+      spec: { en: "End the day on the Andaman Sea. Combine it with a mangrove tour.", ms: "Tamatkan hari di Laut Andaman. Gabungkan dengan lawatan bakau.", zh: "在安达曼海结束一天，可与红树林游搭配。", ar: "اختم يومك في بحر أندامان. ادمجها مع جولة المانغروف." } },
+    { id: "T5", photo: "trip-T5", from: "48", name: { en: "Island hopping (shared boat)", ms: "Lompat pulau (bot kongsi)", zh: "跳岛游（拼船）", ar: "جولة بين الجزر (قارب مشترك)" },
+      spec: { en: "Ask at the counter for the next departure and hotel pick-up time.", ms: "Tanya di kaunter untuk waktu bertolak dan ambil di hotel.", zh: "请在柜台询问出发和酒店接送时间。", ar: "اسأل عند الكاونتر عن موعد الانطلاق والاستلام من الفندق." } }
+  ];
+  var list = document.getElementById("fleet-list"), tlist = document.getElementById("tour-list"), sel = document.getElementById("n-veh"),
+      from = document.getElementById("n-from"), to = document.getElementById("n-to"), days = document.getElementById("n-days");
+  function nm(v) { return typeof v.name === "string" ? v.name : L(v.name); }
+  function card(v, isTour) {
+    return '<article class="pack"><div class="ph"><img data-photo="' + v.photo + '" data-w="800" alt="' + esc(nm(v)) + '">' +
+      (v.badge ? '<span class="pack-badge">' + esc(t("t.reviewed")) + "</span>" : "") + "</div>" +
+      '<div class="pack-body"><p class="pack-name">' + esc(t(isTour ? "t.kind.tour" : "t.kind.scooter")) + "</p><h3>" + esc(nm(v)) + "</h3>" +
+      '<p class="pack-spec">' + esc(L(v.spec)) + "</p>" +
+      '<ul class="feats"><li><svg class="icon" aria-hidden="true"><use href="#d-check"/></svg>' + esc(t(isTour ? "t.ft.pickup" : "t.ft.helmet")) + "</li></ul>" +
+      '<div class="pack-foot"><div class="prices">' + (v.from ? "<span><small>" + esc(t("t.from")) + "</small><b>RM " + v.from + "</b><small>" + esc(t(isTour ? "t.perTour" : "t.perDay")) + "</small></span>" : '<span class="ask">' + esc(t("t.ask")) + "</span>") + "</div>" +
+      '<div class="acts"><button class="btn" type="button" data-book="' + v.id + '">' + esc(t("t.bookThis")) + "</button>" +
+      '<button class="btn btn--wa btn--icon" type="button" data-demo="wa" data-demo-text="' + esc(t("t.wa.item").replace("{v}", nm(v))) + '" aria-label="WhatsApp"><svg aria-hidden="true"><use href="#d-wa"/></svg></button></div></div>' +
+      "</div></article>";
+  }
+  function calc() {
+    var a = from.value && new Date(from.value), b = to.value && new Date(to.value);
+    if (!a || !b) { days.textContent = ""; return; }
+    var n = Math.round((b - a) / 864e5);
+    days.textContent = n > 0 ? t("t.days").replace("{n}", n) : t("t.badDates");
+  }
+  D.onRender(function () {
+    list.innerHTML = FLEET.map(function (v) { return card(v, false); }).join("");
+    tlist.innerHTML = TOURS.map(function (v) { return card(v, true); }).join("");
+    var keep = sel.value;
+    sel.innerHTML = '<option value="">' + esc(t("f.choose")) + '</option><optgroup label="' + esc(t("t.kind.scooter")) + '">' +
+      FLEET.map(function (v) { return '<option value="' + v.id + '">' + esc(nm(v)) + "</option>"; }).join("") + '</optgroup><optgroup label="' + esc(t("t.kind.tour")) + '">' +
+      TOURS.map(function (v) { return '<option value="' + v.id + '">' + esc(nm(v)) + "</option>"; }).join("") + "</optgroup>";
+    sel.value = keep; calc();
+  });
+  from.addEventListener("change", function () { if (from.value && (!to.value || to.value <= from.value)) { var d = new Date(from.value); d.setDate(d.getDate() + 3); to.value = d.toISOString().slice(0, 10); } calc(); });
+  to.addEventListener("change", calc);
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-book]"); if (!b) return;
+    sel.value = b.getAttribute("data-book");
+    document.getElementById("book").scrollIntoView({ behavior: "smooth" });
+    setTimeout(function () { from.focus({ preventScroll: true }); }, 600);
+  });
+
+  add("en", {
+    "t.wa.msg": "Hi Langkawi Trip! I'd like to rent a scooter for 3 days from tomorrow and book the mangrove kayak tour. Is that possible?",
+    "t.wa.item": "Hi! I'd like to book: {v}. Date: … People: … Hotel: …",
+    "t.kind.scooter": "Scooter", "t.kind.tour": "Tour", "t.reviewed": "Mentioned in reviews",
+    "t.ft.helmet": "Helmets for two included", "t.ft.pickup": "Hotel pick-up on request",
+    "t.from": "from", "t.perDay": "per day", "t.ask": "Ask for price", "t.bookThis": "Book this",
+    "t.days": "{n} days of rental", "t.badDates": "The return date must be after the pick-up date", "t.perTour": "price on langkawitrip.com"
+  });
+  add("ms", {
+    "n.book.submit": "Hantar permintaan tempahan",
+    "n.book.tag": "Tempahan",
+    "n.br1": "Lesen memandu (permit antarabangsa disyorkan)",
+    "n.br2": "Pasport",
+    "n.bring.title": "Bawa",
+    "n.fShop": "Di kedai",
+    "n.fWhere": "Ambil",
+    "n.inc.title": "Termasuk",
+    "n.nav.book": "Tempah",
+    "n.nav.rules": "Deposit & peraturan",
+    "n.r1": "Topi keledar wajib di Malaysia, untuk penunggang dan pembonceng.",
+    "n.rules.title": "Perlu tahu",
+    "t.inc1": "Topi keledar untuk penunggang dan pembonceng",
+    "t.meta": "Langkawi Trip – Cadangan laman web | WebsProMakers",
+    "t.metaDesc": "Cadangan laman web oleh WebsProMakers untuk Langkawi Trip, Pantai Tengah: sewa skuter, lawatan bakau, jet ski dan pelayaran matahari terbenam, deposit dan tempahan.",
+    "t.nav.fleet": "Skuter", "t.nav.tours": "Lawatan",
+    "t.altHero": "Skuter di jalan pantai Langkawi",
+    "t.hero.tag": "577 ulasan Google · Pantai Tengah, Langkawi",
+    "t.hero.title": "Sewa skuter. <span>Tempah lawatan di tempat yang sama.</span>",
+    "t.hero.sub": "Honda Vario dari RM 45 dan Honda ADV 160 dari RM 80 untuk 24 jam, serta kayak bakau, jet ski bakau, lawatan bot bakau dan pelayaran matahari terbenam. Satu kedai, satu WhatsApp, dibuka 24 jam.",
+    "t.hero.cta": "Skuter & harga", "t.hero.tours": "Lihat lawatan", "t.hero.wa": "WhatsApp",
+    "t.f1": "Dibuka 24 jam (Jumaat 10:30 – 23:00)", "t.f2": "Deposit RM 100, dipulangkan semasa pulang", "t.f3": "Kad, Visa, Mastercard & UnionPay", "t.f4": "Lanjutkan sewaan di WhatsApp",
+    "t.fl.tag": "Sewa skuter", "t.fl.title": "Skuter baharu dan terjaga", "t.fl.sub": "Pelanggan menyifatkan motosikal baharu dan terjaga. Tunjuk ID yang sah, beri RM 100 dan terus tunggang.",
+    "t.fl.note": "Harga untuk 24 jam, seperti di langkawitrip.com. Ambil dan hantar percuma di Pantai Cenang dan Pantai Tengah. Yamaha NMAX dan kereta atas permintaan.", "t.perTour": "harga di langkawitrip.com",
+    "t.to.tag": "Lawatan", "t.to.title": "Bakau, jet ski dan matahari terbenam", "t.to.sub": "Tempah di kaunter semasa ambil skuter, atau hantar WhatsApp. Ambil di hotel untuk lawatan.",
+    "t.crew": "Nama yang sering disebut dalam ulasan: Mansoor di kaunter, Shah di jet ski dan kapten Azlan di hutan bakau.",
+    "t.inc2": "Motosikal diperiksa sebelum setiap sewaan", "t.inc3": "Bantuan di WhatsApp, 24 jam", "t.br3": "RM 100 untuk deposit",
+    "t.r2": "Perlu lebih hari? Lanjutkan di WhatsApp sebelum tarikh pulang.", "t.r3": "Lawatan: beritahu hotel anda untuk masa pengambilan.",
+    "t.book.title": "Tempah skuter atau lawatan", "t.book.sub": "Hantar apa yang anda perlukan, tarikh dan tempat penginapan. Kedai akan sahkan melalui WhatsApp.",
+    "t.fWhat": "Skuter atau lawatan", "t.fFrom": "Tarikh (atau ambil)", "t.fTo": "Tarikh pulang (skuter)", "t.fHotel": "Ambil saya di hotel (lawatan)", "t.fMsgPh": "Bilangan orang, masa lawatan, dua topi keledar…",
+    "t.footer": "Sewa skuter & lawatan di Pantai Tengah, Langkawi · Dibuka 24 jam",
+    "t.wa.msg": "Hai Langkawi Trip! Saya mahu sewa skuter 3 hari bermula esok dan tempah lawatan kayak bakau. Boleh?",
+    "t.wa.item": "Hai! Saya mahu tempah: {v}. Tarikh: … Bilangan orang: … Hotel: …",
+    "t.kind.scooter": "Skuter", "t.kind.tour": "Lawatan", "t.reviewed": "Disebut dalam ulasan",
+    "t.ft.helmet": "Topi keledar untuk dua", "t.ft.pickup": "Ambil di hotel atas permintaan",
+    "t.from": "dari", "t.perDay": "sehari", "t.ask": "Tanya harga", "t.bookThis": "Tempah ini",
+    "t.days": "{n} hari sewaan", "t.badDates": "Tarikh pulang mesti selepas tarikh ambil"
+  });
+  add("zh", {
+    "n.book.submit": "发送预订申请",
+    "n.book.tag": "预订",
+    "n.br1": "驾照（建议携带国际驾照）",
+    "n.br2": "护照",
+    "n.bring.title": "请携带",
+    "n.fShop": "到店取车",
+    "n.fWhere": "取车方式",
+    "n.inc.title": "包含",
+    "n.nav.book": "预订",
+    "n.nav.rules": "押金与规定",
+    "n.r1": "在马来西亚，驾驶者和乘客都必须戴头盔。",
+    "n.rules.title": "须知",
+    "t.inc1": "驾驶者和乘客头盔",
+    "t.meta": "Langkawi Trip – 网站提案 | WebsProMakers",
+    "t.metaDesc": "WebsProMakers 为 Pantai Tengah 的 Langkawi Trip 制作的网站提案：踏板车租赁、红树林游、水上摩托和日落游船、押金和预订。",
+    "t.nav.fleet": "踏板车", "t.nav.tours": "行程",
+    "t.altHero": "兰卡威海边公路上的踏板车",
+    "t.hero.tag": "Google 577 条评价 · 兰卡威 Pantai Tengah",
+    "t.hero.title": "租一辆踏板车，<span>行程也在这里一起订。</span>",
+    "t.hero.sub": "Honda Vario 每 24 小时 RM 45 起，Honda ADV 160 RM 80 起，另有红树林皮划艇、红树林水上摩托、红树林游船和日落游船。一家店、一个 WhatsApp，24 小时营业。",
+    "t.hero.cta": "踏板车与价格", "t.hero.tours": "查看行程", "t.hero.wa": "WhatsApp",
+    "t.f1": "24 小时营业（周五 10:30 – 23:00）", "t.f2": "押金 RM 100，还车时退还", "t.f3": "可刷卡：Visa、Mastercard、银联", "t.f4": "可通过 WhatsApp 续租",
+    "t.fl.tag": "踏板车租赁", "t.fl.title": "车况新、保养好", "t.fl.sub": "客人评价车辆新且保养良好。出示有效证件，交 RM 100 押金即可出发。",
+    "t.fl.note": "价格按 24 小时计，以 langkawitrip.com 公布为准。Pantai Cenang 和 Pantai Tengah 免费送取车。Yamaha NMAX 和汽车请咨询。", "t.perTour": "以 langkawitrip.com 价格为准",
+    "t.to.tag": "行程", "t.to.title": "红树林、水上摩托与日落", "t.to.sub": "取车时在柜台预订，或发 WhatsApp。行程可酒店接送。",
+    "t.crew": "评价中常提到：柜台的 Mansoor、水上摩托向导 Shah 和红树林船长 Azlan。",
+    "t.inc2": "每次出租前检查车辆", "t.inc3": "24 小时 WhatsApp 协助", "t.br3": "押金 RM 100",
+    "t.r2": "需要多租几天？请在还车日前通过 WhatsApp 续租。", "t.r3": "行程：告诉我们您的酒店以安排接送时间。",
+    "t.book.title": "预订踏板车或行程", "t.book.sub": "发送您的需求、日期和住宿地点，店家会通过 WhatsApp 确认。",
+    "t.fWhat": "踏板车或行程", "t.fFrom": "日期（或取车）", "t.fTo": "还车日期（踏板车）", "t.fHotel": "到酒店接我（行程）", "t.fMsgPh": "人数、行程时间、两个头盔……",
+    "t.footer": "兰卡威 Pantai Tengah 踏板车租赁与行程 · 24 小时营业",
+    "t.wa.msg": "您好 Langkawi Trip！我想从明天起租踏板车 3 天，并预订红树林皮划艇。可以吗？",
+    "t.wa.item": "您好！我想预订：{v}。日期：… 人数：… 酒店：…",
+    "t.kind.scooter": "踏板车", "t.kind.tour": "行程", "t.reviewed": "评价中提及",
+    "t.ft.helmet": "含两个头盔", "t.ft.pickup": "可酒店接送",
+    "t.from": "起", "t.perDay": "每天", "t.ask": "请询价", "t.bookThis": "预订",
+    "t.days": "租期 {n} 天", "t.badDates": "还车日期必须晚于取车日期"
+  });
+  add("ar", {
+    "n.book.submit": "أرسل طلب الحجز",
+    "n.book.tag": "الحجز",
+    "n.br1": "رخصة قيادة (يُنصح بالرخصة الدولية)",
+    "n.br2": "جواز السفر",
+    "n.bring.title": "أحضر معك",
+    "n.fShop": "من المحل",
+    "n.fWhere": "الاستلام",
+    "n.inc.title": "يشمل",
+    "n.nav.book": "احجز",
+    "n.nav.rules": "التأمين والقواعد",
+    "n.r1": "الخوذة إلزامية في ماليزيا للسائق والراكب.",
+    "n.rules.title": "معلومات مهمة",
+    "t.inc1": "خوذة للسائق والراكب",
+    "t.meta": "Langkawi Trip – مقترح موقع | WebsProMakers",
+    "t.metaDesc": "مقترح موقع من WebsProMakers لـ Langkawi Trip في بانتاي تنغاه: تأجير السكوترات، جولات المانغروف، الدراجات المائية ورحلات الغروب، التأمين والحجز.",
+    "t.nav.fleet": "السكوترات", "t.nav.tours": "الجولات",
+    "t.altHero": "سكوتر على طريق ساحلي في لنكاوي",
+    "t.hero.tag": "577 تقييمًا على Google · بانتاي تنغاه، لنكاوي",
+    "t.hero.title": "استأجر سكوتر. <span>واحجز الجولات من المكان نفسه.</span>",
+    "t.hero.sub": "هوندا فاريو من 45 رينغيت وهوندا ADV 160 من 80 رينغيت لكل 24 ساعة، وكاياك المانغروف، والدراجة المائية في المانغروف، وجولات القارب ورحلات الغروب. محل واحد وواتساب واحد، مفتوح 24 ساعة.",
+    "t.hero.cta": "السكوترات والأسعار", "t.hero.tours": "الجولات", "t.hero.wa": "واتساب",
+    "t.f1": "مفتوح 24 ساعة (الجمعة 10:30 – 23:00)", "t.f2": "تأمين 100 رينغيت يُعاد عند الإرجاع", "t.f3": "بطاقات: فيزا، ماستركارد، يونيون باي", "t.f4": "مدّد الإيجار عبر واتساب",
+    "t.fl.tag": "تأجير السكوترات", "t.fl.title": "سكوترات جديدة وبحالة جيدة", "t.fl.sub": "يصف الضيوف الدراجات بأنها جديدة ومُعتنى بها. أظهر هوية سارية وادفع 100 رينغيت وانطلق.",
+    "t.fl.note": "الأسعار لكل 24 ساعة كما في langkawitrip.com. استلام وتسليم مجاني في بانتاي شنانغ وبانتاي تنغاه. ياماها NMAX والسيارات عند الطلب.", "t.perTour": "السعر في langkawitrip.com",
+    "t.to.tag": "الجولات", "t.to.title": "المانغروف والدراجات المائية والغروب", "t.to.sub": "احجزها عند الكاونتر عند استلام السكوتر أو عبر واتساب. استلام من الفندق للجولات.",
+    "t.crew": "أسماء تتكرر في التقييمات: منصور عند الكاونتر، وشاه على الدراجة المائية، والقبطان أزلان في المانغروف.",
+    "t.inc2": "فحص الدراجة قبل كل إيجار", "t.inc3": "مساعدة عبر واتساب 24 ساعة", "t.br3": "100 رينغيت للتأمين",
+    "t.r2": "تحتاج أيامًا أكثر؟ مدّد عبر واتساب قبل موعد الإرجاع.", "t.r3": "الجولات: أخبرنا باسم فندقك لتحديد موعد الاستلام.",
+    "t.book.title": "احجز سكوتر أو جولة", "t.book.sub": "أرسل ما تحتاجه والتواريخ ومكان إقامتك، ويؤكد المحل عبر واتساب.",
+    "t.fWhat": "سكوتر أو جولة", "t.fFrom": "التاريخ (أو الاستلام)", "t.fTo": "تاريخ الإرجاع (سكوتر)", "t.fHotel": "استلمني من الفندق (الجولات)", "t.fMsgPh": "عدد الأشخاص، وقت الجولة، خوذتان…",
+    "t.footer": "تأجير سكوترات وجولات في بانتاي تنغاه، لنكاوي · مفتوح 24 ساعة",
+    "t.wa.msg": "مرحبًا Langkawi Trip! أريد استئجار سكوتر 3 أيام من الغد وحجز جولة كاياك المانغروف. هل هذا ممكن؟",
+    "t.wa.item": "مرحبًا! أريد حجز: {v}. التاريخ: … عدد الأشخاص: … الفندق: …",
+    "t.kind.scooter": "سكوتر", "t.kind.tour": "جولة", "t.reviewed": "مذكور في التقييمات",
+    "t.ft.helmet": "خوذتان مشمولتان", "t.ft.pickup": "استلام من الفندق عند الطلب",
+    "t.from": "ابتداءً من", "t.perDay": "يوميًا", "t.ask": "اسأل عن السعر", "t.bookThis": "احجز",
+    "t.days": "{n} أيام إيجار", "t.badDates": "يجب أن يكون تاريخ الإرجاع بعد تاريخ الاستلام"
+  });
+})();
+
+</script>
+<script>
+(function () {
+  var add = window.WPM.addStrings;
+  add("ms", {"t.nav.photos": "Foto", "t.gal.tag": "Foto", "t.gal.title": "Motosikal sebenar, lawatan sebenar", "t.g1": "Kedai di Pantai Tengah", "t.g2": "Skuter sedia untuk disewa", "t.g3": "Bertolak ke lawatan bakau", "t.g4": "Jet ski di Laut Andaman", "t.g5": "Monyet di hutan bakau", "t.g6": "Di dalam gua kelawar", "t.g7": "Berkayak di Taman Geoforest Kilim", "t.g8": "Bot sedia di jeti"});
+  add("zh", {"t.nav.photos": "照片", "t.gal.tag": "照片", "t.gal.title": "真实的车，真实的行程", "t.g1": "Pantai Tengah 的店面", "t.g2": "待租的踏板车", "t.g3": "出发去红树林", "t.g4": "安达曼海上的水上摩托", "t.g5": "红树林里的猴子", "t.g6": "蝙蝠洞内", "t.g7": "在基林地质森林公园划艇", "t.g8": "码头待发的船"});
+  add("ar", {"t.nav.photos": "الصور", "t.gal.tag": "الصور", "t.gal.title": "دراجات حقيقية وجولات حقيقية", "t.g1": "المحل في بانتاي تنغاه", "t.g2": "سكوترات جاهزة", "t.g3": "الانطلاق إلى جولة المانغروف", "t.g4": "دراجة مائية في بحر أندامان", "t.g5": "قرود في المانغروف", "t.g6": "داخل كهف الخفافيش", "t.g7": "التجديف في حديقة كيليم الجيولوجية", "t.g8": "قوارب جاهزة في الرصيف"});
+})();
+</script>
+</body>
+</html>

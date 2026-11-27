@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Digital Menu – Koffeemilia (Proposal)</title>
+  <meta name="theme-color" content="#2b1b14">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Karla:wght@400;500;700&family=Noto+Serif+SC:wght@600&display=swap">
+  <style>
+/* ==========================================================================
+   WEBSPROMAKERS — Base común de las demos (banner, modal, idiomas, formularios)
+   El estilo propio de cada demo está en /demos/<demo>/style.css
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+* { min-width: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { margin: 0; overflow-x: clip; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+button, input, select, textarea { font: inherit; color: inherit; }
+h1, h2, h3, h4, p { margin: 0; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+[hidden] { display: none !important; }
+.icon { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+img.is-missing { visibility: hidden; }
+.ph { position: relative; overflow: hidden; background: linear-gradient(135deg, var(--ph1, #c9b79c), var(--ph2, #7d6b55)); }
+.ph img { width: 100%; height: 100%; object-fit: cover; position: relative; }
+
+/* Demo banner */
+.demo-banner { position: relative; z-index: 200; display: flex; align-items: center; justify-content: center; gap: 8px 16px; flex-wrap: wrap; padding: 8px 16px; background: #0e1311; color: #e9efe9; font: 500 13px/1.4 "Inter", system-ui, sans-serif; text-align: center; }
+.demo-banner a { color: #a8d5b9; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.demo-banner a:hover { text-decoration: underline; }
+.demo-banner svg { width: 18px; height: 18px; flex: none; }
+
+/* Language switcher (shared markup) */
+.lang { position: relative; }
+.lang-btn { display: inline-flex; align-items: center; gap: 6px; height: 40px; padding: 0 12px; border-radius: 999px; border: 1px solid currentColor; background: transparent; cursor: pointer; font-size: 14px; font-weight: 600; opacity: .9; }
+.lang-btn .icon { width: 17px; height: 17px; }
+.lang-menu { position: absolute; right: 0; top: calc(100% + 8px); min-width: 180px; padding: 6px; background: #fff; color: #111; border-radius: 12px; box-shadow: 0 20px 50px -15px rgba(0, 0, 0, .35), 0 0 0 1px rgba(0, 0, 0, .06); z-index: 150; font-family: "Inter", system-ui, "PingFang SC", "Noto Sans SC", sans-serif; }
+.lang-menu button { width: 100%; text-align: left; padding: 10px 12px; border: 0; background: none; border-radius: 8px; cursor: pointer; font-size: 15px; display: flex; justify-content: space-between; }
+.lang-menu button:hover, .lang-menu button:focus-visible { background: #f2efe9; }
+.lang-menu button[aria-checked="true"] { font-weight: 700; }
+.lang-menu button[aria-checked="true"]::after { content: "✓"; }
+
+/* Forms (shared behaviour; each demo themes them) */
+.d-field { display: flex; flex-direction: column; gap: 6px; }
+.d-field label { font-size: 14px; font-weight: 600; }
+.d-field input, .d-field select, .d-field textarea { width: 100%; min-height: 48px; padding: 11px 13px; font-size: 16px; border-radius: 10px; border: 1px solid rgba(0, 0, 0, .18); background: #fff; color: #111; }
+.d-field textarea { min-height: 100px; resize: vertical; }
+.d-field [aria-invalid="true"] { border-color: #c0392b !important; background: #fff7f6; }
+.field-error { font-size: 13px; color: #c0392b; font-weight: 500; }
+.field-error:empty { display: none; }
+.d-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.d-grid .full { grid-column: 1 / -1; }
+@media (max-width: 600px) { .d-grid { grid-template-columns: 1fr; } }
+
+/* Demo modal */
+.d-modal { position: fixed; inset: 0; z-index: 400; display: grid; place-items: center; padding: 18px; background: rgba(10, 12, 11, .6); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); opacity: 0; transition: opacity .25s; }
+.d-modal.is-open { opacity: 1; }
+.d-modal-card { width: min(480px, 100%); max-height: calc(100vh - 36px); overflow: auto; background: #fff; color: #111; border-radius: 20px; padding: 26px; font: 15px/1.55 "Inter", system-ui, "PingFang SC", "Noto Sans SC", sans-serif; box-shadow: 0 40px 80px -20px rgba(0, 0, 0, .5); transform: translateY(12px); transition: transform .3s; }
+.d-modal.is-open .d-modal-card { transform: none; }
+.d-modal-card h2 { font: 800 22px/1.2 "Manrope", "Inter", system-ui, sans-serif; letter-spacing: -.01em; display: flex; gap: 10px; align-items: center; }
+.d-modal-card h2 span { font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 99px; background: #e3f0e8; color: #1d4b3a; letter-spacing: 0; }
+.d-modal-card p { margin-top: 10px; color: #444; }
+.d-modal-msg { margin-top: 14px; background: #dcf8c6; border-radius: 12px 0 12px 12px; padding: 12px 14px; white-space: pre-line; font-size: 14.5px; color: #111; }
+.d-modal-msg.plain { background: #f3f1ec; border-radius: 12px; }
+.d-modal-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; padding-top: 18px; border-top: 1px solid #eee; align-items: center; }
+.d-modal-actions small { flex: 1 1 100%; color: #666; font-size: 13px; }
+.d-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 46px; padding: 0 20px; border-radius: 999px; font-weight: 600; font-size: 15px; text-decoration: none; cursor: pointer; border: 1px solid transparent; background: #1d4b3a; color: #fff; }
+.d-btn--ghost { background: transparent; color: #111; border-color: #ccc; }
+
+/* Lightbox */
+.d-lightbox { position: fixed; inset: 0; z-index: 400; background: rgba(0, 0, 0, .9); display: grid; place-items: center; padding: 24px; }
+.d-lightbox img { max-height: 86vh; max-width: 100%; border-radius: 8px; object-fit: contain; }
+.d-lightbox button { position: absolute; top: 14px; right: 14px; width: 46px; height: 46px; border-radius: 50%; border: 0; background: rgba(255, 255, 255, .15); color: #fff; font-size: 24px; cursor: pointer; }
+
+/* Floating WhatsApp (demo) */
+.d-wa { position: fixed; right: 18px; bottom: 18px; z-index: 90; width: 56px; height: 56px; border-radius: 50%; border: 0; background: #1fa855; color: #fff; display: grid; place-items: center; cursor: pointer; box-shadow: 0 12px 30px -8px rgba(31, 168, 85, .7); transition: transform .25s; }
+.d-wa:hover { transform: scale(1.07); }
+.d-wa svg { width: 30px; height: 30px; }
+
+/* Toast */
+.wpm-toast { position: fixed; left: 50%; bottom: 24px; z-index: 500; transform: translate(-50%, 160%); background: #111; color: #fff; padding: 13px 18px; border-radius: 12px; font: 15px/1.4 "Inter", system-ui, sans-serif; max-width: calc(100% - 32px); transition: transform .35s; text-align: center; }
+.wpm-toast.is-on { transform: translate(-50%, 0); }
+
+/* Mobile nav helper */
+.d-burger { display: none; width: 44px; height: 44px; border-radius: 12px; border: 1px solid currentColor; background: transparent; cursor: pointer; place-items: center; }
+.d-burger span, .d-burger span::before, .d-burger span::after { display: block; width: 18px; height: 2px; background: currentColor; border-radius: 2px; position: relative; content: ""; transition: transform .25s, background .25s; }
+.d-burger span::before { position: absolute; top: -6px; }
+.d-burger span::after { position: absolute; top: 6px; }
+.nav-open .d-burger span { background: transparent; }
+.nav-open .d-burger span::before { transform: translateY(6px) rotate(45deg); }
+.nav-open .d-burger span::after { transform: translateY(-6px) rotate(-45deg); }
+
+/* Reveal */
+.js-ready [data-reveal] { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+.js-ready [data-reveal].is-in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+
+</style>
+  <style>
+/* Carta QR común de las propuestas. Cada página define sus colores en :root (--qbg, --qink, --qmuted, --qline, --qacc, --qtag, --qtagc). */
+body { background: var(--qbg); color: var(--qink); font-size: 16px; line-height: 1.55; }
+.wrap { width: min(560px, 100% - 32px); margin-inline: auto; }
+.demo-banner { font-size: 12px; padding: 6px 12px; }
+.embed .demo-banner { display: none; }
+.top { position: relative; height: 220px; color: #fff; isolation: isolate; }
+.top .ph { position: absolute; inset: 0; z-index: -2; }
+.top::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .8)); }
+.top .wrap { height: 100%; display: flex; flex-direction: column; justify-content: space-between; padding: 14px 0 18px; }
+.top-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.top-row .lang-btn { color: #fff; border-color: rgba(255, 255, 255, .6); background: rgba(0, 0, 0, .25); height: 38px; }
+.brand { font-size: 30px; font-weight: 700; line-height: 1.05; }
+h1.brand { font-size: 26px; }
+.top p { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; opacity: .85; margin-top: 6px; }
+[data-lang="zh"] .top p, [dir="rtl"] .top p { letter-spacing: .02em; }
+.m-tabs { position: sticky; top: 0; z-index: 10; display: flex; gap: 8px; overflow-x: auto; padding: 12px 16px; background: var(--qbg); scrollbar-width: none; box-shadow: 0 1px 0 var(--qline); }
+.m-tabs::-webkit-scrollbar { display: none; }
+.m-tabs button { flex: none; border: 1px solid var(--qline); background: #fff; color: var(--qink); border-radius: 999px; padding: 9px 16px; font-size: 15px; cursor: pointer; min-height: 42px; }
+.m-tabs button[aria-selected="true"] { background: var(--qink); color: #fff; border-color: var(--qink); }
+.m-list { width: min(560px, 100% - 32px); margin: 8px auto 0; }
+.m-item { display: grid; grid-template-columns: 84px 1fr auto; gap: 14px; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--qline); }
+.m-item.no-photo { grid-template-columns: 1fr auto; }
+.m-photo { width: 84px; height: 84px; border-radius: 14px; }
+.m-text h4 { font-size: 18px; font-weight: 600; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; margin: 0; }
+.m-text p { font-size: 14px; color: var(--qmuted); margin-top: 3px; }
+.m-tag { font-size: 11px; padding: 2px 8px; border-radius: 99px; background: var(--qtag); color: var(--qtagc); font-family: system-ui, sans-serif; font-weight: 600; }
+.m-price { font-weight: 700; color: var(--qacc); white-space: nowrap; align-self: start; padding-top: 2px; }
+.foot { padding: 22px 0 110px; font-size: 13px; color: var(--qmuted); display: grid; gap: 8px; }
+.foot a { color: var(--qink); font-weight: 600; }
+.call { position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%); z-index: 20; }
+.call button { min-height: 50px; padding: 0 22px; border-radius: 999px; border: 0; background: var(--qink); color: #fff; font-size: 15px; font-weight: 600; cursor: pointer; box-shadow: 0 10px 30px -10px rgba(0, 0, 0, .5); white-space: nowrap; }
+[dir="rtl"] .lang-menu { right: auto; left: 0; }
+[dir="rtl"] .lang-menu button { text-align: right; }
+
+</style>
+  <style>
+/* Versión enlace privado: huecos de foto y botón de mapa */
+.ph[data-ph-label] { background-image: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, .22), transparent 55%), linear-gradient(135deg, var(--ph1, #c9b79c), var(--ph2, #7d6b55)); }
+.ph[data-ph-label]::before { content: ""; position: absolute; left: 50%; top: 50%; width: 34px; height: 34px; margin: -24px 0 0 -17px; opacity: .55; pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 8h3l2-3h6l2 3h3v11H4z'/%3E%3Ccircle cx='12' cy='13' r='3.5'/%3E%3C/svg%3E") center / contain no-repeat; }
+.ph[data-ph-label]::after { content: attr(data-ph-label); position: absolute; left: 8px; right: 8px; top: 50%; margin-top: 16px; text-align: center; font: 600 12px/1.3 system-ui, sans-serif; color: rgba(255, 255, 255, .85); text-transform: none; letter-spacing: 0; pointer-events: none; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.m-photo.ph[data-ph-label]::after, .ph[data-ph-label].m-photo::after { display: none; }
+.m-photo.ph[data-ph-label]::before { width: 26px; height: 26px; margin: -13px 0 0 -13px; }
+[data-lightbox] .ph { cursor: default !important; }
+.pp-map { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; text-decoration: none; color: #1b2a33; padding: 20px; text-align: center;
+  background-color: #e6ecef;
+  background-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0), linear-gradient(90deg, rgba(0, 0, 0, .05) 1px, transparent 1px), linear-gradient(rgba(0, 0, 0, .05) 1px, transparent 1px);
+  background-size: 100% 10px, 10px 100%, 28px 28px, 28px 28px; background-position: 0 58%, 38% 0, 0 0, 0 0; background-repeat: no-repeat, no-repeat, repeat, repeat; }
+.pp-pin { width: 44px; height: 44px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); background: #e8453c; box-shadow: 0 10px 20px -8px rgba(0, 0, 0, .5); position: relative; }
+.pp-pin::after { content: ""; position: absolute; inset: 14px; border-radius: 50%; background: #fff; }
+.pp-map b { font: 700 16px/1.3 system-ui, sans-serif; background: #fff; padding: 10px 18px; border-radius: 999px; box-shadow: 0 6px 18px -8px rgba(0, 0, 0, .4); margin-top: 6px; }
+.pp-map small { font: 13px/1.3 system-ui, sans-serif; color: #4a5a63; max-width: 24em; }
+.pp-map:hover b { background: #1b2a33; color: #fff; }
+
+</style>
+  <style>
+    :root { --qbg: #f6efe6; --qink: #2b1b14; --qmuted: #6d5e53; --qline: #e4d4c0; --qacc: #2f7a4a; --qtag: #f0dcc4; --qtagc: #7a4b1e; --ph1: #c98b4b; --ph2: #2b1b14; }
+    body { font-family: "Karla", system-ui, "PingFang SC", sans-serif; }
+    .brand, .m-text h4 { font-family: "Fraunces", Georgia, serif; }
+    .brand-ar, [data-lang="zh"] .brand, [data-lang="zh"] .m-text h4 { font-family: "Noto Serif SC", serif; }
+    .m-price.is-text { font-size: 13px; white-space: normal; max-width: 6em; text-align: end; line-height: 1.3; }
+  </style>
+</head>
+<body data-biz="Koffeemilia Langkawi">
+<div class="demo-banner"><span data-i18n="demo.banner">Website proposal for Koffeemilia Langkawi by WebsProMakers · Not the official website</span></div>
+<header class="top">
+  <div class="ph"><img data-photo="koffee-qr" alt="Koffeemilia" data-w="800" loading="eager"></div>
+  <div class="wrap">
+    <div class="top-row">
+      <span class="brand">Koffeemilia</span>
+      <div class="lang" data-lang-switch><button class="lang-btn" type="button" aria-label="Language"><svg class="icon" aria-hidden="true"><use href="#d-globe"/></svg><span data-lang-current>EN</span></button></div>
+    </div>
+    <div><h1 class="brand" data-i18n="mn.title">Digital menu</h1><p data-i18n="mn.sub">Scan · Browse · Enjoy</p></div>
+  </div>
+</header>
+<main id="qr-root"></main>
+<div class="wrap foot">
+  <p data-i18n="k.menu.note">Items taken from guest reviews. A burger and coffee cost about RM 42 (review). Prices will be added with the café.</p>
+  <p data-i18n="mn.allergy">Please tell our staff about any allergies.</p>
+  <p><a href="koffeemilia.html" target="_top" data-i18n="mn.site">Café website</a></p>
+</div>
+<div class="call"><button type="button" id="call-waiter" data-i18n="mn.call">Order at the counter</button></div>
+<script>
+/* ==========================================================================
+   WEBSPROMAKERS — CONFIGURACIÓN CENTRAL (edita SOLO este archivo para tus datos)
+   --------------------------------------------------------------------------
+   - Deja un campo vacío ("") si todavía no lo tienes: la web lo ocultará
+     o mostrará "Coming soon" en vez de un dato falso.
+   - WhatsApp: formato internacional SIN "+", sin espacios. Ej.: "60123456789"
+   ========================================================================== */
+window.WPM_CONFIG = {
+  companyName: "WebsProMakers",
+
+  // Dirección pública de la web (cámbiala si Cloudflare te da otro nombre)
+  siteUrl: "https://webspromakers.pages.dev",
+
+  contact: {
+    whatsapp: "",            // Ej.: "60123456789"
+    phone: "",               // Ej.: "+60 12-345 6789" (se muestra tal cual)
+    email: "",               // Ej.: "hello@tudominio.com" o un Gmail
+    location: "Langkawi, Malaysia"
+  },
+
+  // Redes sociales: pega la URL completa. Vacío = no se muestra.
+  social: {
+    instagram: "",
+    facebook: "",
+    tiktok: "",
+    linkedin: ""
+  },
+
+  // Formulario de contacto -> email gratis con Web3Forms (250 envíos/mes gratis)
+  // 1) Ve a https://web3forms.com  2) Escribe tu email  3) Copia la "Access Key" aquí
+  forms: {
+    web3formsAccessKey: ""
+  },
+
+  // Google Analytics 4 (opcional). Ej.: "G-XXXXXXXXXX". Vacío = desactivado.
+  analytics: {
+    gaMeasurementId: ""
+  },
+
+  // Mapa de la sección de contacto (texto de búsqueda de Google Maps)
+  map: {
+    query: "Langkawi, Kedah, Malaysia"
+  },
+
+  // Idiomas disponibles (el primero es el predeterminado)
+  languages: [
+    { code: "en", label: "English", short: "EN" },
+    { code: "ms", label: "Bahasa Melayu", short: "BM" },
+    { code: "es", label: "Español", short: "ES" },
+    { code: "zh", label: "中文", short: "中文" }
+  ]
+};
+
+</script>
+<script data-langs="en,ms,zh,es">
+/* Idiomas de cada propuesta: <script defer src="../langs.js" data-langs="en,ms,zh,ar"> (va justo después de config.js) */
+(function () {
+  var ALL = {
+    en: { code: "en", label: "English", short: "EN" },
+    ms: { code: "ms", label: "Bahasa Melayu", short: "BM" },
+    es: { code: "es", label: "Español", short: "ES" },
+    zh: { code: "zh", label: "中文", short: "中文" },
+    ar: { code: "ar", label: "العربية", short: "عربي" },
+    hi: { code: "hi", label: "हिन्दी", short: "हिं" }
+  };
+  var s = document.currentScript, list = ((s && s.getAttribute("data-langs")) || "en,ms,zh").split(",");
+  window.WPM_CONFIG = window.WPM_CONFIG || {};
+  window.WPM_CONFIG.languages = list.map(function (c) { return ALL[c.trim()]; }).filter(Boolean);
+})();
+
+</script>
+<script>
+/* ==========================================================================
+   WEBSPROMAKERS — FOTOGRAFÍAS (un único sitio para cambiarlas todas)
+   --------------------------------------------------------------------------
+   Cada foto tiene un nombre (clave). En el HTML se usa así:
+       <img data-photo="rest-interior" alt="...">
+   Para usar TU foto: súbela a /public/assets/img/photos/ y cambia el valor:
+       "rest-interior": "/assets/img/photos/mi-restaurante.webp",
+   Los valores que empiezan por "u:" son fotos de Unsplash (licencia gratuita
+   para uso comercial). Se cargan desde images.unsplash.com.
+   Si una foto no carga, la web muestra un fondo de color en su lugar.
+   ========================================================================== */
+window.WPM_PHOTOS = {
+  // Restaurante
+  "rest-interior": "u:1517248135467-4c7edcad34c4",
+  "rest-table": "u:1414235077428-338989a2e8c0",
+  "rest-dining": "u:1555396273-367ea4eb4db5",
+  "food-plate": "u:1504674900247-0877df9cc836",
+  "food-salad": "u:1512621776951-a57141f2eefd",
+  "food-bowl": "u:1546069901-ba9599a7e63c",
+  "food-spread": "u:1540189549336-e6e99c3679fe",
+  "food-grill": "u:1544025162-d76694265947",
+  "food-curry": "u:1585937421612-70a008356fbe",
+  "food-noodles": "u:1569718212165-3a8278d5f624",
+  "food-dessert": "u:1488477181946-6428a0291777",
+  "food-pancake": "u:1567620905732-2d1ec7ab7445",
+  "drink-cocktail": "u:1551024709-8f23befc6f87",
+  "drink-bar": "u:1470337458703-46ad1756a187",
+  // Café & bar
+  "cafe-interior": "u:1501339847302-ac426a4a7cbb",
+  "cafe-shop": "u:1554118811-1e0d58224f24",
+  "coffee-cup": "u:1495474472287-4d71bcdd2085",
+  "coffee-beans": "u:1509042239860-f550ce710b93",
+  "coffee-latte": "u:1541167760496-1628856ab772",
+  "cafe-croissant": "u:1555507036-ab1f4038808a",
+  "bar-night": "u:1514933651103-005eec06c04b",
+  // Hotel
+  "hotel-pool": "u:1566073771259-6a8506099945",
+  "hotel-resort": "u:1520250497591-112f2f40a3f4",
+  "hotel-exterior": "u:1571896349842-33c89424de2d",
+  "hotel-lobby": "u:1542314831-068cd1dbfeeb",
+  "room-1": "u:1582719478250-c89cae4dc85b",
+  "room-2": "u:1611892440504-42a792e24d32",
+  "room-3": "u:1590490360182-c33d57733427",
+  "spa": "u:1540555700478-4be289fbecef",
+  "villa": "u:1613490493576-7fde63acd811",
+  "guesthouse": "u:1564013799919-ab600027ffc6",
+  // Islas, playa, tours
+  "beach": "u:1507525428034-b723cf961d3e",
+  "beach-waves": "u:1505228395891-9a51e7e86bf6",
+  "island-bali": "u:1537996194471-e657df975ab4",
+  "diving": "u:1544551763-46a013bb70d5",
+  "sunset": "u:1495616811223-4d98c6e9c869",
+  "forest": "u:1448375240586-882707db888b",
+  "waterfall": "u:1432405972618-c60b0225b8f9",
+  // Tienda
+  "shop-interior": "u:1441986300917-64674bd600d8",
+  "shop-cosmetics": "u:1556228578-8c89e6adf883",
+  "shop-pottery": "u:1578749556568-bc2c40e68b61",
+  // Negocio / web
+  "web-laptop": "u:1460925895917-afdab827c52f",
+  "web-code": "u:1498050108023-c5249f4df085",
+  "web-phone": "u:1512941937669-90a1b58e7e9c",
+  "meeting": "u:1556761175-5973dc0f32e7",
+  "beauty": "u:1560066984-138dadb4c035"
+};
+
+</script>
+<script>
+/* ==========================================================================
+   WEBSPROMAKERS — CORE (idiomas, fotos, datos de contacto, validación)
+   Se usa en la web principal y en todas las demos.
+   ========================================================================== */
+(function () {
+  "use strict";
+  var CFG = window.WPM_CONFIG || {};
+  var LANGS = (CFG.languages || [{ code: "en", label: "English", short: "EN" }]);
+  var CODES = LANGS.map(function (l) { return l.code; });
+  var DEFAULT = CODES[0];
+  var STORE_KEY = "wpm-lang";
+  var HTML_LANG = { en: "en", ms: "ms", es: "es", zh: "zh-CN" };
+
+  var dict = {};       // dict[lang][key]
+  var en = {};         // English snapshot taken from the HTML
+  var current = DEFAULT;
+
+  /* ---------- small helpers ---------- */
+  function $all(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
+  function get(obj, path) {
+    return path.split(".").reduce(function (o, k) { return o && o[k] != null ? o[k] : undefined; }, obj);
+  }
+  function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
+
+  /* ---------- i18n ---------- */
+  function addStrings(lang, obj) {
+    dict[lang] = dict[lang] || {};
+    for (var k in obj) if (Object.prototype.hasOwnProperty.call(obj, k)) dict[lang][k] = obj[k];
+  }
+  function t(key, lang) {
+    lang = lang || current;
+    var v = dict[lang] && dict[lang][key];
+    if (v == null) v = (dict.en && dict.en[key]) != null ? dict.en[key] : en[key];
+    return v == null ? key : v;
+  }
+  var ATTRS = [["data-i18n-ph", "placeholder"], ["data-i18n-aria", "aria-label"], ["data-i18n-alt", "alt"], ["data-i18n-title", "title"], ["data-i18n-content", "content"]];
+
+  function snapshot() {
+    $all("[data-i18n]").forEach(function (el) { var k = el.getAttribute("data-i18n"); if (!(k in en)) en[k] = el.textContent.trim(); });
+    $all("[data-i18n-html]").forEach(function (el) { var k = el.getAttribute("data-i18n-html"); if (!(k in en)) en[k] = el.innerHTML.trim(); });
+    ATTRS.forEach(function (a) {
+      $all("[" + a[0] + "]").forEach(function (el) { var k = el.getAttribute(a[0]); if (!(k in en)) en[k] = el.getAttribute(a[1]) || ""; });
+    });
+  }
+
+  function apply(lang) {
+    if (CODES.indexOf(lang) < 0) lang = DEFAULT;
+    current = lang;
+    document.documentElement.lang = HTML_LANG[lang] || lang;
+    document.documentElement.setAttribute("data-lang", lang);
+    $all("[data-i18n]").forEach(function (el) { el.textContent = t(el.getAttribute("data-i18n")); });
+    $all("[data-i18n-html]").forEach(function (el) { el.innerHTML = t(el.getAttribute("data-i18n-html")); });
+    ATTRS.forEach(function (a) {
+      $all("[" + a[0] + "]").forEach(function (el) { el.setAttribute(a[1], t(el.getAttribute(a[0]))); });
+    });
+    // Re-translate visible validation messages
+    $all("[data-err-key]").forEach(function (el) { el.textContent = t(el.getAttribute("data-err-key")); });
+    $all("[data-lang-current]").forEach(function (el) {
+      var l = LANGS.filter(function (x) { return x.code === lang; })[0];
+      el.textContent = l ? l.short : lang.toUpperCase();
+    });
+    $all("[data-lang-option]").forEach(function (el) {
+      el.setAttribute("aria-checked", el.getAttribute("data-lang-option") === lang ? "true" : "false");
+    });
+    store(STORE_KEY, lang);
+    document.dispatchEvent(new CustomEvent("wpm:lang", { detail: { lang: lang } }));
+  }
+
+  function initialLang() {
+    var q = new URLSearchParams(location.search).get("lang");
+    if (q && CODES.indexOf(q) >= 0) return q;
+    var s = store(STORE_KEY);
+    if (s && CODES.indexOf(s) >= 0) return s;
+    return DEFAULT;
+  }
+
+  /* ---------- language switcher ---------- */
+  function buildSwitchers() {
+    $all("[data-lang-switch]").forEach(function (box) {
+      var btn = box.querySelector("button");
+      var menu = document.createElement("ul");
+      menu.className = "lang-menu";
+      menu.setAttribute("role", "menu");
+      menu.hidden = true;
+      LANGS.forEach(function (l) {
+        var li = document.createElement("li");
+        var b = document.createElement("button");
+        b.type = "button";
+        b.setAttribute("role", "menuitemradio");
+        b.setAttribute("data-lang-option", l.code);
+        b.setAttribute("lang", HTML_LANG[l.code] || l.code);
+        b.textContent = l.label;
+        b.addEventListener("click", function () { apply(l.code); close(); btn.focus(); });
+        li.appendChild(b); menu.appendChild(li);
+      });
+      box.appendChild(menu);
+      function close() { menu.hidden = true; btn.setAttribute("aria-expanded", "false"); }
+      btn.setAttribute("aria-haspopup", "true");
+      btn.setAttribute("aria-expanded", "false");
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var open = menu.hidden;
+        $all(".lang-menu").forEach(function (m) { m.hidden = true; });
+        menu.hidden = !open;
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+        if (open) { var first = menu.querySelector('[aria-checked="true"]') || menu.querySelector("button"); first && first.focus(); }
+      });
+      box.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") { close(); btn.focus(); }
+        if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+          var items = $all("button", menu), i = items.indexOf(document.activeElement);
+          if (i < 0) return;
+          e.preventDefault();
+          items[(i + (e.key === "ArrowDown" ? 1 : items.length - 1)) % items.length].focus();
+        }
+      });
+      document.addEventListener("click", function (e) { if (!box.contains(e.target)) close(); });
+    });
+  }
+
+  /* ---------- photos ---------- */
+  function photoUrl(val, w) {
+    if (!val) return "";
+    if (val.indexOf("u:") === 0) return "https://images.unsplash.com/photo-" + val.slice(2) + "?auto=format&fit=crop&w=" + w + "&q=70";
+    return val;
+  }
+  function loadPhotos(root) {
+    var P = window.WPM_PHOTOS || {};
+    $all("img[data-photo]", root).forEach(function (img) {
+      if (img.getAttribute("src")) return;
+      var val = P[img.getAttribute("data-photo")];
+      var w = parseInt(img.getAttribute("data-w") || "800", 10);
+      if (!val) { img.classList.add("is-missing"); return; }
+      img.addEventListener("error", function () { img.classList.add("is-missing"); }, { once: true });
+      img.decoding = "async";
+      if (!img.hasAttribute("loading")) img.loading = "lazy";
+      if (val.indexOf("u:") === 0) img.srcset = photoUrl(val, w) + " 1x, " + photoUrl(val, Math.min(w * 2, 2400)) + " 2x";
+      img.src = photoUrl(val, w);
+    });
+  }
+
+  /* ---------- config-driven contact details ---------- */
+  function waLink(number, text) {
+    return "https://wa.me/" + String(number).replace(/[^\d]/g, "") + (text ? "?text=" + encodeURIComponent(text) : "");
+  }
+  function bindConfig() {
+    var c = CFG.contact || {}, s = CFG.social || {};
+    $all("[data-cfg-text]").forEach(function (el) {
+      var v = get(CFG, el.getAttribute("data-cfg-text"));
+      if (v) { el.textContent = v; el.removeAttribute("data-i18n"); el.classList.remove("is-empty"); }
+      else { el.setAttribute("data-i18n", "common.soon"); el.classList.add("is-empty"); }
+    });
+    $all("[data-cfg-mail]").forEach(function (a) {
+      if (c.email) a.href = "mailto:" + c.email; else { a.removeAttribute("href"); a.classList.add("is-empty"); }
+    });
+    $all("[data-cfg-tel]").forEach(function (a) {
+      if (c.phone) a.href = "tel:" + c.phone.replace(/[^\d+]/g, ""); else { a.removeAttribute("href"); a.classList.add("is-empty"); }
+    });
+    $all("[data-social]").forEach(function (a) {
+      var url = s[a.getAttribute("data-social")];
+      if (url) { a.href = url; a.target = "_blank"; a.rel = "noopener"; } else a.hidden = true;
+    });
+    $all("[data-social-group]").forEach(function (g) {
+      if (!$all("[data-social]:not([hidden])", g).length) g.classList.add("is-empty");
+    });
+    $all("[data-map]").forEach(function (f) {
+      var q = f.getAttribute("data-map") || (CFG.map && CFG.map.query) || "Langkawi";
+      f.src = "https://www.google.com/maps?q=" + encodeURIComponent(q) + "&output=embed";
+    });
+    $all("[data-map-link]").forEach(function (a) {
+      var q = a.getAttribute("data-map-link") || (CFG.map && CFG.map.query) || "Langkawi";
+      a.href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q);
+      a.target = "_blank"; a.rel = "noopener";
+    });
+    $all("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
+  }
+  // WhatsApp links of the agency (main site). Demos use their own demo modal.
+  function bindWhatsApp() {
+    var num = (CFG.contact || {}).whatsapp;
+    $all("[data-wa]").forEach(function (a) {
+      function refresh() {
+        if (num) { a.href = waLink(num, t(a.getAttribute("data-wa") || "wa.default")); a.target = "_blank"; a.rel = "noopener"; }
+        else { a.href = "#contact"; a.removeAttribute("target"); }
+      }
+      refresh();
+      document.addEventListener("wpm:lang", refresh);
+      if (!num) a.addEventListener("click", function () { toast(t("toast.waSoon")); });
+    });
+  }
+
+  /* ---------- analytics (only if configured) ---------- */
+  function analytics() {
+    var id = CFG.analytics && CFG.analytics.gaMeasurementId;
+    if (!id) return;
+    var s = document.createElement("script");
+    s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(id);
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag("js", new Date());
+    window.gtag("config", id, { anonymize_ip: true });
+  }
+
+  /* ---------- toast ---------- */
+  var toastEl, toastTimer;
+  function toast(msg) {
+    if (!toastEl) {
+      toastEl = document.createElement("div");
+      toastEl.className = "wpm-toast";
+      toastEl.setAttribute("role", "status");
+      toastEl.setAttribute("aria-live", "polite");
+      document.body.appendChild(toastEl);
+    }
+    toastEl.textContent = msg;
+    toastEl.classList.add("is-on");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toastEl.classList.remove("is-on"); }, 4200);
+  }
+
+  /* ---------- form validation ---------- */
+  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  var PHONE_RE = /^\+?[\d\s\-().]{7,20}$/;
+  function fieldError(field) {
+    var v = (field.value || "").trim();
+    if (field.required && !v) return field.tagName === "SELECT" ? "val.select" : "val.required";
+    if (v && field.type === "email" && !EMAIL_RE.test(v)) return "val.email";
+    if (v && field.getAttribute("data-validate") === "phone" && !PHONE_RE.test(v)) return "val.phone";
+    if (v && field.type === "number") {
+      var n = Number(v), min = field.min !== "" ? Number(field.min) : null, max = field.max !== "" ? Number(field.max) : null;
+      if (isNaN(n) || (min !== null && n < min) || (max !== null && n > max)) return "val.number";
+    }
+    if (v && field.type === "date" && field.min && v < field.min) return "val.date";
+    if (field.getAttribute("data-after")) {
+      var other = field.form && field.form.querySelector("#" + field.getAttribute("data-after"));
+      if (v && other && other.value && v <= other.value) return "val.after";
+    }
+    if (field.minLength > 0 && v && v.length < field.minLength) return "val.short";
+    return null;
+  }
+  function showError(field, key) {
+    var id = field.id + "-err", box = document.getElementById(id);
+    if (!box) {
+      box = document.createElement("p");
+      box.id = id; box.className = "field-error";
+      field.parentNode.appendChild(box);
+    }
+    if (key) {
+      box.textContent = t(key); box.setAttribute("data-err-key", key);
+      field.setAttribute("aria-invalid", "true");
+      field.setAttribute("aria-describedby", id);
+    } else {
+      box.textContent = ""; box.removeAttribute("data-err-key");
+      field.removeAttribute("aria-invalid");
+    }
+  }
+  function validateForm(form) {
+    var first = null;
+    $all("input, select, textarea", form).forEach(function (f) {
+      if (f.type === "hidden" || f.disabled || f.name === "botcheck") return;
+      var k = fieldError(f);
+      showError(f, k);
+      if (k && !first) first = f;
+    });
+    if (first) first.focus();
+    return !first;
+  }
+  function liveValidate(form) {
+    form.setAttribute("novalidate", "");
+    $all("input, select, textarea", form).forEach(function (f) {
+      var ev = f.tagName === "SELECT" || f.type === "date" ? "change" : "blur";
+      f.addEventListener(ev, function () { if (f.value || f.hasAttribute("aria-invalid")) showError(f, fieldError(f)); });
+      f.addEventListener("input", function () { if (f.hasAttribute("aria-invalid")) showError(f, fieldError(f)); });
+    });
+    // Dates cannot be in the past
+    var today = new Date(); today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
+    $all('input[type="date"]', form).forEach(function (d) { d.min = today.toISOString().slice(0, 10); });
+  }
+  function formData(form) {
+    var out = {};
+    $all("input, select, textarea", form).forEach(function (f) {
+      if (!f.name || f.type === "hidden" || f.name === "botcheck") return;
+      var label = form.querySelector('label[for="' + f.id + '"]');
+      var val = f.tagName === "SELECT" && f.selectedIndex >= 0 ? f.options[f.selectedIndex].text : f.value;
+      out[f.name] = { label: label ? label.textContent.replace(/\*/g, "").trim() : f.name, value: (val || "").trim() };
+    });
+    return out;
+  }
+
+  /* ---------- reveal on scroll ---------- */
+  function reveal() {
+    var els = $all("[data-reveal]");
+    if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      els.forEach(function (e) { e.classList.add("is-in"); }); return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("is-in"); io.unobserve(en.target); } });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+    els.forEach(function (e) { io.observe(e); });
+  }
+
+  /* ---------- boot ---------- */
+  function boot() {
+    snapshot();
+    bindConfig();
+    buildSwitchers();
+    bindWhatsApp();
+    loadPhotos();
+    apply(initialLang());
+    reveal();
+    analytics();
+    document.documentElement.classList.add("js-ready");
+  }
+
+  window.WPM = {
+    config: CFG, addStrings: addStrings, t: t, apply: apply, lang: function () { return current; },
+    toast: toast, validateForm: validateForm, liveValidate: liveValidate, formData: formData,
+    waLink: waLink, loadPhotos: loadPhotos, $all: $all, boot: boot
+  };
+})();
+
+</script>
+<script>
+/* ==========================================================================
+   WEBSPROMAKERS — Motor común de las demos
+   - Textos comunes en 4 idiomas
+   - Modal "esto es una demo" (WhatsApp, redes, llamadas, formularios)
+   - Pestañas, filtros, galería, menú móvil
+   Cada demo registra su propio contenido con DEMO.onRender(fn)
+   ========================================================================== */
+(function () {
+  "use strict";
+  var W = window.WPM, add = W.addStrings, t = W.t, $all = W.$all;
+
+  add("en", {
+    "demo.banner": "Concept demo by WebsProMakers · Fictitious business",
+    "demo.back": "Back to WebsProMakers",
+    "demo.isDemo": "Demo",
+    "demo.title.wa": "WhatsApp",
+    "demo.title.form": "Request ready",
+    "demo.title.social": "Social media",
+    "demo.title.call": "Phone call",
+    "demo.title.email": "Email",
+    "demo.wa": "On a real website, this button opens WhatsApp with the business and this message ready to send:",
+    "demo.social": "On a real website, this icon opens the business’s social media profile.",
+    "demo.call": "On a real website, this button calls the business directly with one tap.",
+    "demo.email": "On a real website, this opens an email to the business.",
+    "demo.form": "This is a demo, so nothing has been sent. On a real website, the business would receive this request by email or WhatsApp:",
+    "demo.cta": "Would you like this for your business?",
+    "demo.ctaBtn": "Talk to WebsProMakers",
+    "demo.close": "Close",
+    "demo.menu": "Menu",
+    "demo.mapNote": "The map shows the area. This business is fictitious.",
+    "demo.samplePrices": "Sample prices for demonstration.",
+    "demo.openMaps": "Open in Google Maps",
+    "f.name": "Name", "f.phone": "Phone / WhatsApp", "f.email": "Email", "f.date": "Date", "f.time": "Time", "f.guests": "Guests",
+    "f.message": "Message (optional)", "f.checkin": "Check-in", "f.checkout": "Check-out", "f.room": "Room type", "f.choose": "Choose…",
+    "f.adults": "Adults", "f.children": "Children", "f.tour": "Tour", "f.hotel": "Hotel for pick-up (optional)",
+    "val.required": "Please fill in this field.", "val.select": "Please choose an option.", "val.email": "Please enter a valid email address.",
+    "val.phone": "Please enter a valid phone number, e.g. +60 12 345 6789.", "val.number": "Please enter a valid number.",
+    "val.date": "Please choose a date from today onwards.", "val.after": "This date must be after the first one.", "val.short": "Please write a little more."
+  });
+  add("ms", {
+    "demo.banner": "Demo konsep oleh WebsProMakers · Perniagaan rekaan",
+    "demo.back": "Kembali ke WebsProMakers", "demo.isDemo": "Demo",
+    "demo.title.wa": "WhatsApp", "demo.title.form": "Permintaan sedia", "demo.title.social": "Media sosial", "demo.title.call": "Panggilan telefon", "demo.title.email": "E-mel",
+    "demo.wa": "Di laman web sebenar, butang ini membuka WhatsApp dengan perniagaan dan mesej ini sedia untuk dihantar:",
+    "demo.social": "Di laman web sebenar, ikon ini membuka profil media sosial perniagaan.",
+    "demo.call": "Di laman web sebenar, butang ini terus menghubungi perniagaan dengan satu sentuhan.",
+    "demo.email": "Di laman web sebenar, ini membuka e-mel kepada perniagaan.",
+    "demo.form": "Ini ialah demo, jadi tiada apa-apa dihantar. Di laman web sebenar, perniagaan akan menerima permintaan ini melalui e-mel atau WhatsApp:",
+    "demo.cta": "Mahukan ini untuk perniagaan anda?", "demo.ctaBtn": "Hubungi WebsProMakers", "demo.close": "Tutup", "demo.menu": "Menu",
+    "demo.mapNote": "Peta menunjukkan kawasan. Perniagaan ini rekaan.", "demo.samplePrices": "Harga contoh untuk demonstrasi.", "demo.openMaps": "Buka di Google Maps",
+    "f.name": "Nama", "f.phone": "Telefon / WhatsApp", "f.email": "E-mel", "f.date": "Tarikh", "f.time": "Masa", "f.guests": "Tetamu",
+    "f.message": "Mesej (pilihan)", "f.checkin": "Daftar masuk", "f.checkout": "Daftar keluar", "f.room": "Jenis bilik", "f.choose": "Pilih…",
+    "f.adults": "Dewasa", "f.children": "Kanak-kanak", "f.tour": "Lawatan", "f.hotel": "Hotel untuk dijemput (pilihan)",
+    "val.required": "Sila isi ruangan ini.", "val.select": "Sila pilih satu pilihan.", "val.email": "Sila masukkan alamat e-mel yang sah.",
+    "val.phone": "Sila masukkan nombor telefon yang sah, cth. +60 12 345 6789.", "val.number": "Sila masukkan nombor yang sah.",
+    "val.date": "Sila pilih tarikh mulai hari ini.", "val.after": "Tarikh ini mesti selepas tarikh pertama.", "val.short": "Sila tulis sedikit lagi."
+  });
+  add("es", {
+    "demo.banner": "Demo conceptual de WebsProMakers · Negocio ficticio",
+    "demo.back": "Volver a WebsProMakers", "demo.isDemo": "Demo",
+    "demo.title.wa": "WhatsApp", "demo.title.form": "Solicitud lista", "demo.title.social": "Redes sociales", "demo.title.call": "Llamada", "demo.title.email": "Email",
+    "demo.wa": "En una web real, este botón abre WhatsApp con el negocio y este mensaje listo para enviar:",
+    "demo.social": "En una web real, este icono abre el perfil del negocio en redes sociales.",
+    "demo.call": "En una web real, este botón llama al negocio con un solo toque.",
+    "demo.email": "En una web real, esto abre un email dirigido al negocio.",
+    "demo.form": "Esto es una demo, así que no se ha enviado nada. En una web real, el negocio recibiría esta solicitud por email o WhatsApp:",
+    "demo.cta": "¿Quieres esto para tu negocio?", "demo.ctaBtn": "Habla con WebsProMakers", "demo.close": "Cerrar", "demo.menu": "Menú",
+    "demo.mapNote": "El mapa muestra la zona. Este negocio es ficticio.", "demo.samplePrices": "Precios de ejemplo para la demostración.", "demo.openMaps": "Abrir en Google Maps",
+    "f.name": "Nombre", "f.phone": "Teléfono / WhatsApp", "f.email": "Email", "f.date": "Fecha", "f.time": "Hora", "f.guests": "Personas",
+    "f.message": "Mensaje (opcional)", "f.checkin": "Entrada", "f.checkout": "Salida", "f.room": "Tipo de habitación", "f.choose": "Elige…",
+    "f.adults": "Adultos", "f.children": "Niños", "f.tour": "Excursión", "f.hotel": "Hotel de recogida (opcional)",
+    "val.required": "Rellena este campo.", "val.select": "Elige una opción.", "val.email": "Introduce un email válido.",
+    "val.phone": "Introduce un teléfono válido, p. ej. +60 12 345 6789.", "val.number": "Introduce un número válido.",
+    "val.date": "Elige una fecha a partir de hoy.", "val.after": "Esta fecha debe ser posterior a la primera.", "val.short": "Escribe un poco más, por favor."
+  });
+  add("zh", {
+    "demo.banner": "WebsProMakers 概念演示 · 虚构商家",
+    "demo.back": "返回 WebsProMakers", "demo.isDemo": "演示",
+    "demo.title.wa": "WhatsApp", "demo.title.form": "申请已生成", "demo.title.social": "社交媒体", "demo.title.call": "电话", "demo.title.email": "电子邮件",
+    "demo.wa": "在真实网站上，此按钮会打开与商家的 WhatsApp 对话，并附上这条待发送的消息：",
+    "demo.social": "在真实网站上，此图标会打开商家的社交媒体主页。",
+    "demo.call": "在真实网站上，此按钮可一键直接拨打商家电话。",
+    "demo.email": "在真实网站上，这会打开发给商家的电子邮件。",
+    "demo.form": "这是演示，因此没有发送任何内容。在真实网站上，商家会通过电子邮件或 WhatsApp 收到以下申请：",
+    "demo.cta": "想为您的生意也做一个吗？", "demo.ctaBtn": "联系 WebsProMakers", "demo.close": "关闭", "demo.menu": "菜单",
+    "demo.mapNote": "地图显示的是所在区域。此商家为虚构。", "demo.samplePrices": "价格仅为演示示例。", "demo.openMaps": "在 Google 地图中打开",
+    "f.name": "姓名", "f.phone": "电话 / WhatsApp", "f.email": "电子邮箱", "f.date": "日期", "f.time": "时间", "f.guests": "人数",
+    "f.message": "留言（选填）", "f.checkin": "入住", "f.checkout": "退房", "f.room": "房型", "f.choose": "请选择…",
+    "f.adults": "成人", "f.children": "儿童", "f.tour": "行程", "f.hotel": "接送酒店（选填）",
+    "val.required": "请填写此项。", "val.select": "请选择一个选项。", "val.email": "请输入有效的电子邮箱。",
+    "val.phone": "请输入有效的电话号码，例如 +60 12 345 6789。", "val.number": "请输入有效的数字。",
+    "val.date": "请选择今天或之后的日期。", "val.after": "此日期必须晚于第一个日期。", "val.short": "请再多写一点。"
+  });
+
+  /* ---------- shared icon sprite ---------- */
+  var SPRITE = '<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>' +
+    '<symbol id="d-wa" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 2.2a9.6 9.6 0 0 0-8.3 14.5L2.3 21.8l5.3-1.4A9.6 9.6 0 1 0 12 2.2zm0 17.6a8 8 0 0 1-4.1-1.1l-.3-.2-3.1.8.8-3-.2-.3A8 8 0 1 1 12 19.8zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8.9c-.1.2-.3.2-.5.1-.7-.3-1.5-.7-2.1-1.3-.6-.6-1-1.2-1.3-1.8-.1-.2 0-.4.1-.5l.4-.5.3-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3 1 2.5c.1.2 1.6 2.5 4 3.5 1.5.6 2.1.7 2.8.6.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1l-.4-.3z"/></symbol>' +
+    '<symbol id="d-pin" viewBox="0 0 24 24"><path d="M12 21.5s-7-6.1-7-11.2a7 7 0 0 1 14 0c0 5.1-7 11.2-7 11.2z"/><circle cx="12" cy="10.2" r="2.5"/></symbol>' +
+    '<symbol id="d-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3.2 2"/></symbol>' +
+    '<symbol id="d-call" viewBox="0 0 24 24"><path d="M5 3h3.5l2 5L8 9.5a11 11 0 0 0 6.5 6.5L16 13.5l5 2V19a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></symbol>' +
+    '<symbol id="d-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></symbol>' +
+    '<symbol id="d-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>' +
+    '<symbol id="d-fb" viewBox="0 0 24 24"><path d="M15 3h-2.5A3.5 3.5 0 0 0 9 6.5V10H6.5v3.5H9V21h3.5v-7.5H15l.5-3.5h-3V7a1 1 0 0 1 1-1H15z"/></symbol>' +
+    '<symbol id="d-tt" viewBox="0 0 24 24"><path d="M14 3v11.5a3.5 3.5 0 1 1-3-3.46M14 3c.5 2.5 2.3 4.2 5 4.5"/></symbol>' +
+    '<symbol id="d-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.6 2.8 3.9 6 3.9 9.5s-1.3 6.7-3.9 9.5c-2.6-2.8-3.9-6-3.9-9.5s1.3-6.7 3.9-9.5z"/></symbol>' +
+    '<symbol id="d-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>' +
+    '<symbol id="d-back" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>' +
+    '<symbol id="d-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>' +
+    '<symbol id="d-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.6a3.5 3.5 0 0 1 0 6.8M21.5 20a6.5 6.5 0 0 0-4-6"/></symbol>' +
+    '<symbol id="d-size" viewBox="0 0 24 24"><path d="M4 9V4h5M20 15v5h-5M4 4l6 6M20 20l-6-6"/></symbol>' +
+    '<symbol id="d-bed" viewBox="0 0 24 24"><path d="M3 5v14M3 14h18v5M21 14v-2.5A3.5 3.5 0 0 0 17.5 8H11v6"/><circle cx="7" cy="10.5" r="2"/></symbol>' +
+    '<symbol id="d-pool" viewBox="0 0 24 24"><path d="M2 18c2 0 2-1.5 4-1.5S8 18 10 18s2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5M8 14V5a2 2 0 0 1 4 0M16 14V5a2 2 0 0 0-4 0M8 9h8"/></symbol>' +
+    '<symbol id="d-coffee" viewBox="0 0 24 24"><path d="M4 9h13v4a6 6 0 0 1-6 6h-1a6 6 0 0 1-6-6zM17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 3v3M12 3v3"/></symbol>' +
+    '<symbol id="d-wifi" viewBox="0 0 24 24"><path d="M2 8.5a15 15 0 0 1 20 0M5.5 12a10 10 0 0 1 13 0M9 15.5a5 5 0 0 1 6 0M12 19h.01"/></symbol>' +
+    '<symbol id="d-car" viewBox="0 0 24 24"><path d="M5 16V11l2-5h10l2 5v5M3 16h18v3h-3v-3M6 19v-3"/><circle cx="7.5" cy="13" r=".8"/><circle cx="16.5" cy="13" r=".8"/></symbol>' +
+    '<symbol id="d-spa" viewBox="0 0 24 24"><path d="M12 21c-5 0-8-3-8-7 3 0 6 1.5 8 4 2-2.5 5-4 8-4 0 4-3 7-8 7zM12 18c-2-3-2-7 0-10 2 3 2 7 0 10z"/></symbol>' +
+    '<symbol id="d-bike" viewBox="0 0 24 24"><circle cx="6" cy="16" r="3.5"/><circle cx="18" cy="16" r="3.5"/><path d="M6 16l4-8h5l3 8M10 8 8.5 5H6M12.5 16 15 8"/></symbol>' +
+    '<symbol id="d-broom" viewBox="0 0 24 24"><path d="M14 4l6 6M12 6l6 6-7 7a3 3 0 0 1-4 0l-2-2a3 3 0 0 1 0-4z"/></symbol>' +
+    '<symbol id="d-map" viewBox="0 0 24 24"><path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/></symbol>' +
+    '<symbol id="d-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>' +
+    '<symbol id="d-shield" viewBox="0 0 24 24"><path d="M12 3 20 6v6c0 5-3.4 8-8 9-4.6-1-8-4-8-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>' +
+    '<symbol id="d-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1 13H6zM9 8V6a3 3 0 0 1 6 0v2"/></symbol>' +
+    '<symbol id="d-leaf" viewBox="0 0 24 24"><path d="M5 19c0-9 6-14 15-14 0 9-5 15-14 15M5 19l8-8"/></symbol>' +
+    '<symbol id="d-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>' +
+    '</defs></svg>';
+
+  /* ---------- helpers ---------- */
+  function L(o) { if (o == null) return ""; if (typeof o === "string") return o; return o[W.lang()] || o.en || ""; }
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  var renderers = [];
+
+  /* ---------- modal ---------- */
+  var lastFocus;
+  function modal(kind, body, isMsg) {
+    close();
+    lastFocus = document.activeElement;
+    var m = document.createElement("div");
+    m.className = "d-modal"; m.setAttribute("role", "dialog"); m.setAttribute("aria-modal", "true"); m.setAttribute("aria-labelledby", "d-modal-title");
+    m.innerHTML = '<div class="d-modal-card"><h2 id="d-modal-title">' + esc(t("demo.title." + kind)) + " <span>" + esc(t("demo.isDemo")) + "</span></h2>" +
+      "<p>" + esc(t("demo." + kind)) + "</p>" +
+      (body ? '<div class="d-modal-msg' + (isMsg ? "" : " plain") + '">' + esc(body) + "</div>" : "") +
+      '<div class="d-modal-actions"><small>' + esc(t("demo.cta")) + '</small><a class="d-btn" href="' + 'https://webspromakers-site.pages.dev/#contact" target="_blank" rel="noopener">' + esc(t("demo.ctaBtn")) + '</a><button type="button" class="d-btn d-btn--ghost" data-close>' + esc(t("demo.close")) + "</button></div></div>";
+    document.body.appendChild(m);
+    requestAnimationFrame(function () { m.classList.add("is-open"); });
+    m.addEventListener("click", function (e) { if (e.target === m || e.target.hasAttribute("data-close")) close(); });
+    m.querySelector("[data-close]").focus();
+  }
+  function close() {
+    var m = document.querySelector(".d-modal, .d-lightbox");
+    if (m) { m.remove(); if (lastFocus) lastFocus.focus(); }
+  }
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+
+  /* ---------- delegated actions ---------- */
+  document.addEventListener("click", function (e) {
+    var el = e.target.closest("[data-demo]");
+    if (el) {
+      e.preventDefault();
+      var kind = el.getAttribute("data-demo");
+      var text = el.getAttribute("data-demo-text") || (el.getAttribute("data-demo-msg") ? t(el.getAttribute("data-demo-msg")) : "");
+      modal(kind, text, kind === "wa");
+      return;
+    }
+    var img = e.target.closest("[data-lightbox] img");
+    if (img && !img.classList.contains("is-missing")) {
+      lastFocus = document.activeElement;
+      var lb = document.createElement("div");
+      lb.className = "d-lightbox"; lb.setAttribute("role", "dialog"); lb.setAttribute("aria-modal", "true");
+      var src = img.currentSrc || img.src;
+      lb.innerHTML = '<img alt=""><button type="button" aria-label="' + esc(t("demo.close")) + '">×</button>';
+      lb.querySelector("img").src = src.replace(/w=\d+/, "w=1600");
+      lb.querySelector("img").alt = img.alt;
+      lb.addEventListener("click", close);
+      document.body.appendChild(lb);
+      lb.querySelector("button").focus();
+    }
+  });
+
+  /* ---------- forms ---------- */
+  function bindForms() {
+    $all("form[data-demo-form]").forEach(function (form) {
+      W.liveValidate(form);
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (!W.validateForm(form)) return;
+        var data = W.formData(form);
+        var lines = Object.keys(data).filter(function (k) { return data[k].value; }).map(function (k) { return data[k].label + ": " + data[k].value; });
+        modal("form", lines.join("\n"), false);
+      });
+    });
+  }
+
+  /* ---------- tabs & filters ---------- */
+  function bindTabs() {
+    $all("[data-tabs]").forEach(function (box) {
+      var btns = $all("[data-tab]", box);
+      function show(id) {
+        btns.forEach(function (b) { var on = b.getAttribute("data-tab") === id; b.setAttribute("aria-selected", on ? "true" : "false"); b.tabIndex = on ? 0 : -1; });
+        $all("[data-panel]", box).forEach(function (p) { p.hidden = p.getAttribute("data-panel") !== id; });
+      }
+      btns.forEach(function (b, i) {
+        b.addEventListener("click", function () { show(b.getAttribute("data-tab")); });
+        b.addEventListener("keydown", function (e) {
+          if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+          var n = btns[(i + (e.key === "ArrowRight" ? 1 : btns.length - 1)) % btns.length];
+          n.focus(); n.click();
+        });
+      });
+      if (btns[0]) show(btns[0].getAttribute("data-tab"));
+    });
+  }
+
+  /* ---------- header & mobile nav ---------- */
+  function bindNav() {
+    var header = document.querySelector("[data-demo-header]");
+    var burger = document.querySelector(".d-burger");
+    if (header) {
+      var onS = function () { header.classList.toggle("is-scrolled", window.scrollY > 30); };
+      onS(); window.addEventListener("scroll", onS, { passive: true });
+    }
+    if (burger) {
+      burger.addEventListener("click", function () {
+        var open = !document.body.classList.contains("nav-open");
+        document.body.classList.toggle("nav-open", open);
+        burger.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+      $all("[data-demo-nav] a").forEach(function (a) { a.addEventListener("click", function () { document.body.classList.remove("nav-open"); burger.setAttribute("aria-expanded", "false"); }); });
+    }
+  }
+
+  function renderAll() { renderers.forEach(function (fn) { fn(W.lang()); }); W.loadPhotos(); }
+
+  function start() {
+    document.body.insertAdjacentHTML("afterbegin", SPRITE);
+    renderAll();           // first render in default language so the English snapshot is complete
+    W.boot();              // translations, photos, language switcher
+    bindForms(); bindTabs(); bindNav();
+    document.addEventListener("wpm:lang", renderAll);
+    renderAll();
+  }
+
+  window.DEMO = {
+    L: L, esc: esc, modal: modal,
+    onRender: function (fn) { renderers.push(fn); },
+    rebindForms: bindForms
+  };
+  if (document.readyState === "complete") start(); else document.addEventListener("DOMContentLoaded", start);
+})();
+
+</script>
+<script>
+/* ==========================================================================
+   WEBSPROMAKERS — Propuestas para negocios reales (común a /propuestas/*)
+   - Fotos extra (Unsplash, licencia gratuita)
+   - Textos comunes en árabe (ar) e hindi (hi)
+   - Banner "propuesta, no es la web oficial" con el nombre del negocio
+   - Dirección derecha-izquierda (RTL) para árabe
+   Se carga DESPUÉS de demo.js y ANTES del data.js de cada propuesta.
+   ========================================================================== */
+(function () {
+  "use strict";
+  var W = window.WPM, add = W.addStrings;
+
+  /* ---------- fotos extra ---------- */
+  var P = window.WPM_PHOTOS = window.WPM_PHOTOS || {};
+  var extra = {
+    // India / Punjab
+    "pk-hero": "u:1772730065344-4cf131b39951", "pk-butter": "u:1603894584373-5ac82b2ae398",
+    "pk-biryani": "u:1782541370275-6761522e39d1", "pk-biryani2": "u:1589302168068-964664d93dc0",
+    "pk-tandoor": "u:1763951718950-c536b1295213", "pk-tikka": "u:1762922425226-8cfe6987e7b0",
+    "pk-thali": "u:1767114915989-c6ab3c8fc42e", "pk-dal": "u:1585937421612-70a008356fbe",
+    "pk-roti": "u:1565557623262-b51c2513a641", "pk-kebab": "u:1781332146555-5507a0fc9bc9",
+    "pk-paneer": "u:1631452180519-c014fe946bc7", "pk-table": "u:1728910156510-77488f19b152",
+    // Siria / Oriente Medio
+    "sy-mezze": "u:1767114915974-3481fa23cbb0", "sy-hummus": "u:1697126248475-a537cc5cce28",
+    "sy-hummus2": "u:1783696072732-2ff5cec23b08", "sy-baba": "u:1771574206132-74f127909c02",
+    "sy-falafel": "u:1593001872095-7d5b3868fb1d", "sy-falafel2": "u:1786174045076-1cd880429ef1",
+    "sy-shawarma": "u:1529006557810-274b9b2fc783", "sy-shawarma-spit": "u:1530469912745-a215c6b256ea",
+    "sy-wrap": "u:1760888548893-bc2f7e09e972", "sy-grill": "u:1555939594-58d7cb561ad1",
+    "sy-kebab": "u:1603360946369-dc9bb6258143", "sy-kibbeh": "u:1786174044931-d395bf77e58e",
+    "sy-baklava": "u:1761828122856-8703baac8e86", "sy-kunafa": "u:1778447812923-88a9e3e6b567",
+    "sy-dips": "u:1783455442171-16dbde079c53", "sy-lanterns": "u:1589371315231-096e33e8c55e",
+    "sy-room": "u:1763811939095-09bd3e83ba0d",
+    // Desayuno mediterráneo / café
+    "bc-breakfast": "u:1759216279330-c5a83a0a1ebe", "bc-shakshuka": "u:1757972367454-b79cbe99a253",
+    "bc-shakshuka2": "u:1759493785939-0bd3e3d60682", "bc-turkish": "u:1768566108481-27e72362c174",
+    "bc-coconut": "u:1537191072641-5e19cc173c6a", "bc-coconut2": "u:1620752420341-4cd7642568dd",
+    "bc-palms": "u:1570533459920-076b827c7b69",
+    // Barbería
+    "bb-shop": "u:1585747860715-2ba37e788b70", "bb-chair": "u:1621645582931-d1d3e6564943",
+    "bb-cut": "u:1647140655214-e4a2d914971f", "bb-razor": "u:1599351431202-1e0f0137899a",
+    "bb-dry": "u:1605497788044-5a32c7078486", "bb-tools": "u:1621605815971-fbc98d665033",
+    "bb-beard": "u:1599011176306-4a96f1516d4d", "bb-fade": "u:1593702275687-f8b402bf1fb5",
+    "bb-sit": "u:1503951914875-452162b0f3f1", "bb-gloves": "u:1783908688260-0c47404926f3",
+    "bb-interior": "u:1781455793310-8427c96454c7",
+    // Jet ski / islas
+    "js-hero": "u:1787142948486-e8022174270e", "js-ride": "u:1505867798796-639ec7e8cdf5",
+    "js-woman": "u:1764056230965-570f10082acc", "js-two": "u:1554132267-d06483b00adc",
+    "js-sunset": "u:1768463852042-656c293ce22f", "js-fleet": "u:1524061508355-90afbf7fcf03",
+    "js-aerial": "u:1715178724773-a243cfbc2e9e", "js-island": "u:1771601795534-8a07e8bf4ae4",
+    "js-karst": "u:1764187808299-f3e5dfdf09ef", "js-eagle": "u:1583316369024-8a4eb52ec261",
+    "js-mangrove": "u:1589556183130-530470785fab", "js-view": "u:1647878872662-50d50c74d40e",
+    "js-beach": "u:1591251010190-43c22baa46b0"
+  };
+  for (var k in extra) P[k] = extra[k];
+
+  /* ---------- textos comunes: árabe ---------- */
+  add("ar", {
+    "demo.back": "العودة إلى WebsProMakers", "demo.isDemo": "عرض تجريبي",
+    "demo.title.wa": "واتساب", "demo.title.form": "الطلب جاهز", "demo.title.social": "وسائل التواصل", "demo.title.call": "اتصال هاتفي", "demo.title.email": "البريد الإلكتروني",
+    "demo.wa": "في الموقع الحقيقي، يفتح هذا الزر واتساب مع النشاط التجاري وهذه الرسالة جاهزة للإرسال:",
+    "demo.social": "في الموقع الحقيقي، تفتح هذه الأيقونة حساب النشاط على وسائل التواصل.",
+    "demo.call": "في الموقع الحقيقي، يتصل هذا الزر بالنشاط مباشرة بلمسة واحدة.",
+    "demo.email": "في الموقع الحقيقي، يفتح هذا رسالة بريد إلكتروني إلى النشاط.",
+    "demo.form": "هذا عرض تجريبي، لذلك لم يُرسل شيء. في الموقع الحقيقي، يستلم النشاط هذا الطلب عبر البريد أو واتساب:",
+    "demo.cta": "هل تريد هذا لنشاطك التجاري؟", "demo.ctaBtn": "تواصل مع WebsProMakers", "demo.close": "إغلاق", "demo.menu": "القائمة",
+    "demo.openMaps": "افتح في خرائط Google",
+    "f.name": "الاسم", "f.phone": "الهاتف / واتساب", "f.email": "البريد الإلكتروني", "f.date": "التاريخ", "f.time": "الوقت", "f.guests": "عدد الأشخاص",
+    "f.message": "رسالة (اختياري)", "f.choose": "اختر…", "f.adults": "البالغون", "f.children": "الأطفال", "f.tour": "الجولة", "f.hotel": "الفندق (اختياري)",
+    "val.required": "يرجى ملء هذا الحقل.", "val.select": "يرجى اختيار خيار.", "val.email": "يرجى إدخال بريد إلكتروني صحيح.",
+    "val.phone": "يرجى إدخال رقم هاتف صحيح، مثل ‎+60 12 345 6789.", "val.number": "يرجى إدخال رقم صحيح.",
+    "val.date": "يرجى اختيار تاريخ من اليوم فصاعدًا.", "val.after": "يجب أن يكون هذا التاريخ بعد التاريخ الأول.", "val.short": "يرجى كتابة المزيد قليلًا."
+  });
+  /* ---------- textos comunes: hindi ---------- */
+  add("hi", {
+    "demo.back": "WebsProMakers पर वापस जाएँ", "demo.isDemo": "डेमो",
+    "demo.title.wa": "WhatsApp", "demo.title.form": "अनुरोध तैयार", "demo.title.social": "सोशल मीडिया", "demo.title.call": "फ़ोन कॉल", "demo.title.email": "ईमेल",
+    "demo.wa": "असली वेबसाइट पर यह बटन बिज़नेस के साथ WhatsApp खोलता है, यह संदेश भेजने के लिए तैयार रहता है:",
+    "demo.social": "असली वेबसाइट पर यह आइकन बिज़नेस का सोशल मीडिया प्रोफ़ाइल खोलता है।",
+    "demo.call": "असली वेबसाइट पर यह बटन एक टैप में बिज़नेस को कॉल करता है।",
+    "demo.email": "असली वेबसाइट पर यह बिज़नेस को ईमेल खोलता है।",
+    "demo.form": "यह डेमो है, इसलिए कुछ भी नहीं भेजा गया। असली वेबसाइट पर बिज़नेस को यह अनुरोध ईमेल या WhatsApp पर मिलेगा:",
+    "demo.cta": "क्या आप अपने बिज़नेस के लिए यह चाहते हैं?", "demo.ctaBtn": "WebsProMakers से बात करें", "demo.close": "बंद करें", "demo.menu": "मेन्यू",
+    "demo.openMaps": "Google Maps में खोलें",
+    "f.name": "नाम", "f.phone": "फ़ोन / WhatsApp", "f.email": "ईमेल", "f.date": "तारीख़", "f.time": "समय", "f.guests": "लोग",
+    "f.message": "संदेश (वैकल्पिक)", "f.choose": "चुनें…", "f.adults": "वयस्क", "f.children": "बच्चे", "f.tour": "टूर", "f.hotel": "होटल (वैकल्पिक)",
+    "val.required": "कृपया यह भरें।", "val.select": "कृपया एक विकल्प चुनें।", "val.email": "कृपया सही ईमेल लिखें।",
+    "val.phone": "कृपया सही फ़ोन नंबर लिखें, जैसे +60 12 345 6789।", "val.number": "कृपया सही संख्या लिखें।",
+    "val.date": "कृपया आज या उसके बाद की तारीख़ चुनें।", "val.after": "यह तारीख़ पहली तारीख़ के बाद होनी चाहिए।", "val.short": "कृपया थोड़ा और लिखें।"
+  });
+
+  /* ---------- banner y notas: propuesta para un negocio real ---------- */
+  var biz = document.body.getAttribute("data-biz") || "";
+  var BAN = {
+    en: "Website proposal for {b} by WebsProMakers · Not the official website",
+    ms: "Cadangan laman web untuk {b} oleh WebsProMakers · Bukan laman web rasmi",
+    es: "Propuesta de web para {b} de WebsProMakers · No es la web oficial",
+    zh: "WebsProMakers 为 {b} 制作的网站提案 · 非官方网站",
+    ar: "مقترح موقع إلكتروني لـ {b} من WebsProMakers · ليس الموقع الرسمي",
+    hi: "{b} के लिए WebsProMakers का वेबसाइट प्रस्ताव · यह आधिकारिक वेबसाइट नहीं है"
+  };
+  var MAP = { en: "Location from Google Maps.", ms: "Lokasi dari Google Maps.", es: "Ubicación según Google Maps.", zh: "位置来自 Google 地图。", ar: "الموقع من خرائط Google.", hi: "लोकेशन Google Maps से।" };
+  var PRICES = {
+    en: "Example prices: to be confirmed with the business.", ms: "Harga contoh: akan disahkan bersama perniagaan.", es: "Precios de ejemplo: a confirmar con el negocio.",
+    zh: "示例价格：以商家确认为准。", ar: "أسعار تقريبية: يؤكدها النشاط التجاري.", hi: "उदाहरण मूल्य: बिज़नेस से पुष्टि होना बाकी।"
+  };
+  Object.keys(BAN).forEach(function (l) {
+    var o = {}; o["demo.banner"] = BAN[l].replace("{b}", biz); o["demo.mapNote"] = MAP[l]; o["demo.samplePrices"] = PRICES[l];
+    add(l, o);
+  });
+
+  /* ---------- RTL para árabe ---------- */
+  function dir(e) { var l = (e && e.detail && e.detail.lang) || W.lang(); document.documentElement.dir = l === "ar" ? "rtl" : "ltr"; }
+  document.addEventListener("wpm:lang", dir);
+})();
+
+</script>
+<script>
+/* FOTOS DE KOFFEEMILIA — guarda las fotos reales en fotos/ con EXACTAMENTE estos nombres (jpg). */
+window.PP_FOTOS = {
+  "koffee-hero": ["fotos/barra.jpg", "cafe-shop"], "koffee-round": ["fotos/flat-white.jpg", "coffee-latte"],
+  "koffee-about1": ["fotos/terraza.jpg", "cafe-interior"], "koffee-about2": ["fotos/barista.jpg", "coffee-beans"], "koffee-about3": ["fotos/smash-burger.jpg", "food-grill"],
+  "koffee-book": ["fotos/iced-latte.jpg", "coffee-cup"], "koffee-qr": ["fotos/barra.jpg", "cafe-shop"],
+  "koffee-eth": ["fotos/etiope.jpg", "coffee-beans"], "koffee-fw": ["fotos/flat-white.jpg", "coffee-latte"], "koffee-iced": ["fotos/iced-latte.jpg", "coffee-cup"],
+  "koffee-croissant": ["fotos/croissant.jpg", "cafe-croissant"], "koffee-scone": ["fotos/scones.jpg", ""], "koffee-burger": ["fotos/smash-burger.jpg", "food-grill"]
+};
+
+</script>
+<script>
+/* Huecos de foto con las fotos reales del negocio (Google Maps / las que os dé el dueño).
+   Cada demo tiene su fotos.js:  window.PP_FOTOS = { "clave": ["fotos/archivo.jpg", "foto-de-reserva"] }
+   1) Si existe fotos/archivo.jpg, se usa.
+   2) Si no existe y hay foto de reserva (clave de photos.js / common.js), se usa la de reserva.
+   3) Si no hay ninguna, se ve un hueco con el nombre de la foto que va ahí. */
+(function () {
+  "use strict";
+  var F = window.PP_FOTOS || {}, P = window.WPM_PHOTOS = window.WPM_PHOTOS || {}, STOCK = {};
+  var me = document.currentScript, ROOT = me ? me.src.replace(/pp\/slots\.js(\?.*)?$/, "") : "";
+  Object.keys(F).forEach(function (k) {
+    if (P[k] && !STOCK[k]) STOCK[k] = P[k];
+    P[k] = /^(https?:|\/)/.test(F[k][0]) ? F[k][0] : ROOT + F[k][0];
+  });
+  function stockUrl(key, w) {
+    var v = STOCK[key] || P[key];
+    if (!v || v.indexOf("u:") !== 0) return v || "";
+    return "https://images.unsplash.com/photo-" + v.slice(2) + "?auto=format&fit=crop&w=" + w + "&q=70";
+  }
+  function label(img) {
+    img.classList.add("is-missing");
+    var ph = img.closest(".ph");
+    if (ph) ph.setAttribute("data-ph-label", img.getAttribute("alt") || "Photo");
+  }
+  function fail(img) {
+    var key = img.getAttribute("data-photo"), slot = F[key];
+    if (!slot) return;
+    var fb = slot[1];
+    if (fb && !img.getAttribute("data-fb")) {
+      var w = parseInt(img.getAttribute("data-w") || "800", 10), url = fb.indexOf("u:") === 0 ? "https://images.unsplash.com/photo-" + fb.slice(2) + "?auto=format&fit=crop&w=" + w + "&q=70" : stockUrl(fb, w);
+      if (url) {
+        img.setAttribute("data-fb", "1");
+        img.removeAttribute("srcset");
+        setTimeout(function () { img.classList.remove("is-missing"); img.src = url; }, 0);
+        return;
+      }
+    }
+    label(img);
+  }
+  document.addEventListener("error", function (e) {
+    var img = e.target;
+    if (img && img.tagName === "IMG" && img.hasAttribute("data-photo")) fail(img);
+  }, true);
+  function relabel() {
+    Array.prototype.forEach.call(document.querySelectorAll(".ph[data-ph-label] img"), function (img) {
+      img.closest(".ph").setAttribute("data-ph-label", img.getAttribute("alt") || "Photo");
+    });
+  }
+  document.addEventListener("wpm:lang", function () { setTimeout(relabel, 40); });
+})();
+
+</script>
+<script>
+/* Carta con pestañas para las propuestas (web + carta QR).
+   Datos: window.PP_MENU = [{ id, name:{en,..}, items:[{ n, p, photo, tag, d:{en,..} }] }]
+   n puede ser texto o un objeto por idioma. p = precio en RM (número o texto). */
+(function () {
+  var TAGS = {
+    pop: { en: "Popular", ms: "Popular", es: "Popular", zh: "人气", ar: "الأكثر طلبًا", hi: "लोकप्रिय" },
+    rev: { en: "Mentioned in reviews", ms: "Disebut dalam ulasan", es: "Citado en reseñas", zh: "评价常提及", ar: "مذكور في التقييمات", hi: "रिव्यू में ज़िक्र" },
+    veg: { en: "Vegetarian", ms: "Vegetarian", es: "Vegetariano", zh: "素食", ar: "نباتي", hi: "शाकाहारी" },
+    vegan: { en: "Vegan", ms: "Vegan", es: "Vegano", zh: "纯素", ar: "نباتي صرف", hi: "वीगन" },
+    spicy: { en: "Spicy", ms: "Pedas", es: "Picante", zh: "辣", ar: "حار", hi: "तीखा" }
+  };
+  window.PP_renderMenu = function (root, opts) {
+    var D = window.DEMO, L = D.L, esc = D.esc, M = window.PP_MENU;
+    opts = opts || {};
+    var active = root.getAttribute("data-active") || M[0].id;
+    var cat = M.filter(function (c) { return c.id === active; })[0] || M[0];
+    root.innerHTML =
+      '<div class="m-tabs" role="tablist">' + M.map(function (c) {
+        return '<button type="button" role="tab" data-cat="' + c.id + '" aria-selected="' + (c.id === cat.id) + '">' + esc(L(c.name)) + "</button>";
+      }).join("") + "</div>" +
+      '<div class="m-list" role="tabpanel">' + cat.items.map(function (it) {
+        var name = L(it.n), tags = (it.tags || (it.tag ? [it.tag] : []));
+        return '<article class="m-item' + (it.photo ? "" : " no-photo") + '">' +
+          (it.photo ? '<div class="m-photo ph"><img data-photo="' + it.photo + '" data-w="' + (opts.w || 300) + '" alt="' + esc(name) + '"></div>' : "") +
+          '<div class="m-text"><h4>' + esc(name) + tags.map(function (t) { return ' <span class="m-tag m-tag--' + t + '">' + esc(L(TAGS[t])) + "</span>"; }).join("") + "</h4>" +
+          (it.d ? "<p>" + esc(L(it.d)) + "</p>" : "") + "</div>" +
+          (!it.p ? "" : /^[\d.,\s–-]+$/.test(String(it.p)) ? '<b class="m-price">RM ' + esc(it.p) + "</b>" : '<b class="m-price is-text">' + esc(L(it.p)) + "</b>") + "</article>";
+      }).join("") + "</div>";
+    if (!root._bound) {
+      root._bound = true;
+      root.addEventListener("click", function (e) {
+        var b = e.target.closest("[data-cat]");
+        if (!b) return;
+        root.setAttribute("data-active", b.getAttribute("data-cat"));
+        window.PP_renderMenu(root, opts);
+        window.WPM.loadPhotos(root);
+        var nb = root.querySelector('[data-cat="' + b.getAttribute("data-cat") + '"]');
+        nb && nb.focus();
+      });
+    }
+  };
+})();
+
+</script>
+<script>
+/* KOFFEEMILIA LANGKAWI — carta y traducciones (el inglés está en el HTML)
+   Datos: ficha de Google (4,8 · 346 reseñas; +60 4-955 5681; 231 Jalan Pantai Tengah; lunes cerrado, viernes con pausa 12:30–14:30),
+   Wanderlog (café etíope, piccolo, iced latte, flat white, mango latte, croissants, scones con mantequilla y mermelada, smash burger doble;
+   ~RM 42 burger + café; gatitos; tarjetas y pagos digitales; enfrente del Villa Hotel), TTR Weekly (hamburguesa de ternera Angus) y
+   Newswav / A Twist of Create (barista serio con el café, ambiente reggae, se mudaron más cerca de Cenang). SIN PRECIOS publicados. */
+(function () {
+  var add = window.WPM.addStrings;
+  window.PP_MENU = [
+    { id: "coffee", name: { en: "Coffee", ms: "Kopi", zh: "咖啡", es: "Café" }, items: [
+      { n: { en: "Ethiopian coffee", ms: "Kopi Ethiopia", zh: "埃塞俄比亚咖啡", es: "Café etíope" }, photo: "koffee-eth", tags: ["rev"],
+        d: { en: "Single-origin beans, brewed to order.", ms: "Biji kopi satu asal, dibancuh ikut pesanan.", zh: "单一产地豆，现点现冲。", es: "Grano de origen único, preparado al momento." } },
+      { n: { en: "Flat white", zh: "馥芮白" }, photo: "koffee-fw", tags: ["pop"],
+        d: { en: "Double shot with silky milk.", ms: "Dua syot dengan susu lembut.", zh: "双份浓缩配丝滑牛奶。", es: "Doble espresso con leche sedosa." } },
+      { n: { en: "Piccolo", zh: "短笛拿铁" }, tags: ["rev"], d: { en: "Small, strong and milky.", ms: "Kecil, pekat dan bersusu.", zh: "小杯、浓郁、带奶。", es: "Pequeño, intenso y con leche." } },
+      { n: { en: "Iced latte", ms: "Latte ais", zh: "冰拿铁", es: "Latte con hielo" }, photo: "koffee-iced", tags: ["pop"] },
+      { n: { en: "Mango latte", ms: "Latte mangga", zh: "芒果拿铁", es: "Latte de mango" }, tags: ["rev"], d: { en: "A local favourite on hot days.", ms: "Kegemaran pada hari panas.", zh: "炎热天的人气之选。", es: "Un favorito en los días de calor." } }
+    ]},
+    { id: "bakes", name: { en: "Bakes", ms: "Pastri", zh: "烘焙", es: "Bollería" }, items: [
+      { n: { en: "Butter croissant", ms: "Croissant mentega", zh: "黄油可颂", es: "Croissant de mantequilla" }, photo: "koffee-croissant" },
+      { n: { en: "Scones with butter & jam", ms: "Scone dengan mentega & jem", zh: "司康配黄油和果酱", es: "Scones con mantequilla y mermelada" }, photo: "koffee-scone", tags: ["rev"] }
+    ]},
+    { id: "food", name: { en: "Food", ms: "Makanan", zh: "餐点", es: "Comida" }, items: [
+      { n: { en: "Angus smash burger", ms: "Burger smash Angus", zh: "安格斯牛肉碎饼汉堡", es: "Smash burger de Angus" }, photo: "koffee-burger", tags: ["rev", "pop"],
+        d: { en: "Double beef patty. Burger + coffee about RM 42.", ms: "Dua kepingan daging. Burger + kopi kira-kira RM 42.", zh: "双层牛肉饼。汉堡加咖啡约 RM 42。", es: "Doble carne de ternera. Burger + café, unos RM 42." } }
+    ]}
+  ];
+
+  add("en", {
+    "k.wa.msg": "Hi Koffeemilia! Can I order 2 flat whites and 2 scones to pick up at 9:30 tomorrow?",
+    "mn.title": "Digital menu", "mn.sub": "Scan · Choose · Enjoy", "mn.site": "Café website", "mn.allergy": "Please tell us about any allergies.", "mn.call": "Order at the counter", "mn.callMsg": "Demo: on the real menu, this button sends your order to the counter or opens WhatsApp."
+  });
+  add("ms", {
+    "k.meta": "Koffeemilia Langkawi – Cadangan laman web | WebsProMakers",
+    "k.metaDesc": "Cadangan laman web oleh WebsProMakers untuk Koffeemilia, Pantai Tengah: menu kopi istimewa, menu QR, pesan awal, waktu dan peta.",
+    "k.nav.menu": "Menu", "k.nav.about": "Kafe", "k.nav.book": "Pesan awal", "k.nav.visit": "Lokasi", "k.cta.menu": "Lihat menu",
+    "k.hero.kicker": "Kopi istimewa · Pantai Tengah, Langkawi", "k.hero.title": "Kopi serius, <em>rentak pulau.</em>",
+    "k.hero.sub": "Biji kopi Ethiopia, flat white, piccolo dan latte ais, croissant, scone dan burger smash dua lapis. Di pondok di Jalan Pantai Tengah, bertentangan Villa Hotel.",
+    "k.hero.order": "Pesan awal", "k.hero.rating": "346 ulasan Google · 5.0 di Tripadvisor", "k.seal": "Dari 8:30 · Isnin tutup",
+    "k.altHero": "Bar kopi di Koffeemilia", "k.altLatte": "Flat white",
+    "k.strip.hours": "Selasa – Ahad dari 8:30 pagi, Isnin hari pantai", "k.strip.beans": "Biji kopi istimewa Ethiopia", "k.strip.pay": "Terima kad dan e-dompet", "k.strip.early": "Datang awal, sebelum panas tengah hari",
+    "k.alt1": "Pondok dan tempat duduk", "k.alt2": "Barista sedang bekerja", "k.alt3": "Burger smash", "k.alt4": "Latte ais di kaunter",
+    "k.about.label": "Kafe", "k.about.title": "Pondok kopi oleh orang yang ambil berat",
+    "k.about.p": "Koffeemilia berpindah ke Jalan Pantai Tengah, lebih dekat ke Cenang. Pemiliknya serius tentang kopi dan santai tentang yang lain: reggae, banyak tempat duduk, beberapa anak kucing dan staf yang disifatkan pelanggan sebagai baik dan mesra. Pengulas menyebutnya antara kopi terbaik di Asia Tenggara.",
+    "k.about.mostT": "Paling banyak disebut dalam ulasan", "k.chip1": "Kopi Ethiopia", "k.chip2": "Burger smash", "k.chip3": "Scone dengan jem", "k.chip4": "Pemilik mesra", "k.chip5": "Anak kucing",
+    "k.menu.label": "Menu", "k.menu.title": "Kopi, pastri & burger", "k.menu.qr": "Juga sebagai menu QR di setiap meja:", "k.menu.qrLink": "buka menu mudah alih",
+    "k.menu.note": "Item diambil daripada ulasan pelanggan. Burger dan kopi kira-kira RM 42 (ulasan). Harga akan ditambah bersama kafe.",
+    "k.book.label": "Pesan awal", "k.book.title": "Kopi anda siap bila anda tiba",
+    "k.book.sub": "Pesan sebelum keluar hotel dan ambil tanpa menunggu, atau simpan meja untuk kumpulan. Kafe akan sahkan melalui WhatsApp.",
+    "k.fType": "Permintaan", "k.fPick": "Pesan awal untuk diambil", "k.fTable": "Meja untuk kumpulan", "k.fOrder": "Pesanan anda", "k.fOrderPh": "2 flat white, 1 latte ais, 2 scone…",
+    "k.book.mon": "Kami tutup pada hari Isnin. Sila pilih hari lain.", "k.book.submit": "Hantar pesanan", "k.book.wa": "Pesan di WhatsApp",
+    "k.visit.label": "Lokasi", "k.visit.title": "231 Jalan Pantai Tengah, bertentangan Villa Hotel", "k.h1": "Isnin", "k.h2": "Selasa – Khamis, Sabtu, Ahad", "k.h3": "Jumaat", "k.closed": "Tutup", "k.contact": "Hubungi",
+    "k.footer": "Koffeemilia · Kopi istimewa · Pantai Tengah, Langkawi",
+    "k.wa.msg": "Hai Koffeemilia! Boleh saya pesan 2 flat white dan 2 scone untuk diambil pukul 9:30 esok?",
+    "mn.title": "Menu digital", "mn.sub": "Imbas · Pilih · Nikmati", "mn.site": "Laman web kafe", "mn.allergy": "Sila beritahu kami tentang sebarang alahan.", "mn.call": "Pesan di kaunter", "mn.callMsg": "Demo: dalam menu sebenar, butang ini menghantar pesanan ke kaunter atau membuka WhatsApp."
+  });
+  add("zh", {
+    "k.meta": "Koffeemilia 兰卡威 – 网站提案 | WebsProMakers",
+    "k.metaDesc": "WebsProMakers 为 Pantai Tengah 的 Koffeemilia 制作的网站提案：精品咖啡菜单、二维码菜单、提前点单、营业时间和地图。",
+    "k.nav.menu": "菜单", "k.nav.about": "咖啡馆", "k.nav.book": "提前点单", "k.nav.visit": "位置", "k.cta.menu": "查看菜单",
+    "k.hero.kicker": "精品咖啡 · 兰卡威 Pantai Tengah", "k.hero.title": "认真做咖啡，<em>悠闲过日子。</em>",
+    "k.hero.sub": "埃塞俄比亚咖啡豆、馥芮白、短笛和冰拿铁，可颂、司康和双层碎饼汉堡。位于 Jalan Pantai Tengah 的小屋，Villa Hotel 对面。",
+    "k.hero.order": "提前点单", "k.hero.rating": "Google 346 条评价 · Tripadvisor 5.0 分", "k.seal": "8:30 起 · 周一休息",
+    "k.altHero": "Koffeemilia 咖啡吧台", "k.altLatte": "馥芮白",
+    "k.strip.hours": "周二至周日上午 8:30 起，周一是海滩日", "k.strip.beans": "埃塞俄比亚精品咖啡豆", "k.strip.pay": "可刷卡和电子钱包", "k.strip.early": "早点来，避开中午的炎热",
+    "k.alt1": "小屋和座位区", "k.alt2": "咖啡师在工作", "k.alt3": "碎饼汉堡", "k.alt4": "吧台上的冰拿铁",
+    "k.about.label": "咖啡馆", "k.about.title": "用心经营的咖啡小屋",
+    "k.about.p": "Koffeemilia 搬到了 Jalan Pantai Tengah，离 Cenang 更近。店主对咖啡一丝不苟，其他事情都很随性：雷鬼音乐、宽敞座位、几只小猫，以及客人口中亲切热情的员工。评价称这是他们在东南亚喝过最好的咖啡之一。",
+    "k.about.mostT": "评价中提及最多", "k.chip1": "埃塞俄比亚咖啡", "k.chip2": "碎饼汉堡", "k.chip3": "司康配果酱", "k.chip4": "店主亲切", "k.chip5": "小猫",
+    "k.menu.label": "菜单", "k.menu.title": "咖啡、烘焙与汉堡", "k.menu.qr": "每张桌上也有二维码菜单：", "k.menu.qrLink": "打开手机菜单",
+    "k.menu.note": "品项取自客人评价。汉堡加咖啡约 RM 42（评价）。价格将与咖啡馆一起补充。",
+    "k.book.label": "提前点单", "k.book.title": "到店即取，不用排队",
+    "k.book.sub": "出门前下单，到店直接取，或为团体预留座位。咖啡馆会通过 WhatsApp 确认。",
+    "k.fType": "需求", "k.fPick": "提前点单自取", "k.fTable": "团体座位", "k.fOrder": "您的订单", "k.fOrderPh": "2 杯馥芮白、1 杯冰拿铁、2 个司康……",
+    "k.book.mon": "周一休息，请选择其他日期。", "k.book.submit": "发送订单", "k.book.wa": "通过 WhatsApp 点单",
+    "k.visit.label": "位置", "k.visit.title": "Jalan Pantai Tengah 231 号，Villa Hotel 对面", "k.h1": "周一", "k.h2": "周二至周四、周六、周日", "k.h3": "周五", "k.closed": "休息", "k.contact": "联系方式",
+    "k.footer": "Koffeemilia · 精品咖啡 · 兰卡威 Pantai Tengah",
+    "k.wa.msg": "您好 Koffeemilia！我可以预订 2 杯馥芮白和 2 个司康，明天 9:30 来取吗？",
+    "mn.title": "电子菜单", "mn.sub": "扫码 · 挑选 · 享用", "mn.site": "咖啡馆网站", "mn.allergy": "如有过敏请告诉我们。", "mn.call": "到柜台点单", "mn.callMsg": "演示：在真实菜单中，此按钮可把订单发送到柜台或打开 WhatsApp。"
+  });
+  add("es", {
+    "k.meta": "Koffeemilia Langkawi – Propuesta de web | WebsProMakers",
+    "k.metaDesc": "Propuesta de web de WebsProMakers para Koffeemilia, Pantai Tengah: carta de café de especialidad, carta QR, pedidos para recoger, horario y mapa.",
+    "k.nav.menu": "Carta", "k.nav.about": "El café", "k.nav.book": "Pedir antes", "k.nav.visit": "Dónde estamos", "k.cta.menu": "Ver la carta",
+    "k.hero.kicker": "Café de especialidad · Pantai Tengah, Langkawi", "k.hero.title": "Café en serio, <em>a ritmo de isla.</em>",
+    "k.hero.sub": "Grano etíope, flat whites, piccolos y lattes con hielo, croissants, scones y una smash burger doble. En una cabaña de Jalan Pantai Tengah, enfrente del Villa Hotel.",
+    "k.hero.order": "Pedir antes", "k.hero.rating": "346 reseñas en Google · 5,0 en Tripadvisor", "k.seal": "Desde las 8:30 · lunes cerrado",
+    "k.altHero": "La barra de Koffeemilia", "k.altLatte": "Flat white",
+    "k.strip.hours": "De martes a domingo desde las 8:30; el lunes es día de playa", "k.strip.beans": "Grano de especialidad de Etiopía", "k.strip.pay": "Se aceptan tarjetas y monederos digitales", "k.strip.early": "Ven temprano, antes del calor del mediodía",
+    "k.alt1": "La cabaña y la zona de mesas", "k.alt2": "El barista trabajando", "k.alt3": "Smash burger", "k.alt4": "Lattes con hielo en la barra",
+    "k.about.label": "El café", "k.about.title": "Una cabaña de café llevada con cariño",
+    "k.about.p": "Koffeemilia se mudó a Jalan Pantai Tengah, más cerca de Cenang. El dueño se toma el café muy en serio y todo lo demás con calma: reggae, muchas mesas, unos cuantos gatitos y un equipo que los clientes describen como amable y acogedor. Hay reseñas que lo ponen entre los mejores cafés que han probado en el Sudeste Asiático.",
+    "k.about.mostT": "Lo más citado en las reseñas", "k.chip1": "Café etíope", "k.chip2": "Smash burger", "k.chip3": "Scones con mermelada", "k.chip4": "Dueño muy amable", "k.chip5": "Gatitos",
+    "k.menu.label": "Carta", "k.menu.title": "Café, bollería y burger", "k.menu.qr": "También como carta QR en cada mesa:", "k.menu.qrLink": "abrir la carta del móvil",
+    "k.menu.note": "Productos sacados de las reseñas de clientes. Burger + café, unos RM 42 (reseña). Los precios se añaden con el café.",
+    "k.book.label": "Pedir antes", "k.book.title": "Tu café listo cuando llegues",
+    "k.book.sub": "Pide antes de salir del hotel y recógelo sin esperar, o reserva mesa para un grupo. El café confirma por WhatsApp.",
+    "k.fType": "Solicitud", "k.fPick": "Pedido para recoger", "k.fTable": "Mesa para un grupo", "k.fOrder": "Tu pedido", "k.fOrderPh": "2 flat whites, 1 latte con hielo, 2 scones…",
+    "k.book.mon": "Los lunes cerramos. Elige otro día.", "k.book.submit": "Enviar pedido", "k.book.wa": "Pedir por WhatsApp",
+    "k.visit.label": "Dónde estamos", "k.visit.title": "231 Jalan Pantai Tengah, enfrente del Villa Hotel", "k.h1": "Lunes", "k.h2": "Mar – jue, sáb, dom", "k.h3": "Viernes", "k.closed": "Cerrado", "k.contact": "Contacto",
+    "k.footer": "Koffeemilia · Café de especialidad · Pantai Tengah, Langkawi",
+    "k.wa.msg": "¡Hola, Koffeemilia! ¿Puedo pedir 2 flat whites y 2 scones para recoger mañana a las 9:30?",
+    "mn.title": "Carta digital", "mn.sub": "Escanea · Elige · Disfruta", "mn.site": "Web del café", "mn.allergy": "Avísanos de cualquier alergia.", "mn.call": "Pedir en la barra", "mn.callMsg": "Demo: en la carta real, este botón envía el pedido a la barra o abre WhatsApp."
+  });
+
+  var root = document.getElementById("menu-root");
+  if (root) window.DEMO.onRender(function () { window.PP_renderMenu(root); });
+  var date = document.getElementById("a-date"), note = document.getElementById("a-tue");
+  if (date && note) date.addEventListener("change", function () { note.hidden = !(date.value && new Date(date.value + "T12:00").getDay() === 1); });
+})();
+
+</script>
+<script>
+/* Carta QR común de las propuestas (usa PP_MENU del data.js del negocio) */
+(function () {
+  if (/[?&]embed=1/.test(location.search)) document.documentElement.classList.add("embed");
+  var root = document.getElementById("qr-root");
+  window.DEMO.onRender(function () { window.PP_renderMenu(root, { w: 240 }); });
+  document.getElementById("call-waiter").addEventListener("click", function () { window.WPM.toast(window.WPM.t("mn.callMsg")); });
+})();
+
+</script>
+</body>
+</html>

@@ -12,3 +12,9 @@
 
 /assets/img/*
   Cache-Control: public, max-age=604800
+
+# Propuestas para negocios reales (demos de captación): sin CSP para que funcionen
+# los scripts en línea y las fotos de Google Maps / webs de los negocios. No indexar.
+/propuestas/*
+  ! Content-Security-Policy
+  X-Robots-Tag: noindex, nofollow
